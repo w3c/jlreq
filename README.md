@@ -1,0 +1,2 @@
+# jlreq
+Japanese layout requirements
