@@ -127,3 +127,10 @@ samp, kbd {
 .checkme {
 	background-color: #BBEFFC;
 }
+
+a .fig-title { 
+	display: none;
+	}
+a .figno:after {
+	content: '';
+	}
