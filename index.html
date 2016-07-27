@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Requirements for Japanese Text Layout 中文排版需求</title>
+<title>Requirements for Japanese Text Layout 日本語組版処理の要件</title>
 <script src="script.js" type="application/javascript"></script>
 <script src="//www.w3.org/Tools/respec/respec-w3c-common"
             async class="remove"></script>
@@ -19,42 +19,42 @@
           shortName:  "jlreq",
 		  noRecTrack: true,
           editors: [
-                {   name:       "<span lang='ja'>阿南 康宏</span> (Yasuhiro Anan), <span lang='ja'>第１版</span> 1st edition",
+                {   name:       "<span lang='ja'>阿南 康宏</span> (Yasuhiro Anan), (<span lang='ja'>第１版</span> 1st edition)",
                     company:    "Microsoft" },
-                {   name:       "<span lang='ja'>千葉 弘幸</span> (Hiroyuki Chiba)",
+                {   name:       "<span lang='ja'>千葉 弘幸</span> (Hiroyuki Chiba), (<span lang='ja'>第２版</span> 2nd edition)",
                     company:    "Invited Expert" },
-                {   name:       "<span lang='zh-hans'>梁海</span> (Hai LIANG)",
-                    mailto:     "lianghai@gmail.com",
-                    company:    "<span lang='zh-hans'>特邀专家</span> (Invited Expert)" },
-                {   name:       "<span lang='zh-hans'>刘庆</span> (Eric Q. LIU)",
-                    mailto:     "ryukeikun@me.com",
-                    company:    "<span lang='zh-hans'>特邀专家</span> (Invited Expert)" },
-                {   name:       "<span lang='zh-hans'>张爱杰</span> (Aijie ZHANG)",
-                    mailto:     "zhangaijie_yjs@139.com",
-                    company:    "<span lang='zh-hans'>中国移动通信集团公司</span> (China Mobile)" },
-                {   name:       "<span lang='zh-hans'>吴小倩（至2015年8月）</span> (Xiaoqian WU) (until August 2015)",
-                    mailto:     "xiaoqian@w3.org",
-                    company:    "W3C" },
-                {   name:       "<span lang='zh-hans'>李安琪</span> (Angel LI)",
-                    mailto:     "angel@w3.org",
-                    company:    "W3C" },
+                {   name:       "<span lang='ja'>枝本 順三郎</span> (Junsaburo Edamoto)",
+                    company:    "Invited Expert" },
                 {   name:       "Richard Ishida",
-                    mailto:     "ishida@w3.org",
-                    company:    "W3C" }
+                    company:    "W3C" },
+                {   name:       "<span lang='ja'>石野 恵一郎</span> (Keiichiro Ishino)",
+                    company:    "Antenna House" },
+                {   name:       "<span lang='ja'>加藤 誠一</span> (Seiichi Kato), (<span lang='ja'>第２版</span> 2nd edition)",
+                    company:    "Microsoft" },
+                {   name:       "<span lang='ja'>小林 龍生</span> (Tatsuo Kobayashi)",
+                    company:    "JustSystems" },
+                {   name:       "<span lang='ja'>小林 敏</span> (Toshi Kobayashi)",
+                    company:    "Invited Expert" },
+                {   name:       "<span lang='ja'>小野澤 賢三</span> (Kenzou Onozawa)",
+                    company:    "Invited Expert" },
+                {   name:       "Felix Sasaki",
+                    company:    "DFKI GmbH" },
+                {   name:       "<span lang='ja'>塩澤 元</span> (Hajime Shiozawa), (<span lang='ja'>第２版</span> 2nd edition)",
+                    company:    "Invited Expert" },
           ],
 		wg:           "Internationalization Core Working Group",
 		wgURI:        "https://www.w3.org/International/core/",
-		bugTracker: { new: "https://github.com/w3c/clreq/issues", open: "https://github.com/w3c/clreq/issues" } ,
+		bugTracker: { new: "https://github.com/w3c/jlreq/issues", open: "https://github.com/w3c/jlreq/issues" } ,
 		wgPublicList: "public-i18n-cjk",
         wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/32113/status",
-		edDraftURI: "https://w3c.github.io/clreq/", 
+		edDraftURI: "https://w3c.github.io/jlreq/", 
  		otherLinks: [
 			{
 			key: "Github",
 			data: [
 				{
 			  	value: "repository",
-			  	href: "https://github.com/w3c/clreq"
+			  	href: "https://github.com/w3c/jlreq"
 		 		}
 				]
 			}
@@ -71,36 +71,22 @@
 <body>
 <div id="abstract">
   <p data-lang="en">This document describes requirements for general Japanese layout realized with technologies like CSS, SVG and XSL-FO. The document is mainly based on a standard for Japanese layout, JIS X 4051, however, it also addresses areas which are not covered by JIS X 4051. This second version of the document contains a significant amount of additional information related to hanmen design, such as handling headings, placement of illustrations and tables, handling of notes and reference marks, etc.</p>
-  <p data-lang="zh-hant">この文書は，CSS，SVGおよびXSL-FOなどの技術で実現が求められる一般的な日本語組版の要件を記述したものです．この文書は，主としてJIS X 4051（日本語組版規則）に基づいていますが，一部，JIS X 4051に記載されていない事項にも言及しています．この第2版は，見出しの扱い，図版や表の配置，注や合印等の版面デザインに関する多くの情報が増補されています. </p>
+  <p data-lang="ja">この文書は，CSS，SVGおよびXSL-FOなどの技術で実現が求められる一般的な日本語組版の要件を記述したものです．この文書は，主としてJIS X 4051（日本語組版規則）に基づいていますが，一部，JIS X 4051に記載されていない事項にも言及しています．この第2版は，見出しの扱い，図版や表の配置，注や合印等の版面デザインに関する多くの情報が増補されています. </p>
 </div>
 <div id="sotd">
-  <p data-lang="en">This document was created by the <a href="https://www.w3.org/International/groups/chinese-layout/">Chinese Layout Task Force</a> within the W3C Internationalization Interest Group, and in collaboration with the <a href="https://www.w3.org/html/ig/zh/">W3C HTML5 Chinese Interest Group</a>. The <a href="https://www.w3.org/International/core/">Internationalization Working Group</a> has been a great help during the writing of this document.  The Chinese Layout Task Force will work with Internationalization Working Group to publish Working Drafts of this document, and to widen the exposure and review of the document. </p>
-  <p data-lang="zh-hans" class="translateme">本文档由W3C国际化兴趣组下设的<a href="https://www.w3.org/International/groups/chinese-layout/">中文布局任务小组</a> 编写而成，<a href="https://www.w3.org/html/ig/zh/">W3C HTML5中文兴趣组</a>为本文档提供了审阅支持，<a href="https://www.w3.org/International/core/">W3C国际化工作组</a>为文档的编写提供了诸多的帮助。中文版式布局任务小组将与<a href="https://www.w3.org/International/core/">W3C国际化工作组</a>联合发布该文档的工作草案，并邀请业界进行审阅。</p>
-  <p data-lang="zh-hant">本文档由W3C国际化兴趣组下设的<a href="https://www.w3.org/International/groups/chinese-layout/">中文布局任务小组</a> 编写而成，<a href="https://www.w3.org/html/ig/zh/">W3C HTML5中文兴趣组</a>为本文档提供了审阅支持，<a href="https://www.w3.org/International/core/">W3C国际化工作组</a>为文档的编写提供了诸多的帮助。中文版式布局任务小组将与<a href="https://www.w3.org/International/core/">W3C国际化工作组</a>联合发布该文档的工作草案，并邀请业界进行审阅。</p>
+  <p data-lang="en">This is a second version of a document that describes requirements for general Japanese layout realized with technologies like CSS, SVG, XSL-FO and eBook standards. The document is mainly based on a standard for Japanese layout, JIS X 4051, however, it also addresses areas which are not covered by JIS X 4051. This second version of the document contains a significant amount of additional information related to hanmen design, such as handling headings, placement of illustrations and tables, handling of notes and reference marks, etc.</p>
+  <p>This document was developed by participants in the <a href="http://www.w3.org/2007/02/japanese-layout/">Japanese Layout Task Force</a>, with input from four W3C Working Groups, <a href="http://www.w3.org/Style/CSS/">CSS</a>, <a href="http://www.w3.org/International/core/">Internationalization Core</a>, <a href="http://www.w3.org/Graphics/SVG/">SVG</a> and <a href="http://www.w3.org/Style/XSL/">XSL</a>.</p>
+  <p>The document was originally authored in Japanese, then translated to English under the guidance of the Japanese authors. In order to reach the largest international audience, the W3C works in English, so this English version of the document is the authoritative version. However, the <a href="http://www.w3.org/TR/2012/NOTE-jlreq-20120403/ja/">Japanese</a> version of this document is also available.</p>
   <div class="note">
-    <p data-lang="en" style="font-weight: bold; font-size: 120%">Sending comments on this document</p>
-    <p data-lang="en">If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/clreq/issues" style="font-size: 120%;">github issues</a>. Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
-    <p data-lang="en">To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on&nbsp; using  a URL for the dated version of the document.</p>
-    <p data-lang="zh-hans" class="translateme" style="font-weight:bold; font-size:120%">发表对本文档的建议</p>
-    <p data-lang="zh-hans" class="translateme">如果你对<a href="https://www.w3.org/TR/2015/WD-clreq-20150730/" style="font-size: 120%">/TR下最新版本</a>的文档有任何建议和反馈，请把您的想法整理发布为 <a href="https://github.com/w3c/clreq/issues" style="font-size: 120%;">github issues</a>。若您觉得在GitHub上提出issues比较困难，也可以邮件形式进行反馈（请参考下面的链接）。您的任何建议对本文档都很可贵。</p>
-    <p data-lang="zh-hans" class="translateme">为便于跟踪您所反馈的问题，请为您所提出的每一个意见点单独成立一个issue或者邮件，并在其中明确指出您所谈到的章节序号和您所阅读的日期版本的URL。</p>
-    <p data-lang="zh-hant" style="font-weight:bold; font-size:120%">发表对本文档的建议</p>
-    <p data-lang="zh-hant">如果你对<a href="https://www.w3.org/TR/2015/WD-clreq-20150730/" style="font-size: 120%">/TR下最新版本</a>的文档有任何建议和反馈，请把您的想法整理发布为 <a href="https://github.com/w3c/clreq/issues" style="font-size: 120%;">github issues</a>。若您觉得在GitHub上提出issues比较困难，也可以邮件形式进行反馈（请参考下面的链接）。您的任何建议对本文档都很可贵。</p>
-    <p data-lang="zh-hant">为便于跟踪您所反馈的问题，请为您所提出的每一个意见点单独成立一个issue或者邮件，并在其中明确指出您所谈到的章节序号和您所阅读的日期版本的URL。</p>
+    <p style="font-weight: bold; font-size: 120%">Sending comments on this document</p>
+    <p>If you wish to make comments regarding this document, please raise them as <a href="https://github.com/w3c/jlreq/issues" style="font-size: 120%;">github issues</a>. Only send comments by email if you are unable to raise issues on github (see links below).   All comments are welcome.</p>
+    <p>To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on&nbsp; using  a URL for the dated version of the document.</p>
   </div>
-  <p id="langSwitch">
+  <!--p id="langSwitch">
     <button id="toZHHant" onClick="switch2zh();">zh-hant</button>
     <button id="toZHHans" onClick="switch2zhHans();">zh-hans</button>
     <button onClick="switch2en();">en</button>
-  </p>
-  <p data-lang="zh-hans" class="translateme">本章节描述了本文档的发布状态。其它更新版本可能会覆盖本文档。W3C的文档列表和最新版本可通过<a href="https://www.w3.org/TR/">W3C技术报告</a>索引访问。 </p>
-  <p data-lang="zh-hans" class="translateme">以编辑草稿方式发布的文档还没有通过<abbr title="World Wide Web Consortium">W3C</abbr>会员流程的认可。这是一份文档草稿并且会被不断更新。请暂时不要正式引用本文档。</p>
-  <p data-lang="zh-hans" class="translateme">本文档遵循<abbr title="World Wide Web Consortium">W3C</abbr><a id="sotd_patent_zh_hans" href="https://www.w3.org/Consortium/Patent-Policy-20040205/">专利政策</a>（2004-02-05）。<abbr title="World Wide Web Consortium">W3C</abbr>为工作组的产出成果维护着一份<a href="https://www.w3.org/2004/01/pp-impl/32113/status" rel="disclosure">公开专利披露列表</a>，此页面也同时涵盖了专利披露说明。若个人发现其有包含<a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">必须声明</a>的专利信息，必须按照<a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure"><abbr title="World Wide Web Consortium">W3C</abbr>专利政策第六章节</a>披露此信息。</p>
-  <p data-lang="zh-hans" class="translateme">本文档遵循<a id="w3c_process_revision_zh_hans" href="https://www.w3.org/2014/Process-20140801/"><abbr title="World Wide Web Consortium">W3C</abbr>流程文档</a>（2014-08-01）。</p>
-  <p data-lang="zh-hant">本章节描述了本文档的发布状态。其它更新版本可能会覆盖本文档。W3C的文档列表和最新版本可通过<a href="https://www.w3.org/TR/">W3C技术报告</a>索引访问。 </p>
-  <p data-lang="zh-hant">以编辑草稿方式发布的文档还没有通过<abbr title="World Wide Web Consortium">W3C</abbr>会员流程的认可。这是一份文档草稿并且会被不断更新。请暂时不要正式引用本文档。</p>
-  <p data-lang="zh-hant">本文档遵循<abbr title="World Wide Web Consortium">W3C</abbr><a id="sotd_patent_zh-hant" href="https://www.w3.org/Consortium/Patent-Policy-20040205/">专利政策</a>（2004-02-05）。<abbr title="World Wide Web Consortium">W3C</abbr>为工作组的产出成果维护着一份<a href="https://www.w3.org/2004/01/pp-impl/32113/status" rel="disclosure">公开专利披露列表</a>，此页面也同时涵盖了专利披露说明。若个人发现其有包含<a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">必须声明</a>的专利信息，必须按照<a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure"><abbr title="World Wide Web Consortium">W3C</abbr>专利政策第六章节</a>披露此信息。</p>
-  <p data-lang="zh-hant">本文档遵循<a id="w3c_process_revision_zh-hant" href="https://www.w3.org/2014/Process-20140801/"><abbr title="World Wide Web Consortium">W3C</abbr>流程文档</a>（2014-08-01）。</p>
+  </p-->
 </div>
 <section id="chapter_1">
   <h2 id="introduction">Introduction</h2>
