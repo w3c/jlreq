@@ -134,3 +134,12 @@ a .fig-title {
 a .figno:after {
 	content: '';
 	}
+ol li {
+	list-style-type: lower-alpha;
+	}
+ol li li { 
+	list-style-type: decimal;
+	}
+ol li li li {
+	list-style-type: lower-roman;
+	}
