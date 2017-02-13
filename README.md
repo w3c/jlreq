@@ -8,7 +8,7 @@
 ###Feedback
 Feedback about the content of this document can be submitted via issues or pull request in this GitHub repo.
 
-If you prefer, you can also send comments to [public-i18n-cjk@w3.org](mailto:public-i18n-cjk@w3.org). You can also view the archives of this mailing list [here](https://lists.w3.org/Archives/Public/public-i18n-cjk/).
+If necessary, you can also send comments to [public-i18n-cjk@w3.org](mailto:public-i18n-cjk@w3.org). You can also view the archives of this mailing list [here](https://lists.w3.org/Archives/Public/public-i18n-cjk/).
 
 ###Contributing
 
