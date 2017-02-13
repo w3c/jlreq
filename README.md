@@ -6,9 +6,10 @@
 - [Japanese version](https://www.w3.org/TR/2012/NOTE-jlreq-20120403/ja/)
 
 ###Feedback
-Feedback about the content of this document can be submitted via issues or pull request in this GitHub repo.
+Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to send feedback about this document.
 
-If necessary, you can also send comments to [public-i18n-cjk@w3.org](mailto:public-i18n-cjk@w3.org). You can also view the archives of this mailing list [here](https://lists.w3.org/Archives/Public/public-i18n-cjk/).
+###Following
+To follow the work, you can 'Watch' this repository using the control above, or subscribe to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list, which is notified once a day about changes to the repo. The [www-international](https://lists.w3.org/Archives/Public/www-international/) list is also notified daily. (Please use github issues rather than the mailing list to send feedback.)
 
 ###Contributing
 
