@@ -22,4 +22,5 @@ Editors should be familiar with and use the following:
 
 ### Links
 - [Task Force Home Page](https://www.w3.org/2007/02/japanese-layout/)
+- [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
 
