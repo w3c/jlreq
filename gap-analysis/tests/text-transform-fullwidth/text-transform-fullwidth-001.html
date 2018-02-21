@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform:fullwidth, a-z</title>
+<meta name="assert" content="text-transform:fullwidth converts a-z to fullwidth.">
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#text-transform'>
+<style type='text/css'>
+@font-face {
+	font-family: 'webfont';
+	src: url('../../fonts/DoulosSIL-R.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 200%; line-height: 2.5em; font-family: 'Doulos SIL', 'Noto Serif', 'Noto Sans', webfont, sans-serif; }
+.test span, .ref span { display: inline-block; min-width: 5em; margin-right: 1em; white-space: nowrap; }
+.test span { color: red; }
+.ref { position:absolute; top:0; }
+
+/* the CSS above is not part of the test */
+.test span { text-transform: full-width; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red.</p>
+<div style="position:relative">
+<div class="test"><span>aａ</span> <span>bｂ</span> <span>cｃ</span> <span>dｄ</span> <span>eｅ</span> <span>fｆ</span> <span>gｇ</span> <span>hｈ</span> <span>iｉ</span> <span>jｊ</span> <span>kｋ</span> <span>lｌ</span> <span>mｍ</span> <span>nｎ</span> <span>oｏ</span> <span>pｐ</span> <span>qｑ</span> <span>rｒ</span> <span>sｓ</span> <span>tｔ</span> <span>uｕ</span> <span>vｖ</span> <span>wｗ</span> <span>xｘ</span> <span>yｙ</span> <span>zｚ</span></div>
+<div class="ref"><span>ａａ</span> <span>ｂｂ</span> <span>ｃｃ</span> <span>ｄｄ</span> <span>ｅｅ</span> <span>ｆｆ</span> <span>ｇｇ</span> <span>ｈｈ</span> <span>ｉｉ</span> <span>ｊｊ</span> <span>ｋｋ</span> <span>ｌｌ</span> <span>ｍｍ</span> <span>ｎｎ</span> <span>ｏｏ</span> <span>ｐｐ</span> <span>ｑｑ</span> <span>ｒｒ</span> <span>ｓｓ</span> <span>ｔｔ</span> <span>ｕｕ</span> <span>ｖｖ</span> <span>ｗｗ</span> <span>ｘｘ</span> <span>ｙｙ</span> <span>ｚｚ</span>
+</div>
+</div>
+</body>
+</html>

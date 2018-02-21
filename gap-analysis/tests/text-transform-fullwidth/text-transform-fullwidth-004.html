@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8"/>
+<title>CSS3 Text, text transform:fullwidth, katakana</title>
+<meta name="assert" content="text-transform:fullwidth converts halfwidth katakana to fullwidth.">
+<link rel='author' title='Richard Ishida' href='mailto:ishida@w3.org'>
+<link rel='help' href='http://dev.w3.org/csswg/css-text-3/#text-transform'>
+<style type='text/css'>
+@font-face {
+	font-family: 'webfont';
+	src: url('../../fonts/DoulosSIL-R.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
+.test, .ref { font-size: 200%; line-height: 2.5em; font-family: 'Doulos SIL', 'Noto Serif', 'Noto Sans', webfont, sans-serif; }
+.test span, .ref span { display: inline-block; min-width: 5em; margin-right: 1em; white-space: nowrap; }
+.test span { color: red; }
+.ref { position:absolute; top:0; }
+
+/* the CSS above is not part of the test */
+.test span { text-transform: full-width; }
+</style>
+</head>
+<body>
+<p class="instructions">Test passes if you see no red.</p>
+<div style="position:relative">
+<div class="test"><span>ｦヲ</span> <span>ｧァ</span> <span>ｨィ</span> <span>ｩゥ</span> <span>ｪェ</span> <span>ｫォ</span> <span>ｬャ</span> <span>ｭュ</span> <span>ｮョ</span> <span>ｯッ</span> <span>ｰー</span> <span>ｱア</span> <span>ｲイ</span> <span>ｳウ</span> <span>ｴエ</span> <span>ｵオ</span> <span>ｶカ</span> <span>ｷキ</span> <span>ｸク</span> <span>ｹケ</span> <span>ｺコ</span> <span>ｻサ</span> <span>ｼシ</span> <span>ｽス</span> <span>ｾセ</span> <span>ｿソ</span> <span>ﾀタ</span> <span>ﾁチ</span> <span>ﾂツ</span> <span>ﾃテ</span> <span>ﾄト</span> <span>ﾅナ</span> <span>ﾆニ</span> <span>ﾇヌ</span> <span>ﾈネ</span> <span>ﾉノ</span> <span>ﾊハ</span> <span>ﾋヒ</span> <span>ﾌフ</span> <span>ﾍヘ</span> <span>ﾎホ</span> <span>ﾏマ</span> <span>ﾐミ</span> <span>ﾑム</span> <span>ﾒメ</span> <span>ﾓモ</span> <span>ﾔヤ</span> <span>ﾕユ</span> <span>ﾖヨ</span> <span>ﾗラ</span> <span>ﾘリ</span> <span>ﾙル</span> <span>ﾚレ</span> <span>ﾛロ</span> <span>ﾜワ</span> <span>ﾝン</span> <span>ﾞ゙</span> <span>ﾟ゚</span></div>
+<div class="ref"><span>ヲヲ</span> <span>ァァ</span> <span>ィィ</span> <span>ゥゥ</span> <span>ェェ</span> <span>ォォ</span> <span>ャャ</span> <span>ュュ</span> <span>ョョ</span> <span>ッッ</span> <span>ーー</span> <span>アア</span> <span>イイ</span> <span>ウウ</span> <span>エエ</span> <span>オオ</span> <span>カカ</span> <span>キキ</span> <span>クク</span> <span>ケケ</span> <span>ココ</span> <span>ササ</span> <span>シシ</span> <span>スス</span> <span>セセ</span> <span>ソソ</span> <span>タタ</span> <span>チチ</span> <span>ツツ</span> <span>テテ</span> <span>トト</span> <span>ナナ</span> <span>ニニ</span> <span>ヌヌ</span> <span>ネネ</span> <span>ノノ</span> <span>ハハ</span> <span>ヒヒ</span> <span>フフ</span> <span>ヘヘ</span> <span>ホホ</span> <span>ママ</span> <span>ミミ</span> <span>ムム</span> <span>メメ</span> <span>モモ</span> <span>ヤヤ</span> <span>ユユ</span> <span>ヨヨ</span> <span>ララ</span> <span>リリ</span> <span>ルル</span> <span>レレ</span> <span>ロロ</span> <span>ワワ</span> <span>ンン</span> <span>゙゙</span> <span>゚゚</span></div>
+</div>
+</body>
+</html>
