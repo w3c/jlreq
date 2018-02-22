@@ -32,7 +32,6 @@
       // editors, add as many as you like
       // only "name" is required
       editors:  [
-        { name: "Shervin Afshar", mailto: "safshar@netflix.com", company: "Netflix" },
         { name: "Richard Ishida", mailto: "ishida@w3.org", company: "W3C" },
       ],
 
@@ -346,7 +345,7 @@
 
 
 
-<section id="hyphenation" class="tbd">
+<section id="hyphenation" class="na">
     <h3>Hyphenation</h3>
     <p class="status_prompt">Is hyphenation used for your script, or something else? If hyphenation is used, does it work as expected? <a href="https://w3c.github.io/typography/index#hyphenation">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ahyphenation%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
 
@@ -366,12 +365,19 @@
 
 
 
-<section id="counters" class="tbd">
+<section id="counters" class="basic">
     <h3>Counters, lists, etc.</h3>
     <p class="status_prompt">The CSS Counter Styles specification describes a limited set of simple and complex styles for counters to be used in list numbering, chapter heading numbering, etc.The rules plus more counter styles (totalling around 120 for over 30 scripts) are listed in the document <a href="https://w3c.github.io/predefined-counter-styles/">Ready-made Counter Styles</a>. Do these cover your needs?  Are the details correct? Are there other aspects related to counters and lists that need to be addressed? <a href="https://w3c.github.io/typography/index#counters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acounter-styles%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
 
 
-    <p></p>
+<p>A number of predefined counter styles in the CSS Counter Styles spec are not widely supported by browsers, or use a different separator from that specified. Because the custom mechanism of the Counter Styles spec is not supported by browsers other than Firefox, users are unable to fix this for themselves.</p>
+<p>There is an additional problem for list counters in vertical text. A common way to orient counters for lists in vertical text is to have an upright number with a dot alongside it.<a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/tcu-all-pref.html" target="text"></a></p>
+<p><img src="images/vertical-lists.png" alt=""></p>
+<p>The expected way to achieve this in HTML would be to use the following CSS: <code>li::marker { text-combine-upright: all; }</code>, however this cannot be used because browsers don't support <code class="kw" translate="no">text-combine-upright</code>. . Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/japanese_list_upright.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/japanese_list_upright_pref.html" target="text">proprietary syntax</a></p>
+<p>A workaround might be to use fullwidth characters for counters, such as ①, ②, ③ etc., but use of such a workaround requires the availability of custom built counter styles, and only Firefox currently supports the CSS Counter Styles specification. So that doesn't work either. Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/korean-list-counterstyles.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/korean-list-counterstyles-pref.html" target="text">proprietary syntax</a></p>
+<p>It is a significant nuisance for content authoring to not be able to produce upright counters for lists.</p>
+
+
 </section>
 
 
