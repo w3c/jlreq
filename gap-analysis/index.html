@@ -179,12 +179,28 @@
 
 
 
-<section id="quotations" class="tbd">
+<section id="quotations" class="advanced">
     <h3>Quotations</h3>
     <p class="status_prompt">Are there any issues when dealing with quotations marks, especially when nested? Should block quotes be indented or handled specially? <a href="https://w3c.github.io/typography/index#quotations">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aquotations%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
 
 
-    <p></p>
+<section id="q_defaults">
+<h4><a href="#q_defaults">Default quotation marks for q element</a></h4>
+<p>If the <code class="kw" translate="no">html</code> tag sets the language of a page, the HTML specification says that  the <code class="kw" translate="no">q</code> element should by default produce quotation marks according to the information in CLDR for that language.</p>
+<p>For Japanese, according to CLDR the default quote marks should be 「...」, and embedded quote marks 『...』. Firefox  doesn't change default quote marks based on language setting. (Chrome &amp; Safari are ok.) See a <a href="https://w3c.github.io/i18n-tests/results/the-q-element.html#language">test and results</a>.</p>
+</section>
+
+<section id="q_section">
+<h4><a href="#q_section">Default quotation marks in a new language section</a></h4>
+<p>In addition, the default quotation marks for the <code class="kw" translate="no">q</code> element  are not set to the appropriate characters by the browser  when the element appears inside an Japanese section of a page that has a different overall language. This is currently per the HTML specification (both W3C and WhatWG).  There is <a href="https://github.com/whatwg/html/issues/3636#issuecomment-384340053">an issue</a> raised against the WhatWG version for this to be changed.</p>
+</section>
+
+<section id="q_multilingual">
+<h4><a href="#q_multilingual">Embedded quotations in a different language</a></h4>
+<p>Japanese quotes embedded in text in another language can also be problematic if the outer language uses different quotation marks. This is due to the browsers choosing default quotation marks based on the language of the <em>quotation</em>, rather than that of the surrounding text. See <a href="https://w3c.github.io/i18n-tests/results/the-q-element.html#ml_nesting">a test</a>. This behaviour is specified in the WhatWG version of the HTML spec, but no longer in the W3C version. There is <a href="https://github.com/whatwg/html/issues/3636#issuecomment-384340053">an issue</a> raised against the WhatWG version for this to be changed.</p>
+</section>
+
+<p>Marking all the above as advanced, because use of the <code class="kw" translate="no">q</code> element is optional (quote characters can be used instead), and it can be styled using CSS for the general case.</p>
 </section>
 
 
@@ -239,7 +255,10 @@
 <p>The basic pattern here is <code>ruby-base ruby-base ... ruby-text ruby-text ...,</code> which we'll refer to as tabular. An advantage to this approach is that it enables you to style the ruby text to appear inline in such a way that all the ruby text for a word follows that word together. Inline styling can be useful in space-constrained situations, where it would be too difficult to read small ruby characters. <a href="https://w3c.github.io/i18n-drafts/articles/ruby/markup.en.html#tabular">Read more</a>.</p>
 <p>This also makes certain applications of double-sided ruby impossible when the ruby on each side of the base spans a different set of base characters.</p>
 <p>Only Firefox supports tabular ruby markup. More Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form-pref.html" target="text">proprietary syntax</a></p>
-<p>This has a particular impact for creation of HTML with jukugo ruby, so advanced in impact.</p>
+<p>For creation of HTML with jukugo ruby this is advanced in impact, however there are other implications when tabular markup is not supported that have a more important impact.</p>
+<p>When text is marked up in mono-ruby way. searching may not work well. If you have the following markup</p>
+<p><code>&lt;p&gt;&lt;ruby&gt;漢&lt;rt&gt;かん&lt;/rt&gt;字&lt;rt&gt;じ&lt;/rt&gt;&lt;/ruby&gt;&lt;/p&gt;</code></p>
+<p>and search for the base text &quot;漢字&quot; in a browser, you will not get a result. Tabular markup could solve this problem.</p>
 </section>
 
 <section>
