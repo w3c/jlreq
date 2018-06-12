@@ -27,11 +27,24 @@ All contributors should read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 Group _members_ are expert contributors participate actively in producing the work of the group, contributing text and advice to create the outputs, and participating in any meetings. For more information about becoming a group member contact [Richard Ishida](mailto:ishida@w3.org). We welcome participation requests.
 
 ### Links
-- [Task Force Home Page](https://www.w3.org/2007/02/japanese-layout/)
+- [Issue tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=japanese)
+- [Github issues](https://github.com/w3c/jlreq/issues)
+- [Home Page](https://www.w3.org/2007/02/japanese-layout/)
 - Charter (tbd)
 - Action tracker (tbd)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
 - Meeting info (tbd)
+- Contacts: [Richard Ishida](mailto:ishida@w3.org)
+
+
+### Links for editors
+If you end up creating a document, you should be familiar with and use the following:
+- [Github guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/github)
+- [Editorial guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/editing)
+
+The following templates are available:
+- [Gap analysis template](http://w3c.github.io/i18n-activity/templates/gap-analysis/gap-analysis_template.html)
+- [Requirements document template](http://w3c.github.io/i18n-activity/templates/lreq_doc/gap-analysis_template.html)
 
 
 ### Links to background information
@@ -41,17 +54,6 @@ The following information describes work going on at the W3C to support language
 - [Overview of language enablement work in progress](https://www.w3.org/International/layout)
 - [Setting up a Gap Analysis Project](https://github.com/w3c/typography/wiki/Setting-up-a-Gap-Analysis-Project)
 - [Internationalization Sponsorship Program](https://www.w3.org/International/sponsorship/)
-
-
-### Links for editors
-If you end up creating a document, you should be familiar with and use the following:
-
-- [Github guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/github)
-- [Editorial guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/editing)
-
-The following templates are available:
-- [Gap analysis template](http://w3c.github.io/i18n-activity/templates/gap-analysis/gap-analysis_template.html)
-- [Requirements document template](http://w3c.github.io/i18n-activity/templates/lreq_doc/gap-analysis_template.html)
 
 
 
