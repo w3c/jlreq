@@ -29,7 +29,7 @@ Group _members_ are expert contributors participate actively in producing the wo
 ### Links
 - [Issue tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=japanese)
 - [Github issues](https://github.com/w3c/jlreq/issues)
-- Charter (tbd)
+- [Charter](https://w3c.github.io/jlreq/charter/)
 - Action tracker (tbd)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
 - Meeting info (tbd)
