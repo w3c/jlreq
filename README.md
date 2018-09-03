@@ -17,7 +17,7 @@ Topics for discussion are suggested by [the gap-analysis document](https://w3c.g
 Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to to report issues for language support, for discussions, and to send feedback about documents.
 
 ### Following
-Rather than just 'Watch' this repository, it is best to subscribe to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list. That list is notified once a day (in digest form) about activity in this repository, but also about any activity for other W3C Working Group issues related to Japanese. (Please use github issues rather than the mailing list to send feedback.)  Meeting minutes are also sent to public-i18n-mongolian.
+Rather than just 'Watch' this repository, it is best to subscribe to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list. That list is notified once a day (in digest form) about activity in this repository, but also about any activity for other W3C Working Group issues related to Japanese. (Please use github issues rather than the mailing list to send feedback.)  Meeting minutes are also sent to public-i18n-cjk.
 
 You can find a list of open issues, including those from Working Groups, on the [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=japanese) page. (That link applies a `japanese` filter.)
 
