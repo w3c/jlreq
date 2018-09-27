@@ -24,7 +24,9 @@ You can find a list of open issues, including those from Working Groups, on the 
 ### Contributing
 All contributors must read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Group _members_ are expert contributors participate actively in producing the work of the group, contributing text and advice to create the outputs, and participating in any meetings. For more information about becoming a group member contact [Richard Ishida](mailto:ishida@w3.org). We welcome participation requests.
+Group _members_ are expert contributors participate actively in producing the work of the group, contributing text and advice to create the outputs, and participating in any meetings. For more information about becoming a group member contact [Richard Ishida](mailto:ishida@w3.org) or [木田泰夫 (Yasuo Kida)](mailto:kida@me.com). We welcome participation requests.
+
+**Members of this group may communicate in Japanese, however any substantive discussions should be summarised in English at some point, so that non-Japanese speakers can follow the rationale and contribute comments.**
 
 ### Links
 - [Issue tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=japanese)
