@@ -19,7 +19,7 @@ Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to to re
 ### Following
 Rather than just 'Watch' this repository, it is best to subscribe to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list. That list is notified once a day (in digest form) about activity in this repository, but also about any activity for other W3C Working Group issues related to Japanese. (Please use github issues rather than the mailing list to send feedback.)  Meeting minutes are also sent to public-i18n-cjk.
 
-You can find a list of open issues, including those from Working Groups, on the [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=japanese) page. (That link applies a `japanese` filter.)
+You can find a list of open issues, including those from Working Groups, on the [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=jlreq) page. (That link applies a `japanese` filter.)
 
 ### Contributing
 All contributors must read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -41,7 +41,7 @@ Group _members_ are expert contributors participate actively in producing the wo
 
 ### Links to background information
 The following information describes work going on at the W3C to support languages on the Web.
-- [Language support heatmap](http://w3c.github.io/typography/gap-analysis/language-matrix.html)
+- [Language matrix](http://w3c.github.io/typography/gap-analysis/language-matrix.html)
 - [Analysing support for text layout on the Web](https://github.com/w3c/i18n-discuss/wiki/Analysing-support-for-text-layout-on-the-Web)
 - [Overview of language enablement work in progress](https://www.w3.org/International/layout)
 - [Setting up a Gap Analysis Project](https://github.com/w3c/typography/wiki/Setting-up-a-Gap-Analysis-Project)
