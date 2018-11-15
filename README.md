@@ -14,19 +14,20 @@ Topics for discussion are suggested by [the gap-analysis document](https://w3c.g
 - [Requirements for Japanese Text Layout](https://www.w3.org/TR/jlreq/) (WG Note)
 - [Requirements for Japanese Text Layout](https://www.w3.org/TR/2012/NOTE-jlreq-20120403/ja/) (Japanese version)
 
-Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to to report issues for language support, for discussions, and to send feedback about documents.
-
 ### Following
-Rather than just 'Watch' this repository, it is best to subscribe to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list. That list is notified once a day (in digest form) about activity in this repository, but also about any activity for other W3C Working Group issues related to Japanese. (Please use github issues rather than the mailing list to send feedback.)  Meeting minutes are also sent to public-i18n-cjk.
+Rather than just 'Watch' this repository, it is best to subscribe to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list. That list is notified once a day (in digest form) about activity in this repository, but also about any activity for other W3C Working Group issues related to Japanese, Chinese and Korean. (Please use github issues rather than the mailing list to send feedback. The main purpose of the public-i18n-cjk mailing list is for notifications; meeting minutes are also sent to that list).
 
 You can find a list of open issues, including those from Working Groups, on the [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=jlreq) page. (That link applies a `japanese` filter.)
 
 ### Contributing
 All contributors must read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
+Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to to report issues for language support, for discussions, and to send feedback about documents.
+
+**You may raise issues in Japanese, however any substantive discussions should be summarised in English at some point, so that non-Japanese speakers can follow the rationale and contribute comments.**
+
 Group _members_ are expert contributors participate actively in producing the work of the group, contributing text and advice to create the outputs, and participating in any meetings. For more information about becoming a group member contact [Richard Ishida](mailto:ishida@w3.org) or [木田泰夫 (Yasuo Kida)](mailto:kida@me.com). We welcome participation requests.
 
-**Members of this group may communicate in Japanese, however any substantive discussions should be summarised in English at some point, so that non-Japanese speakers can follow the rationale and contribute comments.**
 
 ### Links
 - [Issue tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=japanese)
