@@ -22,7 +22,7 @@ You can find a list of open issues, including those from Working Groups, on the 
 ### Contributing
 All contributors must read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to to report issues for language support, for discussions, and to send feedback about documents.
+Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to to report issues for language support, for discussions, and to send feedback about documents. (Learn [how GitHub issues work](http://w3c.github.io/i18n-activity/guidelines/issues.html).)
 
 **You may raise issues in Japanese, however any substantive discussions should be summarised in English at some point, so that non-Japanese speakers can follow the rationale and contribute comments.**
 
