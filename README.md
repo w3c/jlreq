@@ -8,7 +8,7 @@ A significant problem faced by the Web is that experts don't know how to tell th
 
 Web が抱えている大きな問題の一つは、エキスパートが彼らの言語のサポートにどのような問題があるかを W3C に伝える方法を知らないこと、反対に、W3C側から聞きたいことがあっても誰に聞けば良いのかが判らないことです。このエキスパートのグループがその問題を大きく解決することを期待しています。
 
-Some experts go a step further, and contribute to a the gap-analysis or requirements document, or to other documents produced by the group.
+Some experts go a step further, and contribute to the gap-analysis or requirements document, or to other documents produced by the group.
 
 一部のエキスパートの人たちは、一歩進んでこのグループが作成する成果物、例えばギャップの分析や要件定義の文書、その他の文書の作成などに貢献します。
 
