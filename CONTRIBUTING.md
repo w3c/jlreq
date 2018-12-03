@@ -1,4 +1,4 @@
-[(Japanese translation follows / 日本語版は後ろにあります)](#Japanese version)
+[(Japanese translation follows / 日本語版は後ろにあります)](#japanese-version-%E6%97%A5%E6%9C%AC%E8%AA%9E%E7%89%88)
 
 ## Contributions
 
