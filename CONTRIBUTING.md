@@ -40,11 +40,13 @@ The Task Force Participant will refrain from sending unsolicited commercial mess
 
 # Japanese version (日本語版)
 
+この章は，<a href="#">本ファイル (CONTRIBUTING.md) の先頭</a>にある英語表記の日本語訳です。日本語訳は参考情報であって、公式な文書ではありません。
+
 ## 貢献について
 
-このレポジトリへの貢献は、[W3C ソフトウェアと文書のライセンス](http://www.w3.org/Consortium/Legal/copyright-software)に基づき管理されている Internationalization Interest Group および Internationalization Working Group の文書の一部となることが想定されています。ここへの貢献について、あなたの貢献がライセンスに基づいて扱われることに同意する必要があります。
+このリポジトリへの貢献は、[W3C ソフトウェアと文書のライセンス](http://www.w3.org/Consortium/Legal/copyright-software)に基づき管理されている Internationalization Interest Group および Internationalization Working Group の文書の一部となることが想定されています。ここへの貢献について、あなたの貢献がライセンスに基づいて扱われることに同意する必要があります。
 
-貢献内容 (プルリクエスト) があなただけの成果でない場合、そのプルリクエストのコメントにすべての貢献者を明示してください。
+貢献内容 (プルリクエスト) があなただけの成果でない場合、そのプルリクエストのコメント中にすべての貢献者を明示してください。
 
 貢献者を追加する (あなた自身は自動的に追加されますので、あなた以外について) には、１行に一人を以下のように追加してください:
 
@@ -52,7 +54,7 @@ The Task Force Participant will refrain from sending unsolicited commercial mess
 +@github_username
 ```
 
-間違って貢献者を追加した場合、コメントに以下のように記述することで削除できます:
+間違って貢献者を追加した場合、コメント中に以下のように記述することで削除できます:
 
 ```
 -@github_username
