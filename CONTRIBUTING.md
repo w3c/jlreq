@@ -44,7 +44,7 @@ The Task Force Participant will refrain from sending unsolicited commercial mess
 
 ## 投稿について
 
-このリポジトリへの投稿は、[W3C ソフトウェアと文書のライセンス](http://www.w3.org/Consortium/Legal/copyright-software)に基づき管理されている Internationalization Interest Group および Internationalization Working Group の文書の一部となることが想定されています。ここにコミットすることによって、あなたはその内容がこのライセンスに基づいて扱われることに同意したことになります。
+このリポジトリへの投稿は、[W3C ソフトウェアと文書のライセンス](http://www.w3.org/Consortium/Legal/copyright-software)に基づき管理されている Internationalization Interest Group および Internationalization Working Group の文書の一部となることが想定されています。このレポジトリにコミットすることによって、あなたはその内容がこのライセンスに基づいて扱われることに同意したことになります。
 
 投稿内容 (プルリクエスト) があなただけの成果でない場合、そのプルリクエストのコメント中にすべての投稿者を明示してください。
 
