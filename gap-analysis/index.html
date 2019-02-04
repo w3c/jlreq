@@ -51,6 +51,13 @@
           ]
         }
       ],
+      
+      
+      // langs array lists languages addressed by this document, in order of speaker (highest first)
+      // it is used to generate the javascript needed for the matrix
+      langs: ['Japanese'],
+      gapDocPath: 'https://w3c.github.io/jlreq/gap-analysis/',
+
 
       // URI of the patent status for this WG, for Rec-track documents
       // !!!! IMPORTANT !!!!
@@ -125,14 +132,83 @@
     
 
 
+<section id="direction">
+    <h2>Text direction</h2>
+<p>See also General page layout &amp; progression for features such as column layout, page turning direction, etc. that are affected by text direction.</p>
+
+<section id="vertical" class="basic">
+<h3>Vertical text</h3>
+    <p class="status_prompt">Are the script requirements for vertically oriented text met?  What about if you mix vertical text with scripts that are normally only horizontal? Do you need a switch to use different characters in vertical vs. horizontal text? Does the browser support short runs of horizontal text in vertical lines (tate-chu-yoko in Japanese) as expected? Is the orientation of characters and the directional ordering of characters supported as needed? <a href="https://w3c.github.io/typography/index#vertical_text">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Avertical-text%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+
+<section>
+<h4>Vertical form controls</h4>
+<p>One major gap is handling of vertical text in forms. Only the <span class="pass">Firefox</span> desktop browser does a good job of this. <a href="https://www.w3.org/International/tests/repo/results/writing-mode-vertical#rl_forms">See test results</a>. <span class="fail">Other browsers</span> fail resoundingly in terms of orienting form controls vertically and displaying text vertically inside them. More Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form-pref.html" target="text">proprietary syntax</a></p>
+<p>This has a significant impact for creation of general web sites.</p>
+</section>
+
+<section>
+<h4>Upright text orientation</h4>
+<p>Another gap is the CSS <code class="kw" translate="no">text-orientation</code> property. It is only supported as standard by <span class="pass">Firefox</span>. <span class="partial">Safari</span> has buggy support if you use the <code class="kw" translate="no">-webkit</code> proprietary extension: it has  a problem centering the letter in the vertical line. Tests:  <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/upright-i.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/upright-i-pref.html" target="text">proprietary syntax</a></p>
+<p>Upright-oriented Latin text, especially, is used commonly for acronyms in Japanese vertical text, so this is a significant gap for general web content.</p>
+</section>
+
+<section>
+<h4>Tate-chu-yoko</h4>
+<p>The CSS <code class="kw" translate="no">text-combine-upright</code> property works with the <code class="kw" translate="no">all</code> value in all major browsers, although for <span class="partial">Edge</span> you need to use the proprietary property <code class="kw" translate="no">-ms-text-combine-horizontal</code>. Tests:  <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/tcu-all.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/tcu-all-pref.html" target="text">proprietary syntax</a></p>
+<p>With the <code class="kw" translate="no">digits</code> value, it is only supported by <span class="partial">Edge</span> (with it's proprietary property name), but Edge stretches single digits to fit the width of the (vertical) line. Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/digits.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/digits-pref.html" target="text">proprietary syntax</a></p>
+<p>The unavailability of the <code class="kw" translate="no">digits</code> value is an inconvenience, since more interventions and markup are needed when using the <code class="kw" translate="no">all</code> value.</p>
+</section>
+
+<section>
+<h4>Lists</h4>
+<p>A common way to orient counters for lists in vertical text is to have an upright number with a dot alongside it.<a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/tcu-all-pref.html" target="text"></a></p>
+<p><img src="images/vertical-lists.png" alt=""></p>
+<p>The expected way to achieve this in HTML would be to use the following CSS: <code>li::marker { text-combine-upright: all; }</code>, however this cannot be used because browsers don't support <code class="kw" translate="no">text-combine-upright</code>. . Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/japanese_list_upright.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/japanese_list_upright_pref.html" target="text">proprietary syntax</a></p>
+<p>A workaround might be to use fullwidth characters for counters, such as ①, ②, ③ etc., but use of such a workaround requires the availability of custom built counter styles, and only Firefox currently supports the CSS Counter Styles specification. So that doesn't work either. Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/korean-list-counterstyles.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/korean-list-counterstyles-pref.html" target="text">proprietary syntax</a></p>
+<p>It is a significant nuisance for content authoring to not be able to produce upright counters for lists.</p>
+</section>
+
+<section>
+<h4>Table cells</h4>
+<p>If you place the <code class="kw" translate="no">writing-mode</code> property with a value of <code class="kw" translate="no">vertical-rl</code> on an individual table cell, you would expect the text in that cell to be displayed vertically. This works as expected in <span class="pass">Edge</span>, <span class="pass">Internet Explorer</span> and <span class="pass">Gecko</span> browsers. <span class="fail">Blink</span> and <span class="fail">Webkit</span> browsers, on the other hand, leave the text horizontal but rotate the characters to the left. Note, also, by the way that you have to set the height of the cell in these browsers for a span to be displayed vertically.</p>
+<p>See test results for major browsers: <a target="_blank" href="https://www.w3.org/International/tests/repo/results/writing-mode-vertical#rl_tables">vertical-rl</a>, <a target="_blank" href="https://www.w3.org/International/tests/repo/results/writing-mode-vertical#rl_tables">vertical-lr</a>.</p>
+</section>
+
+<section>
+<h4>Logical properties</h4>
+<p>A great deal of time and confusion can be saved by using 'logical' properties, rather than right, left, top and bottom, for things such as alignment. </p>
+<p>CSS is developing the necessary keywords in the <a href="https://drafts.csswg.org/css-logical-props/">Logical Properties</a> specification, which at the time of writing is still an editor's draft. Some of the properties described there, however, are already supported by browsers.</p>
+<p>Unfortunately, Microsoft <span class="fail">Edge</span> still doesn't support the start and end values for text-align</p>
+<p>Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/text-align-end.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/text-align-end-pref.html" target="text">proprietary syntax</a></p>
+</section>
+</section>
+
+
+
+
+<section id="bidi" class="na">
+    <h3>Bidirectional text</h3>
+    <p class="status_prompt">If this script runs right-to-left, are there any issues when handling that? Is bidirectional text adequately supported? What about numbers and expressions? Do the Unicode bidi controls and HTML markup provide the support needed? Is isolation of directional runs problematic? <a href="https://w3c.github.io/typography/index#bidirectional_text_direction">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abidi%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+    <p></p>
+</section>
+</section>
+
+
+
+
+
 <section id="h_characters_and_phrases">
 <h2>Characters and phrases</h2>
     
     
     
 <section id="encoding" class="ok">
-    <h3>Encoding considerations</h3>
-    <p class="status_prompt">Are there any character repertoire issues preventing use of this script on the Web? Do variation selectors need attention?</p>
+    <h3>Characters &amp; encoding</h3>
+    <p class="status_prompt">Are there any character repertoire issues preventing use of this script on the Web? Do variation selectors need attention? Are there any other encoding-related issues?</p>
 
     <p></p>
     </section>
@@ -141,7 +217,7 @@
 
 <section id="fonts" class="tbd">
     <h3>Fonts</h3>
-    <p class="status_prompt">Do the standard fallback fonts used in browsers (eg. serif, sans-serif, cursive, etc.) match expectations? Are special font or OpenType features needed for this script that are not available?  <a href="https://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">Do the standard fallback fonts used in browsers (eg. serif, sans-serif, cursive, etc.) match expectations? Are special font or OpenType features needed for this script that are not available?  <a href="https://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
     <p></p>
 </section>
@@ -149,8 +225,8 @@
 
 
 <section id="fontstyle" class="tbd">
-    <h3>Font styles</h3>
-    <p id="fontstylePrompt" class="status_prompt"> Do italic fonts lean in the right direction? Is synthesised italicisation problematic? <a href="https://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <h3>Font  styles, weight, etc</h3>
+    <p id="fontstylePrompt" class="status_prompt"> This covers ways of modifying the glyphs, such as for italicisation, bolding, oblique, etc. Do italic fonts lean in the right direction? Is synthesised italicisation problematic? Are there other problems relating to bolding or italicisation - perhaps relating to generalised assumptions of applicability? <a href="https://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -159,8 +235,8 @@
 
 
 <section id="glyphs" class="na">
-    <h3>Glyph control</h3>
-    <p class="status_prompt">Does the script in question require additional features to support alterations to the position or shape of glyphs, for example adjusting the distance between the base text and diacritics, or changing the glyphs used in a systematic way? <a href="../index#glyphs_diacritics">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aglyphs-diacritics%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <h3>Glyph shaping and positioning</h3>
+    <p class="status_prompt">Does the script in question require additional user control features to support alterations to the position or shape of glyphs, for example adjusting the distance between the base text and diacritics, or changing the glyphs used in a systematic way? Do you need to be able to compose/decompose conjuncts, or show characters that are otherwise hidden, etc? <a href="../index#glyphs_diacritics">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aglyphs-diacritics%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
 
@@ -171,53 +247,7 @@
 
 <section id="cursive" class="na">
     <h3>Cursive text</h3>
-    <p class="status_prompt"> If this script is cursive (eg. Arabic, N'Ko, Syriac, etc), are there problems or needed features related to the handling of cursive text? Do cursive links break if parts of a word are marked up or styled? Do Unicode joiner and non-joiner characters behave as expected?   <a href="https://w3c.github.io/typography/index#cursive">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acursive%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
-
-
-    <p></p>
-    </section>
-
-
-
-<section id="quotations" class="advanced">
-    <h3>Quotations</h3>
-    <p class="status_prompt">Are there any issues when dealing with quotations marks, especially when nested? Should block quotes be indented or handled specially? <a href="https://w3c.github.io/typography/index#quotations">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aquotations%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
-
-
-<section id="q_defaults">
-<h4><a href="#q_defaults">Default quotation marks for q element</a></h4>
-<p>If the <code class="kw" translate="no">html</code> tag sets the language of a page, the HTML specification says that  the <code class="kw" translate="no">q</code> element should by default produce quotation marks according to the information in CLDR for that language.</p>
-<p>For Japanese, according to CLDR the default quote marks should be 「...」, and embedded quote marks 『...』. Firefox  doesn't change default quote marks based on language setting. (Chrome &amp; Safari are ok.) See a <a href="https://w3c.github.io/i18n-tests/results/the-q-element.html#language">test and results</a>.</p>
-</section>
-
-<section id="q_section">
-<h4><a href="#q_section">Default quotation marks in a new language section</a></h4>
-<p>In addition, the default quotation marks for the <code class="kw" translate="no">q</code> element  are not set to the appropriate characters by the browser  when the element appears inside a Japanese section of a page that has a different overall language. This is currently per the HTML specification (both W3C and WhatWG).  There is <a href="https://github.com/whatwg/html/issues/3636">an issue</a> raised against the WhatWG version for this to be changed.</p>
-</section>
-
-<section id="q_multilingual">
-<h4><a href="#q_multilingual">Embedded quotations in a different language</a></h4>
-<p>Japanese quotes embedded in text in another language can also be problematic if the outer language uses different quotation marks. This is due to the browsers choosing default quotation marks based on the language of the <em>quotation</em>, rather than that of the surrounding text. See <a href="https://w3c.github.io/i18n-tests/results/the-q-element.html#ml_nesting">a test</a>. This behaviour is specified in the WhatWG version of the HTML spec, but no longer in the W3C version. There is <a href="https://github.com/whatwg/html/issues/3636">an issue</a> raised against the WhatWG version for this to be changed.</p>
-</section>
-
-<p>Marking all the above as advanced, because use of the <code class="kw" translate="no">q</code> element is optional (quote characters can be used instead), and it can be styled using CSS for the general case.</p>
-</section>
-
-
-
-<section id="numbers" class="ok">
-    <h3>Numbers, dates, etc.</h3>
-    <p class="status_prompt">If  the script has its own set of number digits, are there any issues in how they are used? Does the script or language use special format patterns that are problematic (eg. 12,34,000 in India)? What about date/time formats and selection - and are non-Gregorian calendars needed?  Do percent signs and other symbols associated with number work correctly, and do numbers need special decorations, (like in Ethiopic or Syriac)? <a href="https://w3c.github.io/typography/index#numbers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Anumbers%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
-
-
-    <p></p>
-    </section>
-
-
-
-<section id="boundaries" class="tbd">
-    <h3>Text boundaries &amp; selection</h3>
-    <p class="status_prompt">When you double- or triple-click on the text, is the expected range of characters highlighted? When you move through the text with the cursor, or backspace, etc. do you see the expected behaviour? Are there issues when applying punctuation than could be fixed by the application? (Some of the answers to these questions may be addressed in other sections, such as line-breaking, or initial-letter styling.) <a href="https://w3c.github.io/typography/index#graphemes">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aboundaries%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt"> If this script is cursive (eg. Arabic, N'Ko, Syriac, etc), are there problems or needed features related to the handling of cursive text? Do cursive links break if parts of a word are marked up or styled? Do Unicode joiner and non-joiner characters behave as expected?   <a href="https://w3c.github.io/typography/index#cursive">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acursive%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -227,7 +257,7 @@
 
 <section id="transforms" class="basic">
     <h3>Transforming characters</h3>
-    <p class="status_prompt">Does your script need special text transforms that are not supported? Does your script convert letters to uppercase, capitalised and lowercase alternatives according to your typographic needs? Do you need to to convert between half-width and full-width presentation forms? <a href="https://w3c.github.io/typography/index#transforming_characters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-transform%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">Does your script need special text transforms that are not supported? Does your script convert letters to uppercase, capitalised and lowercase alternatives according to your typographic needs? Do you need to to convert between half-width and full-width presentation forms? <a href="https://w3c.github.io/typography/index#transforming_characters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-transform%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
     <p><code class="kw" translate="no">text-transform: full-width</code> currently only works in Gecko. Tests:  <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/upright-en.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/upright-en-pref.html" target="text">proprietary syntax</a></p>
 <p>More tests: <a href="tests/text-transform-fullwidth/text-transform-fullwidth-001">a-z</a>, <a href="tests/text-transform-fullwidth/text-transform-fullwidth-002">A-Z</a>, <a href="tests/text-transform-fullwidth/text-transform-fullwidth-003">punctuation</a>, <a href="tests/text-transform-fullwidth/text-transform-fullwidth-004">katakana</a>, <a href="tests/text-transform-fullwidth/text-transform-fullwidth-005">punctuation</a>, <a href="tests/text-transform-fullwidth/text-transform-fullwidth-006">symbols</a></p>
@@ -235,64 +265,23 @@
 
 
 
-<section id="spacing" class="tbd">
-    <h3>Inter-character spacing</h3>
-    <p class="status_prompt">Some scripts create emphasis or other effects by spacing out the letters or syllables in a word. Are there requirements for this script/language that are unsupported? (For justification related spacing, see below.) See <a href="https://w3c.github.io/typography/index#letter_spacing">available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-spacing%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+
+<section id="boundaries" class="tbd">
+    <h3>Text segmentation &amp; selection</h3>
+    <p class="status_prompt">This is about how text is divided into graphemes, words, sentences, etc., and behaviour associated with that. Do Unicode grapheme clusters appropriately segment character units for your script? When you double- or triple-click on the text, is the expected range of characters highlighted? When you move through the text with the cursor, or backspace, etc. do you see the expected behaviour?  (Some of the answers to these questions may be picker up in other sections, such as line-breaking, or initial-letter styling.)   <a href="https://w3c.github.io/typography/index#graphemes">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aboundaries%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
     </section>
-
-
-
-<section id="ruby" class="basic">
-    <h3>Ruby annotation</h3>
-    <p class="status_prompt">The ruby spec currently specifies an initial subset of requirements for fine-tuning the typography of phonetic and semantic annotations of East Asian text, including furigana, pinyin and zhuyin fuhao systems.  Is is adequate for what it sets out to do?  What other controls will be needed in the future? <a href="https://w3c.github.io/typography/index#ruby_annotation">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aruby%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
-
-
-<section>
-<h4>Tabular markup</h4>
-<p>The basic pattern here is <code>ruby-base ruby-base ... ruby-text ruby-text ...,</code> which we'll refer to as tabular. An advantage to this approach is that it enables you to style the ruby text to appear inline in such a way that all the ruby text for a word follows that word together. Inline styling can be useful in space-constrained situations, where it would be too difficult to read small ruby characters. <a href="https://w3c.github.io/i18n-drafts/articles/ruby/markup.en.html#tabular">Read more</a>.</p>
-<p>This also makes certain applications of double-sided ruby impossible when the ruby on each side of the base spans a different set of base characters.</p>
-<p>Only Firefox supports tabular ruby markup. More Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form-pref.html" target="text">proprietary syntax</a></p>
-<p>For creation of HTML with jukugo ruby this is advanced in impact, however there are other implications when tabular markup is not supported that have a more important impact.</p>
-<p>When text is marked up in mono-ruby way. searching may not work well. If you have the following markup</p>
-<p><code>&lt;p&gt;&lt;ruby&gt;漢&lt;rt&gt;かん&lt;/rt&gt;字&lt;rt&gt;じ&lt;/rt&gt;&lt;/ruby&gt;&lt;/p&gt;</code></p>
-<p>and search for the base text &quot;漢字&quot; in a browser, you will not get a result. Tabular markup could solve this problem.</p>
-</section>
-
-<section>
-<h4>Double-sided ruby</h4>
-<p>In order to get double-sided ruby to appear on either side of the base text in HTML, you need the CSS <code class="kw" translate="no">ruby-position</code> property to work with the value <code class="kw" translate="no">under</code>. It currently works per the standard only with Firefox. It works with the proprietary<code class="kw" translate="no"> -webkit</code> prefix in Chrome and Safari, but doesn't work with Edge. <a href="https://www.w3.org/International/tests/repo/results/css-ruby#ruby_position_under">See test results</a>.</p>
-<p>Double-sided ruby doesn't appear often in Japanese text, but it is used, and should be available to content authors.</p>
-</section>
-
-<section>
-<h4>Ruby aligment and other styling</h4>
-<p>For background information read <a href="https://w3c.github.io/i18n-drafts/articles/ruby/styling.en.html#alignment">Aligning annotations and bases</a>.</p>
-<p>Fine control in HTML over the placement of ruby annotations relative to the base require the availability of the CSS property <code class="kw" translate="no">ruby-align</code>. This only works in Firefox, and sometimes in Edge with proprietary syntax. See <a href="https://www.w3.org/International/tests/repo/results/css-ruby#ruby_align_space_between">results for major browsers</a>.</p>
-<p>The impact of this is probably more important for advanced typographic layout.</p>
-</section>
-
-    </section>
-
-
-
-<section id="textdecoration" class="tbd">
+    
+    
+    
+<section id="textdecor" class="advanced">
     <h3>Text decoration</h3>
-    <p class="status_prompt">Some aspects related to the drawing of lines alongside or through text involve local typographic considerations. Do underlines need to be broken in special ways for this script? Do you need support for additional line shapes or widths? Does the distance or position of the lines relative to the text need to vary in ways that are not achievable? Are lines correctly drawn relative to vertical text? <a href="https://w3c.github.io/typography/index#text_decoration">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-decoration%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">This is about  ways of marking text (see also specific sections dedicated to quotations and inline notes/annotations). Is it possible to express emphasis or highlight content as expected? Bold, italic and under-/over-lines are not always appropriate, and some scripts have their own unique ways of doing things, that are not in the Western tradition at all. Text delimiters mark certain items or sections off from the main text, such as book names in Chinese, quotations, head markers in Tibetan, etc, and often involve the use of punctuation. Is there any behaviour that isn't well supported, such as overlines for numeric digits in Syriac?    Are there issues about the positioning or use of underlines? Some aspects related to the drawing of lines alongside or through text involve local typographic considerations. Do underlines need to be broken in special ways for this script? Do you need support for additional line shapes or widths? Does the distance or position of the lines relative to the text need to vary in ways that are not achievable? Are lines correctly drawn relative to vertical text?  <a href="https://w3c.github.io/typography/index#text_decoration">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-decoration%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
-
-    <p></p>
-    </section>
-
-
-
-<section id="emphasis" class="advanced">
-    <h3>Emphasis &amp; highlights</h3>
-    <p class="status_prompt">Bold and italic are not always appropriate for expressing emphasis, and some scripts have their own unique ways of doing it, that are not in the Western tradition at all. Does this script require support for emphasising or highlighting text that cannot be achieved currently?  <a href="https://w3c.github.io/typography/index#emphasis">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aemphasis%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
-
-
+<section id="emphasis_requirements">
+<h4>Boten mark requirements</h4>
     <p>For requirements, see JLReq  <a href="https://w3c.github.io/jlreq/#composition_of_emphasis_dots">Composition of Emphasis Dots.</a></p>
 <p>JLReq lists the following ways of showing emphasis in Japanese.</p>
 <ol>
@@ -304,10 +293,13 @@
 </ol>
 <p>(1) and (2) are popular approaches. (5) is not as common, but is a traditional approach with some value attached.</p>
 <p>(1), (2) and (3) present no difficulties. For (4) see <a href="#textdecoration">Text decoration</a>.</p>
+</section>
+
+
 
 <section>
-<h4>Boten marks</h4>
-<p>There are <a href="https://www.w3.org/International/tests/repo/results/emphasis-marks">tests for boten mark support</a> that show that they are not supported by Chrome 63.0.3239.132 or Edge, but they are supported by Firefox 58.0 and Safari 11.0.3.</p>
+<h4>Boten marks lacking wide support</h4>
+<p>There are <a href="https://www.w3.org/International/tests/repo/results/emphasis-marks">tests for boten mark support</a> that show that they are not supported by <span class="fail">Chrome</span> 63.0.3239.132 or <span class="fail">Edge</span>, but they are supported by <span class="pass">Firefox</span> 58.0 and <span class="pass">Safari</span> 11.0.3.</p>
 <p>The expected behaviour for basic support of boten marks is <a href="https://drafts.csswg.org/css-text-decor-3/#emphasis-marks">specified in CSS</a>.</p>
 <p>Given that there are alternative ways of showing emphasis, and although there are already two implementations, I  mark this as an advanced need.</p>
 <p>Additional requirements arose while the text was being written for CSS. They relate to text that is annotated with ruby at the same time as annotation marks. The conclusions were:</p>
@@ -325,19 +317,76 @@
 
 
 
-<section id="bidi" class="na">
-<h3>Bidirectional text</h3>
-    <p class="status_prompt">If this script runs right-to-left, are there any issues when handling that? Is bidirectional text adequately supported? What about numbers and expressions? Do the Unicode bidi controls and HTML markup provide the support needed? Is isolation of directional runs problematic? <a href="https://w3c.github.io/typography/index#bidirectional_text_direction">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abidi%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+<section id="quotations" class="advanced">
+    <h3>Quotations</h3>
+    <p class="status_prompt">Are there any issues when dealing with quotations marks, especially when nested? Should block quotes be indented or handled specially? <a href="https://w3c.github.io/typography/index#quotations">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aquotations%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+<section id="q_defaults">
+<h4>Default quotation marks for q element</h4>
+<p>If the <code class="kw" translate="no">html</code> tag sets the language of a page, the HTML specification says that  the <code class="kw" translate="no">q</code> element should by default produce quotation marks according to the information in CLDR for that language.</p>
+<p>For Japanese, according to CLDR the default quote marks should be 「...」, and embedded quote marks 『...』. <span class="fail">Firefox</span> doesn't change default quote marks based on language setting. <span class="pass">Chrome</span>, <span class="pass">Safari</span> &amp; <span class="pass">Edge</span> are ok. See a <a href="https://w3c.github.io/i18n-tests/results/the-q-element.html#language">test and results</a>.</p>
+</section>
+
+<section id="q_section">
+<h4>Default quotation marks in a new language section</h4>
+<p>In addition, the default quotation marks for the <code class="kw" translate="no">q</code> element  are not set to the appropriate characters by the browser  when the element appears inside a Japanese section of a page that has a different overall language. This is currently per the HTML specification (both W3C and WhatWG).  There is <a href="https://github.com/whatwg/html/issues/3636">an issue</a> raised against the WhatWG version for this to be changed.</p>
+</section>
+
+<section id="q_multilingual">
+<h4>Embedded quotations in a different language</h4>
+<p>Japanese quotes embedded in text in another language can also be problematic if the outer language uses different quotation marks. This is due to the browsers choosing default quotation marks based on the language of the <em>quotation</em>, rather than that of the surrounding text. See <a href="https://w3c.github.io/i18n-tests/results/the-q-element.html#ml_nesting">a test</a>. This behaviour is specified in the WhatWG version of the HTML spec, but no longer in the W3C version. There is <a href="https://github.com/whatwg/html/issues/3636">an issue</a> raised against the WhatWG version for this to be changed.</p>
+</section>
+
+<p>Marking all the above as advanced, because use of the <code class="kw" translate="no">q</code> element is optional (quote characters can be used instead), and it can be styled using CSS for the general case.</p>
+</section>
 
 
-    <p></p>
+
+<section id="inlinenotes" class="basic">
+    <h3>Inline notes &amp; annotations</h3>
+    <p class="status_prompt">The ruby spec currently specifies an initial subset of requirements for fine-tuning the typography of phonetic and semantic annotations of East Asian text, including furigana, pinyin and zhuyin fuhao systems.  Is is adequate for what it sets out to do?  What other controls will be needed in the future? What about other types of inline annotation, such as warichu? (For referent-type notes such as footnotes, see below.) <a href="https://w3c.github.io/typography/index#ruby_annotation">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aruby%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+<section id="tabular_markup">
+<h4>Tabular markup not supported</h4>
+<p>The basic pattern here is <code>ruby-base ruby-base ... ruby-text ruby-text ...,</code> which we'll refer to as tabular. An advantage to this approach is that it enables you to style the ruby text to appear inline in such a way that all the ruby text for a word follows that word together. Inline styling can be useful in space-constrained situations, where it would be too difficult to read small ruby characters. <a href="https://w3c.github.io/i18n-drafts/articles/ruby/markup.en.html#tabular">Read more</a>.</p>
+<p>This also makes certain applications of double-sided ruby impossible when the ruby on each side of the base spans a different set of base characters.</p>
+<p>Only <span class="pass">Firefox</span> supports tabular ruby markup. <span class="fail">Chrome</span>, <span class="fail">Safari</span>, &amp; <span class="fail">Edge</span> do not. More Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form-pref.html" target="text">proprietary syntax</a></p>
+<p>For creation of HTML with jukugo ruby this is advanced in impact, however there are other implications when tabular markup is not supported that have a more important impact.</p>
+<p>When text is marked up in mono-ruby way. searching may not work well. If you have the following markup</p>
+<p><code>&lt;p&gt;&lt;ruby&gt;漢&lt;rt&gt;かん&lt;/rt&gt;字&lt;rt&gt;じ&lt;/rt&gt;&lt;/ruby&gt;&lt;/p&gt;</code></p>
+<p>and search for the base text &quot;漢字&quot; in a browser, you will not get a result. Tabular markup could solve this problem.</p>
+</section>
+
+<section id="double_sided_ruby">
+<h4>Double-sided ruby not supported well</h4>
+<p>In order to get double-sided ruby to appear on either side of the base text in HTML, you need the CSS <code class="kw" translate="no">ruby-position</code> property to work with the value <code class="kw" translate="no">under</code>. It currently works per the standard only with <span class="pass">Firefox</span>. It works with the proprietary<code class="kw" translate="no"> -webkit</code> prefix in <span class="partial">Chrome</span> and <span class="partial">Safari</span>, but doesn't work with <span class="fail">Edge</span>. <a href="https://www.w3.org/International/tests/repo/results/css-ruby#ruby_position_under">See test results</a>.</p>
+<p>Double-sided ruby doesn't appear often in Japanese text, but it is used, and should be available to content authors.</p>
+</section>
+
+<section id="ruby_align">
+<h4>Ruby aligment and other styling unavailable</h4>
+<p>For background information read <a href="https://w3c.github.io/i18n-drafts/articles/ruby/styling.en.html#alignment">Aligning annotations and bases</a>.</p>
+<p>Fine control in HTML over the placement of ruby annotations relative to the base require the availability of the CSS property <code class="kw" translate="no">ruby-align</code>. This only works in <span class="pass">Firefox</span>, and sometimes in <span class="partial">Edge</span> with proprietary syntax. It doesn't work for <span class="fail">Chrome</span> or <span class="fail">Safari</span>. See <a href="https://www.w3.org/International/tests/repo/results/css-ruby#ruby_align_space_between">results for major browsers</a>.</p>
+<p>The impact of this is probably more important for advanced typographic layout.</p>
+</section>
+    </section>
+
+
+
+<section id="numbers" class="ok">
+    <h3>Numbers, dates, etc.</h3>
+    <p class="status_prompt">If  the script has its own set of number digits, are there any issues in how they are used? Does the script or language use special format patterns that are problematic (eg. 12,34,000 in India)? What about date/time formats and selection - and are non-Gregorian calendars needed?  Do percent signs and other symbols associated with number work correctly, and do numbers need special decorations, (like in Ethiopic or Syriac)? <a href="https://w3c.github.io/typography/index#numbers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Anumbers%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+    <p>Note that a new Imperial era sign is expected to be announced at the beginning of April. This will need to be used on calendars straight away. The Unicode Consortium has already approved a character location, and has a fast-track process in place to add the new era sign to the Unicode repertoire.</p>
     </section>
 
 
 
 <section id="otherinline" class="tbd">
     <h3>Other inline features</h3>
-    <p class="status_prompt">Does the script have special ways of representing inline notes (such as wakiten or kumimoji in Japanese) or other inline features that need to be supported? <a href="https://w3c.github.io/typography/index#other_inline_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-features%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">Does the script have special ways of representing inline notes (such as  kumimoji in Japanese) or other inline features that need to be supported? <a href="https://w3c.github.io/typography/index#other_inline_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-features%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -356,7 +405,7 @@
  
 <section id="linebreak" class="tbd">
     <h3>Line breaking</h3>
-    <p class="status_prompt">Does the browser capture the rules about the way text in your script wraps when it hits the end of a line? Does line-breaking wrap whole 'words' at a time, or characters, or something else (such as syllables in Tibetan and Javanese)?  What characters should not appear at the end or start of a line, and what should be done to prevent that? <a href="https://w3c.github.io/typography/index#line_breaking">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aline-break%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">Does the browser capture the rules about the way text in your script wraps when it hits the end of a line? Does line-breaking wrap whole 'words' at a time, or characters, or something else (such as syllables in Tibetan and Javanese)?  What characters should not appear at the end or start of a line, and what should be done to prevent that? <a href="https://w3c.github.io/typography/index#line_breaking">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aline-break%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -366,7 +415,7 @@
 
 <section id="hyphenation" class="na">
     <h3>Hyphenation</h3>
-    <p class="status_prompt">Is hyphenation used for your script, or something else? If hyphenation is used, does it work as expected? <a href="https://w3c.github.io/typography/index#hyphenation">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ahyphenation%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">Is hyphenation used for your script, or something else? If hyphenation is used, does it work as expected? (Note, this is about line-end hyphenation when text is wrapped, rather than use of the hyphen and related characters as punctuation marks.) <a href="https://w3c.github.io/typography/index#hyphenation">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ahyphenation%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -375,8 +424,18 @@
 
 
 <section id="justification" class="tbd">
-    <h3>Justification</h3>
-    <p class="status_prompt"> When text in a paragraph needs to have flush lines down both sides, does it follow the rules for your script? Does the script need assistance to conform to a grid pattern? Does your script allow punctuation to hang outside the text box at the start or end of a line? Where adjustments are need to make a line flush, how is that done? Do you shrink/stretch space between words and/or letters? Are word baselines stretched, as in Arabic? <a href="https://w3c.github.io/typography/index#justification">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ajustification%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <h3>Text alignment &amp; justification</h3>
+    <p class="status_prompt"> When text in a paragraph needs to have flush lines down both sides, does it follow the rules for your script? Does the script need assistance to conform to a grid pattern? Does your script allow punctuation to hang outside the text box at the start or end of a line? Where adjustments are need to make a line flush, how is that done? Do you shrink/stretch space between words and/or letters? Are word baselines stretched, as in Arabic? What about paragraph indents, or the need for logical alignment keywords, such as start/end, rather than left/right? <a href="https://w3c.github.io/typography/index#justification">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ajustification%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+    <p></p>
+</section>
+
+
+
+<section id="spacing" class="tbd">
+    <h3>Word &amp; letter spacing</h3>
+    <p class="status_prompt">Some scripts create emphasis or other effects by spacing out the words, letters or syllables in a word. Are there requirements for this script/language that are unsupported? (For justification related spacing, see below.) See <a href="https://w3c.github.io/typography/index#letter_spacing">available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-spacing%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -386,24 +445,28 @@
 
 <section id="counters" class="basic">
     <h3>Counters, lists, etc.</h3>
-    <p class="status_prompt">The CSS Counter Styles specification describes a limited set of simple and complex styles for counters to be used in list numbering, chapter heading numbering, etc.The rules plus more counter styles (totalling around 120 for over 30 scripts) are listed in the document <a href="https://w3c.github.io/predefined-counter-styles/">Ready-made Counter Styles</a>. Do these cover your needs?  Are the details correct? Are there other aspects related to counters and lists that need to be addressed? <a href="https://w3c.github.io/typography/index#counters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acounter-styles%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">The CSS Counter Styles specification describes a limited set of simple and complex styles for counters to be used in list numbering, chapter heading numbering, etc.The rules plus more counter styles (totalling around 120 for over 30 scripts) are listed in the document <a href="https://w3c.github.io/predefined-counter-styles/">Ready-made Counter Styles</a>. Do these cover your needs?  Are the details correct? Are there other aspects related to counters and lists that need to be addressed? <a href="https://w3c.github.io/typography/index#counters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acounter-styles%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
-
+<section id="local_counter_styles">
+<h4>Local counter styles not supported</h4>
 <p>A number of predefined counter styles in the CSS Counter Styles spec are not widely supported by browsers, or use a different separator from that specified. Because the custom mechanism of the Counter Styles spec is not supported by browsers other than Firefox, users are unable to fix this for themselves.</p>
+</section>
+
+<section id="list_markers">
+<h4>List markers incorrectly oriented</h4>
 <p>There is an additional problem for list counters in vertical text. A common way to orient counters for lists in vertical text is to have an upright number with a dot alongside it.<a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/tcu-all-pref.html" target="text"></a></p>
 <p><img src="images/vertical-lists.png" alt=""></p>
 <p>The expected way to achieve this in HTML would be to use the following CSS: <code>li::marker { text-combine-upright: all; }</code>, however this cannot be used because browsers don't support <code class="kw" translate="no">text-combine-upright</code>. . Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/japanese_list_upright.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/japanese_list_upright_pref.html" target="text">proprietary syntax</a></p>
 <p>A workaround might be to use fullwidth characters for counters, such as ①, ②, ③ etc., but use of such a workaround requires the availability of custom built counter styles, and only Firefox currently supports the CSS Counter Styles specification. So that doesn't work either. Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/korean-list-counterstyles.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/korean-list-counterstyles-pref.html" target="text">proprietary syntax</a></p>
 <p>It is a significant nuisance for content authoring to not be able to produce upright counters for lists.</p>
-
-
+</section>
 </section>
 
 
 
 <section id="initialletter" class="tbd">
-    <h3>Initial letter styling</h3>
-    <p class="status_prompt">Does the browser or ereader correctly handle special styling of the initial letter of a line or paragraph, such as for drop caps or similar? How about  the size relationship between the large letter and the lines alongide? where does the large letter anchor relative to the lines alongside? is it normal to include initial quote marks in the large letter? is the large letter really a syllable? etc. Are all of these things working as expected? .<a href="https://w3c.github.io/typography/index#initial_letter">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainitial-letter%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <h3>Styling initials</h3>
+    <p class="status_prompt">Does the browser or ereader correctly handle special styling of the initial letter of a line or paragraph, such as for drop caps or similar? How about  the size relationship between the large letter and the lines alongide? where does the large letter anchor relative to the lines alongside? is it normal to include initial quote marks in the large letter? is the large letter really a syllable? etc. Are all of these things working as expected? .<a href="https://w3c.github.io/typography/index#initial_letter">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainitial-letter%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -413,7 +476,7 @@
 
 <section id="baselines" class="tbd">
     <h3>Baselines &amp; inline alignment</h3>
-    <p class="status_prompt">Does the browser support  requirements for baseline alignment between mixed scripts and in general? <a href="https://w3c.github.io/typography/index#baselines_inline_alignment">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abaselines%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">Does the browser support  requirements for baseline alignment between mixed scripts and in general? <a href="https://w3c.github.io/typography/index#baselines_inline_alignment">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abaselines%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -423,7 +486,7 @@
 
 <section id="otherpara" class="tbd">
     <h3>Other paragraph features</h3>
-    <p class="status_prompt">In your script, is the first line of text typically indented at the start of a paragraph? Are there other features of paragraph design that are peculiar to your script? <a href="https://w3c.github.io/typography/index#other_para_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aparagraph-features%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">In your script, is the first line of text typically indented at the start of a paragraph? Are there other features of paragraph design that are peculiar to your script? <a href="https://w3c.github.io/typography/index#other_para_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aparagraph-features%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -438,11 +501,11 @@
 
 
 <section id="h_pages">
-<h2>Layout &amp; pages</h2>
+<h2>Page &amp; book layout</h2>
 
-<section id="bidilayout" class="na">
-    <h3>Bidirectional layout</h3>
-    <p class="status_prompt">When content can flow vertically and to the left or right, how do you specify the location of objects, text, etc. relative to the flow? For example, keywords 'left' and 'right' are likely to need to be reversed for pages written in English and page written in Arabic. <a href="https://w3c.github.io/typography/index#direction_agnostic">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abidi%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+<section id="pagelayout" class="tbd">
+    <h3>General page layout &amp; progression</h3>
+    <p class="status_prompt">How are the main text area and ancilliary areas positioned and defined? Are there any special requirements here, such as dimensions in characters for the Japanese kihon hanmen? The book cover for scripts that are read right-to-left scripts is on the right of the spine, rather than the left. Is that provided for? When content can flow vertically and to the left or right, how do you specify the location of objects, text, etc. relative to the flow? For example, keywords 'left' and 'right' are likely to need to be reversed for pages written in English and page written in Arabic. Do tables and grid layouts work as expected? How do columns work in vertical text? Can you mix block of vertical and horizontal text correctly? Does text scroll in the expected direction? <a href="https://w3c.github.io/typography/index#direction_agnostic">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abidi%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -450,64 +513,9 @@
 
 
 
-<section id="vertical" class="basic">
-    <h3>Vertical text</h3>
-    <p class="status_prompt">Are the script requirements for vertically oriented text met?  What about if you mix vertical text with scripts that are normally only horizontal? Do you need a switch to use different characters in vertical vs. horizontal text? Does the browser support short runs of horizontal text in vertical lines (tate-chu-yoko in Japanese) as expected? Is the orientation of characters and the directional ordering of characters supported as needed? <a href="https://w3c.github.io/typography/index#vertical_text">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Avertical-text%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
-
-
-
-    <p>While there is now basic support for vertical text in most major browsers, there are still some essential features that are not supported. Support for even basic vertical text doesn't seem to be available, however, for Android and the UC Browser. (<strong>Need to check this.</strong>) <a href="https://www.w3.org/International/tests/repo/results/writing-mode-vertical">See tests</a>.</p>
-<section>
-<h4>Vertical form controls</h4>
-<p>One major gap is handling of vertical text in forms. Only the Firefox desktop browser does a good job of this. <a href="https://www.w3.org/International/tests/repo/results/writing-mode-vertical#rl_forms">See test results</a>. Other browsers fail resoundingly in terms of orienting form controls vertically and displaying text vertically inside them. More Tests:  <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form-pref.html" target="text">proprietary syntax</a></p>
-<p>This has a significant impact for creation of general web sites.</p>
-</section>
-
-<section>
-<h4>Upright text orientation</h4>
-<p>Another gap is the CSS <code class="kw" translate="no">text-orientation</code> property. It is only supported as standard by Firefox. Safari has buggy support if you use the <code class="kw" translate="no">-webkit</code> proprietary extension: it has  a problem centering the letter in the vertical line. Tests:  <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/upright-i.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/upright-i-pref.html" target="text">proprietary syntax</a></p>
-<p>Upright-oriented Latin text, especially, is used commonly for acronyms in Japanese vertical text, so this is a significant gap for general web content.</p>
-</section>
-
-<section>
-<h4>Tate-chu-yoko</h4>
-<p>The CSS <code class="kw" translate="no">text-combine-upright</code> property works with the <code class="kw" translate="no">all</code> value in all major browsers, although for Edge you need to use the proprietary property <code class="kw" translate="no">-ms-text-combine-horizontal</code>. Tests:  <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/tcu-all.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/tcu-all-pref.html" target="text">proprietary syntax</a></p>
-<p>With the <code class="kw" translate="no">digits</code> value, it is only supported by Edge (with it's proprietary property name), but Edge stretches single digits to fit the width of the (vertical) line. Tests:  <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/digits.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/digits-pref.html" target="text">proprietary syntax</a></p>
-<p>The unavailability of the <code class="kw" translate="no">digits</code> value is an inconvenience, since more interventions and markup are needed when using the <code class="kw" translate="no">all</code> value.</p>
-</section>
-
-<section>
-<h4>Lists</h4>
-<p>A common way to orient counters for lists in vertical text is to have an upright number with a dot alongside it.<a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/tcu-all-pref.html" target="text"></a></p>
-<p><img src="images/vertical-lists.png" alt=""></p>
-<p>The expected way to achieve this in HTML would be to use the following CSS: <code>li::marker { text-combine-upright: all; }</code>, however this cannot be used because browsers don't support <code class="kw" translate="no">text-combine-upright</code>. . Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/japanese_list_upright.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/japanese_list_upright_pref.html" target="text">proprietary syntax</a></p>
-<p>A workaround might be to use fullwidth characters for counters, such as ①, ②, ③ etc., but use of such a workaround requires the availability of custom built counter styles, and only Firefox currently supports the CSS Counter Styles specification. So that doesn't work either. Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/korean-list-counterstyles.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/korean-list-counterstyles-pref.html" target="text">proprietary syntax</a></p>
-<p>It is a significant nuisance for content authoring to not be able to produce upright counters for lists.</p>
-</section>
-
-<section>
-<h4>Table cells</h4>
-<p>If you place the <code class="kw" translate="no">writing-mode</code> property with a value of <code class="kw" translate="no">vertical-rl</code> on an individual table cell, you would expect the text in that cell to be displayed vertically. This works as expected in Edge, Internet Explorer and Gecko browsers. Blink and Webkit browsers, on the other hand, leave the text horizontal but rotate the characters to the left. Note, also, by the way that you have to set the height of the cell in these browsers for a span to be displayed vertically.</p>
-<p>See test results for major browsers: <a target="_blank" href="https://www.w3.org/International/tests/repo/results/writing-mode-vertical#rl_tables">vertical-rl</a>, <a target="_blank" href="https://www.w3.org/International/tests/repo/results/writing-mode-vertical#rl_tables">vertical-lr</a>.</p>
-</section>
-
-<section>
-<h4>Logical properties</h4>
-<p>A great deal of time and confusion can be saved by using 'logical' properties, rather than right, left, top and bottom, for things such as alignment. </p>
-<p>CSS is developing the necessary keywords in the <a href="https://drafts.csswg.org/css-logical-props/">Logical Properties</a> specification, which at the time of writing is still an editor's draft. Some of the properties described there, however, are already supported by browsers.</p>
-<p>Unfortunately, Microsoft Edge still doesn't support the start and end values for text-align</p>
-<p>Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/text-align-end.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/text-align-end-pref.html" target="text">proprietary syntax</a></p>
-</section>
-
-
-<p>&nbsp;</p>
-</section>
-
-
-
 <section id="notes" class="tbd">
     <h3>Notes, footnotes, etc.</h3>
-    <p class="status_prompt">Does your script have special requirements for notes, footnotes, endnotes or other necessary annotations of this kind in the way needed for your culture? <a href="https://w3c.github.io/typography/index#notes_footnotes">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Anotes-footnotes%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">Does your script have special requirements for notes, footnotes, endnotes or other necessary annotations of this kind in the way needed for your culture? (There is a section above for purely inline annotations, such as ruby or warichu. This section is more about annotation systems that separate the reference marks and the content of the notes.) <a href="https://w3c.github.io/typography/index#notes_footnotes">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Anotes-footnotes%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -517,7 +525,7 @@
 
 <section id="pageheaders" class="tbd">
     <h3>Page numbering, running headers, etc.</h3>
-    <p class="status_prompt">Are there special conventions for page numbering, or the way that running headers and the like are handled? <a href="https://w3c.github.io/typography/index#page_numbering_running_headers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Apage-numbering%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">Are there special conventions for page numbering, or the way that running headers and the like are handled? <a href="https://w3c.github.io/typography/index#page_numbering_running_headers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Apage-numbering%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -525,9 +533,19 @@
 
 
 
+<section id="interaction" class="tbd">
+    <h3>Forms &amp; user interaction</h3>
+    <p class="status_prompt">Are vertical form controls well supported? In right-to-left scripts, is it possible to set the base direction for a form field? Is the scroll bar on the correct side? etc. <a href="https://w3c.github.io/typography/index#page_numbering_running_headers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Apage-numbering%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+    <p></p>
+</section>
+
+
+
 <section id="morepage" class="tbd">
     <h3>Other page layout &amp; pagination features</h3>
-    <p class="status_prompt">Some cultures define page areas and page progression direction very differently from those in the West (eg. kihon hanmen in Japanese). Is this an issue for you? Are widows and orphans relevant? In what order do pages progress, RTL or LTR? <a href="https://w3c.github.io/typography/index#more_page_layout_and_pagination">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Apagination%20label%3Atype-info-request%20label%3Ajapanese">check for currently needed data</a>.</p>
+    <p class="status_prompt">Some cultures define text areas and page progression direction very differently from those in the West (eg. kihon hanmen in Japanese). Is this an issue for you? Are widows and orphans relevant? If pages progress RTL, are there issues for support with paged media? What about things such as cross-references, bookmarks, columns, printer marks,  tables of contents and indexes? <a href="https://w3c.github.io/typography/index#more_page_layout_and_pagination">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Apagination%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -549,7 +567,7 @@
 
 
     <p></p>
-</section>
+    </section>
 
 
 
@@ -559,10 +577,9 @@
 
 
     <p></p>
-</section>
+    </section>
     
 </section>
-
 
 
 
@@ -577,40 +594,43 @@ for (let i=0;i<respecConfig.langs.length;i++) {
     out += '{lang: "'+respecConfig.langs[i]+'"'
     out += ', url:"'+respecConfig.gapDocPath+'"'
     out += ', tentative:' + true
+    out += ', vertical:"'+document.getElementById('vertical').className+'"'
+    out += ', bidi:"'+document.getElementById('bidi').className+'"'
+
     out += ', encoding:"'+document.getElementById('encoding').className+'"'   
     out += ', fonts:"'+document.getElementById('fonts').className+'"'
     out += ', fontstyle:"'+document.getElementById('fontstyle').className+'"'
     out += ', glyphcontrol:"'+document.getElementById('glyphs').className+'"'
     out += ', cursive:"'+document.getElementById('cursive').className+'"'
     out += ', transforms:"'+document.getElementById('transforms').className+'"'
-    out += ', digits:"'+document.getElementById('numbers').className+'"'
     out += ', boundaries:"'+document.getElementById('boundaries').className+'"'
+    out += ', textdecor:"'+document.getElementById('textdecor').className+'"'
     out += ', quotations:"'+document.getElementById('quotations').className+'"'
-    out += ', spacing:"'+document.getElementById('spacing').className+'"'
-    out += ', ruby:"'+document.getElementById('ruby').className+'"'
-    out += ', textdecor:"'+document.getElementById('textdecoration').className+'"'
-    out += ', emphasis:"'+document.getElementById('emphasis').className+'"'
-    out += ', bidi:"'+document.getElementById('bidi').className+'"'
+    out += ', inlinenotes:"'+document.getElementById('inlinenotes').className+'"'
+    out += ', digits:"'+document.getElementById('numbers').className+'"'
     out += ', otherinline:"'+document.getElementById('otherinline').className+'"'
+
     out += ', linebreak:"'+document.getElementById('linebreak').className+'"'
     out += ', hyphenation:"'+document.getElementById('hyphenation').className+'"'
     out += ', justification:"'+document.getElementById('justification').className+'"'
+    out += ', spacing:"'+document.getElementById('spacing').className+'"'
     out += ', counters:"'+document.getElementById('counters').className+'"'
     out += ', initialletter:"'+document.getElementById('initialletter').className+'"'
     out += ', baselines:"'+document.getElementById('baselines').className+'"'
     out += ', otherpara:"'+document.getElementById('otherpara').className+'"'
-    out += ', bidilayout:"'+document.getElementById('bidilayout').className+'"'
-    out += ', vertical:"'+document.getElementById('vertical').className+'"'
+
+    out += ', pagelayout:"'+document.getElementById('pagelayout').className+'"'
     out += ', notes:"'+document.getElementById('notes').className+'"'
     out += ', pagehead:"'+document.getElementById('pageheaders').className+'"'
+    out += ', interaction:"'+document.getElementById('interaction').className+'"'
     out += ', otherpage:"'+document.getElementById('morepage').className+'"'
     out += '},\n'
 
     out = out.replace(/tbd/g,'')
+    out = out.replace(/broken/g,'0')
     out = out.replace(/ok/g,'3')
     out = out.replace(/advanced/g,'2')
     out = out.replace(/basic/g,'1')
-    out = out.replace(/broken/g,'0')
     out = out.replace(/"na/g,'"-')
     }
 document.getElementById('summaryPlaceholder').textContent = out
@@ -625,8 +645,7 @@ for (let x=0;x<temp.length;x++) {
 
 
 
-
-<section class="appendix" id="acknowledgements">
+<!--section class="appendix" id="acknowledgements">
 <h2>Acknowledgements</h2>
 
     <p>Special thanks to the following people who contributed to this document (contributors' names listed in in alphabetic order).</p>
@@ -634,6 +653,6 @@ for (let x=0;x<temp.length;x++) {
     <p class="acknowledgement">This Person, That Person, etc</p>
 
     <p data-lang="en">Please find the latest info of the contributors at the <a href="https://github.com/w3c/jlreq/graphs/contributors">GitHub contributors list</a>.</p>
-  </section>
+  </section-->
 </body>
 </html>
