@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+    <meta charset='utf-8'>
+    <title>Rules for Simple Placement of Ruby</title>
+    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+        specStatus: "ED",
+        editors: [{
+          name: "Florian Rivoal",
+	  company: "Invited Expert",
+          url: "https://florian.rivoal.net",
+	  w3cid: "43241",
+        }],
+        authors: [{
+            name: "Toshi Kobayashi",
+          }],
+        github: "w3c/jlreq",
+	edDraftURI: "https://w3c.github.io/jlreq/docs/simple-ruby/",
+        prevED: "https://florian.rivoal.net/ruby/",
+        shortName: "simple-ruby",
+        alternateFormats: [{
+            uri: "ruby-rules-ja.pdf",
+            label: "Original Japanese (PDF)",
+        }],
+        localBiblio: {
+          JIS4051: {
+            title: "Formatting rules for Japanese documents (&#12302;&#26085;&#26412;&#35486;&#25991;&#26360;&#12398;&#32068;&#29256;&#26041;&#27861;&#12303;)",
+            publisher: "Japanese Standards Association",
+            date: "2004",
+            id: "JIS X 4051:2004",
+          },
+        },
+        noRecTrack: true,
+        wg: "Internationalizatoin Interest Group",
+      };
+    </script>
+    <style>
+      .note figure img {
+        background: white;
+        padding: 0.5em;
+      }
+    </style>
+  </head>
+<body>
+<section id='abstract'>
+  <p>A simple set of rules for placement of Ruby text in Japanese typography.</p>
+</section>
+<section id='sotd'>
+  <p>
+  This document was initially written in Japanese
+  and translated to English
+  by the <a href="https://www.aplab.jp/jwt">Japanese Writing Technology</a> Working Group
+  of the <a href="https://www.kri.sfc.keio.ac.jp/en/lab/aplab.html">Advanced Publishing Laboratory</a> of Keio University.
+  </p>
+  <p>
+  It represents the subjective view of its authors and contributors
+  as to one possible approach to address the problem,
+  and does not claim to be the only possible solution.
+  It is submitted to present a non-japanese speaking audience
+  with this particular approach,
+  and to encourage discussion of this topic.
+  </p>
+  <p>The original Japanese version is <a href="https://florian.rivoal.net/ruby/ruby-rules-ja.pdf">available in PDF format</a>.</p>
+</section>
+	
+<section class=informative>
+<h2 id=intro>Introduction</h2>
+
+<section>
+<h3 id="the-difficulties-of-ruby-processing">The Difficulties of Ruby Processing</h3>
+
+<p>When performing ruby layout,
+the following factors need to be considered
+in order to decide on the position:</p>
+
+<ol>
+  <li>How to handle the correspondence between the base characters and the ruby</li>
+  <li>What to do when the string of base characters is longer than the ruby string</li>
+  <li>What to do when the string of base characters is shorter than the ruby string</li>
+  <li>
+    <p>When the ruby string protrudes from the base character string,
+    whether it can be allowed to be laid over the characters preceding or following,
+    and whether this affects the position of the base characters</p>
+    <aside class=note title="Protrusion of ruby from base characters">
+      In movable type typesetting,
+      ruby characters protruding from their base characters
+      may not hang over neighboring kanji,
+      but often were allowed to hang over neighboring kana.
+      However, when the ruby is katakana,
+      some publishers would set it so that
+      it would not hang over the kana neighboring the base character.
+      Also, when the characters around the base characters
+      were kanji on one side and kana on the other side,
+      for the sake of balance
+      the ruby would sometimes be set so as to hang
+      neither over the kanji nor over the kana
+      (which would therefore both be spaced away from the base character).
+    </aside>
+  </li>
+  <li>When the ruby string protrudes from the base character string,
+    and the base character string is at the start or the end of the line,
+    whether the base character string or the ruby string should be aligned with the line edge</li>
+  <li>
+    <p>When there are multiple base characters,
+    whether there can be line wrap opportunity between them</p>
+    <aside class=note title="Wrap opportunities">
+      In computer-based typesetting,
+      rather than always suppressing line wrap opportunities,
+      they would be allowed in cases like compound words.
+      This is because it may otherwise triggers very large
+      spacing adjustments during justification.
+    </aside>
+  </li>
+</ol>
+
+<p>In movable type typography,
+such matters were resolved based generic principles,
+and could always be corrected during the proofreading phase.
+Essentially, each case was adjusted individually in a flexible manner.</p>
+
+<p>In computer-based typesetting,
+the layout needs to be more or less determined based on predetermined rules,
+but it remained necessary to adjust the results in certain cases,
+for example by changing the association between base characters
+and the ruby string,
+or by switching to a different placement policy.</p>
+</section>
+
+<section>
+<h3 id="web-ruby-placement">Web Ruby placement</h3>
+
+<p>When thinking about computing placement for web content,
+it is not practical to decide on the positioning
+case by case as was done in movable type typography.
+It is therefore necessary to decide upon comprehensive rules
+that provide solutions to all the problems listed above,
+so that placement may be determined fully automatically.
+Considering all the possibilities that existed in movable type typesetting,
+the system to be designed needs to be very complex.</p>
+
+<p>However, when considering the ideal positioning of ruby,
+it seems inevitable that exceptions will occur, causing issues.</p>
+
+<p>In such cases, rather than ideal positioning,
+we must at least make sure that the positioning causes no misunderstanding;
+there are also practical limits to how complex the system can be
+in order to be practically implementable.</p>
+
+<p>The following is a proposal for a simple processing system.
+Note that the terminology is based on that defined in
+<a href="https://www.w3.org/TR/jlreq/"><abbr title="Requirements for Japanese Text Layout">JLReq</abbr></a> [[JLREQ]].</p>
+</section>
+</section>
+
+<section class=informative>
+<h2 id="matters-considered-by-the-simple-placement-rules">Matters considered by the simple placement rules</h2>
+
+<section>
+<h3 id="matters-considered-by-the-placement-rules">Matters considered by the placement rules</h3>
+
+<p>Here are the fundamental assumptions underlying the simple placement rules.</p>
+
+<ol>
+  <li>Ruby is used to display the reading or the meaning of the base characters.
+    I therefore consider avoiding misreadings as the number one priority.
+    <aside class=note title="Ruby as notes">
+      Notes are sometimes placed between lines
+      similarly to how ruby is laid out
+      (inter-linear notes).
+      The processing of this arrangement is not covered in this document.
+    </aside>
+  </li>
+  <li>I have devised a method that attempts to reduce exceptions as much as possible.
+    Therefore, there is no requirement for complex processing.
+  <li>The method is agnostic to horizontal vs vertical writing,
+    and will use the same logic in either case.</li>
+  <li>The method places the ruby string relative to the base character string
+    the same way when they occur in the middle, start, or end of the line.
+    Moreover, this method does not change the relative position
+    of the ruby string to the base character string
+    depending on preceding or subsequent characters.
+    In other words, this method calculates a position
+    for the ruby relative to the base string
+    that does not change depending on context.</li>
+  <li>Generally speaking, the processing method is based on JIS X 4051 [[JIS4051]]
+    (Formatting rules for Japanese documents).
+    However, in some cases, optional steps are used.</li>
+  <li>The ruby font size is set to half of the base character’s size as a default.
+    However, the method supports using different sizes than 1/2.
+    <aside class=note title="Reference size">
+      Because the size of ruby characters used in JIS X 4051 [[JIS4051]] set to 1/2
+      there are many examples that use the size of the ruby character as the reference.
+      However, since ruby is not restricted to 1/2,
+      this document uses the size the base character as the reference.
+    </aside>
+    <aside class=note title="Size of ruby characters">
+      In movable type typesetting,
+      when ruby characters of size 3.5 points were not available,
+      based characters of 7 points where sometimes paired
+      with ruby characters of 4 points.
+      Also, ruby associated with large base characters,
+      such as those in titles,
+      are sometimes smaller than 1/2.
+    </aside>
+  </li>
+  <li>While there are cases of ruby on both sides of the base string exist,
+    the method defined here only handles ruby on one side.
+    Handling both sides is left as a future exercise.</li>
+</ol>
+</section>
+
+<section>
+<h3 id="types-of-ruby">Types of ruby</h3>
+
+<p>Ruby may be divided into the following 3 different types,
+based on the relationship between the ruby and the base characters
+(see <a href="https://www.w3.org/TR/jlreq/#usage_of_ruby">JLReq “3.3.1 Usage of Ruby”</a> [[JLREQ]]).</p>
+
+<ol>
+  <li>Mono-ruby</li>
+  <li>Jukugo-ruby</li>
+  <li>Group-ruby</li>
+</ol>
+
+<figure id=ruby-types>
+  <img src="img/fig1.svg" />
+  <figcaption>Types of ruby</figcaption>
+</figure>
+
+<p>Which one to use depends on the relationship
+between the ruby and the base characters.
+Mono-ruby is used to connect ruby to a single base character,
+Jokugo-ruby is used when multiple base characters each have a corresponding ruby
+and at the same time the whole group needs to be processed together,
+and group-ruby is used when ruby is attached to a group of base characters together (see <a href="#ruby-types"></a>).
+Each is used when specified.</p>
+</section>
+</section>
+
+<section>
+<h2 id="rules-for-simple-placement-of-ruby">Rules for Simple Placement of Ruby</h2>
+
+<section>
+<h3 id="ruby-character-size-and-character-placement">Ruby character size and character placement</h3>
+
+<p>The size of the ruby characters
+and their placement in the inline direction relative to the base characters is as follows:</p>
+
+<ol>
+  <li>The size of the ruby is by default set to
+    half of the size of the base characters.</li>
+  <li>In vertical text, ruby is placed to the right of the base characters,
+    and the character frame of the ruby is placed flush
+    against the character frame of the base characters.
+    <figure>
+      <img src="img/fig2.svg" />
+      <figcaption>Example of vertical ruby</figcaption>
+    </figure>
+  </li>
+  <li>In horizontal text, ruby is placed to the top of the base characters,
+    and the character frame of the ruby is placed flush
+    against the character frame of the base characters.
+    <figure>
+      <img src="img/fig3.svg" />
+      <figcaption>Example of horizontal ruby</figcaption>
+    </figure>
+  </li>
+</ol>
+
+<p>The following sections describe in detail the placement of
+mono-ruby,
+jukugo-ruby,
+and group-ruby.
+However, since jukugo-ruby is more complex,
+it is explained last.</p>
+</section>
+
+<section>
+<h3 id="placement-of-mono-ruby">Placement of mono-ruby</h3>
+
+<p>Mono-ruby is placed as follows:</p>
+
+<ol>
+  <li>
+    <p>When the ruby is made of two or more characters,
+    each character in the ruby string is placed
+    immediately next to its neighboring character,
+    without any inter-letter spacing.
+    Furthermore, when the ruby is composed of characters such as
+    <a href="https://www.w3.org/TR/jlreq/#cl-24">Grouped numerals (cl-24)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-25">Unit symbols (cl-25)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-26">Western word space (cl-26)</a>,
+    or <a href="https://www.w3.org/TR/jlreq/#cl-27">Western characters (cl-27)</a> [[JLREQ]]
+    which have their own individual width,
+    they are placed based on each character’s metrics.
+    <figure>
+      <img src="img/fig4.svg" />
+      <figcaption>Example mono-ruby with western characters</figcaption>
+    </figure>
+    </p>
+  </li>
+  <li>The center of the ruby string and of the base character string
+    are aligned in the inline direction.
+    (see <a href="#mono-ex-1"></a>).</li>
+  <li>Since the base character and its associated ruby form a single unit
+    there is no line wrapping opportunity inside a mono-ruby.</li>
+  <li>
+    <p>When the ruby string is longer than the base character string,
+    the part of the ruby string that extends beyond the base characters
+    must not hang over the characters preceding or following,
+    if they are
+    <a href="https://www.w3.org/TR/jlreq/#cl-19">ideographic characters (cl-19)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-15">Hiragana (cl-15)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-26">Katakana (cl-16)</a>,
+    etc [[JLREQ]].
+    Space is introduced accordingly
+    between these preceding or following characters and the base characters.
+    <aside class=note title="Protruding over surrounding characters">
+      The main placement method defined in JIS X 4051 [[JIS4051]]
+      allows some amout of overhang over the preceding and following base characters,
+      but recognize the method defined here as an allowed variant.
+    </aside>
+    <figure id=mono-ex-1>
+      <img src="img/fig5.svg" />
+      <figcaption>Example 1 of mono-ruby protruding</figcaption>
+    </figure>
+    However, in the following cases,
+    the ruby characters do hang over the preceding or following characters
+    (see <a href="#mono-ex-2"></a>).
+    </p>
+
+    <ul>
+      <li>If the character preceding the base character is one of:
+        <a href="https://www.w3.org/TR/jlreq/#cl-02">Closing brackets (cl-02)</a>,
+        <a href="https://www.w3.org/TR/jlreq/#cl-06">Full stops (cl-06)</a>,
+        <a href="https://www.w3.org/TR/jlreq/#cl-07">Commas (cl-07)</a>,
+        <a href="https://www.w3.org/TR/jlreq/#cl-14">Full-width ideographic space (cl-14)</a>,
+        or <a href="https://www.w3.org/TR/jlreq/#cl-05">Middle dots (cl-05)</a> [[JLREQ]],
+        then the ruby must hang over
+        the blank portion at the end the character.
+        (This blank portion is usually half the character’s width,
+        except in the case of <a href="https://www.w3.org/TR/jlreq/#cl-05">Middle dots (cl-05)</a> [[JLREq]]
+        where it is a fourth of the character width).
+        However, if this blank part has been compressed
+        due to justification or similar processing of the line,
+        then the ruby may only hang over the resulting
+        compressed blank space
+        (e.g. if it was reduced from half to a quarter em,
+        hang at most a quarter em).</li>
+      <li>If the character following the base character is one of:
+        <a href="https://www.w3.org/TR/jlreq/#cl-01">Opening brackets (cl-01)</a> or
+        <a href="https://www.w3.org/TR/jlreq/#cl-14">Full-width ideographic space (cl-14)</a>,
+        <a href="https://www.w3.org/TR/jlreq/#cl-05">Middle dots (cl-05)</a> [[JLREQ]],
+        then the ruby must hang over
+        the blank portion at the start the character.
+        (This blank portion is usually
+        half the character’s width for <a href="https://www.w3.org/TR/jlreq/#cl-01">Opening brackets (cl-01)</a>,
+        or a quarter of the character’s width for <a href="https://www.w3.org/TR/jlreq/#cl-05">Middle dots (cl-05)</a> [[JLREQ]])
+        However, if this blank part has been compressed
+        due to justification or similar processing of the line,
+        then the ruby may only hang over the resulting
+        compressed blank space
+        (e.g. if it was reduced from half to a quarter em,
+        hang at most a quarter em).</li>
+    </ul>
+    <figure id=mono-ex-2>
+      <img src="img/fig6.svg" />
+      <figcaption>Example 2 of mono-ruby protruding</figcaption>
+    </figure>
+  </li>
+  <li>
+    <p>When the ruby string is longer than the base character string,
+ and the ruby falls at the start of the line,
+ then the start of the ruby string is aligned with the line’s start edge
+ (see <a href="#line-start-mono"></a>),
+ while if the ruby falls at the end of then line,
+ then the end of the ruby string is aligned with the line’s end edge
+ (see <a href="#line-end-mono"></a>).
+    <figure id=line-start-mono>
+      <img src="img/fig7.svg" />
+      <figcaption>Example of mono-ruby at the line start</figcaption>
+    </figure>
+    <figure id=line-end-mono>
+      <img src="img/fig8.svg" />
+      <figcaption>Example of mono-ruby at the line end</figcaption>
+    </figure>
+    </p>
+  </li>
+</ol>
+</section>
+
+<section>
+<h3 id="placement-of-group-ruby">Placement of group-ruby</h3>
+
+<p>Group-ruby is placed as follows:</p>
+
+<ol>
+  <li>
+    <p>When the ruby string and the base character string
+    are composed of characters such as
+    <a href="https://www.w3.org/TR/jlreq/#cl-15">Hiragana (cl-15)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-26">Katakana (cl-16)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-19">Ideographic characters (cl-19)</a>,
+    and so on,
+    excluding characters like
+    <a href="https://www.w3.org/TR/jlreq/#cl-24">Grouped numerals (cl-24)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-25">Unit symbols (cl-25)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-26">Western word space (cl-26)</a>,
+    or <a href="https://www.w3.org/TR/jlreq/#cl-27">Western characters (cl-27)</a> [[JLREQ]]
+    which have their own individual width,
+    the way they are positioned depends
+    on how their respective lengths would
+    compare if they were each laid out
+    without any inter-letter spacing:</p>
+
+    <ul>
+      <li>
+        <p>When their respective lengths would be the same,
+        both are laid out without inter-letter spacing
+        and placed such that their respective centers in the inline direction are aligned
+        (see <a href="#group-ruby"></a>).
+        <figure id=group-ruby>
+          <img src="img/fig9.svg" />
+          <figcaption>Example 1 of group-ruby</figcaption>
+        </figure>
+        </p>
+      </li>
+      <li>
+        <p>When the ruby string is shorter than the base character string,
+        space is inserted between every character in the ruby string
+        as well as at the start and the end of the ruby string
+        so that it becomes the same length as the base character string,
+        then their centers in the inline direction are aligned.
+        The size of the space inserted between each of the ruby characters
+        is twice the size of the space inserted at the end and at the start
+        (see <a href="#group-2"></a>).
+        <figure id=group-2>
+          <img src="img/fig10.svg" />
+          <figcaption>Example 2 of group-ruby</figcaption>
+        </figure>
+        However, the size space inserted at the start and end must
+        be capped at than half the size of one base character,
+        and the space inserted between each ruby character is enlarged to compensate
+        (see <a href="#group-3"></a>).
+        <figure id=group-3>
+          <img src="img/fig11.svg" />
+          <figcaption>Example 3 of group-ruby</figcaption>
+        </figure>
+        </p>
+      </li>
+      <li>
+        <p>When the ruby string is longer than the base character string,
+        space is inserted between every character in the base character string
+        as well as at the start and the end of the base character string
+        so that it becomes the same length as the ruby string,
+        then their centers in the inline direction are aligned.
+        The size of the space inserted between each of the base characters
+        is twice the size of the space inserted at the end and at the start
+        (see <a href="#group-4"></a>).
+          <figure id=group-4>
+          <img src="img/fig12.svg" />
+          <figcaption>Example 4 of group-ruby</figcaption>
+        </figure>
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>When the base character string is composed of characters like
+    <a href="https://www.w3.org/TR/jlreq/#cl-24">Grouped numerals (cl-24)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-25">Unit symbols (cl-25)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-26">Western word space (cl-26)</a>,
+    or <a href="https://www.w3.org/TR/jlreq/#cl-27">Western characters (cl-27)</a>
+    which have their own individual width,
+    and the ruby string is composed of characters such as
+    <a href="https://www.w3.org/TR/jlreq/#cl-15">Hiragana (cl-15)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-26">Katakana (cl-16)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-19">Ideographic characters (cl-19)</a> [[JLREQ]],
+    and so on,
+    the placement depends on the following (see <a href="#ruby-west"></a>):</p>
+    <ul>
+      <li>When their respective lengths would be the same,
+        both are laid out without inter-letter spacing
+        and placed such that their respective centers in the inline direction are aligned.</li>
+      <li>When the ruby string is shorter than the base character string,
+        space is inserted between every character in the ruby string
+        as well as at the start and the end of the ruby string
+        so that it becomes the same length as the base character string,
+        then their centers in the inline direction are aligned.
+        The size of the space inserted between each of the ruby characters
+        is twice the size of the space inserted at the end and at the start.</li>
+      <li>When the ruby string is longer than the base character string,
+        both are laid out without inter-letter spacing
+        and placed such that their respective centers in the inline direction are aligned.
+        In this case, the ruby string protrudes from the base character string.</li>
+    </ul>
+    <figure id=ruby-west>
+      <img src="img/fig13.svg" />
+      <figcaption>Example of ruby with western characters</figcaption>
+    </figure>
+  </li>
+  <li>When the ruby string is composed of characters like
+    <a href="https://www.w3.org/TR/jlreq/#cl-24">Grouped numerals (cl-24)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-25">Unit symbols (cl-25)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-26">Western word space (cl-26)</a>,
+    or <a href="https://www.w3.org/TR/jlreq/#cl-27">Western characters (cl-27)</a>
+    which have their own individual width,
+    and the base character string is composed of characters such as
+    <a href="https://www.w3.org/TR/jlreq/#cl-15">Hiragana (cl-15)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-26">Katakana (cl-16)</a>,
+    <a href="https://www.w3.org/TR/jlreq/#cl-19">Ideographic characters (cl-19)</a> [[JLREQ]],
+    and so on,
+    the placement depends on the following (see <a href="#protruding-group"></a>):
+    <ul>
+      <li>When their respective lengths would be the same,
+        both are laid out without inter-letter spacing
+        and placed such that their respective centers in the inline direction are aligned.</li>
+      <li>When the ruby string is shorter than the base character string,
+        both are laid out without inter-letter spacing
+        and placed such that their respective centers in the inline direction are aligned.</li>
+      <li>When the ruby string is longer than the base character string,
+        space is inserted between every character in the base character string
+        as well as at the start and the end of the base character string
+        so that it becomes the same length as the ruby string,
+        then their centers in the inline direction are aligned.
+        The size of the space inserted between each of the base characters
+        is twice the size of the space inserted at the end and at the start.</li>
+    </ul>
+    <figure id=protruding-group>
+      <img src="img/fig14.svg" />
+      <figcaption>Example of protruding group-ruby</figcaption>
+    </figure>
+  </li>
+  <li>
+    <p>When the ruby string is longer than the base character string and protrudes,
+    whether and how it hangs over characters preceding or following
+    the base character string 
+    is handled in the same way as with mono-ruby
+    (see <a href="#protruding-group"></a>).
+    Also, when the ruby string is longer than the base character string,
+    protrudes, and is located at the start or end of the line,
+    the processing is also identical to that of mono-ruby.</p>
+  </li>
+  <li>
+    <p>In the case of group ruby,
+    the base character string and its associated ruby string
+    are treated as a unit, 
+    so there is no line wrapping opportunity inside either string.</p>
+    <aside class=note title="Wrap opportunities in group-ruby">
+      As group-ruby is treated as a unit, there is no wrap opportunity.
+      However, in some exceptional cases where it is wrapped,
+      and is then processed similarly to jukugo-ruby.
+      <figure id=wrap-group>
+        <img src="img/fig15.svg" />
+        <figcaption>Wrapping group-ruby</figcaption>
+      </figure>
+    </aside>
+  </li>
+</ol>
+</section>
+
+<section>
+<h3 id="placement-of-jukugo-ruby">Placement of Jukugo-ruby</h3>
+
+<p>Jukugo-ruby is placed as follows:</p>
+
+<ol>
+  <li>
+    <p>With jukugo-ruby, each base character is associated with its own ruby string.
+    When the length of each of these ruby string laid out without inter-letter spacing
+    is shorter than the length of all their corresponding base characters,
+    placement is determined as follows:</p>
+
+    <ul>
+      <li>When the ruby string associated with an individual base character is 1 character long,
+        the ruby character and the base character
+        are placed such that their respective centers in the inline direction are aligned
+        (see <a href=#jukugo-1></a>).
+        <figure id=jukugo-1>
+          <img src="img/fig16.svg" />
+          <figcaption>Example 1 of jukugo-ruby</figcaption>
+        </figure>
+      </li>
+      <li>When the ruby string associated with an individual base character is 2 characters long or more,
+        the ruby string is laid out without inter-letter spacing,
+        and placed such that its center and the center of its base character are aligned in the inline direction
+        (see <a href=#jukugo-1></a>).
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>If even a single ruby string is longer than its corresponding base character
+    when laid out without inter-letter spacing,
+    the processing is identical to group-ruby
+    (see <a href=#jukugo-2></a> and <a href=#jukugo-3></a>).
+    <figure id=jukugo-2>
+      <img src="img/fig17.svg" />
+      <figcaption>Example 2 of jukugo-ruby</figcaption>
+    </figure>
+    <figure id=jukugo-3>
+      <img src="img/fig18.svg" />
+      <figcaption>Example 3 of jukugo-ruby</figcaption>
+    </figure>
+    </p>
+  </li>
+  <li>With jukugo-ruby, individual base characters and their associated ruby string are treated as a unit,
+    and line wrap opportunities are allowed between two base characters.
+    When such a line wrap occurs,
+    if a single base character that is part of the jukugo is placed alone at the end or at the start of a line,
+    it is processed identically to mono-ruby;
+    conversely when several base characters that are part of the jukugo
+    are placed together at the end or start of a line,
+    they are process together as has be described in this section about jukugo-ruby
+    (see <a href=#wrap-jukugo></a>).
+    <figure id=wrap-jukugo>
+      <img src="img/fig19.svg" />
+      <figcaption>Example of wrapping jukugo-ruby</figcaption>
+    </figure>
+  </li>
+  <li>When the ruby string is longer than the base character string and protrudes,
+    whether and how it hangs over characters preceding or following
+    the base character string 
+    is handled in the same way as with mono-ruby.
+    Also, when the ruby string is longer than the base character string,
+    protrudes, and is located at the start or end of the line,
+    the processing is also identical to that of mono-ruby.</li>
+</ol>
+</section>
+</section>
+
+<section class=informative>
+<h2 id="ruby-and-accessibility">Ruby and Accessibility</h2>
+
+<section>
+<h3 id="accessibility-improvements-using-ruby">Accessibility Improvements Using Ruby</h3>
+
+<p>Ruby plays a role in improving accessibility for people with visual impairments,
+and other sources of reading difficulties.
+Therefore, this section examines the relationship between ruby and accessibility.</p>
+
+<p>Reading difficulties can be caused by a variety of factors,
+and therefore, requirements to improve accessibility also vary.
+For example, here are some common requirements:</p>
+
+<ul>
+  <li>
+    <p>To accommodate young children who cannot read any kanji,
+    general-ruby must be added to all kanji.</p>
+    <aside class=note title="General-Ruby and Para-Ruby">
+      See <a href="https://www.w3.org/TR/jlreq/#choice_of_base_characters_to_be_annotated_by_ruby">JLReq section “3.2.2 Choice of Base Characters to be Annotated by Ruby”</a> for an explanation of “general-ruby” and “para-ruby”. [[JLREQ]]
+    </aside>
+  </li>
+  <li>
+    <p>As studies progress, a greater number of kanji is known.
+    After having read general-ruby many times,
+    ruby on difficult kanji only becomes sufficient.
+    Therefore para-ruby on only some of the kanji is required.</p>
+    <aside class=note title="The Need for Ruby">
+      According to the results of the 2017 DAISY survey towards general users of textbooks,
+      61% of children require general-ruby.
+      Based on the same survey,
+      para-ruby is found to be sufficient for 32% of children.
+      This means that after having read general-ruby multiple times,
+      having ruby on difficult kanji only is found sufficient.
+      Moreover, printed textbooks use para-ruby,
+      and faithful digital reproduction is needed.
+    </aside>
+    <aside class=note title="Kanji Studied by Elementary and Middle School Students">
+      Kanji to be learned during primary school are defined in
+      the “Primary School Learning Guidelines”.
+      Those kanji are often called “educational kanji”.
+      In the list published in 2017,
+      1026 kanji are listed and spread across the various school years
+      according to the “Kanji Allotment Table by Grade”.
+      For middle school,
+      the split between each grade is undefined,
+      but students are required to study
+      the 1110 “characters in common use” no included in educational kanji
+      so as to have studied all 2136 characters in common use
+      by the end of middle school.
+    </aside>
+  </li>
+  <li>Some people have difficulties in visually distinguishing between
+    ruby characters and the base characters to which they are attached,
+    and misread the combination as a different character altogether.
+    There must be a display method that enables clearly distinguishing between the two.
+    Also, for those who already know how to read the kanji,
+    there must be a way to hide the ruby.</li>
+  <li>As inline parenthesised annotations can be used instead,
+    there is no strong need for double-sided ruby.</li>
+</ul>
+</section>
+
+<section>
+<h3 id="ruby-display-requirements-for-accessibility">Ruby Display Requirements for Accessibility</h3>
+
+<p>Based on the above,
+we can gather the following
+ruby display requirements for accessibility:</p>
+
+<ol>
+  <li>Support for general-ruby is required.</li>
+  <li>Support for para-ruby is required.
+    Moreover, as the number of kanji known increases with the level of studies,
+    based on the content and on the level of the reader,
+    it must be possible to only display ruby for kanji
+    assigned to a particular school year (or later).</li>
+  <li>Support for hiding ruby is required.</li>
+  <li>Considering the cost of production, distribution, and of user management,
+    it is necessary to support ruby-less display, general-ruby display, and para-ruby display
+    with the same content.</li>
+  <li>A method to clearly visually distinguish the ruby characters and their based characters,
+    such as displaying them in different colors,
+    is required.</li>
+</ol>
+</section>
+</section>
+</body>
+</html>
