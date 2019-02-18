@@ -33,7 +33,7 @@
           },
         },
         noRecTrack: true,
-        wg: "Internationalizatoin Interest Group",
+        wg: "Internationalization Working Group",
       };
     </script>
     <style>
@@ -58,7 +58,7 @@
   It represents the subjective view of its authors and contributors
   as to one possible approach to address the problem,
   and does not claim to be the only possible solution.
-  It is submitted to present a non-japanese speaking audience
+  It is submitted to present a non-Japanese speaking audience
   with this particular approach,
   and to encourage discussion of this topic.
   </p>
@@ -148,7 +148,7 @@ we must at least make sure that the positioning causes no misunderstanding;
 there are also practical limits to how complex the system can be
 in order to be practically implementable.</p>
 
-<p>The following is a proposal for a simple processing system.
+<p>The following is a proposal for a simple processing system. The target audience is implementers and specification writers.
 Note that the terminology is based on that defined in
 <a href="https://www.w3.org/TR/jlreq/"><abbr title="Requirements for Japanese Text Layout">JLReq</abbr></a> [[JLREQ]].</p>
 </section>
@@ -299,7 +299,7 @@ it is explained last.</p>
       <img src="img/fig4.svg" />
       <figcaption>Example mono-ruby with western characters</figcaption>
     </figure>
-    </p>
+    
   </li>
   <li>The center of the ruby string and of the base character string
     are aligned in the inline direction.
@@ -319,8 +319,8 @@ it is explained last.</p>
     between these preceding or following characters and the base characters.
     <aside class=note title="Protruding over surrounding characters">
       The main placement method defined in JIS X 4051 [[JIS4051]]
-      allows some amout of overhang over the preceding and following base characters,
-      but recognize the method defined here as an allowed variant.
+      allows some amount of overhang over the preceding and following base characters,
+      but recognizes the method defined here as an allowed variant.
     </aside>
     <figure id=mono-ex-1>
       <img src="img/fig5.svg" />
@@ -329,7 +329,7 @@ it is explained last.</p>
     However, in the following cases,
     the ruby characters do hang over the preceding or following characters
     (see <a href="#mono-ex-2"></a>).
-    </p>
+    
 
     <ul>
       <li>If the character preceding the base character is one of:
@@ -375,10 +375,10 @@ it is explained last.</p>
  and the ruby falls at the start of the line,
  then the start of the ruby string is aligned with the line’s start edge
  (see <a href="#line-start-mono"></a>),
- while if the ruby falls at the end of then line,
+ while if the ruby falls at the end of the line,
  then the end of the ruby string is aligned with the line’s end edge
  (see <a href="#line-end-mono"></a>).
-    <figure id=line-start-mono>
+  <figure id=line-start-mono>
       <img src="img/fig7.svg" />
       <figcaption>Example of mono-ruby at the line start</figcaption>
     </figure>
@@ -386,7 +386,7 @@ it is explained last.</p>
       <img src="img/fig8.svg" />
       <figcaption>Example of mono-ruby at the line end</figcaption>
     </figure>
-    </p>
+    
   </li>
 </ol>
 </section>
@@ -425,7 +425,7 @@ it is explained last.</p>
           <img src="img/fig9.svg" />
           <figcaption>Example 1 of group-ruby</figcaption>
         </figure>
-        </p>
+        
       </li>
       <li>
         <p>When the ruby string is shorter than the base character string,
@@ -441,14 +441,14 @@ it is explained last.</p>
           <figcaption>Example 2 of group-ruby</figcaption>
         </figure>
         However, the size space inserted at the start and end must
-        be capped at than half the size of one base character,
+        be capped at no more than half the size of one base character,
         and the space inserted between each ruby character is enlarged to compensate
         (see <a href="#group-3"></a>).
         <figure id=group-3>
           <img src="img/fig11.svg" />
           <figcaption>Example 3 of group-ruby</figcaption>
         </figure>
-        </p>
+        
       </li>
       <li>
         <p>When the ruby string is longer than the base character string,
@@ -463,7 +463,7 @@ it is explained last.</p>
           <img src="img/fig12.svg" />
           <figcaption>Example 4 of group-ruby</figcaption>
         </figure>
-        </p>
+        
       </li>
     </ul>
   </li>
@@ -512,7 +512,7 @@ it is explained last.</p>
     <a href="https://www.w3.org/TR/jlreq/#cl-26">Katakana (cl-16)</a>,
     <a href="https://www.w3.org/TR/jlreq/#cl-19">Ideographic characters (cl-19)</a> [[JLREQ]],
     and so on,
-    the placement depends on the following (see <a href="#protruding-group"></a>):
+    the placement depends on the following (see <a href="#ruby-west"></a>):
     <ul>
       <li>When their respective lengths would be the same,
         both are laid out without inter-letter spacing
@@ -551,7 +551,7 @@ it is explained last.</p>
     <aside class=note title="Wrap opportunities in group-ruby">
       As group-ruby is treated as a unit, there is no wrap opportunity.
       However, in some exceptional cases where it is wrapped,
-      and is then processed similarly to jukugo-ruby.
+      it is then processed similarly to jukugo-ruby.
       <figure id=wrap-group>
         <img src="img/fig15.svg" />
         <figcaption>Wrapping group-ruby</figcaption>
@@ -603,7 +603,7 @@ it is explained last.</p>
       <img src="img/fig18.svg" />
       <figcaption>Example 3 of jukugo-ruby</figcaption>
     </figure>
-    </p>
+    
   </li>
   <li>With jukugo-ruby, individual base characters and their associated ruby string are treated as a unit,
     and line wrap opportunities are allowed between two base characters.
@@ -612,7 +612,7 @@ it is explained last.</p>
     it is processed identically to mono-ruby;
     conversely when several base characters that are part of the jukugo
     are placed together at the end or start of a line,
-    they are process together as has be described in this section about jukugo-ruby
+    they are processed together as has been described in this section about jukugo-ruby
     (see <a href=#wrap-jukugo></a>).
     <figure id=wrap-jukugo>
       <img src="img/fig19.svg" />
