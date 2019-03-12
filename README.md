@@ -56,6 +56,7 @@ Chair: [木田泰夫 (Yasuo Kida)](mailto:kida@me.com) • W3C staff: [Richard I
 - [Issue tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=jlreq)
 - [Github issues](https://github.com/w3c/jlreq/issues)
 - [Charter](https://w3c.github.io/jlreq/charter/)
+- [List of group members](https://www.w3.org/2000/09/dbwg/details?group=109193&public=1)
 - Action tracker (tbd)
 - [Writing i18n tests](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
