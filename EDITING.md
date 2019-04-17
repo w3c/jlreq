@@ -9,8 +9,8 @@ When creating new content, you should **always create markup for both English an
 
 For example:  
 ```html
-<p data-lang="en">Text in English.</p>
-<p data-lang="ja">日本語のテキスト。</p>
+<p its-locale-filter-list="en">Text in English.</p>
+<p its-locale-filter-list="ja">日本語のテキスト。</p>
 ```
 
 If you are able to create text in both English and Japanese, please do so. 
@@ -20,8 +20,8 @@ If you are able to create text in both English and Japanese, please do so.
 For example:
 
 ```html
-<p data-lang="en" class="translateme">日本語のテキスト。</p>
-<p data-lang="ja">日本語のテキスト。</p>
+<p its-locale-filter-list="en" class="translateme">日本語のテキスト。</p>
+<p its-locale-filter-list="ja">日本語のテキスト。</p>
 ```
 
 Likewise, if you change existing text, and if that change requires a change in the parallel translation but you are unable to do so, add `class="translateme"` to the text that needs to be updated.
@@ -31,8 +31,8 @@ Likewise, if you change existing text, and if that change requires a change in t
 For example:
 
 ```html
-<p data-lang="en" class="checkme">Text in English.</p>
-<p data-lang="ja">日本語のテキスト。</p>
+<p its-locale-filter-list="en" class="checkme">Text in English.</p>
+<p its-locale-filter-list="ja">日本語のテキスト。</p>
 ```
 
 The class names listed above produce special colouring effects in the displayed document.
@@ -51,8 +51,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
 
     ```html
     <li id="abcd">
-      <p data-lang="en">Text in English.</p>
-      <p data-lang="zh">日本語のテキスト。</p>
+      <p its-locale-filter-list="en">Text in English.</p>
+      <p its-locale-filter-list="zh">日本語のテキスト。</p>
     </li>
     ```
 
@@ -61,8 +61,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
 
     ```html
     <div id="abcd">
-      <p data-lang="en">Text in English.</p>
-      <p data-lang="zh">日本語のテキスト。</p>
+      <p its-locale-filter-list="en">Text in English.</p>
+      <p its-locale-filter-list="zh">日本語のテキスト。</p>
     </div>
     ```
 
@@ -70,8 +70,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
 
     ```html
     <h2>
-      <span data-lang="en">Heading in English.</span>
-      <span data-lang="zh">日本語の見出し</span>
+      <span its-locale-filter-list="en">Heading in English.</span>
+      <span its-locale-filter-list="zh">日本語の見出し</span>
     </h2>
     ```
 
@@ -80,8 +80,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
     ```html
     <section id="h_my_heading">
       <h2>
-        <span data-lang="en">English heading</span>
-        <span data-lang="zh">漢語標題</span>
+        <span its-locale-filter-list="en">English heading</span>
+        <span its-locale-filter-list="zh">漢語標題</span>
       </h2>
       …
     ``` 
@@ -89,8 +89,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
 - **Attribute `id`s on `dfn` elements** should start with `xxdef`, where `xx` is either `ja` or `en`.
 
     ```html
-    <p data-lang="en">The <dfn id="endef_term">term</dfn> is a technical word.</p>
-    <p data-lang="zh">这个<dfn id="jadef_term">词汇</dfn>是一个技术用语。</p>
+    <p its-locale-filter-list="en">The <dfn id="endef_term">term</dfn> is a technical word.</p>
+    <p its-locale-filter-list="zh">这个<dfn id="jadef_term">词汇</dfn>是一个技术用语。</p>
     ```
 
 - **Figure captions** should use `span`s for the different language versions.
@@ -100,8 +100,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
       <!-- 図の内容。 -->
       <!-- Figure content. -->
       <figcaption>
-        <span data-lang="en">Caption in English</span>
-        <span data-lang="zh">日本語のキャプション</span>
+        <span its-locale-filter-list="en">Caption in English</span>
+        <span its-locale-filter-list="zh">日本語のキャプション</span>
       </figcaption>
     </figure>
     ```
@@ -133,7 +133,7 @@ For additional ideas about markup and styling in Internationalization Activity d
 
     ```html
     Requirements for Chinese Text Layout 
-    <span data-lang="zh" lang="zh">中文排版需求</span>
+    <span its-locale-filter-list="ja" lang="ja">中文排版需求</span>
     ```
 
 2. Remove:
