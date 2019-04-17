@@ -40,7 +40,7 @@ The class names listed above produce special colouring effects in the displayed 
 When text highlighted by the `translateme` or `checkme` class is updated to a final translation, the class should be removed.
 
 
-### Markup tips 
+### Markup requirements 
 
 Here are some tips on how to maintain the parallel language structure in markup. The principles in these example approaches should be extended to other markup as needed.
 
@@ -52,7 +52,7 @@ Here are some tips on how to maintain the parallel language structure in markup.
     ```html
     <li id="abcd">
       <p its-locale-filter-list="en">Text in English.</p>
-      <p its-locale-filter-list="zh">日本語のテキスト。</p>
+      <p its-locale-filter-list="ja">日本語のテキスト。</p>
     </li>
     ```
 
@@ -62,7 +62,7 @@ Here are some tips on how to maintain the parallel language structure in markup.
     ```html
     <div id="abcd">
       <p its-locale-filter-list="en">Text in English.</p>
-      <p its-locale-filter-list="zh">日本語のテキスト。</p>
+      <p its-locale-filter-list="ja">日本語のテキスト。</p>
     </div>
     ```
 
@@ -71,7 +71,7 @@ Here are some tips on how to maintain the parallel language structure in markup.
     ```html
     <h2>
       <span its-locale-filter-list="en">Heading in English.</span>
-      <span its-locale-filter-list="zh">日本語の見出し</span>
+      <span its-locale-filter-list="ja">日本語の見出し</span>
     </h2>
     ```
 
@@ -80,8 +80,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
     ```html
     <section id="h_my_heading">
       <h2>
-        <span its-locale-filter-list="en">English heading</span>
-        <span its-locale-filter-list="zh">漢語標題</span>
+        <span its-locale-filter-list="en">Heading in English</span>
+        <span its-locale-filter-list="ja">日本語の見出し</span>
       </h2>
       …
     ``` 
@@ -89,19 +89,19 @@ Here are some tips on how to maintain the parallel language structure in markup.
 - **Attribute `id`s on `dfn` elements** should start with `xxdef`, where `xx` is either `ja` or `en`.
 
     ```html
-    <p its-locale-filter-list="en">The <dfn id="endef_term">term</dfn> is a technical word.</p>
-    <p its-locale-filter-list="zh">这个<dfn id="jadef_term">词汇</dfn>是一个技术用语。</p>
+    <p its-locale-filter-list="en">The <dfn id="endef_page_format">page format</dfn> of a Japanese document is specified by:</p>
+    <p its-locale-filter-list="ja">日本語文書の<dfn id="jadef_page_format">組体裁</dfn>は，以下の順序で設計する．</p>
     ```
 
-- **Figure captions** should use `span`s for the different language versions.
+- **Figures and figure captions** should repeat the information. Japanese images are stored in images_ja directory. Captions use `span`s for the different language versions. There is just one id for the figure.
 
     ```html
-    <figure>
-      <!-- 図の内容。 -->
-      <!-- Figure content. -->
+    <figure id="myid">
+      <img its-locale-filter-list="en" src="images/mypicture.png"/>
+      <img its-locale-filter-list="ja" src="images_ja/mypicture.png"/>
       <figcaption>
         <span its-locale-filter-list="en">Caption in English</span>
-        <span its-locale-filter-list="zh">日本語のキャプション</span>
+        <span its-locale-filter-list="ja">日本語のキャプション</span>
       </figcaption>
     </figure>
     ```
@@ -109,13 +109,15 @@ Here are some tips on how to maintain the parallel language structure in markup.
 - Use the following markup for Unicode codepoint names:
 
     ```html
-    <span class="uname">U+3002 IDEOGRAPHIC FULL STOP</span> [。]
+    <span class="codepoint" translate="no"><span lang="ja">。</span> [<span class="uname">U+3002 IDEOGRAPHIC FULL STOP</span>]</span>
     ```
 
 For additional ideas about markup and styling in Internationalization Activity documents, especially wrt inline markup conventions, see <https://www.w3.org/International/docs/styleguide>.
 
 
 ## Last-minute Pre-publication edits
+
+THIS SECTION NEEDS REVIEW. THINGS MAY HAVE CHANGED SINCE IT WAS WRITTEN.
 
 **Make the following changes to the respec file before pushing to GitHub:**
 
