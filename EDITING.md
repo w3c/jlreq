@@ -106,11 +106,24 @@ Here are some tips on how to maintain the parallel language structure in markup.
     </figure>
     ```
 
-- Use the following markup for Unicode codepoint names:
+- Use the following markup for **Unicode codepoint names**:
 
     ```html
     <span class="codepoint" translate="no"><span lang="ja">。</span> [<span class="uname">U+3002 IDEOGRAPHIC FULL STOP</span>]</span>
     ```
+
+- To link to a section, use the Respec feature, ie. link to the id on the section tag and leave the link text empty.
+
+    ```html
+    <a class="sec_ref" href="#mySectionId"></a>
+    ```
+
+- To link to a figure, use the Respec feature, ie. link to the id on the figure tag and leave the link text empty.
+
+    ```html
+    <a class="fig_ref" href="#myFigureId"></a>
+    ```
+
 
 For additional ideas about markup and styling in Internationalization Activity documents, especially wrt inline markup conventions, see <https://www.w3.org/International/docs/styleguide>.
 
