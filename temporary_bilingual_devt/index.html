@@ -3335,19 +3335,22 @@
   <section id="line-composition-sec3">
     <h3 id="ruby_and_emphasis_dots">
 <span its-locale-filter-list="en">Ruby and Emphasis Dots</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">ルビと圏点処理</span>
 </h3>
     <section>
       <h4 id="usage_of_ruby">
 <span its-locale-filter-list="en">Usage of Ruby</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">ルビの使用</span>
 </h4>
       <p its-locale-filter-list="en"><a class="termref" href="#term.ruby">Ruby</a> is a small-sized, supplementary text attached to a character or a group of characters in the main text. A run of ruby text, usually attached to the right of the characters in <a class="termref" href="#term.vertical-writing-mode">vertical writing mode</a> or immediately above them in <a class="termref" href="#term.horizontal-writing-mode">horizontal writing mode</a>, indicates the reading or the meaning of those characters (see <a class="figure_ref" href="#fig2_3_1"></a>). The characters in the main text that are annotated by ruby are called "<a class="termref" href="#term.base-characters">base characters</a>".
         Mainly <a class="characterClass" href="#cl-15">Hiragana (cl-15)</a> characters are often used for ruby to indicate how to read <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>; this is known as ruby annotation or as "<a class="termref" href="#term.furigana">furigana</a>".</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e8423"><a href="#term.ruby" class="termref">ルビ</a></span>とは，文字のそば（<a href="#term.vertical-writing-mode" class="termref">縦組</a>では一般に右側，<a href="#term.horizontal-writing-mode" class="termref">横組</a>では一般に上側）に付けて文字の読み方，意味などを示す小さな文字のことである（<a class="figure_ref" href="#fig2_3_1"></a>）．ルビを付ける場合，その対象となる文字のことを<span class="index" id="d5e8436"><a href="#term.base-characters" class="termref">親文字</a></span>という．ルビとしては，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の読みを示す<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などを付けることが多く，“<span class="index" id="d5e8450"><a href="#term.furigana" class="termref">振り仮名</a></span>”ともよばれている．</p>
       <figure id="fig2_3_1"> 
       <img its-locale-filter-list="en" src="images/img2_3_1.png" alt="Ruby and base characters." width="324" height="401">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_1.png" alt="ルビと親文字" width="324" height="401">
         <figcaption>
         <span its-locale-filter-list="en">Ruby and base characters.</span>
+        <span its-locale-filter-list="ja">ルビと親文字</span>
         </figcaption>
 
       </figure>
@@ -3361,100 +3364,138 @@
           For example, the preface of the Jouyou Kanji Table states that one may consider the use of 'furigana (annotations to indicate pronunciation)'  when the text appears too
           difficult to read. This is why the use of ruby has been increasing today. The use of ruby is common in magazines and books,
           and even newspapers have begun to use ruby these days.</p>
+        <p its-locale-filter-list="ja">ルビの使用は，漢字表記の考え方や<a href="#term.composition" class="termref">組版</a>におけるルビ処理方法などに影響され，変化している．特に，日本における漢字表記の基準とされてきた“<span class="index" id="d5e8531"><span class="index" id="d5e8532"><a href="#term.touyou-kanji-table" class="termref">当用漢字表</a></span></span>”（1946年11月16日，内閣訓令・告示）の“使用上の注意”において，“ふりがなは，原則として使わない”とあったことから，以前はルビの使用は少なかった．しかし，“当用漢字表”を改正した“<span class="index" id="d5e8536"><span class="index" id="d5e8537"><a href="#term.jouyou-kanji-table" class="termref">常用漢字表</a></span></span>”（1981年10月1日，内閣訓令・告示）では，表そのものの考え方が変化した（“当用漢字表”は一般社会で使用する漢字の範囲を示したもの，“常用漢字表”は一般の社会生活において現代の国語を書き表す場合の漢字使用の目安を示したもの）．例えば，“常用漢字表”の“答申前文”には，“読みにくいと思われるような場合は，必要に応じて振り仮名を用いるような配慮をするのも一つの方法であろう”とある．こうしたことから，今日ではルビの使用が増えている．従来から雑誌や書籍におけるルビ使用は，一般的なことであったが，最近では新聞でもルビを使用するようになっている．</p>
       </aside>
       <aside class="note" id="n104">
         <p its-locale-filter-list="en"> The specification of ruby composition was first introduced in the second revision of JIS X 4051, which was further revised
           in 2004 to add <a href="#term.jukugo-ruby" class="termref">jukugo-ruby</a>, <a href="#term.katatsuki" class="termref">katatsuki-ruby</a> and the dual ruby composition with which two distinct runs of ruby are attached
           to the same base characters (4.12 Ruby Composition).</p>
+        <p its-locale-filter-list="ja"><span class="index" id="d5e8573">ルビの組版処理</span>は，JIS X 4051においては第2次規格で規定が追加され，さらに2004年の改正で，<a href="#term.jukugo-ruby" class="termref">熟語ルビ</a>，<a href="#term.katatsuki" class="termref">肩付きルビ</a>，親文字の両側に付けるルビ処理の規定が追加されている（“4.12 ルビ処理”）．</p>
       </aside>
       <p its-locale-filter-list="en">There are three methods to treat ruby as follows:</p>
+      <p its-locale-filter-list="ja">ルビの組版処理の方法としては，次の3つがある．</p>
       <ol>
         <li id="id213">
           <p its-locale-filter-list="en">Mono-ruby : ruby letters are set in connection with each base character (see <a class="sec_ref" href="#positioning_of_monoruby_with_respect_to_base_characters"></a>).</p>
-        </li>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e8614">モノルビ</span>：親文字の1字ごとに対応してルビを付けて配置する（<a class="sec_ref" href="#positioning_of_monoruby_with_respect_to_base_characters"></a>）．</p>        </li>
         <li id="id214">
           <p its-locale-filter-list="en">Jukugo-ruby : ruby letters are set not only in connection with each base character but also treated as a group as kanji compound word  (see <a class="sec_ref" href="#positioning_of_jukugoruby_with_respect_to_base_characters"></a> and <a class="sec_ref" href="#positioning_of_jukugoruby"></a>).</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e8632">熟語ルビ</span>：個々の親文字の読みとともに熟語としてのまとまりを重視して配置する（<a class="sec_ref" href="#positioning_of_jukugoruby_with_respect_to_base_characters"></a>及び<a class="sec_ref" href="#positioning_of_jukugoruby"></a>）．</p>
         </li>
         <li id="id215">
           <p its-locale-filter-list="en">Group-ruby : The connection between ruby letters and base characters is treated as group-to-group (see <a class="sec_ref" href="#positioning_of_groupruby_with_respect_to_base_characters"></a>).</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e8656">グループルビ</span>：複数の親文字で構成される語全体に掛かるように配置する（処理方法は<a class="sec_ref" href="#positioning_of_groupruby_with_respect_to_base_characters"></a>）．</p>
         </li>
       </ol>
       <p its-locale-filter-list="en">Because of different purposes and different functionalities, there are several complicated methods for ruby as follows:</p>
+      <p its-locale-filter-list="ja">このような複数の処理方法が必要になるのは，以下で説明するように<span class="index" id="d5e8676">ルビ</span>を付ける目的，ルビの役割の違いがあることによる．</p>
       <ol>
         <li id="id216">
           <p its-locale-filter-list="en"> PURPOSE: Ruby annotation with kana (usually <a class="characterClass" href="#cl-15">hiragana (cl-15)</a>) to provide readings of <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>.
             There are two types of ruby for this purpose depending on the type of base character: </p>
+          <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の読み方を示す主に<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>のルビを付ける．これには，次の2つがある．</p>
           <ol>
             <li id="id217">
               <p its-locale-filter-list="en"> Add one or more <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> ruby character to indicate the reading (Japanese onyomi or kunyomi) for each base <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> (see <a class="figure_ref" href="#fig2_3_2"></a>).
                 This method, attaching one or several hiragana or katakana characters for each base ideographic character, is called <a href="#term.mono-ruby" class="termref">mono-ruby</a>.</p>
-              <figure id="fig2_3_2"> 
+              <p its-locale-filter-list="ja">1文字の親文字（<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>）の音読み又は訓読みの読み方を示す1文字の<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>又は複数の<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>のルビを付ける（<a class="figure_ref" href="#fig2_3_2"></a>）．このように親文字列の1文字ごとに対応させたルビの処理方法を<a href="#term.mono-ruby" class="termref">モノルビ</a>という．</p>
+			  <figure id="fig2_3_2"> 
       <img its-locale-filter-list="en" src="images/img2_3_2.png" alt="Example of ruby annotation  per ideographic character." width="192" height="288">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_2.png" alt="漢字等の1字の読みを示すルビの例" width="169" height="288">
                 <figcaption>
         <span its-locale-filter-list="en">Example of ruby annotation  per ideographic character.</span>
+        <span its-locale-filter-list="ja">漢字等の1字の読みを示すルビの例</span>
         </figcaption>
 
               </figure>
             </li>
             <li id="id218">
               <p its-locale-filter-list="en">In the Japanese writing system, <a class="termref" href="#term.compound-word">kanji compound words</a> (jukugo) occasionally appear, usually constructed with a couple of <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>. There are two different methods of attaching ruby letters to base <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> for these compound words.</p>
+              <p its-locale-filter-list="ja">日本語表記では，複数の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>で構成された<a href="#term.compound-word" class="termref">熟語</a>をよく使う．この熟語を構成する個々の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>について，音読み又は訓読みの読み方を示す<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>のルビを付ける（このようなルビの使用例は多い）．このような<span class="index" id="d5e8806"><span class="index" id="d5e8807">熟語に付けるルビ</span></span>について，親文字とルビ文字との対応には，2つの方法がある．</p>
               <ol>
                 <li id="id219">
                   <p its-locale-filter-list="en"><a href="#term.mono-ruby" class="termref2nd">Mono-ruby</a>. Ruby letters are attached to each base <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>, similarly to the previous section (see <a class="figure_ref" href="#fig2_3_3"></a>).</p>
+                  <p its-locale-filter-list="ja">前項と同様に，個々の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>（親文字）の1文字ごとにそのルビを対応させる方法．つまり，<a href="#term.mono-ruby" class="termref2nd">モノルビ</a>としてルビを処理する方法である（<a class="figure_ref" href="#fig2_3_3"></a>）．</p>
                   <figure id="fig2_3_3"> 
       <img its-locale-filter-list="en" src="images/img2_3_3.png" alt="Example of mono-ruby method. Ruby letters are attached to each base ideographic character in a compound word." width="117" height="369">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_3.png" alt="熟語に付くルビをモノルビで処理した例" width="101" height="369">
                     <figcaption>
         <span its-locale-filter-list="en">Example of mono-ruby method. Ruby letters are attached to each base ideographic character in a compound word.</span>
+        <span its-locale-filter-list="ja">熟語に付くルビをモノルビで処理した例</span>
         </figcaption>
 
                   </figure>
                   <aside class="note" id="n105">
                     <p its-locale-filter-list="en">In <a class="figure_ref" href="#fig2_3_3"></a>, there is a <a href="#term.quarter-em-space" class="termref">quarter em space</a> between the base characters "凝" and "視". So when this line happens to appear in the middle of a paragraph, there needs to be some <a href="#term.line-adjustment" class="termref">line adjustment</a> processing.</p>
+                    <p its-locale-filter-list="ja"><a class="figure_ref" href="#fig2_3_3"></a>において，親文字の“凝”と“視”の<a href="#term.inter-character-space" class="termref">字間</a>が<a href="#term.quarter-em-space" class="termref">四分アキ</a>になっている．したがって，この行が段落の途中の行であった場合は，なんらかの<a href="#term.line-adjustment" class="termref">行の調整処理</a>が必要になる．</p>
                   </aside>
                 </li>
                 <li id="id220">
                   <p its-locale-filter-list="en"><a href="#term.jukugo-ruby" class="termref">Jukugo-ruby</a>. Pronunciation is indicated for each <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>, but the positioning takes into account the fact that together they make up a <a href="#term.compound-word" class="termref2nd">compound word</a> (see <a class="figure_ref" href="#fig2_3_4"></a>). The intention when using jukugo-ruby is to handle the <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> phrase as one object.</p>
+                  <p its-locale-filter-list="ja">個々の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の読み方を示すと同時に，熟語単位での配置も考慮して配置する方法（<a class="figure_ref" href="#fig2_3_4"></a>）．この方法は<span class="index" id="d5e8948"><a href="#term.jukugo-ruby" class="termref">熟語ルビ</a></span>とよばれている．熟語ルビは，熟語を構成する<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の1文字1文字の読み方を示すとともに，熟語としてのまとまりを持っているので，ルビもまとまりとして読める必要がある．熟語ルビは，熟語としてのまとまりを重視した配置方法といえる．</p>
                   <figure id="fig2_3_4"> 
       <img its-locale-filter-list="en" src="images/img2_3_4.png" alt="Example of jukugo-ruby method. Ruby letters are attached to groups of ideographic characters in compound words." width="242" height="360">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_4.png" alt="熟語に付くルビを熟語ルビで処理した例" width="250" height="360">
                     <figcaption>
         <span its-locale-filter-list="en">Example of jukugo-ruby method. Ruby letters are attached to groups of ideographic characters in compound words.</span>
-        </figcaption>
+        <span its-locale-filter-list="ja">熟語に付くルビを熟語ルビで処理した例</span>        </figcaption>
 
                   </figure>
                   <aside class="note" id="n106">
                     <p its-locale-filter-list="en">There is no difference between <a class="figure_ref" href="#fig2_3_3"></a> of <a href="#term.mono-ruby" class="termref2nd">mono-ruby</a> and <a class="figure_ref" href="#fig2_3_4"></a> of <a href="#term.jukugo-ruby" class="termref2nd">jukugo-ruby</a>, when the
                       number of ruby letters for each base <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> is one or two. When the mono-ruby approach is adopted, the inter-character space between base <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> can be expanded for line adjustment (in <a class="figure_ref" href="#fig2_3_3"></a>, the inter-character space between "鬼" and "門", or, "方" and "角" can be expanded). When the jukugo-ruby approach is  adopted, line adjustment cannot be applied to the base <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>.</p>
+                    <p its-locale-filter-list="ja"><a href="#term.mono-ruby" class="termref2nd">モノルビ</a>で処理した<a class="figure_ref" href="#fig2_3_3"></a>と<a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a>で処理した<a class="figure_ref" href="#fig2_3_4"></a>では，熟語を構成する個々の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に付くルビ文字がすべて2字以下の場合は，その配置位置の関係は同じになる．しかし，モノルビでルビを付けた場合には，ルビ付きの親文字間を行の調整処理で字間を空ける処理の対象としている（<a class="figure_ref" href="#fig2_3_3"></a>でいえば，“鬼”と“門”の字間，“方”と“角”との字間）．これに対し，熟語ルビでルビを付けた場合には，ルビ付きの親文字間を行の調整処理で字間を空ける処理の対象としない，という違いがある．</p>
                   </aside>
                   <aside class="note" id="n107">
                     <p its-locale-filter-list="en">The following examples show the relationship between ruby letters and base <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>.</p>
+                    <p its-locale-filter-list="ja"><span class="index" id="d5e9095">熟語に付けるルビとの対応関係の指示方法</span>について，“凝視”を例に概念として示せば，次のようになろう．</p>
                     <table class="t_sample">
                       <tbody><tr>
-                        <td class="ft"><p its-locale-filter-list="en">Example of mono-ruby:</p></td>
-                        <td><p its-locale-filter-list="en">"凝+(ぎよう)" "視+(し)"</p></td>
+                        <td class="ft">
+						<p its-locale-filter-list="en">Example of mono-ruby:</p>
+						<p its-locale-filter-list="ja">モノルビの例）</p>
+						</td>
+                        <td>
+						<p>"凝+(ぎよう)" "視+(し)"</p>
+						</td>
                       </tr>
                       <tr>
-                        <td class="ft"><p its-locale-filter-list="en">Example of jukugo-ruby 1:</p></td>
-                        <td><p its-locale-filter-list="en">"凝+(ぎよう) 視+(し)"</p></td>
+                        <td class="ft">
+						<p its-locale-filter-list="en">Example of jukugo-ruby 1:</p>
+						<p its-locale-filter-list="ja">熟語ルビの例1）</p>
+						</td>
+                        <td>
+						<p>"凝+(ぎよう) 視+(し)"</p>
+						</td>
                       </tr>
                       <tr>
-                        <td class="ft"><p its-locale-filter-list="en">Example of jukugo-ruby 2:</p></td>
-                        <td><p its-locale-filter-list="en">"(凝視)+(ぎよう/し)"</p></td>
+                        <td class="ft">
+						<p its-locale-filter-list="en">Example of jukugo-ruby 2:</p>
+						<p its-locale-filter-list="ja">熟語ルビの例2）</p>
+						</td>
+                        <td>
+						<p>"(凝視)+(ぎよう/し)"</p>
+						</td>
                       </tr>
                     </tbody></table>
                   </aside>
                   <aside class="note" id="n108">
                     <p its-locale-filter-list="en"> Books commonly adopt kana-based jukugo-ruby for ideographic <a href="#term.compound-word" class="termref2nd">compound words</a>. However, due to technical difficulties for rendering jukugo-ruby in machine-assisted text layout, the adoption of kana-based mono-ruby is increasing. For example, newspapers do not use jukugo-ruby, and study aids generally use mono-ruby because it is considered more important to show the readings of each <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> for students than to be concerned about the beauty of the layout.</p>
+                    <p its-locale-filter-list="ja"><a href="#term.compound-word" class="termref2nd">熟語</a>に付けるルビでは，書籍の場合は，熟語としてのまとまりを重視する配置方法が一般的である．ただし，コンピュータ組版の機械的な処理では，熟語としてのまとまりを重視する配置方法はむずかしく，そのような配置方法としない例も増えている．新聞などでも，熟語としてのまとまりを重視する配置方法にはしていない．なお，学習参考書などでは，個々の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の読み方を示すことが重要と考え，従来から個々の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の読み方を示すことを重視した配置方法としている．</p>
                   </aside>
                   <aside class="note" id="n109">
                     <p its-locale-filter-list="en"> Multiple ideographic <a href="#term.compound-word" class="termref2nd">compound words</a> can form one compound phrase. In this case, there are two ways to attach ruby, i.e. attaching ruby
                       to the compound phrase as a whole, or to each word which forms the compound (see <a class="figure_ref" href="#fig2_3_5"></a>). Similarly, a Japanese personal name consists of a given name and a family name, which together form a compound of a full
                       name, and it is an editorial decision whether to attach two runs of ruby, one each for given name and family name, or to attach the
                       full ruby text to the compound which represents the reading of the full name. </p>
+                    <p its-locale-filter-list="ja"><a href="#term.compound-word" class="termref2nd">熟語</a>としてのまとまりを重視する場合，<span class="index" id="d5e9243"><span class="index" id="d5e9244">複合語</span></span>のときは，その複合語全体を熟語1語として考えてルビを対応させる方法と，複合語を構成する熟語単位にルビを対応させる方法がある（<a class="figure_ref" href="#fig2_3_5"></a>）．<span class="index" id="d5e9250"><span class="index" id="d5e9251">氏名</span></span>の場合も姓名を一体としてルビを対応させる方法と，性と名を別の単位としてルビを対応させる方法がある．いずれにするかは編集方針による．</p>
                   </aside>
                   <figure id="fig2_3_5"> 
       <img its-locale-filter-list="en" src="images/img2_3_5.png" alt="Examples of ruby attachment for a compound phrase." width="284" height="126">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_5.png" alt="複合語に付けるルビの例" width="277" height="126">
                     <figcaption>
         <span its-locale-filter-list="en">Examples of ruby attachment for a compound phrase.</span>
+        <span its-locale-filter-list="ja">複合語に付けるルビの例</span>
         </figcaption>
 
                   </figure>
@@ -3462,11 +3503,14 @@
                     <p its-locale-filter-list="en"> In most cases, the reading of a ideographic compound word  is just a concatenation of the readings of each individual <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>, but some phrases
                       have their own native readings (known as jukuji readings) (see <a class="figure_ref" href="#fig2_3_6"></a>), which cannot be derived from the readings of each character. Attaching
                       ruby to those phrases, which are usually sequences of two or three <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>, is essentially the same as attaching ruby in <a class="characterClass" href="#cl-16">katakana (cl-16)</a> to <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> and/or <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> base characters  (see <a class="figure_ref" href="#fig2_3_6_2"></a>).</p>
+                    <p its-locale-filter-list="ja">熟語は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の1文字ごとに音読み又は訓読みするケースが多いが，中には熟語をまとめて訓読みする場合がある（<span class="index" id="d5e9317"><span class="index" id="d5e9318">熟字訓</span></span>という）（<a class="figure_ref" href="#fig2_3_6"></a>）．この場合は，親文字である2文字又は3文字の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の文字列にルビをまとめて付ければよいので，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>や<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などの親文字に<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>で構成された言葉をルビとして付ける場合（<a class="figure_ref" href="#fig2_3_6_2"></a>）と同じである．</p>
                   </aside>
                   <figure id="fig2_3_6"> 
       <img its-locale-filter-list="en" src="images/img2_3_6.png" alt="Examples of ruby for jukuji readings." width="227" height="108">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_6.png" alt="熟字訓のルビの例" width="227" height="108">
                     <figcaption>
         <span its-locale-filter-list="en">Examples of ruby for jukuji readings.</span>
+        <span its-locale-filter-list="ja">熟字訓のルビの例</span>
         </figcaption>
 
                   </figure>
@@ -3477,10 +3521,13 @@
         </li>
         <li id="id221">
           <p its-locale-filter-list="en">PURPOSE: Ruby annotation that annotates a <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> or <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> word with <a class="characterClass" href="#cl-16">katakana (cl-16)</a> to provide its meaning, together with it's reading. In terms of ruby layout, attaching ruby text to a single character in <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> is essentially the same as attaching the reading to a <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> (e.g. attaching ruby text "バザール", 'Bazaar', in <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a> to a <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> "市" is just like attaching the reading "いち" to that character). When attaching <a class="characterClass" href="#cl-16">katakana (cl-16)</a> ruby text to a run of base text consisting of two or more characters in <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> and/or <a class="characterClass" href="#cl-15">hiragana (cl-15)</a>, the ruby text needs to be positioned as if it corresponds to the annotated text itself, no matter how the ruby characters are distributed across each base character. The most typical example of this is attaching ruby text to a kanji compound word to indicate a corresponding loan word in katakana (see <a class="figure_ref" href="#fig2_3_6_2"></a>). The use of ruby text of this kind is on the increase in proportion to the growing need for translations and loan words. This type of ruby, namely ruby letters that are attached to two or more base characters as one object (note that ruby characters are not limited to <a class="characterClass" href="#cl-16">katakana (cl-16)</a>. <a class="figure_ref" href="#fig2_3_6"></a> and <a class="figure_ref" href="#fig2_3_7"></a>), is called <a class="termref" href="#term.group-ruby">group-ruby</a>. Group-ruby and it's base characters are unbreakable, because of their behavior as one object (it is possible to break a line in the middle of the base characters where <a class="termref2nd" href="#term.jukugo-ruby">jukugo-ruby</a> is in use).</p>
+          <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-19">漢字等（cl-19）</a>や<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などの<span class="index" id="d5e9422"><span class="index" id="d5e9423">言葉（語）</span></span>に，ルビとして別な言葉を<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>で示す（読み方を示すのではなく，意味を示すルビを付けるということでもある）．<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の1字の言葉に別の言葉を対応させる場合（例えば，“市”に“バザール”というルビを付ける）は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の1字の読み方を示した場合（例えば，“市”に“いち”というルビを付ける）と同じように考えればよいが，2文字以上の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>や<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などの親文字列に<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>のルビを付ける場合は，個々の親文字とルビとの対応は問題とならず，親文字列全体に対してルビ文字列を対応させる必要がある．このケースで最も多い例は，親文字である<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の熟語に対し，それとほぼ同じ意味の外来語である<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>で構成された言葉をルビとして示す場合である（<a class="figure_ref" href="#fig2_3_6_2"></a>）．翻訳が増大し，また片仮名語が増えていることから，このようなルビの使用例は多くなっている．このように2文字以上の親文字列全体にまとめて付けるルビ（ルビ文字列は<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>に限らない．<a class="figure_ref" href="#fig2_3_6"></a>及び<a class="figure_ref" href="#fig2_3_7"></a>）は，<span class="index" id="d5e9473"><a href="#term.group-ruby" class="termref">グループルビ</a></span>とよばれている．グループルビは，一体として扱い，2行に分割できない（<a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a>は，親文字列の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の字間で2行に分割できる）．</p>
           <figure id="fig2_3_6_2"> 
       <img its-locale-filter-list="en" src="images/img2_3_6_2.png" alt="Examples of ruby for compound ideographic character words to indicate corresponding words in katakana." width="317" height="147">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_6_2.png" alt="漢字等の熟語に片仮名を付けたルビの例" width="317" height="147">
             <figcaption>
         <span its-locale-filter-list="en">Examples of ruby for compound ideographic character words to indicate corresponding words in katakana.</span>
+        <span its-locale-filter-list="ja">漢字等の熟語に片仮名を付けたルビの例</span>
         </figcaption>
 
           </figure>
@@ -3488,6 +3535,7 @@
             <p its-locale-filter-list="en"> Having said that, the layout of ruby text to a single <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> is not entirely the same depending on the use of ruby, and may differ according to
               whether it is for indicating the reading or the meaning. In fact, the <a href="#term.katatsuki" class="termref">katatsuki</a>, one of ruby layout per character which will
               be described in the later section, does allow the <a href="#term.nakatsuki" class="termref">nakatsuki</a> layout for those ruby which indicate  meaning. </p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の1字に対し，読み方を示すルビを付ける場合と，意味を示すルビを付ける場合の組版処理がまったく同じというわけではない．後述する<a href="#term.katatsuki" class="termref">肩付き</a>という方式を選んだ場合でも，意味を示すルビは<a href="#term.nakatsuki" class="termref">中付き</a>にするという考え方もある．</p>
           </aside>
         </li>
         <li id="id222">
@@ -3495,113 +3543,155 @@
             base text (see <a class="figure_ref" href="#fig2_3_7"></a>).
             There are opposite cases where a synonymous Western word in Latin characters is attached as a ruby annotation to a Japanese
             word in <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> or <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> and so on (see <a class="figure_ref" href="#fig2_3_7"></a>). These cases are less used than a and b, however they are quite common in study guides, translated books and travel guides. </p>
+          <p its-locale-filter-list="ja">親文字である<span class="index" id="d5e9635"><span class="index" id="d5e9636">欧文の単語</span></span>の読み方又は意味を示す言葉（一般に<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>）をルビとして付ける（<a class="figure_ref" href="#fig2_3_7"></a>）．逆に親文字である<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>や<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などの言葉に，それと同じ意味を示す欧文の単語をルビとして付ける（<a class="figure_ref" href="#fig2_3_7"></a>）．この例は，aやbに比べると使用例は少ないが，学習参考書，翻訳書，旅行案内などではよく利用されている．</p>
           <figure id="fig2_3_7"> 
       <img its-locale-filter-list="en" src="images/img2_3_7.png" alt="Examples of Latin characters used either in  base text or ruby text for Western words." width="250" height="185">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_7.png" alt="親文字又はルビが欧文の単語の例" width="250" height="185">
             <figcaption>
         <span its-locale-filter-list="en">Examples of Latin characters used either in  base text or ruby text for Western words.</span>
+        <span its-locale-filter-list="ja">親文字又はルビが欧文の単語の例</span>
         </figcaption>
 
           </figure>
           <aside class="note" id="n112">
             <p its-locale-filter-list="en"> There is no difference in the positioning of ruby text whether attaching ruby characters in <a class="characterClass" href="#cl-16">katakana (cl-16)</a> or <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> to a Western word in Latin characters or attaching ruby in Latin to a Japanese word in <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> or <a class="characterClass" href="#cl-15">hiragana (cl-15)</a>. The ruby text in either case should be positioned relative to a run of base text to be annotated as in b). However, there is a difference in cases where the lengths of the base text and the ruby text are different. Details are described in <a class="sec_ref" href="#adjustments_of_ruby_with_length_longer_than_that_of_the_base_characters">3.3.8 Adjustments of Ruby with Length Longer than that of the Base Characters</a>. When the length of a ruby text in <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>, <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a> is shorter than the corresponding base text, the ruby text is, in general, stretched by adding inter-character spaces between ruby characters, and when the length of a ruby text in <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>, <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a> is longer than the corresponding base text, the base text is, in general, stretched by adding inter-character spaces between base characters, so that the ruby and base text look similar in length (see <a class="figure_ref" href="#fig2_3_6_2"></a>). On the other hand, when the base text or ruby text is Latin word, the word is set with western solid setting, and no inter-character space will be added to any ruby or base text in Latin characters no matter how different the ruby and base text look in length (see <a class="figure_ref" href="#fig2_3_7"></a>). Details will be explained later.</p>
+            <p its-locale-filter-list="ja">親文字としての複数の欧字の文字列に<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>若しくは<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>のルビを付ける又は複数の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>や<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>の親文字列に欧字のルビを付ける処理は，bと同様に親文字列全体にまとめてルビを対応させるという点では同じである．しかし，親文字とルビの文字列の長さが同じでないときは，詳細は<a class="sec_ref" href="#adjustments_of_ruby_with_length_longer_than_that_of_the_base_characters"></a>で解説するが，親文字及びルビが<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>又は<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の場合は，その字間を空けて長さのバランスをとる処理を一般に行う（<a class="figure_ref" href="#fig2_3_6_2"></a>）．これに対し，親文字又はルビが欧文の単語の場合は，親文字とルビの文字列の長さが不ぞろいであっても，親文字列の欧字又はルビ文字列の欧字は，それぞれの文字の固有の字幅に応じて配置し字間は空けない，という違いがある（<a class="figure_ref" href="#fig2_3_7"></a>）．</p>
           </aside>
         </li>
         <li id="id223">
           <p its-locale-filter-list="en"> PURPOSE:  Ruby annotation using <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> for a base text word in <a class="characterClass" href="#cl-15">hiragana (cl-15)</a>. This is called <a href="#term.furikanji" class="termref">furikanji</a>, and is very rarely found.</p>
+          <p its-locale-filter-list="ja">親文字である<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などにルビとして<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>を付ける（<span class="index" id="d5e9829"><a href="#term.furikanji" class="termref">振り漢字</a></span>という）．この使用例は非常に少ない．</p>
         </li>
       </ol>
       <p its-locale-filter-list="en"> Hereafter, mainly the usage of (a) and (b) will be explained.</p>
+      <p its-locale-filter-list="ja"> 以下では，主にa，bのルビの組版処理について解説する．</p>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="choice_of_base_characters_to_be_annotated_by_ruby">
 <span its-locale-filter-list="en">Choice of Base Characters to be Annotated by Ruby</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">ルビをどのような言葉に，どのように付けるかは各種の方法がある．</span>
 </h4>
       <p its-locale-filter-list="en"> There are several methods of choosing how to attach ruby annotations to which base characters. </p>
       <ol>
         <li id="id224">
           <p its-locale-filter-list="en"> '<a href="#term.general-ruby" class="termref">General-ruby</a>' is the method of attaching ruby annotations to all  base characters in <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>.</p>
+          <p its-locale-filter-list="ja">出てくる<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>のすべてにルビを付ける方式を<span class="index" id="d5e9896"><a href="#term.general-ruby" class="termref">総ルビ</a></span>という．</p>
         </li>
         <li id="id225">
-          <p its-locale-filter-list="en"> '<a href="#term.para-ruby" class="termref">Para-ruby</a>' is the method of attaching ruby annotations to only those base characters in <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> for which readings are
-            difficult. </p>
+          <p its-locale-filter-list="en"> '<a href="#term.para-ruby" class="termref">Para-ruby</a>' is the method of attaching ruby annotations to only those base characters in <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> for which readings are difficult. </p>
+          <p its-locale-filter-list="ja">出てくる<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>のすべてではなく，読み方がむずかしい一部の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>のみに付ける方式を<span class="index" id="d5e9927"><a href="#term.para-ruby" class="termref">パラルビ</a></span>という．</p>
           <aside class="note" id="n113">
             <p its-locale-filter-list="en"> The '<a href="#term.para-ruby" class="termref2nd">para-ruby</a>' method is further divided into the method of attaching ruby annotations regardless of multiple occurrences of
               the same base <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>, and the method of attaching ruby annotations to only the first instance of the same base <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>. Furthermore, the latter method has several variations in counting the first instance for the entire book,
               each chapter, or each <a href="#term.spread" class="termref">spread</a>, etc. </p>
+            <p its-locale-filter-list="ja"><a href="#term.para-ruby" class="termref2nd">パラルビ</a>の場合，出てくるむずかしい同じ<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>のすべてにルビを付ける方式と，むずかしい<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の初出のものに限りルビを付ける方式とがある．初出も，本ごとの初出，章ごとの初出，<a href="#term.spread" class="termref">見開き</a>ページごとの初出など，いくつかの方式がある．</p>
           </aside>
         </li>
       </ol>
       <p its-locale-filter-list="en"> Note that ruby should be attached to all <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> in a compound word, to reflect the unitary nature of the text. To attach ruby to only some of the <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> in a compound word is not recommended (see <a class="figure_ref" href="#fig2_3_8"></a>).</p>
+      <p its-locale-filter-list="ja"> なお，熟語は，まとまりとして読むものなので，<span class="index" id="d5e10008">熟語にルビを付ける場合</span>，熟語を構成する一部のむずかしい<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>にのみルビを付けるのではなく，熟語を構成するすべての<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の読み方を示すのが望ましい（<a class="figure_ref" href="#fig2_3_8"></a>）．</p>
       <figure id="fig2_3_8"> 
       <img its-locale-filter-list="en" src="images/img2_3_8.png" alt="Examples of ruby on kanji characters in a compound word. (Left side, recommended. Right side, not recommended.)" width="160" height="180">
-        <figcaption>
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_8.png" alt="熟語に付けるルビの例 （左側：望ましい例．右側：望ましくない例）" width="160" height="180">        <figcaption>
         <span its-locale-filter-list="en">Examples of ruby on kanji characters in a compound word. (Left side, recommended. Right side, not recommended.)</span>
+        <span its-locale-filter-list="ja">熟語に付けるルビの例（左側：望ましい例．右側：望ましくない例）</span>
         </figcaption>
 
       </figure>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="choice_of_size_for_ruby_characters">
 <span its-locale-filter-list="en">Choice of Size for Ruby Characters</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">ルビの文字サイズ</span>
 </h4>
       <p its-locale-filter-list="en"> The <a href="#term.character-size" class="termref">character size</a> of ruby characters is, in principle, the half size of the base characters (see <a class="figure_ref" href="#fig2_3_9"></a>). </p>
+      <p its-locale-filter-list="ja">ルビの<a href="#term.character-size" class="termref">文字サイズ</a>は，原則として親文字の文字サイズの1/2とする（<a class="figure_ref" href="#fig2_3_9"></a>）．</p>
       <figure id="fig2_3_9"> 
       <img its-locale-filter-list="en" src="images/img2_3_9.png" alt="Examples of ruby with half the size of the base characters." width="394" height="150">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_9.png" alt="ルビの文字サイズを1/2とした例" width="395" height="145">
         <figcaption>
         <span its-locale-filter-list="en">Examples of ruby with half the size of the base characters.</span>
+        <span its-locale-filter-list="ja">ルビの文字サイズを1/2とした例</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en"> The '<a href="#term.one-third-ruby" class="termref">one-third-ruby</a>' characters are  used on rare occasions to attach three ruby characters to one <a href="#term.full-width" class="termref">full-width</a> <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>. One-third-ruby for vertical layout has the dimension of the half of the base character in width and the one third in height. Those
         for horizontal writing mode have the dimension of half of the base characters in height and one third in width (see <a class="figure_ref" href="#fig2_3_10"></a>). </p>
+      <p its-locale-filter-list="ja"><a href="#term.full-width" class="termref">全角</a>の<a href="#term.character-advance" class="termref">字幅</a>の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>にルビ文字を3字付ける場合に使用している<span class="index" id="d5e10133"><a href="#term.one-third-ruby" class="termref">三分ルビ</a></span>とよばれるルビもある（使用例は少ない）．縦組用の三分ルビは，ルビ文字の左右の幅は親文字の1/2とするが，ルビ文字の天地サイズを親文字の1/3とする．横組用の三分ルビは，ルビ文字の天地サイズは親文字の1/2とするが，ルビ文字の左右の幅は親文字の1/3とする（<a class="figure_ref" href="#fig2_3_10"></a>）．</p>
       <figure id="fig2_3_10"> 
-      <img its-locale-filter-list="en" src="images/img2_3_10.png" alt="Examples of one third ruby." width="230" height="233">
+      <img its-locale-filter-list="en" src="images/img2_3_10.png" alt="Examples of one third ruby." width="230" height="233">      <img its-locale-filter-list="ja" src="images_ja/img2_3_10.png" alt="三分ルビの例" width="230" height="237">
         <figcaption>
         <span its-locale-filter-list="en">Examples of one third ruby.</span>
+        <span its-locale-filter-list="ja">三分ルビの例</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en"> When ruby is attached to twelve point or larger base characters (usually used for headings), the size of the ruby letter is generally smaller than half the size of the base characters, considering the proportion of the sizes
         of base characters and ruby. When all is said and done, these cases are very rare.</p>
+      <p its-locale-filter-list="ja">また，12ポイント以上の<span class="index" id="d5e10184">大きな文字サイズの<a href="#term.heading" class="termref">見出し</a>などにルビを付ける場合</span>（用例は少ない），親文字とルビとのバランスを考慮し，ルビ文字のサイズは一般に親文字の文字サイズの1/2より小さくしている．</p>
       <figure id="fig2_3_11"> 
       <img its-locale-filter-list="en" src="images/img2_3_11.png" alt="Examples of ruby at a size smaller than half the size of the base characters." width="269" height="218">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_11.png" alt="親文字の文字サイズの1/2より小さくしたルビの例" width="269" height="218">
         <figcaption>
         <span its-locale-filter-list="en">Examples of ruby at a size smaller than half the size of the base characters.</span>
+        <span its-locale-filter-list="ja">親文字の文字サイズの1/2より小さくしたルビの例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n114">
         <p its-locale-filter-list="en"> There are cases where the body size is twelve points in books designed for infants or aged people. In these cases, the
           size of ruby can be six points, exactly the half size of the base characters. </p>
+        <p its-locale-filter-list="ja">幼児又は高齢者向けの本で，本文の文字サイズを12ポイントとする例もある．この場合のルビの文字サイズは親文字の文字サイズの1/2の6ポイントでよい．</p>
       </aside>
       <aside class="note" id="n115">
         <p its-locale-filter-list="en"> When the size of base characters is very small (for e.g. smaller than seven points), ruby which is half the
           size, will be even more small and illegible. In such cases where the size of base characters is very small, ruby is not
           a suitable method of annotation. In those cases, consider other annotation methods such as adding the reading in parenthesis immediately
           after the base character. </p>
+        <p its-locale-filter-list="ja"><span class="index" id="d5e10264">親文字の文字サイズが小さい場合</span>（例えば7ポイント未満の場合），ルビ文字はその1/2でさらに小さくなり，可読性を損なう．そこで親文字の文字サイズが小さい場合は，ルビを付けることは望ましくない．親文字の直後に括弧を付けて読み方などを示すという方法をとるとよい．</p>
       </aside>
       <aside class="note" id="n116">
         <p its-locale-filter-list="en"> Slightly different from the question of the size of ruby, there is a question of whether or not <a class="characterClass" href="#cl-11">small kana (cl-11)</a> characters should be used
           in ruby annotations. Because the size is so small, there was no choice of using small kana in <a href="#term.letterpress-printing" class="termref">letterpress printing</a>.
           Today there are cases where small kana are used in ruby annotations, but taking legibility into consideration, these cases should be
           limited to those where accurate readings are needed, such as for proper nouns. </p>
+        <p its-locale-filter-list="ja">ルビの文字サイズとはやや異なる事項であるが，<span class="index" id="d5e10294"><span class="index" id="d5e10295">ルビに<a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a>を使用</span></span>するかどうかも問題となる．ルビ文字は小さいので，<a href="#term.letterpress-printing" class="termref">活字組版</a>では，そもそもルビ文字には小書きの仮名は準備されていなかった（使用できなかった）．今日ではルビに小書きの仮名を使用する例もあるが，可読性を考慮すると，小書きの仮名のルビは，特定の読みを限定したい固有名詞などに限り使用するのが望ましい．</p>
       </aside>
     </section>
+
+
+
+
+
     <section>
       <h4 id="choice_of_sides_for_ruby_with_respect_to_base_characters">
 <span its-locale-filter-list="en">Choice of Sides for Ruby with Respect to Base Characters</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">親文字のどちら側にルビを付けるか</span>
 </h4>
       <p its-locale-filter-list="en"> In principle, ruby is attached to the right of base characters in vertical writing mode, and above in horizontal writing mode. </p>
+      <p its-locale-filter-list="ja">縦組の場合，ルビは親文字の右側，横組の場合，ルビは親文字の上側に付けるのが原則である．</p>
       <p its-locale-filter-list="en"> In some special cases, ruby can be seen to the left of base characters in vertical writing mode, and below in horizontal writing mode, but this is very rare. </p>
+      <p its-locale-filter-list="ja">特別な場合は，縦組でルビは親文字の左側，横組ではルビは親文字の下側に付ける例があるが，そのように付ける例は非常に少ない．</p>
       <p its-locale-filter-list="en"> There are cases where two kinds of ruby are attached, one to either side of the base characters, one for readings and the other for
         meanings (see <a class="figure_ref" href="#fig2_3_12"></a>). This is also very rare. </p>
+      <p its-locale-filter-list="ja">また，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の読みを示すルビと意味を示すルビといったように両側に付ける例（<a class="figure_ref" href="#fig2_3_12"></a>）もあるが，このように付ける例も非常に少ない．</p>
       <figure id="fig2_3_12"> 
       <img its-locale-filter-list="en" src="images/img2_3_12.png" alt="An example of ruby attached to both sides of the base characters." width="72" height="180">
-        <figcaption>
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_12.png" alt="親文字の両側にルビを付けた例" width="72" height="180">        <figcaption>
         <span its-locale-filter-list="en">An example of ruby attached to both sides of the base characters.</span>
+        <span its-locale-filter-list="ja">親文字の両側にルビを付けた例</span>
         </figcaption>
 
       </figure>
@@ -3609,35 +3699,50 @@
         base characters, and they will be attached to the right in vertical writing mode and above in horizontal writing mode. First we look at
         the basic composition rules of <a href="#term.mono-ruby" class="termref2nd">mono-ruby</a>, <a href="#term.group-ruby" class="termref2nd">group-ruby</a> and <a href="#term.jukugo-ruby" class="termref2nd">jukugo-ruby</a>, then the rules of positioning of ruby with respect to
         those characters which come before and after the base characters, and finally the composition rules at the <a href="#term.line-head" class="termref">line head</a> and at the <a href="#term.line-end" class="termref">line end</a>. </p>
+      <p its-locale-filter-list="ja">以下では，ルビの文字サイズを親文字の文字サイズの1/2とし，縦組では親文字の右側，横組では親文字の上側にルビを付ける場合に限定し，その配置方法を解説する．最初に<a href="#term.mono-ruby" class="termref2nd">モノルビ</a>，<a href="#term.group-ruby" class="termref2nd">グループルビ</a>及び<a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a>の親文字とルビ文字の原則的な配置方法を解説し，その後で，前後に配置する文字との関係，さらに<a href="#term.line-head" class="termref">行頭</a>・<a href="#term.line-end" class="termref">行末</a>における配置方法を解説する．</p>
     </section>
-    <section>
+
+
+
+
+
+
+<section>
       <h4 id="positioning_of_monoruby_with_respect_to_base_characters">
 <span its-locale-filter-list="en">Positioning of Mono-ruby with Respect to Base Characters</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">モノルビの親文字に対する配置位置</span>
 </h4>
       <p its-locale-filter-list="en"> When <a href="#term.mono-ruby" class="termref2nd">mono-ruby</a> characters are Japanese, they are <a href="#term.solid-setting" class="termref">set solid</a>. If mono-ruby characters have their own character widths such as
         Western characters or <a href="#term.european-numerals" class="termref">European numerals</a>, they are set according to their own widths and then the ruby text is placed so that its center
         matches that of its base character. There are more variations depending on the combination of the base character
         and ruby text and accordingly various composition rules have been invented, which will be explained with examples. </p>
+      <p its-locale-filter-list="ja"><a href="#term.mono-ruby" class="termref2nd">モノルビ</a>の場合，モノルビのルビ文字列は<a href="#term.solid-setting" class="termref">ベタ組</a>とし，ルビ文字列が欧字や<a href="#term.european-numerals" class="termref">アラビア数字</a>など固有の字幅を持つ文字の場合には，それぞれの文字の固有の字幅に応じて配置する．そのうえで，親文字列とルビ文字列の中央をそろえて配置することが原則である．しかし，親文字とルビの組合せに種々の例があり，様々な工夫もされているので，例を挙げながら解説する．</p>
       <p its-locale-filter-list="en"> When attaching two <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> ruby characters to a single base character, the lengths of the ruby text and the base text are the same and they are positioned as shown
         in <a class="figure_ref" href="#fig2_3_13"></a>. </p>
       <figure id="fig2_3_13"> 
+      <p its-locale-filter-list="ja">親文字1文字に<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>のルビ文字が2字付く場合は，親文字の長さとルビ文字の文字列の長さはそろい，<a class="figure_ref" href="#fig2_3_13"></a>のようになる．</p>
       <img its-locale-filter-list="en" src="images/img2_3_13.png" alt="An example of composition with two ruby characters." width="195" height="147">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_13.png" alt="ルビ文字が2字の場合の配置例" width="195" height="108">
         <figcaption>
         <span its-locale-filter-list="en">An example of composition with two ruby characters.</span>
+        <span its-locale-filter-list="ja">ルビ文字が2字の場合の配置例</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en"> When attaching a single <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> ruby character to a single base character, there are two ways of positioning the ruby character. </p>
+      <p its-locale-filter-list="ja">親文字1文字に付く<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>のルビ文字が1字の場合は，次の2つの方法がある．</p>
       <ol>
         <li id="id226">
           <p its-locale-filter-list="en"> In <a href="#term.vertical-writing-mode" class="termref2nd">vertical writing mode</a>, attach a ruby character so that its vertical center matches that of the base character (see <a class="figure_ref" href="#fig2_3_14"></a>).
             In <a href="#term.horizontal-writing-mode" class="termref2nd">horizontal writing mode</a>, attach a ruby character so that its horizontal center matches that of the base character (see <a class="figure_ref" href="#fig2_3_14"></a>).
             This positioning of a ruby character is called '<a href="#term.nakatsuki" class="termref">nakatsuki</a>' (center-alignment). </p>
+          <p its-locale-filter-list="ja">縦組においては親文字の天地中央とルビ文字の天地中央をそろえて配置する（<a class="figure_ref" href="#fig2_3_14"></a>）．横組においては親文字の左右中央とルビ文字の左右中央をそろえて配置する（<a class="figure_ref" href="#fig2_3_14"></a>）．この配置方法は，<span class="index" id="d5e10550"><a href="#term.nakatsuki" class="termref">中付き</a>（中付きルビ）</span>とよばれている．</p>
           <figure id="fig2_3_14"> 
       <img its-locale-filter-list="en" src="images/img2_3_14.png" alt="Examples of nakatsuki and katatsuki alignment." width="453" height="454">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_14.png" alt="中付きと肩付きの例" width="453" height="361">
             <figcaption>
         <span its-locale-filter-list="en">Examples of nakatsuki and katatsuki alignment.</span>
+        <span its-locale-filter-list="ja">中付きと肩付きの例</span>
         </figcaption>
 
           </figure>
@@ -3648,10 +3753,13 @@
             For horizontal writing mode, '<a href="#term.katatsuki" class="termref2nd">katatsuki</a>' should not be adopted. If a ruby character is attached so that the left-edge of its virtual
             body is aligned with the left-edge of that of the base character, it would result in the loss of the center of balance, which
             doesn't look good (see <a class="figure_ref" href="#fig2_3_15"></a>). </p>
+          <p its-locale-filter-list="ja">縦組においては親文字の上端とルビ文字の上端をそろえて配置する（<a class="figure_ref" href="#fig2_3_14"></a>）．この配置方法は，<span class="index" id="d5e10606"><a href="#term.katatsuki" class="termref">肩付き</a>（肩付きルビ）</span>とよばれている．なお，横組では，肩付きの配置方法にはしない．横組において親文字の左端とルビ文字の左端をそろえて配置すると，左右のバランスが壊れ，体裁がよくないからである（<a class="figure_ref" href="#fig2_3_15"></a>）．</p>
           <figure id="fig2_3_15"> 
       <img its-locale-filter-list="en" src="images/img2_3_15.png" alt="Example of katatsuki alignment in horizontal layout (this is intentionally wrong and should not be applied)." width="370" height="139">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_15.png" alt="横組で肩付きとした例 （このような配置法にはしない）" width="265" height="139">
             <figcaption>
         <span its-locale-filter-list="en">Example of katatsuki alignment in horizontal layout (this is intentionally wrong and should not be applied).</span>
+        <span its-locale-filter-list="ja">横組で肩付きとした例（このような配置法にはしない）</span>
         </figcaption>
 
           </figure>
@@ -3661,43 +3769,53 @@
         <p its-locale-filter-list="en"> Katatsuki alignment was commonly used in the <a href="#term.letterpress-printing" class="termref2nd">letterpress printing</a> era, but today the adoption of nakatsuki alignment is increasing
           even in vertical writing mode. However, there is still an opinion favoring katatsuki alignment, because it is familiar and
           readable. </p>
+        <p its-locale-filter-list="ja">活字組版においては，肩付きとする方法が一般的であったが，今日では縦組においても中付きとする方法が徐々に増えている．ただし，親文字とルビの上端をそろえた肩付きの方が慣れており，読みやすいという意見もある．</p>
       </aside>
       <p its-locale-filter-list="en"> When attaching three or more <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> ruby characters to a single base character, the ruby characters are set solid. In this
         case, where the length of a ruby text is longer than that of its base character, positioning of the ruby text depends
         on which alignment has been adopted for a single ruby character. There is another issue: how to maintain the spatial balance
         of the ruby characters hanging over those characters which are not related base characters. The adjustment of inter-character
         spacing for those characters which come before and after the base character will be explained in <a class="sec_ref" href="#adjustments_of_ruby_with_length_longer_than_that_of_the_base_characters">3.3.8 Adjustments of Ruby with Length Longer than that of the Base Characters</a>. </p>
+      <p its-locale-filter-list="ja">親文字1文字に<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>の<span class="index" id="d5e10695">ルビ文字が3字以上付く場合</span>は，ルビ文字列はベタ組にする．しかし，親文字列よりルビ文字列が長くなるので，その配置位置が問題となる．ルビ文字が1字の場合にどの方法を採用したかにより異なる．一般に次のようにしている．なお，親文字からルビがはみ出した場合における前後にくる文字との字間処理は<a class="sec_ref" href="#adjustments_of_ruby_with_length_longer_than_that_of_the_base_characters"></a>で解説する．</p>
       <ol>
         <li id="id228">
           <p its-locale-filter-list="en"> When nakatsuki alignment is adopted for a single ruby character, position a ruby text so that its vertical center is aligned
             with that of its base character in vertical writing mode (see <a class="figure_ref" href="#fig2_3_16"></a>). In horizontal writing mode, position a ruby text so that its horizontal center is aligned with that of its base character
             (see <a class="figure_ref" href="#fig2_3_16"></a>). </p>
+          <p its-locale-filter-list="ja">縦組において，ルビ文字が1字の配置方法を中付きとした場合は，親文字の天地中央とルビ文字列全体の天地中央をそろえて配置する（<a class="figure_ref" href="#fig2_3_16"></a>）．横組においては親文字の左右中央とルビ文字列全体の左右中央をそろえて配置する（<a class="figure_ref" href="#fig2_3_16"></a>）．</p>
           <figure id="fig2_3_16"> 
       <img its-locale-filter-list="en" src="images/img2_3_16.png" alt="Example 1 of positioning of ruby text with three or more  characters." width="223" height="342">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_16.png" alt="親文字にルビ文字が3字以上付く場合の配置例1" width="234" height="266">
             <figcaption>
         <span its-locale-filter-list="en">Example 1 of positioning of ruby text with three or more  characters.</span>
+        <span its-locale-filter-list="ja">親文字にルビ文字が3字以上付く場合の配置例1</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id229">
           <p its-locale-filter-list="en"> When katatsuki alignment is adopted for a single ruby character, there are two methods, as follows. </p>
+          <p its-locale-filter-list="ja">縦組においてルビ文字が1字の配置方法を肩付きとした場合は，次の2つの方法がある．</p>
           <ol>
             <li id="id230">
               <p its-locale-filter-list="en"> Position the ruby text so that its vertical center is aligned with that of its base character (see <a class="figure_ref" href="#fig2_3_16"></a>).</p>
+              <p its-locale-filter-list="ja">親文字の天地中央とルビ文字列全体の天地中央をそろえて配置する（<a class="figure_ref" href="#fig2_3_16"></a>）．</p>
             </li>
             <li id="id231">
               <p its-locale-filter-list="en"> Depending on the type of script of the adjacent characters to the base character, and the number of ruby characters, a decision
                 is made about whether  ruby hangover is allowed on the character before its base character, or on the character after, or
                 on both adjacent characters. At break-even situation, the hangover is usually on the character after its base character (see <a class="figure_ref" href="#fig2_3_17"></a>). </p>
+              <p its-locale-filter-list="ja">親文字の前後に配置する文字の種類及びルビ文字の字数により親文字からのルビのはみ出しが後ろになるか，前になるか，又は両側になるかを決めるが，下側へのはみ出しを優先する（<a class="figure_ref" href="#fig2_3_17"></a>）．</p>
             </li>
           </ol>
         </li>
       </ol>
       <figure id="fig2_3_17"> 
       <img its-locale-filter-list="en" src="images/img2_3_17.png" alt="Example 2 of positioning of ruby text with three or more characters (vertical writing mode)." width="437" height="293">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_17.png" alt="親文字にルビ文字が3字以上付く場合の配置例2 （縦組）" width="437" height="275">
         <figcaption>
         <span its-locale-filter-list="en">Example 2 of positioning of ruby text with three or more characters (vertical writing mode).</span>
+        <span its-locale-filter-list="ja">親文字にルビ文字が3字以上付く場合の配置例2（縦組）</span>
         </figcaption>
 
       </figure>
@@ -3706,40 +3824,57 @@
           to a single base character. However there are cases where the meaning is stretched so that the terms can be used when
           three or more ruby characters are involved. We use the terms katatsuki and nakatsuki with their original meaning throughout
           this document. </p>
+        <p its-locale-filter-list="ja">肩付きと中付きは，従来は親文字1字で，かつルビ文字が1字の場合のルビの配置方法についてのみ使用されていた用語である．しかし，ルビ文字が3字以上の場合についても拡大解釈して使用する例もある．この文書では，肩付き及び中付きという用語は，本来の意味に限定して使用している．</p>
       </aside>
       <aside class="note" id="n119">
         <p its-locale-filter-list="en"> The preference for the choice of hanging the ruby over the character after its base character is due to the preference
           to avoid adjustment of inter-character spacing between base characters and their adjacent characters, which was common
           in letterpress printing. </p>
+        <p its-locale-filter-list="ja">ルビ文字が3字以上付いた場合，下側へのはみ出しを優先するという方法は，親文字の字間及びその前後の字間をできるだけ空けない処理をするという考え方からのものである．活字組版で行われていた方法である．</p>
       </aside>
       <p its-locale-filter-list="en">For <a href="#term.mono-ruby" class="termref2nd">mono-ruby</a>, base characters and   attached  ruby characters are handled as one object, and internal line-breaks are prohibited.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e10905"><span class="index" id="d5e10906"><a href="#term.mono-ruby" class="termref2nd">モノルビ</a></span></span>の場合，親文字とそれに付くルビ文字の文字列は，一体として扱い，2行に分割してはならない．</p>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="positioning_of_groupruby_with_respect_to_base_characters">
 <span its-locale-filter-list="en">Positioning of Group-ruby with Respect to Base Characters</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">グループルビの親文字に対する配置位置</span>
 </h4>
       <p its-locale-filter-list="en"> When the length of a sequence of base characters (number of characters * advance-width of each character) and that
         of the ruby text are the same, each text is set solid and the center of both texts are aligned with each other (see <a class="figure_ref" href="#fig2_3_18"></a>). </p>
+      <p its-locale-filter-list="ja">親文字の文字列の長さとルビ文字の文字列の長さが同じ場合は，それぞれの文字列をベタ組にし，文字列の中心をそろえて配置する（<a class="figure_ref" href="#fig2_3_18"></a>）．</p>
       <figure id="fig2_3_18"> 
       <img its-locale-filter-list="en" src="images/img2_3_18.png" alt="Examples of group-ruby where the length is the same as that of the base text." width="267" height="346">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_18.png" alt="親文字と同じ長さの場合のグループルビの配置例" width="280" height="340">
         <figcaption>
         <span its-locale-filter-list="en">Examples of group-ruby where the length is the same as that of the base text.</span>
+        <span its-locale-filter-list="ja">親文字と同じ長さの場合のグループルビの配置例</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en">When the length of the ruby text is shorter than that of its base characters, set the base text solid and  attached ruby character, so that both texts balance each other. To be more specific, where 2 units of inter-character space are used between ruby characters, add 1 unit of space between the start of  the base text and the start of the ruby text, and between the end of the ruby text and the end of the base text. This  will give a balanced appearance, and is the method specified in JIS X 4051 (see <a class="figure_ref" href="#fig2_3_19"></a>). Another way is to first align the leading characters for both the base text and ruby text and the ends of both trailing characters, and then add the same amount of inter-character space between the rest of the ruby characters (see <a class="figure_ref" href="#fig2_3_20"></a>).</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e10976">親文字の文字列の長さよりルビ文字の文字列の長さが短い場合</span>は，親文字の文字列をベタ組にし，ルビ文字の文字列の字間及びその前後を適当に空け，親文字とのバランスをとる．この場合，JIS X 4051で規定しているように，ルビ文字の文字列の字間の空き量の大きさ2に対して，先頭までの空き量及び親文字の文字列の末尾からルビ文字の文字列の末尾までの空き量を1の比率で空けると体裁がよい（<a class="figure_ref" href="#fig2_3_19"></a>）．親文字の文字列及びルビ文字の文字列の先頭及び末尾をそろえ，ルビ文字の文字列の字間だけを空ける方法もある（<a class="figure_ref" href="#fig2_3_20"></a>）．</p>
       <figure id="fig2_3_19"> 
       <img its-locale-filter-list="en" src="images/img2_3_19.png" alt="Example 1 of distribution of group-ruby alongside base characters where the length of the ruby is shorter than that of the base characters." width="591" height="221">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_19.png" alt="親文字よりルビが短い場合のグループルビの配置例1" width="484" height="207">
         <figcaption>
         <span its-locale-filter-list="en">Example 1 of distribution of group-ruby alongside base characters where the length of the ruby is shorter than that of the base characters.</span>
+        <span its-locale-filter-list="ja">親文字よりルビが短い場合のグループルビの配置例1</span>
         </figcaption>
 
       </figure>
       <figure id="fig2_3_20"> 
       <img its-locale-filter-list="en" src="images/img2_3_20.png" alt="Example 2 of distribution of group-ruby alongside base characters where the length of the ruby is shorter than that of the base characters." width="280" height="193">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_20.png" alt="親文字よりルビが短い場合のグループルビの配置例2" width="278" height="175">
         <figcaption>
         <span its-locale-filter-list="en">Example 2 of distribution of group-ruby alongside base characters where the length of the ruby is shorter than that of the base characters.</span>
+        <span its-locale-filter-list="ja">親文字よりルビが短い場合のグループルビの配置例2</span>
         </figcaption>
 
       </figure>
@@ -3749,47 +3884,66 @@
           before the leading ruby character and after the trailing character, or not. In the former case it had been said that for 2
           units of inter-character space between each c ruby characters, adding 1 unit of the leading and trailing space would
           give a balanced appearance. </p>
+        <p its-locale-filter-list="ja">活字組版では，ルビ文字の字間調整が細かくできない場合も多く，親文字とルビ文字の字数に応じて，適宜ルビ文字の文字列の先頭及び末尾を空けない方法と空ける方法を選択して行ってきた．また，ルビ文字の文字列の先頭及び末尾を空ける場合は，ルビ文字の文字列の字間の空き量の大きさ2に対して，その先頭及び末尾の空き量を1の比率で空けると体裁がよい，といわれていた．</p>
       </aside>
       <aside class="note" id="n121">
         <p its-locale-filter-list="en"> When the length of the ruby text is far shorter than that of the base text, the method specified in JIS X 4051 could
           result in space twice the size of a ruby character for the leading and the trailing space, which might give a misleading appearance.
           Therefore, a criterion for deciding whether or not to adopt the method of JIS X 4051 is to see if the amount of the leading and the trailing
           space exceeds the full-width size (or up to 1.5 times the size) of a ruby character (see <a class="figure_ref" href="#fig2_3_21"></a>). </p>
+        <p its-locale-filter-list="ja">親文字の文字列の長さに比べ，ルビ文字の文字列の長さが極端に短い場合，JIS X 4051で規定している方法では，ルビ文字の文字列の先頭及び末尾がルビ文字の文字サイズで2倍以上空いてしまう場合がある．これは誤読の原因ともなりかねないので，ルビ文字の文字列の先頭及び末尾の空き量は，ルビ文字の文字サイズの全角（又は1.5倍）アキまでとした方がよい（<a class="figure_ref" href="#fig2_3_21"></a>）．</p>
       </aside>
       <figure id="fig2_3_21"> 
       <img its-locale-filter-list="en" src="images/img2_3_21.png" alt="Examples of distribution of group-ruby where the length is much shorter than that of the base text." width="252" height="168">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_21.png" alt="親文字に比べルビが極端に短い場合のグループルビの配置例" width="252" height="168">
         <figcaption>
         <span its-locale-filter-list="en">Examples of distribution of group-ruby where the length is much shorter than that of the base text.</span>
+        <span its-locale-filter-list="ja">親文字に比べルビが極端に短い場合のグループルビの配置例</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en">When the length of the ruby text is longer than that of the base characters, balance the base characters with the ruby text by setting the ruby text solid and adding a certain amount of inter-character space between each adjacent base character. To be more specific, for 2 units of inter-character space, add 1 unit of space between the start of the ruby text and the start of the base text, and between the end of the base text and the end of the ruby text, as specified in JIS X 4051 (see <a class="figure_ref" href="#fig2_3_22"></a>). Another way is to first align the start of both the leading characters and the end of the trailing characters, and then add a certain amount of inter-character space between each adjacent base character (see <a class="figure_ref" href="#fig2_3_23"></a>).</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e11143">親文字の文字列の長さよりルビ文字の文字列の長さが長い場合</span>は，ルビ文字の文字列をベタ組とし，親文字の文字列の字間及びその前後を適当に空け，ルビ文字とのバランスをとる．この場合，JIS X 4051で規定しているように，親文字の文字列の字間の空き量の大きさ2に対して，ルビ文字の文字列の先頭から親文字の文字列の先頭までの空き量及びルビ文字の文字列の末尾から親文字の文字列の末尾までの空き量の大きさを1の比率で空けると体裁がよい（<a class="figure_ref" href="#fig2_3_22"></a>）．親文字の文字列とルビ文字の文字列の先頭及び末尾をそろえ，親文字の文字列の字間だけを空ける方法もある（<a class="figure_ref" href="#fig2_3_23"></a>）．</p>
       <figure id="fig2_3_22"> 
       <img its-locale-filter-list="en" src="images/img2_3_22.png" alt="Example 1 of distribution of group-ruby where the length is longer than that of the base characters." width="457" height="224">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_22.png" alt="親文字よりルビが長い場合のグループルビの配置例1" width="432" height="200">
         <figcaption>
         <span its-locale-filter-list="en">Example 1 of distribution of group-ruby where the length is longer than that of the base characters.</span>
+        <span its-locale-filter-list="ja">親文字よりルビが長い場合のグループルビの配置例1</span>
         </figcaption>
 
       </figure>
       <figure id="fig2_3_23"> 
       <img its-locale-filter-list="en" src="images/img2_3_23.png" alt="Example 2 of distribution of group-ruby where the length is longer than that of the base characters." width="362" height="166">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_23.png" alt="親文字よりルビが長い場合のグループルビの配置例2" width="345" height="166">
         <figcaption>
         <span its-locale-filter-list="en">Example 2 of distribution of group-ruby where the length is longer than that of the base characters.</span>
+        <span its-locale-filter-list="ja">親文字よりルビが長い場合のグループルビの配置例2</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en">For <a href="#term.group-ruby" class="termref2nd">group-ruby</a>, base characters and  attached ruby characters are handled as one object, and internal line-breaks are prohibited. Also, for an object constructed with base characters and  attached ruby characters it is prohibited to insert additional spaces between each character for line adjustment. </p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e11214"><a href="#term.group-ruby" class="termref2nd">グループルビ</a></span>の場合，親文字の文字列とそれに付くルビ文字の文字列は，一体として扱い，2行に分割してはならない．また，親文字の文字列とそれに付くルビ文字の文字列を合わせた親文字群は，行の調整処理の際に字間を空ける処理をしてはならない．</p>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="positioning_of_jukugoruby_with_respect_to_base_characters">
 <span its-locale-filter-list="en">Positioning of Jukugo-ruby with Respect to Base Characters</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">熟語ルビの親文字に対する配置位置</span>
 </h4>
       <p its-locale-filter-list="en"> If the number of ruby characters are two or less for each <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> which participates in a kanji compound word (or jukugo), then for each run of ruby text associated with each base character, compose ruby characters as described in <a class="sec_ref" href="#positioning_of_monoruby_with_respect_to_base_characters"></a> (see <a class="figure_ref" href="#fig2_3_24"></a>). </p>
+      <p its-locale-filter-list="ja">熟語を構成するそれぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に付くルビ文字がそれぞれ2文字以下の場合，それぞれの親文字の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>とルビ文字を対応させ，<a class="sec_ref" href="#positioning_of_monoruby_with_respect_to_base_characters"></a>で述べた方法で配置する（<a class="figure_ref" href="#fig2_3_24"></a>）．</p>
       <figure id="fig2_3_24"> 
       <img its-locale-filter-list="en" src="images/img2_3_24.png" alt="Example 1 of distribution of jukugo-ruby." width="243" height="308">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_24.png" alt="熟語ルビの配置例1" width="243" height="308">
         <figcaption>
         <span its-locale-filter-list="en">Example 1 of distribution of jukugo-ruby.</span>
+        <span its-locale-filter-list="ja">熟語ルビの配置例1</span>
         </figcaption>
 
       </figure>
@@ -3798,17 +3952,22 @@
         to the kanji compound word as a whole. The available methods include the layout as specified in JIS X 4051, which is similar to the <a href="#term.group-ruby" class="termref2nd">group-ruby</a> method described in <a class="sec_ref" href="#positioning_of_groupruby_with_respect_to_base_characters"></a> (see <a class="figure_ref" href="#fig2_3_25"></a>), and layout decided by the phonetic structure of the kanji compound word
         and the type of script of the adjacent characters (see <a class="figure_ref" href="#fig2_3_26"></a>). The latter method can be used unless a run of ruby text for the base character hangs over another base character more than a full character width (or one and a half times the full-width) of a ruby character.
         (The detail of this method is described in <a class="sec_ref" href="#positioning_of_jukugoruby"></a>.)</p>
+      <p its-locale-filter-list="ja">熟語を構成するそれぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の中で，1字でもそれに対応するルビ文字が3字以上のものがある場合，熟語全体とルビ文字の文字列を対応させて配置する．熟語全体とルビ文字の文字列を対応させる方法としては，JIS X 4051で規定しているように<a class="sec_ref" href="#positioning_of_groupruby_with_respect_to_base_characters"></a>項の<a href="#term.group-ruby" class="termref2nd">グループルビ</a>と同様な方法で配置する方法（<a class="figure_ref" href="#fig2_3_25"></a>）と，熟語の構成，さらにその熟語の前後にくる文字の種類を考慮して配置する方法とがある（<a class="figure_ref" href="#fig2_3_26"></a>）．後者の方法では，熟語を構成するそれぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に対応するルビ文字が，熟語内の他の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に最大でルビ文字サイズで全角（又は1.5倍）まで掛かってよい，としている（この処理方法の詳細は，<a class="sec_ref" href="#positioning_of_jukugoruby"></a>で解説する）．</p>
       <figure id="fig2_3_25"> 
       <img its-locale-filter-list="en" src="images/img2_3_25.png" alt="Example 2 distribution of jukugo-ruby." width="357" height="341">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_25.png" alt="熟語ルビの配置例2" width="357" height="341">
         <figcaption>
         <span its-locale-filter-list="en">Example 2 distribution of jukugo-ruby.</span>
+        <span its-locale-filter-list="ja">熟語ルビの配置例2</span>
         </figcaption>
 
       </figure>
       <figure id="fig2_3_26"> 
       <img its-locale-filter-list="en" src="images/img2_3_26.png" alt="Example 3 distribution of jukugo-ruby." width="357" height="323">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_26.png" alt="熟語ルビの配置例3" width="357" height="323">
         <figcaption>
         <span its-locale-filter-list="en">Example 3 distribution of jukugo-ruby.</span>
+        <span its-locale-filter-list="ja">熟語ルビの配置例3</span>
         </figcaption>
 
       </figure>
@@ -3816,11 +3975,14 @@
         <p its-locale-filter-list="en"> There are often cases where the <a href="#term.jukugo-ruby" class="termref2nd">jukugo-ruby</a> consists of one ruby character followed by three ruby characters, and vice versa, for
           a kanji compound word of two base characters. If the <a href="#term.mono-ruby" class="termref2nd">mono-ruby</a> layout were chosen for these cases, it would look like as shown
           in <a class="figure_ref" href="#fig2_3_27"></a>, which wouldn't be very beautiful. </p>
+        <p its-locale-filter-list="ja"><a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a>には，それぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>との対応でいえばルビ文字1字＋ルビ文字3字又はルビ文字3字＋ルビ文字1字が付くケースが多い．これを<a href="#term.mono-ruby" class="termref2nd">モノルビ</a>として処理すると<a class="figure_ref" href="#fig2_3_27"></a>のようになる．これはあまり体裁がよくない．</p>
       </aside>
       <figure id="fig2_3_27"> 
       <img its-locale-filter-list="en" src="images/img2_3_27.png" alt="Example of distribution as mono-ruby for jukugo." width="131" height="332">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_27.png" alt="熟語に付くルビをモノルビとして配置した例" width="131" height="332">
         <figcaption>
         <span its-locale-filter-list="en">Example of distribution as mono-ruby for jukugo.</span>
+        <span its-locale-filter-list="ja">熟語に付くルビをモノルビとして配置した例</span>
         </figcaption>
 
       </figure>
@@ -3828,32 +3990,44 @@
         two <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>, and vice versa. In order to maintain the correspondence of each <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> to its ruby annotation, the layout
         of the ruby may be different after the division (see <a class="figure_ref" href="#fig2_3_28"></a>).
         Note that jukugo-ruby and its base characters  cannot be the subject of inter-character space expansion for line adjustment.</p>
-      <figure id="fig2_3_28"> 
+      <p its-locale-filter-list="ja"><span class="index" id="d5e11483"><a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a></span>は，それぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>とそれに対応するルビ文字を単位として2行に分割してもよい．<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が2字の熟語を分割する場合は，それぞれが<a href="#term.mono-ruby" class="termref2nd">モノルビ</a>として処理されることになる．<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が3字の熟語ルビを分割する場合は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が1字のモノルビと<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が2字の熟語ルビ，又は<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が2字の熟語ルビと<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が1字のモノルビになる．それぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>とそれに対応するルビ文字との関係を維持するので，分割以前と以後とでは，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>とルビ文字との対応が変わる場合もある（<a class="figure_ref" href="#fig2_3_28"></a>）．ただし，熟語を構成する<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に<span class="index" id="d5e11536">熟語ルビ</span>を付けた場合には，ルビ付きの親文字の字間は，行の調整処理で字間を空ける処理の対象としない．</p>
+	  <figure id="fig2_3_28"> 
       <img its-locale-filter-list="en" src="images/img2_3_28.png" alt="Examples of distribution of jukugo-ruby split across two lines." width="336" height="275">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_28.png" alt="熟語ルビを2行に分割して配置した例" width="300" height="275">
         <figcaption>
         <span its-locale-filter-list="en">Examples of distribution of jukugo-ruby split across two lines.</span>
+        <span its-locale-filter-list="ja">熟語ルビを2行に分割して配置した例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n123">
         <p its-locale-filter-list="en">The composition of <a href="#term.jukugo-ruby" class="termref2nd">jukugo-ruby</a> changes in accordance with  the construction of the jukugo, the position at the head, middle  or bottom of the line, and adjacent characters before or after. The detail of this issue is too complicated to discuss here, so it is discussed in <a class="sec_ref" href="#positioning_of_jukugoruby"></a>.</p>
+        <p its-locale-filter-list="ja">熟語の構成などを考慮して配置する<a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a>の配置方法は，熟語の構成，行頭・行中・行末かの位置，その前後に配置される文字などにより変化する．この処理方法の詳細は，複雑になるので，<a class="sec_ref" href="#positioning_of_jukugoruby"></a>で解説する．</p>
       </aside>
       <aside class="note" id="n124">
         <p its-locale-filter-list="en">The complexes of base characters with ruby characters are classified as <a class="characterClass" href="#cl-22">simple-ruby character complex (cl-22)</a> and <a class="characterClass" href="#cl-23">jukugo-ruby character complex (cl-23)</a>. The handling and positioning of these complexes with adjacent characters is discussed in <a class="sec_ref" href="#spacing_between_characters"></a> as a complete table in accordance with <a class="sec_ref" href="#about_character_classes"></a>.</p>
+        <p its-locale-filter-list="ja">ルビ文字が付いた親文字群については，<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>と<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>に分け，それと隣接する文字間の間隔についての処理方法の詳細は，<a class="sec_ref" href="#about_character_classes"></a>で説明する文字クラスに従い，表の形式にして<a class="sec_ref" href="#spacing_between_characters"></a>以下で示す．</p>
       </aside>
     </section>
+
+
+
+
+
     <section>
       <h4 id="adjustments_of_ruby_with_length_longer_than_that_of_the_base_characters">
 <span its-locale-filter-list="en">Adjustments of Ruby with Length Longer than that of the Base Characters</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">ルビが親文字よりはみ出した場合の処理</span>
 </h4>
       <p its-locale-filter-list="en"> When the length of any ruby text is shorter than that of the base characters, the main text can be just set solid because
         there is no need for any adjustment of the inter-character spacing between base characters  and
         their adjacent characters in the main text.</p>
+      <p its-locale-filter-list="ja">ルビ文字の文字列が親文字の文字列より短い場合は，親文字の前後に配置する他の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>や<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>とルビの付く親文字との字間をベタ組にして配置すればよい（<a class="figure_ref" href="#fig2_3_29"></a>）．</p>
       <figure id="fig2_3_29"> 
       <img its-locale-filter-list="en" src="images/img2_3_29.png" alt="Set solid when the length of ruby text is shorter than that of base characters." width="153" height="325">
-        <figcaption>
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_29.png" alt="ルビ文字の文字列が親文字の文字列より短い場合は前後の文字との間はベタ組" width="153" height="325">        <figcaption>
         <span its-locale-filter-list="en">Set solid when the length of ruby text is shorter than that of base characters.</span>
+        <span its-locale-filter-list="ja">ルビ文字の文字列が親文字の文字列より短い場合は前後の文字との間はベタ組</span>
         </figcaption>
 
       </figure>
@@ -3861,91 +4035,116 @@
         much the ruby text hangs over the <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a>, <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a href="#term.punctuation-marks" class="termref">punctuation marks</a>, which are  attached to the base
         characters. The following are the general rules (see <a class="figure_ref" href="#fig2_3_30"></a> and <a class="figure_ref" href="#fig2_3_31"></a>). They were established especially in order to avoid misreading and to maintain the beauty of the layout.
         Noted that the detailed value of spaces between characters for cases of ruby letters hanging over the base characters is described in <a href="#spacing_between_characters">"Appendix B Spacing between Characters"</a> as Table 1 in accordance with <a class="sec_ref" href="#about_character_classes">3.9 About Character Classes</a>. </p>
+      <p its-locale-filter-list="ja">ルビ文字の文字列が親文字の文字列より長い場合は，親文字の前後に配置する他の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>や<a href="#term.punctuation-marks" class="termref">約物</a>などにどこまで親文字よりはみ出したルビ文字が掛かってよいかが問題となる．一般に次のように処理している（<a class="figure_ref" href="#fig2_3_30"></a>，<a class="figure_ref" href="#fig2_3_31"></a>）．これはもっぱら誤読を避けること，及び体裁を考慮しての処理である．なお，ルビ文字の文字列が親文字の文字列よりはみ出した場合についての詳細は，<a class="sec_ref" href="#about_character_classes"></a>で説明する文字クラスに従い，表の形式にして<a href="#spacing_between_characters">附属書 B 文字間の空き量</a>で示す．</p>
       <figure id="fig2_3_30"> 
       <img its-locale-filter-list="en" src="images/img2_3_30.png" alt="Example 1 of distribution of ruby characters overhanging adjacent characters." width="201" height="684">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_30.png" alt="ルビ文字のはみ出しがある場合の配置例1" width="201" height="684">
         <figcaption>
         <span its-locale-filter-list="en">Example 1 of distribution of ruby characters overhanging adjacent characters.</span>
+        <span its-locale-filter-list="ja">ルビ文字のはみ出しがある場合の配置例1</span>
         </figcaption>
 
       </figure>
       <figure id="fig2_3_31"> 
       <img its-locale-filter-list="en" src="images/img2_3_31.png" alt="Example 2 of distribution of ruby characters overhanging adjacent characters." width="127" height="684">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_31.png" alt="ルビ文字のはみ出しがある場合の配置例2" width="127" height="684">
         <figcaption>
         <span its-locale-filter-list="en">Example 2 of distribution of ruby characters overhanging adjacent characters.</span>
+        <span its-locale-filter-list="ja">ルビ文字のはみ出しがある場合の配置例2</span>
         </figcaption>
 
       </figure>
       <ol>
         <li id="id232">
           <p its-locale-filter-list="en"> Ruby text shall not hang over the <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> adjacent to the base characters. </p>
+          <p its-locale-filter-list="ja">前又は後ろにくる<span class="index" id="d5e11858"><a class="characterClass" href="#cl-19">漢字等（cl-19）</a></span>に<span class="index" id="d5e11862">ルビ文字を掛けてはならない</span>．</p>
         </li>
         <li id="id233">
           <p its-locale-filter-list="en"> When the adjacent character is a <a class="characterClass" href="#cl-15">hiragana (cl-15)</a>, <a class="characterClass" href="#cl-16">katakana (cl-16)</a>, <a class="characterClass" href="#cl-10">prolonged sound mark (cl-10)</a> or <a class="characterClass" href="#cl-11">small kana (cl-11)</a>, the ruby text may overhang the character up to the full-width size of the ruby characters. </p>
+          <p its-locale-filter-list="ja">前又は後ろにくる<span class="index" id="d5e11880"><a class="characterClass" href="#cl-15">平仮名（cl-15）</a></span>，<span class="index" id="d5e11884"><a class="characterClass" href="#cl-16">片仮名（cl-16）</a></span>，<span class="index" id="d5e11888"><a class="characterClass" href="#cl-10">長音記号（cl-10）</a></span>又は<span class="index" id="d5e11892"><a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a></span>に最大でルビ文字サイズの全角まで<span class="index" id="d5e11896">ルビ文字を掛けてもよい</span>．</p>
           <aside class="note" id="n125">
             <p its-locale-filter-list="en">Because ruby letter may go over the base characters and overhang to adjacent <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> etc. up to the full-width size of a ruby letter, ruby letters from before and from after a base <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> may be consecutive without space like <a class="figure_ref" href="#fig2_3_29_2"></a>. Such cases are not recommended because of the possibility of misreading. It is recommended to insert one em space between former ruby letters and latter ruby letters. There are to ways to carry out this. One is to reduce the maximum size of overhang to the <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> base character of before ruby letter and after ruby letter, and the other is to reduce the maximum size of overhang to the <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> base character of after ruby letter. The latter case is carried over to differently set the limit of overhang from before and from after. Firstly, set the ruby letters from before as usual, i.e. ruby letter may overhang up to the full-width size of a ruby letter. Secondly, ruby letter from after shall be set with one em space before, namely, the ruby letter from after can not go over the base <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> letter in between. Hence, appropriate size space shall be inserted between base characters themselves (see <a class="figure_ref" href="#fig2_3_29_3"></a>).</p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などに最大でルビ文字サイズの全角までルビ文字を掛けてよいということから，<a class="figure_ref" href="#fig2_3_29_2"></a>のように1文字の<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>の前後に配置される<span class="index" id="d5e11946">ルビ文字のはみ出しがつながってしまう場合</span>もある．これは誤読される恐れもあり，望ましくない．前のルビ文字列と後ろの文字列との間をルビ文字サイズの全角くらい空けるのが望ましい．この配置処理としては，中間に入る1文字の<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>に掛かってよい限界について，前及び後ろのルビ文字列の両方を少なくする方法と，後ろに配置するルビ文字列の掛かる限界を少なくする方法とが考えられる．後者の場合，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などにルビ文字列が掛かってよい限界を，前から掛かるのか，後ろから掛かるのかで変えることで解決する．後ろに配置する<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などに，はみ出したルビ文字列を前から掛ける場合は，ルビ文字サイズの全角までルビ文字列は掛かってよい．しかし，前に配置する<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などについて，はみ出したルビ文字列を後ろから掛ける場合は，その<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などに別のルビ文字列が前から掛かっているとき，前から掛かっている別のルビ文字列の掛かっている量を差し引いた値までとする．<a class="figure_ref" href="#fig2_3_29_2"></a>の例でいえば，前から掛かるルビの“き”は，“の”に掛かってもよいが，後ろに配置するルビの“お”は，すでに“き”がルビ文字サイズの全角まで掛かっているので，“の”には掛けてはいけないことになり，<a class="figure_ref" href="#fig2_3_29_3"></a>のようになる．</p>
           </aside>
           <figure id="fig2_3_29_2"> 
       <img its-locale-filter-list="en" src="images/img2_3_29_2.png" alt="An example of not recommended case that two different group of ruby letters are consecutive without space" width="153" height="181">
-            <figcaption>
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_29_2.png" alt="ルビ文字のはみ出しがつながってしまう望ましくない例" width="153" height="181">            <figcaption>
         <span its-locale-filter-list="en">An example of not recommended case that two different group of ruby letters are consecutive without space</span>
+        <span its-locale-filter-list="ja">ルビ文字のはみ出しがつながってしまう望ましくない例</span>
         </figcaption>
 
           </figure>
           <figure id="fig2_3_29_3"> 
       <img its-locale-filter-list="en" src="images/img2_3_29_3.png" alt="An example of  two different group of ruby letters are consecutive with space" width="153" height="199">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_29_3.png" alt="ルビ文字のはみ出しがつながらないようにした例" width="153" height="199">
             <figcaption>
         <span its-locale-filter-list="en">An example of  two different group of ruby letters are consecutive with space</span>
+        <span its-locale-filter-list="ja">ルビ文字のはみ出しがつながらないようにした例</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id234">
           <p its-locale-filter-list="en"> The ruby letter may go over the base characters and overhang the <a href="#term.half-em-space" class="termref">half em spaces</a> which are inserted after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, <a class="characterClass" href="#cl-06">full stops (cl-06)</a> or <a class="characterClass" href="#cl-07">commas (cl-07)</a>, set before the target ruby object, up to the  full-width size of a ruby letter. Also, the ruby letter may go over the base characters and hang over the half em spaces which are inserted before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>, set after the target ruby object, up to the  full -width size of a ruby letter. Note that when the half em spaces are reduced for line adjustment, the room for ruby letter overhang is also compressed to the reduced space size. (For example, if the space is a quarter em in the base character size, the ruby letter can overhang by a <a href="#term.half-em" class="termref">half em</a> in ruby letter size.)</p>
+          <p its-locale-filter-list="ja">前にくる<span class="index" id="d5e12054"><a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a></span>，<span class="index" id="d5e12058"><a class="characterClass" href="#cl-06">句点類（cl-06）</a></span>若しくは<span class="index" id="d5e12062"><a class="characterClass" href="#cl-07">読点類（cl-07）</a></span>の後ろにある<a href="#term.half-em-space" class="termref">二分アキ</a>，又は後ろにくる<span class="index" id="d5e12069"><a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a></span>の前にある二分アキには，最大でルビ文字サイズで全角までルビ文字を掛けてもよい．ただし，行の調整処理で二分アキが詰められている場合は，調整で詰められた空き量までとする（例えば，四分アキとなっていれば，最大でルビ文字サイズの<a href="#term.half-em" class="termref">二分</a>までルビ文字を掛けてもよい）．</p>
         </li>
         <li id="id235">
           <p its-locale-filter-list="en"> When the adjacent character is an <a class="characterClass" href="#cl-08">inseparable character (cl-08)</a>, the ruby text may overhang the character up to the full-width size
             of a ruby character. </p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e12109"><a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a></span>にも，最大でルビ文字サイズの全角までルビ文字を掛けてもよい．</p>
         </li>
         <li id="id236">
           <p its-locale-filter-list="en"> When the adjacent character is one of the <a class="characterClass" href="#cl-05">middle dots (cl-05)</a>, the ruby text may overhang the middle dots, in principle, up to the full-width
             size of a ruby character. But if there is any reduction of space size before and after the middle dots as a result of the line
             adjustment, the amount of the extension shall be up to the amount of space size after the middle dots plus 1/2 a ruby character size when the middle dots are set before the ruby object, or the space size before the middle dots plus 1/2 a ruby character size when the middle dots are set after the ruby object. </p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e12127"><a class="characterClass" href="#cl-05">中点類（cl-05）</a></span>にも最大でルビ文字サイズの全角までルビ文字を掛けてもよい．ただし，中点類の前後の四分アキが行の調整処理で詰められている場合は，前にくる中点類の場合は中点類の後ろの空き量＋ルビ文字サイズの二分まで，後ろにくる中点類の場合は中点類の前の空き量＋ルビ文字サイズの二分までである．</p>
         </li>
         <li id="id237">
           <p its-locale-filter-list="en"> When the adjacent character is one of the <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, the ruby text may go over the base characters up to the full-width size of a ruby character. Note that the overhang must not go beyond the closing bracket itself. </p>
+          <p its-locale-filter-list="ja">後ろにくる<span class="index" id="d5e12151"><a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a></span>には，最大でルビ文字サイズの全角までルビ文字を掛けてもよい．この場合，終わり括弧類の後ろの空き量に掛けてはならない．</p>
         </li>
         <li id="id238">
           <p its-locale-filter-list="en"> When the adjacent character is a <a class="characterClass" href="#cl-07">comma (cl-07)</a> or <a class="characterClass" href="#cl-06">full stop (cl-06)</a>, the ruby text may go over the base characters and overhang the comma or full stop up to the full-width
             size of a ruby character. Note that the overhang must not go beyond the comma or the period itself. </p>
+          <p its-locale-filter-list="ja">後ろにくる<span class="index" id="d5e12174"><a class="characterClass" href="#cl-06">句点類（cl-06）</a></span>又は<span class="index" id="d5e12178"><a class="characterClass" href="#cl-07">読点類（cl-07）</a></span>には，最大でルビ文字サイズの全角までルビ文字を掛けてもよい．この場合，句点類又は読点類の後ろの空き量に掛けてはならない．</p>
         </li>
         <li id="id239">
           <p its-locale-filter-list="en"> Also, when the adjacent character is one of the <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> before the ruby object, the ruby text may go over the base characters and hang over the opening brackets up to the full-width size of a ruby character. Note that the overhang must not go beyond the opening brackets.</p>
+          <p its-locale-filter-list="ja">前にくる<span class="index" id="d5e12202"><a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a></span>にも，最大でルビ文字サイズの全角までルビ文字を掛けてもよい．この場合，始め括弧類の前の空き量に掛けてはならない．</p>
         </li>
       </ol>
       <aside class="note" id="n126">
         <p its-locale-filter-list="en">There is an opinion that it is not good style to hang ruby characters over <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>, especially <span class="character">LEFT CORNER BRACKET "「"</span> and <span class="character">RIGHT CORNER BRACKET "」"</span>. When this opinion holds, there are two possibilities. One is not  allow ruby characters to overhang the <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>. The other is allow ruby characters to overhang the opening brackets up to 1/2 the size of a ruby character.</p>
+        <p its-locale-filter-list="ja">前にくる<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>，特に始めかぎ括弧<span class="character">[「] (LEFT CORNER BRACKET)</span>にルビ文字を掛けることは体裁がよくないので，避けた方がよいという考え方もある．この考え方では，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>にルビ文字を掛けない処理とするか，又は最大でルビ文字サイズの二分までルビ文字を掛ける処理方法とする．</p>
       </aside>
       <aside class="note" id="n127">
         <p its-locale-filter-list="en"> JIS X 4051 classifies katakana characters and kanji characters in same class. Accordingly, in JIS X 4051 it is prohibited for ruby characters to overhang adjacent katakana characters.</p>
+        <p its-locale-filter-list="ja">JIS X 4051では，片仮名は漢字と同じ文字クラスに含まれている．したがって，片仮名についてはルビ文字を掛けることは禁止されている．</p>
       </aside>
       <aside class="note" id="n128">
         <p its-locale-filter-list="en"> There is another variation that allows ruby text to overhang any <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>, <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a> up to the full-width
           size of a ruby character (see <a class="figure_ref" href="#fig2_3_32"></a>). </p>
+        <p its-locale-filter-list="ja">ルビが付いた親文字群の前又は後ろの文字が，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>又は<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>のいずれでも，最大でルビ文字サイズの二分まで<a href="#term.ruby" class="termref2nd">ルビ</a>文字を掛けてもよい，とする処理法もある（<a class="figure_ref" href="#fig2_3_32"></a>）．</p>
       </aside>
       <figure id="fig2_3_32"> 
       <img its-locale-filter-list="en" src="images/img2_3_32.png" alt="Example 3 of distribution of ruby characters overhanging adjacent characters." width="136" height="702">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_32.png" alt="ルビ文字のはみ出しがある場合の配置例3" width="136" height="702">
         <figcaption>
         <span its-locale-filter-list="en">Example 3 of distribution of ruby characters overhanging adjacent characters.</span>
+        <span its-locale-filter-list="ja">ルビ文字のはみ出しがある場合の配置例3</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n129">
         <p its-locale-filter-list="en"> There is a further variation that does not allow  ruby text to overhang any <a class="characterClass" href="#cl-19">ideographic (cl-19)</a>, <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a> characters (see <a class="figure_ref" href="#fig2_3_33"></a>). </p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-19">漢字等（cl-19）</a>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>及び<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>のすべてにルビを掛けない，とする処理法もある（<a class="figure_ref" href="#fig2_3_33"></a>）．</p>
       </aside>
       <figure id="fig2_3_33"> 
       <img its-locale-filter-list="en" src="images/img2_3_33.png" alt="Example 4 of distribution of ruby characters overhanging adjacent characters." width="136" height="747">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_33.png" alt="ルビ文字のはみ出しがある場合の配置例4" width="136" height="747">
         <figcaption>
         <span its-locale-filter-list="en">Example 4 of distribution of ruby characters overhanging adjacent characters.</span>
+        <span its-locale-filter-list="ja">ルビ文字のはみ出しがある場合の配置例4</span>
         </figcaption>
 
       </figure>
@@ -3953,56 +4152,71 @@
         compose the text so that the first base character is aligned with the line head. Similarly, when ruby annotated
         text ends at the line end and the ruby length is shorter than that of the basic characters, compose the text so that the
         last basic character is aligned with the line end. </p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e12456"><span class="index" id="d5e12457"><span class="index" id="d5e12458">行頭又は行末にルビが付いた親文字を配置する場合</span></span></span>，ルビ文字の文字列が親文字の文字列より短いときは，親文字の先頭又は末尾を行頭又は行末にそろえて配置すればよい．</p>
       <p its-locale-filter-list="en"> When the line head starts with ruby annotated text where the ruby text length is longer than that of the base characters, compose the text so that the first ruby character
         which overhangs the base text is aligned with the line head, and vice versa (see <a class="figure_ref" href="#fig2_3_34"></a>). Alternatively, there is a variation by which the text is composed so that the first base character is aligned with the line head,
         and vice versa (see <a class="figure_ref" href="#fig2_3_35"></a>). </p>
+      <p its-locale-filter-list="ja">行頭又は行末にルビが付いた親文字を配置する場合，ルビ文字の文字列が親文字の文字列より長いときは，親文字よりはみ出したルビ文字の文字列の先頭又は末尾を行頭又は行末にそろえて配置する（<a class="figure_ref" href="#fig2_3_34"></a>）．また，親文字の先頭又は末尾を行頭又は行末にそろえて配置する方法もある（<a class="figure_ref" href="#fig2_3_35"></a>）．</p>
       <figure id="fig2_3_34"> 
       <img its-locale-filter-list="en" src="images/img2_3_34.png" alt="Example 1 of positioning of ruby characters at the line head and at the line end." width="245" height="264">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_34.png" alt="ルビ文字の行頭・行末の配置例1" width="209" height="264">
         <figcaption>
         <span its-locale-filter-list="en">Example 1 of positioning of ruby characters at the line head and at the line end.</span>
+        <span its-locale-filter-list="ja">ルビ文字の行頭・行末の配置例1</span>
         </figcaption>
 
       </figure>
       <figure id="fig2_3_35"> 
       <img its-locale-filter-list="en" src="images/img2_3_35.png" alt="Example 2 of positioning of ruby characters at the line head and at the line end." width="244" height="264">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_35.png" alt="ルビ文字の行頭・行末の配置例2" width="209" height="264">
         <figcaption>
         <span its-locale-filter-list="en">Example 2 of positioning of ruby characters at the line head and at the line end.</span>
+        <span its-locale-filter-list="ja">ルビ文字の行頭・行末の配置例2</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en"> When aligning the first base character to the line head and the last base character to the line end, ruby text
         is not allowed to extend beyond the hanmen or the area of the <a href="#term.column" class="termref">column</a>. If it does, the following adjustments should be considered
         in positioning base characters and ruby characters. </p>
+      <p its-locale-filter-list="ja">親文字の先頭又は末尾を行頭又は行末にそろえて配置する方法では，行頭又は行末では，ルビ文字が版面又は<a href="#term.column" class="termref">段</a>の領域よりはみ出すことは認められていないので，親文字とルビ文字の配置方法を変更する必要がある．次のようにする．</p>
       <ol>
         <li id="id240">
           <p its-locale-filter-list="en"> <a href="#term.mono-ruby" class="termref2nd">Mono-ruby</a> at the line head: Make adjustments so that the top of the ruby text is aligned with that of the base
             characters (see <a class="figure_ref" href="#fig2_3_35"></a>). </p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e12557"><a href="#term.mono-ruby" class="termref2nd">モノルビ</a>の行頭</span>：ルビ文字の文字列の先頭と親文字の文字列の先頭をそろえる形に変更する（<a class="figure_ref" href="#fig2_3_35"></a>）．</p>
         </li>
         <li id="id241">
           <p its-locale-filter-list="en"> <a href="#term.mono-ruby" class="termref2nd">Mono-ruby</a> at the line end: Make adjustments so that the bottom of the ruby text is aligned with that of the last base
             character (see <a class="figure_ref" href="#fig2_3_35"></a>). </p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e12584"><a href="#term.mono-ruby" class="termref2nd">モノルビ</a>の行末</span>：ルビ文字の文字列の末尾と親文字の文字列の末尾をそろえる形に変更する（<a class="figure_ref" href="#fig2_3_35"></a>）．</p>
         </li>
         <li id="id242">
           <p its-locale-filter-list="en"><a href="#term.group-ruby" class="termref2nd">Group-ruby</a> at the line head: Make adjustments so that the top of the ruby text is aligned with that of the first base character, and add the same amount of inter-character space between the base characters and between the end of the last base character and the end of the last ruby character after the last base character (the method specified in JIS X 4051) (see <a class="figure_ref" href="#fig2_3_36"></a>).</p>
-          <figure id="fig2_3_36"> 
+          <p its-locale-filter-list="ja"><span class="index" id="d5e12611"><a href="#term.group-ruby" class="termref2nd">グループルビ</a>の<a href="#term.line-head" class="termref2nd">行頭</a></span>：<a href="#term.ruby" class="termref2nd">ルビ</a>文字の文字列の先頭と<a href="#term.base-characters" class="termref2nd">親文字</a>の文字列の先頭をそろえ，親文の文字列の字間の空き量と，親文字の文字列の末尾からルビ文字の文字列の末尾までの空き量とを1対1の比率に変更する（JIS X 4051で規定している方法，<a class="figure_ref" href="#fig2_3_36"></a>）．</p>
+		  <figure id="fig2_3_36"> 
       <img its-locale-filter-list="en" src="images/img2_3_36.png" alt="Example 3 of positioning of ruby characters at the line head and at the line end." width="244" height="264">
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_36.png" alt="ルビ文字の行頭・行末の配置例3" width="209" height="264">
             <figcaption>
         <span its-locale-filter-list="en">Example 3 of positioning of ruby characters at the line head and at the line end.</span>
+        <span its-locale-filter-list="ja">ルビ文字の行頭・行末の配置例3</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id243">
           <p its-locale-filter-list="en">Group-ruby at the line end: Make adjustments so that the end of the ruby text is aligned with that of the last base character  and add the same amount of inter-character space between the base characters and the space between the start of the base text and the start of the ruby text (the method specified in JIS X 4051) (see <a class="figure_ref" href="#fig2_3_36"></a>).</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e12670"><a href="#term.group-ruby" class="termref2nd">グループルビ</a>の<a href="#term.line-end" class="termref2nd">行末</a></span>：<a href="#term.ruby" class="termref2nd">ルビ</a>文字の文字列の末尾と<a href="#term.base-characters" class="termref2nd">親文字</a>の文字列の末尾をそろえ，親文字の文字列の字間の空き量と，親文字の文字列の先頭からルビ文字の文字列の先頭までの空き量とを1対1の比率に変更する（JIS X 4051で規定している方法，<a class="figure_ref" href="#fig2_3_36"></a>）．</p>
         </li>
         <li id="id244">
           <p its-locale-filter-list="en"> <a href="#term.jukugo-ruby" class="termref2nd">Jukugo-ruby</a> at the line head or at the line end: Make the same adjustments as described in (c) or (d) for the <a href="#term.group-ruby" class="termref2nd">group-ruby</a>. </p>
+          <p its-locale-filter-list="ja"><a href="#term.group-ruby" class="termref2nd">グループルビ</a>と同様に処理した<span class="index" id="d5e12707"><a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a>が行頭又は行末</span>にきた場合：c又はdと同じ処理になる．</p>
         </li>
         <li id="id245">
           <p its-locale-filter-list="en"> <a href="#term.jukugo-ruby" class="termref2nd">Jukugo-ruby</a> at the line head: Make adjustments so that the top of the ruby text is aligned with that of the first base
             character. A run of ruby characters for a base character may overhang the adjacent base characters of the same    kanji compound word, up to the full-width size (or one and a half of it) of a ruby character. If the extension should go
             beyond the limit, just force the ruby text out of the base characters, or make a further adjustment by adding inter-character
             space between the base characters.</p>
+          <p its-locale-filter-list="ja">熟語の構成などを考慮して配置する<a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a>が行頭にきた場合：ルビ文字の文字列の先頭と親文字の文字列の先頭を行頭にそろえて配置する．この場合，熟語を構成するそれぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に付くルビ文字が熟語内の他の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に最大でルビ文字サイズで全角（又は1.5倍）まで掛かってよい．それ以上掛かる場合は，親文字の文字列からルビ文字の文字列をはみ出させるか，親文字の字間を空ける．</p>
         </li>
         <li id="id246">
           <p its-locale-filter-list="en"> <a href="#term.jukugo-ruby" class="termref2nd">Jukugo-ruby</a> at the line end: Make adjustments so that the end of the ruby text is aligned with that of the last
@@ -4010,6 +4224,7 @@
             the same kanji compound word, up to the full-width size (or one and a half of it) of the ruby characters. If the extension should
             go  beyond the limit, just force the ruby text out of the base characters, or make a further adjustment by adding
             inter-character space between the base characters.</p>
+          <p its-locale-filter-list="ja">熟語の構成などを考慮して配置する<a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a>が行末にきた場合：ルビ文字の文字列の末尾と親文字の文字列の末尾を行末にそろえて配置する．この場合，熟語を構成するそれぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に付くルビ文字が熟語内の他の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に最大でルビ文字サイズで全角（又は1.5倍）まで掛かってよい．それ以上掛かる場合は，親文字の文字列からルビ文字の文字列をはみ出させるか，親文字の字間を空ける．</p>
         </li>
         <li id="id247">
           <p its-locale-filter-list="en"> <a href="#term.jukugo-ruby" class="termref2nd">Jukugo-ruby</a> split across two lines: jukugo-ruby can be split across two lines, with one part  at the line end and the other at the line head.
@@ -4017,16 +4232,24 @@
             with three <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>, handle one <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> with mono-ruby text and the remaining two <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> with jukugo-ruby,
             and vice versa. The layout of one <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> with mono-ruby text will be composed by method (a) or (b) described above.
             The layout of two <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> with jukugo-ruby text will be composed by method (f) or (g) above.</p>
+          <p its-locale-filter-list="ja"><a href="#term.jukugo-ruby" class="termref2nd">熟語ルビ</a>を親文字単位で2行に分割した場合：熟語ルビは，2行に分割され，行末及び行頭に分かれることがある．<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が2字の熟語の場合は，行末に<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が1字の<a href="#term.mono-ruby" class="termref2nd">モノルビ</a>，次の行頭に<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が1字のモノルビという形になる．<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が3字の場合は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が1字のモノルビと<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が2字の熟語ルビ又は<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が2字の熟語ルビと<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が1字のモノルビとなる．<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が1字のモノルビの形になった場合は，a項又はb項で処理することになる．<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>が2字以上の熟語ルビとなった場合は，e項，f項又はg項で処理することになる．</p>
         </li>
       </ol>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="composition_of_emphasis_dots">
 <span its-locale-filter-list="en">Composition of Emphasis Dots</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">圏点の処理</span>
 </h4>
       <p its-locale-filter-list="en"> <a href="#term.emphasis-dots" class="termref">Emphasis dots</a> (also known as bouten or side dots) are symbols placed alongside a run of <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> or <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> characters to emphasize
         the text. </p>
+      <p its-locale-filter-list="ja"><a href="#term.emphasis-dots" class="termref">圏点</a>（傍点ともいう）は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>や<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>などの文字列に付け，その文字列を強調する役割を果たす．</p>
       <aside class="note" id="n130">
         <p its-locale-filter-list="en"> There are many ways to emphasize a run of text in Japanese composition. Besides attaching emphasis dots, one may emphasize
           a certain run of text by selecting a different <a href="#term.typeface" class="termref">typeface</a> (for example, Mincho face for normal text and <a href="#term.japanese-gothic-face" class="termref">Japanese gothic face</a> for emphasis),
@@ -4034,113 +4257,164 @@
           which emphasis method to adopt. Selecting a different typeface and enclosing text within brackets are generally used and
           popular emphasis methods. Attaching emphasis dots is not very common but one of the long-established and traditional methods typically
           used in <a href="#term.kanbun-composition" class="termref">kanbun composition</a> (classic Chinese text). </p>
+        <p its-locale-filter-list="ja">日本語組版において文中の一部の文字列を<span class="index" id="d5e12944">強調する方法</span>としては，圏点を付ける方法以外に，その部分の<a href="#term.typeface" class="termref">書体</a>を変更する（例えば<a href="#term.japanese-gothic-face" class="termref">ゴシック体</a>），文字の色を変更する（例えば赤色の文字にする），括弧類でくくる（例えば始めかぎ括弧<span class="character">[「] (LEFT CORNER BRACKET)</span>及び終わりかぎ括弧<span class="character">[」] (RIGHT CORNER BRACKET)</span>，又は始め山括弧<span class="character">[〈] (LEFT ANGLE BRACKET)</span>及び終わり山括弧<span class="character">[〉] (RIGHT ANGLE BRACKET)</span>でくくる），<a href="#term.bousen" class="termref">傍線</a>（又は<a href="#term.underline" class="termref">下線</a>）を付けるなどの方法がある．どの方式にするかは編集方針による．一般に書体を変更する方法や括弧類でくくる方法がよく使用されている．圏点を付ける方法はやや少ないが，<a href="#term.kanbun-composition" class="termref">漢文</a>等では古くからで使用されており，歴史のある伝統的な方法である．</p>
       </aside>
       <aside class="note" id="n131">
         <p its-locale-filter-list="en"> In practice, emphasis dots are not used for <a class="characterClass" href="#cl-07">commas (cl-07)</a>, <a class="characterClass" href="#cl-06">full stops (cl-06)</a>, <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> or <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>. </p>
+        <p its-locale-filter-list="ja">慣行として，<span class="index" id="d5e13030">圏点</span>は，<a class="characterClass" href="#cl-06">句点類（cl-06）</a>，<a class="characterClass" href="#cl-07">読点類（cl-07）</a>，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>などには付けない．</p>
       </aside>
       <p its-locale-filter-list="en"> Composition of emphasis dots is as follows (see <a class="figure_ref" href="#fig2_3_37"></a>). </p>
+      <p its-locale-filter-list="ja">圏点の組版処理は，次のようにする（<a class="figure_ref" href="#fig2_3_37"></a>）．</p>
       <figure id="fig2_3_37"> 
       <img its-locale-filter-list="en" src="images/img2_3_37.png" alt="Composition of emphasis dots." width="433" height="614">
-        <figcaption>
+      <img its-locale-filter-list="ja" src="images_ja/img2_3_37.png" alt="圏点の配置例" width="397" height="605">
+	  <figcaption>
         <span its-locale-filter-list="en">Composition of emphasis dots.</span>
+        <span its-locale-filter-list="ja">圏点の配置例</span>
         </figcaption>
 
       </figure>
       <ol>
         <li id="id248">
           <p its-locale-filter-list="en"> The <a href="#term.character-size" class="termref">character size</a> of emphasis dots is the half size of the <a href="#term.base-characters" class="termref">base characters</a> to be emphasized. </p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e13115">圏点の<a href="#term.character-size" class="termref">文字サイズ</a></span>は，圏点を付ける対象となる<a href="#term.base-characters" class="termref">親文字</a>の文字サイズの1/2とする．</p>
         </li>
         <li id="id249">
           <p its-locale-filter-list="en"> Emphasis dots are attached to the right of the base characters in <a href="#term.vertical-writing-mode" class="termref">vertical writing mode</a>, or above them in <a href="#term.horizontal-writing-mode" class="termref">horizontal writing mode</a>. The center of emphasis dots is aligned with that of the base characters. </p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e13142">圏点の位置</span>は，<a href="#term.vertical-writing-mode" class="termref">縦組</a>では親文字の右側とし，<a href="#term.horizontal-writing-mode" class="termref">横組</a>では親文字の上側とし，親文字に接し，それぞれの中心をそろえて配置する．</p>
         </li>
         <li id="id250">
           <p its-locale-filter-list="en"> There are many symbols that could be specified for use as <a href="#term.emphasis-dots" class="termref2nd">emphasis dots</a>. <span class="character">SESAME DOT "﹅"</span> in <a href="#term.vertical-writing-mode" class="termref2nd">vertical writing mode</a> and <span class="character">BULLET "•"</span> in <a href="#term.horizontal-writing-mode" class="termref2nd">horizontal writing mode</a> are those used for emphasis dots in general.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e13170"><a href="#term.emphasis-dots" class="termref2nd">圏点</a></span>にどのような記号を付けるかは指定によるが，一般に<a href="#term.vertical-writing-mode" class="termref2nd">縦組</a>ではゴマ<span class="character">[<span class="char-kenten">﹅</span>] (SESAME DOT)</span>，<a href="#term.horizontal-writing-mode" class="termref2nd">横組</a>ではビュレット<span class="character">[<span class="char-kenten">•</span>] (BULLET)</span>が使用されている．</p>
         </li>
       </ol>
     </section>
+
+
+
+
+
   </section>
   <section id="line-composition-sec4">
     <h3 id="inline_cutting_note">
 <span its-locale-filter-list="en">Inline Cutting Note (Warichu)</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">>割注処理</span>
 </h3>
     <section>
       <h4 id="where_the_inline_cutting_note_is_used">
 <span its-locale-filter-list="en">Where the Inline Cutting Note (Warichu) is used</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">割注の利用</span>
 </h4>
       <p its-locale-filter-list="en"><a href="#term.warichu" class="termref">Warichu</a> (inline cutting note) is a type of inline notation, where two lines of small characters are inserted into the text. Warichu divides a line into two sub lines. The frequency of use of the inline cutting note is not so high. However,
         the inline cutting note is very important for study guides, travel guides, reference books, encyclopedias and manuals,  because it is very effective for inserting notes at the point in the text where they are needed (see <a class="figure_ref" href="#fig2_4_1"></a>). Inline cutting note is usually used in <a href="#term.vertical-writing-mode" class="termref">vertical writing mode</a>. It is very infrequently used in <a href="#term.horizontal-writing-mode" class="termref">horizontal writing mode</a>.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e13247"><a href="#term.warichu" class="termref">割注</a></span>とは，行の途中に挿入する<a href="#term.note" class="termref">注</a>（<span class="index" id="d5e13254">挿入注</span>）の一種で，2行に割って（<span class="index" id="d5e13257">割り書き</span>という）挿入することから，その名前が付けられている．割注の使用頻度は多くないが，その該当用語が出てきた箇所に直接補足説明できることから，学習参考書，旅行ガイド，事典類，解説書などで利用されており，人物・用語等の簡単な紹介に重要な役割を果たしている（<a class="figure_ref" href="#fig2_4_1"></a>）．<a href="#term.vertical-writing-mode" class="termref">縦組</a>での利用が多く，<a href="#term.horizontal-writing-mode" class="termref">横組</a>での例は非常に少ない．</p>
       <figure id="fig2_4_1"> 
       <img its-locale-filter-list="en" src="images/img2_4_1.png" alt="Warichu (inline cutting note)." width="248" height="477">
+      <img its-locale-filter-list="ja" src="images_ja/img2_4_1.png" alt="割注の例" width="248" height="477">
         <figcaption>
         <span its-locale-filter-list="en">Warichu (inline cutting note).</span>
+        <span its-locale-filter-list="ja">割注の例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n132">
         <p its-locale-filter-list="en">JIS X 4051 specifies inline cutting note in 4.16 "Handling of inline cutting note".</p>
+        <p its-locale-filter-list="ja">割注については，JIS X 4051では“4.16 割注処理”に規定がある．</p>
       </aside>
     </section>
+
+
+
+
+
     <section>
       <h4 id="character_size_for_inline_cutting_notes_and_line_gaps">
 <span its-locale-filter-list="en">Character Size for Inline Cutting Notes and Line Gaps</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">割注の文字サイズと行間など</span>
 </h4>
       <p its-locale-filter-list="en"><a href="#term.character-size" class="termref">Character size</a> for an inline cutting note depends on the  character size established for the kihon-hanmen. Usually, around six point size is used (see <a class="figure_ref" href="#fig2_4_1"></a>).</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e13362">割注の<a href="#term.character-size" class="termref">文字サイズ</a></span>は，指定によるが，一般に6ポイント程度の文字が使用されている（<a class="figure_ref" href="#fig2_4_1"></a>）．</p>
       <p its-locale-filter-list="en">The space between adjacent lines in an inline cutting note is zero, that is to say, there is no <a href="#term.line-gap" class="termref">line gap</a> between them (see <a class="figure_ref" href="#fig2_4_2"></a>).</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e13383">割注そのものの<a href="#term.line-gap" class="termref">行間</a></span>は，一般に0である．つまり，行間をとらない（<a class="figure_ref" href="#fig2_4_2"></a>）．</p>
       <p its-locale-filter-list="en">As shown in <a class="figure_ref" href="#fig2_4_2"></a>, an inline cutting note usually has two lines, and is surrounded by <span class="character">LEFT PARENTHESIS "("</span> and <span class="character">RIGHT PARENTHESIS ")"</span> characters that are double the size of the characters in the inline cutting note itself. There is no space between the surrounding text and parentheses for the inline cutting note.</p>
+      <p its-locale-filter-list="ja">割注は，<a class="figure_ref" href="#fig2_4_2"></a>のように，通常，2行に割り書きし，割注全体の先頭及び末尾に，<a href="#term.block-direction" class="termref">行送り方向</a>の割注の幅と同じ<a href="#term.character-size" class="termref2nd">文字サイズ</a>の始め小括弧<span class="character">[(] (LEFT PARENTHESIS)</span>及び終わり小括弧<span class="character">[)] (RIGHT PARENTHESIS)</span>でくくる形式が多い．したがって，<span class="index" id="d5e13422">割注を囲む括弧類</span>（以下，<a class="characterClass" href="#cl-28">割注始め括弧類（cl-28）</a>及び<a class="characterClass" href="#cl-29">割注終わり括弧類（cl-29）</a>とよぶ）のサイズは，割注の<a href="#term.character-size" class="termref2nd">文字サイズ</a>の2倍にする．なお，割注始め括弧類の前，及び割注終わり括弧類の後ろの漢字等，平仮名，片仮名との<a href="#term.inter-character-space" class="termref">字間</a>は<a href="#term.solid-setting" class="termref">ベタ組</a>とする．</p>
       <aside class="note" id="n133">
         <p its-locale-filter-list="en">There is a style of inline cutting note, which has no <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> or <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, but is surrounded by spaces that have been added explicitly to act as delimiters.</p>
+        <p its-locale-filter-list="ja">割注を<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>及び<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>でくくらずに，指定された一定の空き量をとる方法もある．</p>
       </aside>
       <aside class="note" id="n134">
         <p its-locale-filter-list="en">Handling of inter-character spacing between <a class="characterClass" href="#cl-28">warichu opening brackets (cl-28)</a> or <a class="characterClass" href="#cl-29">warichu closing brackets (cl-29)</a> and adjacent characters is described in <a class="sec_ref" href="#spacing_between_characters"></a> as a complete table, using the concept of character class described in <a class="sec_ref" href="#about_character_classes"></a>.</p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-28">割注始め括弧類（cl-28）</a>及び<a class="characterClass" href="#cl-29">割注終わり括弧類（cl-29）</a>と隣接する文字間の間隔についての処理方法の詳細は，<a class="sec_ref" href="#about_character_classes"></a>で説明する文字クラスに従い，表の形式にして<a class="sec_ref" href="#spacing_between_characters"></a>で示す．</p>
       </aside>
       <figure id="fig2_4_2"> 
       <img its-locale-filter-list="en" src="images/img2_4_2.png" alt="Example of construction of an inline cutting note." width="197" height="478">
+      <img its-locale-filter-list="ja" src="images_ja/img2_4_2.png" alt="割注の指定例" width="145" height="478">
         <figcaption>
         <span its-locale-filter-list="en">Example of construction of an inline cutting note.</span>
+        <span its-locale-filter-list="ja">割注の指定例</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en">Symbols, like <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>, <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, <a class="characterClass" href="#cl-07">commas (cl-07)</a> and <a class="characterClass" href="#cl-06">full stops (cl-06)</a> are also used in inline cutting note text. In such cases, the handling of such symbols is the same as for the <a href="#term.main-text" class="termref">main text</a>.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e13574">割注</span>の中には<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>，<a class="characterClass" href="#cl-06">句点類（cl-06）</a>，<a class="characterClass" href="#cl-07">読点類（cl-07）</a>も使用される．これらの組版処理は，<a href="#term.main-text" class="termref">本文</a>と同じである．</p>
       <p its-locale-filter-list="en">In vertical text, the horizontal width of the inline cutting note area is wider than the width of a <a href="#term.kihon-hanmen" class="termref">kihon-hanmen</a> line. The horizontal centers of the kihon-hanmen line and inline cutting note area are aligned. The line gap used to establish the kihon-hanmen should not be affected by the horizontal
         width of the inline cutting note area.
         In other words, the line gap for the kihon-hanmen needs to be designed wider than usual in preparation for the use of the  inline cutting note. (see <a class="figure_ref" href="#fig_ad1_18"></a> and <a class="figure_ref" href="#fig2_4_1"></a>) Warichu is used also in horizontal text, however it is not so common, and usually occurs only in study guides and encyclopedias.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e13615">割注</span>は，本文の1行の行送り方向の幅の中心と，割注の行送り方向の幅の中心をそろえて配置する．割注の2行の行送り方向の幅は，本文の行の幅より大きくなるが，はみ出しは両方に均等に出すことになる．この場合の行間は，割注のない部分の行間を<a href="#term.kihon-hanmen" class="termref">基本版面</a>として設定した行間とし，割注の部分は狭くなる（<a class="figure_ref" href="#fig_ad1_18"></a>及び<a class="figure_ref" href="#fig2_4_1"></a>）．したがって，基本版面を設定する際に，これを考慮し，行間を広めに設計する必要がある．割注は，横組に用いられる場合もあるが，その例はほとんど学習参考書や百科事典に限られる．</p>
       <p its-locale-filter-list="en">The length of the two lines of the inline cutting note should be as near as possible the same. When the inline cutting note can be set in one kihon-hanmen line, the whole inline note text should be broken at a position where line breaking is permitted, and where the two resulting lines are as close as possible to the same length. The length of the second line should not be longer than the length of the first line. Note that the same line breaking rules are used as for basic text  (see <a class="figure_ref" href="#fig2_4_3"></a>).</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d5e13644">割注の2行の行長</span>は，できるだけそろえる．本文の1行の中に割注がすべて配置できる場合は，2行に分割可能な箇所で，かつ割注全体の文字列の半分に最も近い位置で分割する（この場合の2行に分割するルール（分割可能箇所）も本文と同じである）．ただし，割注の2行目の行長を1行目の行長より長くしない（<a class="figure_ref" href="#fig2_4_3"></a>）．</p>
       <figure id="fig2_4_3"> 
       <img its-locale-filter-list="en" src="images/img2_4_3.png" alt="Examples showing how the inline cutting note can be set in one line of base text." width="140" height="312">
+      <img its-locale-filter-list="ja" src="images_ja/img2_4_3.png" alt="1行の中に割注がすべて配置できる場合の例" width="140" height="312">
         <figcaption>
         <span its-locale-filter-list="en">Examples showing how the inline cutting note can be set in one line of base text.</span>
+        <span its-locale-filter-list="ja">1行の中に割注がすべて配置できる場合の例</span>
         </figcaption>
 
       </figure>
     </section>
+
+
+
+
+
     <section>
       <h4 id="handling_an_inline_cutting_note_when_it_straddles_two_kihonhanmen_lines">
 <span its-locale-filter-list="en">Handling an Inline Cutting Note when it Straddles Two Kihon-hanmen Lines</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">割注を本文の2行以上にわたって配置する処理</span>
 </h4>
       <p its-locale-filter-list="en">When an inline cutting note will not fit on a single kihon-hanmen line, it will wrap onto the following line, and  will be set as shown in <a class="figure_ref" href="#fig2_4_4"></a> or <a class="figure_ref" href="#fig2_4_5"></a>.</p>
+      <p its-locale-filter-list="ja">割注の挿入位置や分量によっては，本文の1行の中に割注がすべて配置できなく，割注を本文の2行又は3行以上にわたって配置する場合がある．この場合の文字列の配置順序及びそれぞれの割注の行長は，<a class="figure_ref" href="#fig2_4_4"></a>又は<a class="figure_ref" href="#fig2_4_5"></a>のようにする．</p>
       <figure id="fig2_4_4"> 
       <img its-locale-filter-list="en" src="images/img2_4_4.png" alt="Example of an inline cutting note straddling two base text lines." width="413" height="280">
+      <img its-locale-filter-list="ja" src="images_ja/img2_4_4.png" alt="2行にわたって割注を配置する例" width="385" height="273">
         <figcaption>
         <span its-locale-filter-list="en">Example of an inline cutting note straddling two base text lines.</span>
+        <span its-locale-filter-list="ja">2行にわたって割注を配置する例</span>
         </figcaption>
 
       </figure>
       <figure id="fig2_4_5"> 
       <img its-locale-filter-list="en" src="images/img2_4_5.png" alt="Example of an inline cutting note straddling three base text lines." width="296" height="298">
+      <img its-locale-filter-list="ja" src="images_ja/img2_4_5.png" alt="3行にわたって割注を配置する例" width="266" height="297">
         <figcaption>
         <span its-locale-filter-list="en">Example of an inline cutting note straddling three base text lines.</span>
+        <span its-locale-filter-list="ja">3行にわたって割注を配置する例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n135">
           <p its-locale-filter-list="en">Normally, an inline cutting note is short, and will therefore fit on a single kihon-hanmen line. There are cases where the note wraps onto the following line, but it is rare that it extends over three or more of the kihon-hanmen lines. If the note is too large, other styles of notation should be considered.</p>
+        <p its-locale-filter-list="ja">割注の利用は，そもそも人物や事項に簡単な説明を付けるもので，注記の字数がそれほど多くならない場合に利用する形式である．したがって，割注が本文の2行にわたって配置されることは，その挿入位置により頻出する．しかし，3行にわたって配置される例はほとんどない．このような注になるのであれば，別の形式の注にすることを検討する必要がある．</p>
           </aside>
     </section>
   </section>
+
+
+
+
+
+
   <section id="line-composition-sec5">
     <h3 id="paragraph_adjustment_rules">
 <span its-locale-filter-list="en">Paragraph Adjustment Rules</span>
