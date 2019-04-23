@@ -50,7 +50,7 @@ Group _members_ are expert contributors participate actively in producing the wo
 
 ### Contacts（連絡先）
 
-Chair: [木田泰夫 (Yasuo Kida)](mailto:kida@me.com) • W3C staff: [Atsushi Shimono](mailto:atsushi@w3.org), [Richard Ishida](mailto:ishida@w3.org)
+Chair: [木田泰夫 (Yasuo Kida)](mailto:kida@me.com) • W3C staff: [下農淳司 (Atsushi Shimono)](mailto:atsushi@w3.org), [Richard Ishida](mailto:ishida@w3.org)
 
 ### Links（JLReq 関連のリンク）
 - [Issue tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=jlreq)
