@@ -4376,7 +4376,7 @@
 
 
 
-
+  
 
     <section>
       <h4 id="handling_an_inline_cutting_note_when_it_straddles_two_kihonhanmen_lines">
@@ -4418,50 +4418,61 @@
   <section id="line-composition-sec5">
     <h3 id="paragraph_adjustment_rules">
 <span its-locale-filter-list="en">Paragraph Adjustment Rules</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">段落整形，そろえ及び段落末尾処理</span>
 </h3>
     <section>
       <h4 id="line_head_indent_at_the_beginning_of_paragraphs">
 <span its-locale-filter-list="en">Line Head Indent at the Beginning of Paragraphs</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">段落先頭行の字下げ</span>
 </h4>
       <p its-locale-filter-list="en">A <a href="#term.paragraph" class="termref">paragraph</a>, a section of a document which consists of one or more sentences to indicate a distinct idea, usually begins on
         a <a href="#term.paragraph-break" class="termref">new line</a>. For the related <a href="#term.line-head-indent" class="termref">line head indent</a> at the beginning of paragraphs (in JIS 4051, this is called the "paragraph line head
         indent") the following methods are available. The amount of space used for the indentation is, in principle, <a href="#term.one-em-space" class="termref">one em space</a> using the <a href="#term.character-size" class="termref">character size</a> in the paragraph.</p>
+      <p its-locale-filter-list="ja">ある意味のまとまりを持った複数の文で構成されている<a href="#term.paragraph" class="termref">段落</a>（意味上の段落）を示す場合に，通常，新しい段落で<a href="#term.paragraph-break" class="termref">改行</a>にしている．この際，段落先頭行の<a href="#term.line-head-indent" class="termref">字下げ</a>（JIS X 4051では“段落字下げ”という用語を使用している）については，次のような方法がある．なお，字下げする場合は，その段落で使用している<a href="#term.character-size" class="termref">文字サイズ</a>の<a href="#term.one-em-space" class="termref">全角アキ</a>が原則である．</p>
       <aside class="note" id="n136">
         <p its-locale-filter-list="en">The definition of line head indent at the beginning of paragraphs is provided in JIS X 4051, sec. 4.17 "paragraph appearance
           processing". Note that "paragraph appearance processing" includes "line head indent", "line end indent" and "indent" in general.</p>
+        <p its-locale-filter-list="ja">段落先頭行の字下げについては，JIS X 4051では“4.17 段落整形処理”に規定されている．なお，<span class="index" id="d5e13886"><a href="#term.paragraph-format" class="termref">段落整形</a></span>とは，字下げ，字上げ，インデントなどの段落の書式をいう．</p>
       </aside>
       <aside class="note" id="n137">
         <p its-locale-filter-list="en">The layout processing for <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> in the case of full-width line head indent at the beginning of paragraphs,
           is described in this document, <a class="sec_ref" href="#positioning_of_opening_brackets_at_line_head"></a>. </p>
+        <p its-locale-filter-list="ja">段落先頭行の字下げを全角とした場合の<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の組版処理については，本文書の<a class="sec_ref" href="#positioning_of_opening_brackets_at_line_head"></a>を参照．</p>
       </aside>
       <ol>
         <li id="id251">
           <p its-locale-filter-list="en">Line head indent at the beginning of paragraphs is applied to all paragraphs. Nearly all books and magazines make use of
             this method (see <a class="figure_ref" href="#fig2_5_1"></a>). </p>
+          <p its-locale-filter-list="ja">すべての段落の先頭行の字下げを行う．ほとんどの書籍・雑誌は，この方法を採用している（<a class="figure_ref" href="#fig2_5_1"></a>）．</p>
           <figure id="fig2_5_1"> 
       <img its-locale-filter-list="en" src="images/img2_5_1.png" alt="Example of line head indent at the beginning of paragraphs." width="546" height="477">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_1.png" alt="段落の先頭行の字下げを行った例" width="530" height="474">
             <figcaption>
         <span its-locale-filter-list="en">Example of line head indent at the beginning of paragraphs.</span>
+        <span its-locale-filter-list="ja">段落の先頭行の字下げを行った例</span>
         </figcaption>
 
           </figure>
           <aside class="note" id="n138">
             <p its-locale-filter-list="en">In the case of written conversational text followed by, for example, "she said", if the conversational part is bounded by <span class="character">LEFT CORNER BRACKET "「"</span> and <span class="character">RIGHT CORNER BRACKET "」"</span> and the "she said" text appears after a line-break, the conversational text and the "she said" text are considered to be one continuous phrase. Hence, there is no line head indent at
               the beginning of the "she said" phrase, after the conversation part, i.e. so-called tentsuki (see <a class="figure_ref" href="#fig2_5_2"></a>). When you have a (mathematical) formula on a separate line in <a href="#term.horizontal-writing-mode" class="termref">horizontal writing mode</a>, and a following line containing text such as "will be" there is also no line head indent at the beginning of the paragraph. On the other hand, there is also an approach in novels etc., where the first line indent is applied to paragraphs (see <a class="figure_ref" href="#fig2_5_3"></a>).</p>
+            <p its-locale-filter-list="ja">改行にして始めかぎ括弧<span class="character">[「] (LEFT CORNER BRACKET)</span>及び終わりかぎ括弧<span class="character">[」] (RIGHT CORNER BRACKET)</span>でくくった<span class="index" id="d5e14010"><span class="index" id="d5e14011">会話などを</span></span>“といった……”などと受けて続く場合は，文節が連続していると考え，段落の先頭行の字下げは行わないで<span class="index" id="d5e14014"><a href="#term.tentsuki" class="termref">天付き</a></span>とする（<a class="figure_ref" href="#fig2_5_2"></a>）．<a href="#term.horizontal-writing-mode" class="termref">横組</a>の別行にした<span class="index" id="d5e14025"><span class="index" id="d5e14026">数式を受け</span></span>て，改行で“となるので……”などと受ける場合も，同様に段落の先頭行の字下げは行わない．ただし，小説などでは，すべて段落の先頭行の字下げは行うという処理方法も行われている（<a class="figure_ref" href="#fig2_5_3"></a>）．</p>
           </aside>
           <figure id="fig2_5_2"> 
       <img its-locale-filter-list="en" src="images/img2_5_2.png" alt="Layout example 1 of a line immediately following a written conversation." width="172" height="345">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_2.png" alt="会話の直後の行の配置例1" width="128" height="345">
             <figcaption>
         <span its-locale-filter-list="en">Layout example 1 of a line immediately following a written conversation.</span>
+        <span its-locale-filter-list="ja">会話の直後の行の配置例1</span>
         </figcaption>
 
           </figure>
           <figure id="fig2_5_3"> 
       <img its-locale-filter-list="en" src="images/img2_5_3.png" alt="Layout example 2 of a line immediately following a written conversation." width="180" height="339">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_3.png" alt="会話の直後の行の配置例2" width="137" height="339">
             <figcaption>
         <span its-locale-filter-list="en">Layout example 2 of a line immediately following a written conversation.</span>
+        <span its-locale-filter-list="ja">会話の直後の行の配置例2</span>
         </figcaption>
 
           </figure>
@@ -4470,189 +4481,268 @@
           <p its-locale-filter-list="en">Line head indent at the beginning of paragraphs is not applied for any paragraph at all, and the tentsuki position is used
             (see <a class="figure_ref" href="#fig2_5_4"></a>). There are examples of this method being used in certain books and magazines for the sake of styling, but this is rather hard
             to read. </p>
+          <p its-locale-filter-list="ja">すべての段落の先頭行の字下げを行わないで，<span class="index" id="d5e14107">天付き</span>とする（<a class="figure_ref" href="#fig2_5_4"></a>）．横組などの一部の書籍・雑誌で体裁を優先して採用している例があるが，あまり読みやすいとはいえない．</p>
           <figure id="fig2_5_4"> 
       <img its-locale-filter-list="en" src="images/img2_5_4.png" alt="Example of no line head indent at the beginning of paragraphs." width="530" height="494">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_4.png" alt="段落の先頭行の字下げを行わない例" width="530" height="497">
             <figcaption>
         <span its-locale-filter-list="en">Example of no line head indent at the beginning of paragraphs.</span>
+        <span its-locale-filter-list="ja">段落の先頭行の字下げを行わない例</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id253">
           <p its-locale-filter-list="en">In principle, <a href="#term.line-head-indent" class="termref">line head indent</a> is applied at the beginning of a paragraph.  However, a paragraph immediately following a tentsuki-set <a href="#term.heading" class="termref">heading</a> is also  set <a href="#term.tentsuki" class="termref">tentsuki</a>, so that the beginning of the heading and the paragraph are  aligned (see <a class="figure_ref" href="#fig2_5_5"></a>).  In some books and magazines this method is applied to text in  horizontal writing mode.</p>
-          <figure id="fig2_5_5"> 
+          <p its-locale-filter-list="ja"><a href="#term.paragraph" class="termref2nd">段落</a>の先頭行の<a href="#term.line-head-indent" class="termref2nd">字下げ</a>は原則として行うが，<a href="#term.heading" class="termref">見出し</a>の直後の<a href="#term.paragraph" class="termref2nd">段落</a>に限り<span class="index" id="d5e14160"><a href="#term.line-head-indent" class="termref2nd">字下げ</a></span>を行わないで，<a href="#term.tentsuki" class="termref2nd">天付き</a>とする（<a class="figure_ref" href="#fig2_5_5"></a>）．字下げを行わない見出しと体裁をそろえるということもあり，横組の一部の書籍・雑誌などでこの方法が採用されている．</p>          <figure id="fig2_5_5"> 
       <img its-locale-filter-list="en" src="images/img2_5_5.png" alt="Example of no line head indent at the beginning of paragraphs immediately following headings." width="575" height="495">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_5.png" alt="見出しの直後の段落に限り字下げを行わない例" width="575" height="493">
             <figcaption>
         <span its-locale-filter-list="en">Example of no line head indent at the beginning of paragraphs immediately following headings.</span>
+        <span its-locale-filter-list="ja">見出しの直後の段落に限り字下げを行わない例</span>
         </figcaption>
 
           </figure>
         </li>
       </ol>
       <p its-locale-filter-list="en">On the other hand, for example with <a href="#term.itemization" class="termref">itemization</a>, there is also the method that indents the second and following lines of  the paragraph (see <a class="figure_ref" href="#fig2_5_6"></a>). This is the so-called "questions and answer" (Q&amp;A) form. It has the effect that numbers (if used) stand out.</p>
+      <p its-locale-filter-list="ja">なお，<span class="index" id="d5e14216"><a href="#term.itemization" class="termref">箇条書き</a></span>などでは，逆に，<span class="index" id="d5e14220">段落の2行目以下の行頭を字下げ</span>するという方法も行われている（<a class="figure_ref" href="#fig2_5_6"></a>）．“<span class="index" id="d5e14226">問答形式（Q&amp;A）</span>”などとよばれる処理方法である．番号が付く場合など，この番号が目立つという効果がある．</p>
       <figure id="fig2_5_6"> 
       <img its-locale-filter-list="en" src="images/img2_5_6.png" alt="Layout example for itemization." width="620" height="497">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_6.png" alt="箇条書きの配置例" width="620" height="475">
         <figcaption>
         <span its-locale-filter-list="en">Layout example for itemization.</span>
+        <span its-locale-filter-list="ja">箇条書きの配置例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n139">
         <p its-locale-filter-list="en">The definition of itemization is provided in JIS X 4051, sec. 8.4 "itemization processing".</p>
+        <p its-locale-filter-list="ja">箇条書きについては，JIS X 4051では“8.4 箇条書き処理”に規定がある．</p>
       </aside>
     </section>
+
+
+
+
+
+
     <section>
-      <h4 id="line_head_indent_and_line_end_indent">3.5.2 <span class="heading"><span class="index" id="en-subheading2_5_2">Line Head Indent</span> and <span class="index" id="d5e14311">Line End Indent</span></span>
-</h4>
+      <h4 id="line_head_indent_and_line_end_indent">
+	  <span its-locale-filter-list="en">Line Head Indent and Line End Indent</span>
+	  <span its-locale-filter-list="ja">字下げと字上げ</span>
+	</h4>
       <p its-locale-filter-list="en">The <a href="#term.line-head-indent" class="termref">line head indent</a> is the indentation of the line head by a fixed amount, starting from the <a href="#term.line-head" class="termref">line head</a> side of the hanmen (in the case of one column) or of the <a href="#term.column" class="termref">column</a> area (in the case of several columns). In contrast, the indentation of the <a href="#term.line-end" class="termref">line end</a> position by a fixed amount, starting from the line head, is called <a href="#term.line-end-indent" class="termref">line end indent</a>.</p>
+      <p its-locale-filter-list="ja"><a href="#term.line-head-indent" class="termref">字下げ</a>は，版面（1段組の場合）又は<a href="#term.column" class="termref">段</a>の領域（多段組の場合）の<a href="#term.line-head" class="termref">行頭</a>側の端から指定された量だけ行頭位置を下げる処理である．逆に<a href="#term.line-end" class="termref">行末</a>側の端から指定された量だけ行末位置を上げる処理が<a href="#term.line-end-indent" class="termref">字上げ</a>である．</p>
       <p its-locale-filter-list="en">There are examples of <a href="#term.line-head-indent" class="termref2nd">line head indent</a> for <a href="#term.quotation" class="termref">quotations</a> in separate lines (see <a class="figure_ref" href="#fig2_5_7"></a>) or for headings in separate lines. <a href="#term.line-end-indent" class="termref2nd">Line end indent</a> is used, for example, for headings or for quotations in separate lines.</p>
+      <p its-locale-filter-list="ja"><a href="#term.line-head-indent" class="termref2nd">字下げ</a>は，<a href="#term.quotation" class="termref">引用文</a>を別行にして示す場合（<a class="figure_ref" href="#fig2_5_7"></a>）や，別行の見出しで行う例がある．<a href="#term.line-end-indent" class="termref2nd">字上げ</a>は，別行の見出しなどで行う場合や引用文に例がある．</p>
       <figure id="fig2_5_7"> 
       <img its-locale-filter-list="en" src="images/img2_5_7.png" alt="Example of line head indent for a quotation in a separate line." width="477" height="554">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_7.png" alt="別行の引用文を字下げした例" width="459" height="556">
         <figcaption>
         <span its-locale-filter-list="en">Example of line head indent for a quotation in a separate line.</span>
+        <span its-locale-filter-list="ja">別行の引用文を字下げした例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n140">
         <p its-locale-filter-list="en"> For <a href="#term.quotation" class="termref2nd">quotations</a> on separate lines, there are the following approaches: either (a) the character size is the same as for the main text, and the difference from the main text is expressed only by the line head indent; or (b) the character size is made smaller than that of the main text. The former approach is applied frequently. With this approach, the line head indent is often set at double the normal character size of the main text. If large quotations are inserted frequently, there is also an approach that uses a full-width line head indent with an empty line inserted before and after the quotation. The approach where characters are made smaller than the main text is the same as the processing of endnotes, see <a class="sec_ref" href="#processing_of_endnotes_in_vertical_writing_mode_or_horizontal_writing_mode"></a>).</p>
+        <p its-locale-filter-list="ja">別行にする<span class="index" id="d5e14429"><a href="#term.quotation" class="termref2nd">引用文</a></span>では，本文と同じ文字サイズで字下げだけで本文との区別を表す方法と，文字サイズも本文よりは小さくする方法がある．前者の方法が多い．この場合，一般に本文の文字サイズの2倍の字下げとする例が多い．分量の多い引用文が数多く挿入される場合は，全角の字下げとして，さらに別行の引用文の前後を1行アキとする方法も行われている．文字サイズを本文より小さくして字下げを行う方法は，後注などの注の字下げと同様である（このような注の字下げについては，<a class="sec_ref" href="#processing_of_endnotes_in_vertical_writing_mode_or_horizontal_writing_mode"></a>を参照）．</p>
       </aside>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="single_line_alignment_processing">
 <span its-locale-filter-list="en">Single Line Alignment Processing</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">そろえの処理</span>
 </h4>
       <p its-locale-filter-list="en">The Japanese "<a href="#term.single-line-alignment-method" class="termref">single line alignment method</a>" is a process for setting alignment for a run of text that is shorter than a given line length. This method is frequently used for headings and poems. The following methods are available (see <a class="figure_ref" href="#fig2_5_8"></a>).</p>
+      <p its-locale-filter-list="ja">日本語組版でいう“<span class="index" id="d5e14475"><a href="#term.single-line-alignment-method" class="termref">そろえ</a></span>”とは，1行の文字列について，指定した位置に文字の配置位置を合わせることである．見出しや詩などの比較的短い行をある一定の長さと位置に調整することである．次のような方法がある（<a class="figure_ref" href="#fig2_5_8"></a>）．指定された行長以下の文字列を処理する方法なので，見出しや，複数行からなるが短い文章で構成される“詩”などで，指定の位置にそろえる場合に利用されている．</p>
       <figure id="fig2_5_8"> 
       <img its-locale-filter-list="en" src="images/img2_5_8.png" alt="Single line alignment processing." width="476" height="526">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_8.png" alt="そろえの配置例" width="448" height="510">
         <figcaption>
         <span its-locale-filter-list="en">Single line alignment processing.</span>
+        <span its-locale-filter-list="ja">そろえの配置例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n141">
         <p its-locale-filter-list="en">The single line alignment method is defined in JIS X 4051, sec. 4.18 "Single Line Alignment Processing".</p>
+        <p its-locale-filter-list="ja">そろえの処理については，JIS X 4051では“4.18 そろえ等の処理”に規定されている．</p>
       </aside>
       <ol>
         <li id="id254">
           <p its-locale-filter-list="en"><a href="#term.centering" class="termref">Centering</a>: The <a href="#term.space" class="termref">space</a> between adjacent characters is, in principle, <a href="#term.solid-setting" class="termref">set solid</a>. (If space is needed between Japanese text and western text, before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, that space is inserted based on the table in <a class="sec_ref" href="#spacing_between_characters"></a>.) Also, if there is an explicit instruction to insert spaces, such spaces are inserted. If there is not solid setting but a fixed space between characters, this is used; the amount of space at the line head and line end is made equal, and the center of the character sequence is unified with the center of the line.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e14554"><a href="#term.centering" class="termref">中央そろえ</a></span>：隣接する文字の字間は，原則として<a href="#term.solid-setting" class="termref">ベタ組</a>（和文と欧文との字間，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の後ろなど<a class="sec_ref" href="#spacing_between_characters"></a>に示した原則とする空き量が必要なときは，その空き量を入れる）とするか，又は明示的に指定された空き量がある場合はその空き量を挿入し，行頭側及び行末側の空き量を均等にし，文字列の中央を，行の中央の位置に合わせて配置する．</p>
         </li>
         <li id="id255">
           <p its-locale-filter-list="en"><a href="#term.line-head-alignment" class="termref">Line head alignment</a>: The space between adjacent characters is, in principle, set solid. (If space is needed between Japanese text and western text, before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, that space is inserted based on the table in <a class="sec_ref" href="#spacing_between_characters"></a>.) Also, if there is an explicit instruction to insert spaces, such spaces are inserted. If there is not solid setting but a fixed space between characters, this is used; the start of the character sequence is unified with the line head, and if the line is not full, the line end is kept empty.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e14606"><a href="#term.line-head-alignment" class="termref">行頭そろえ</a></span>：隣接する文字の字間は，原則としてベタ組（和文と欧文との字間，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の後ろなど<a class="sec_ref" href="#spacing_between_characters"></a>に示した原則とする空き量が必要なときは，その空き量を入れる）とするか，又は明示的に指定された空き量がある場合はその空き量を挿入し，文字列の先頭を行頭の位置に合わせ，1行に満たないときは行末側を空けて配置する．</p>
         </li>
         <li id="id256">
           <p its-locale-filter-list="en"><a href="#term.line-end-alignment" class="termref">Line end alignment</a>: The space between adjacent characters is, in principle, set solid. (If space is needed between Japanese text and western text, before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, that space is inserted based on the table in <a class="sec_ref" href="#spacing_between_characters"></a>.) Also, if there is an explicit instruction to insert spaces, such spaces are inserted. If there is not solid setting but a fixed space between characters, this is used; the end of the character sequence is unified with the line end, and if the line is not full, the line head is kept empty.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e14649"><a href="#term.line-end-alignment" class="termref">行末そろえ</a></span>：隣接する文字の字間は，原則としてベタ組（和文と欧文との字間，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の後ろなど<a class="sec_ref" href="#spacing_between_characters"></a>に示した原則とする空き量が必要なときは，その空き量を入れる）とするか，又は明示的に指定された空き量がある場合はその空き量を挿入し，文字列の末尾を行末の位置に合わせ，1行に満たないときは行頭側を空けて配置する．</p>
         </li>
         <li id="id257">
           <p its-locale-filter-list="en"><a href="#term.even-inter-character-spacing" class="termref">Even inter-character spacing</a>: The space between adjacent characters is, in principle, set solid. (If space is needed between Japanese text and western text, before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, that space is inserted based on the table in <a class="sec_ref" href="#spacing_between_characters"></a>.) Also, if there is an explicit instruction to insert spaces, such spaces are inserted. In addition, using the space made available during line adjustment processing, equal character spacing is applied where possible. The start of the character sequence is aligned to the position of the line head, and the end of the character sequence to the position of the line end.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d5e14693"><a href="#term.even-inter-character-spacing" class="termref">均等割り</a></span>：隣接する文字の字間は，原則としてベタ組（和文と欧文との字間，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の後ろなど<a class="sec_ref" href="#spacing_between_characters"></a>に示した原則とする空き量が必要なときは，その空き量を入れる）とするか，又は明示的に指定された空き量がある場合はその空き量を挿入し，そのうえで，行の調整を行う際に空ける調整が可能な箇所で字間を均等に空けて，文字列の先頭を行頭の位置に，文字列の末尾を行末の位置に合わせる．</p>
         </li>
       </ol>
       <aside class="note" id="n142">
         <p its-locale-filter-list="en">Several justification methods are applied for positioning of headings or items of <a href="#term.table" class="termref">tables</a>. For example, <a href="#term.centering" class="termref2nd">centering</a> is often used for headings
           in horizontal writing mode, taking the left-right balance is taken into account. However, there are also
           examples of <a href="#term.line-head-alignment" class="termref2nd">line head alignment</a>.</p>
+        <p its-locale-filter-list="ja">そろえは，見出しや<a href="#term.table" class="termref">表</a>の項目の配置方法でいくつかの方法が行われている．例えば，<span class="index" id="d5e14762">横組の見出し</span>は左右のバランスを考慮し<a href="#term.centering" class="termref2nd">中央そろえ</a>が多いが，<a href="#term.line-head-alignment" class="termref2nd">行頭そろえ</a>にする例もある．</p>
       </aside>
       <aside class="note" id="n143">
         <p its-locale-filter-list="en"><a href="#term.even-inter-character-spacing" class="termref2nd">Even inter-character spacing</a> is often used for printing Haiku in separate lines (see <a class="figure_ref" href="#fig2_5_9"></a>). </p>
+        <p its-locale-filter-list="ja"><span class="index" id="d5e14807"><a href="#term.even-inter-character-spacing" class="termref2nd">均等割り</a></span>は，俳句を別行にして掲げる場合によく利用されている（<a class="figure_ref" href="#fig2_5_9"></a>）．</p>
       </aside>
       <figure id="fig2_5_9"> 
       <img its-locale-filter-list="en" src="images/img2_5_9.png" alt="Example of Haiku positioning with even inter-character spacing." width="528" height="515">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_9.png" alt="均等割りにした俳句の配置例" width="520" height="515">
         <figcaption>
         <span its-locale-filter-list="en">Example of Haiku positioning with even inter-character spacing.</span>
+        <span its-locale-filter-list="ja">均等割りにした俳句の配置例</span>
         </figcaption>
 
       </figure>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="widow_adjustment_of_paragraphs">
 <span its-locale-filter-list="en">Widow Adjustment of Paragraphs</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">段落末尾処理</span>
 </h4>
       <p its-locale-filter-list="en">The intent of <a href="#term.widow-adjustment" class="termref">widow adjustment</a> of paragraphs is to avoid that the last line of a paragraph contains less than a
         given number of characters. This is also called "<a href="#term.widow" class="termref">widow</a>" processing.</p>
+      <p its-locale-filter-list="ja"><a href="#term.widow-adjustment" class="termref">段落末尾処理</a>とは，段落の最終行の文字数が，ある文字数未満になることを避けるための処理のことである．<span class="index" id="d5e14875"><a href="#term.widow" class="termref">ウィドウ</a>（widow）処理</span>ともいう．</p>
       <aside class="note" id="n144">
         <p its-locale-filter-list="en"><a href="#term.widow-adjustment" class="termref2nd">Widow adjustment</a> of paragraphs is defined in JIS X 4051, sec. 4.20 "Widow Adjustment of Paragraphs".</p>
+        <p its-locale-filter-list="ja"><a href="#term.widow-adjustment" class="termref2nd">段落末尾処理</a>については，JIS X 4051では“4.20 段落末尾処理”に規定されている．</p>
       </aside>
       <aside class="note" id="n145">
         <p its-locale-filter-list="en"><a href="#term.widow-adjustment" class="termref2nd">Widow adjustment</a> of paragraphs is not regarded as very important in Japanese composition. However, care is taken to avoid cases
           such as a single character in the last line of a paragraph (often this is tolerated), or - even more extreme -
           just one character on a page just before a <a href="#term.page-break" class="termref">page break</a> or a <a href="#term.new-recto" class="termref">new recto</a> (see <a class="figure_ref" href="#fig2_5_10"></a>).</p>
+        <p its-locale-filter-list="ja">日本語組版では，<a href="#term.widow-adjustment" class="termref2nd">段落末尾処理</a>はあまり重視されていない．しかし，段落の最終行が1字だけになる場合（これは許容している例が多い），もっと極端に<a href="#term.new-recto" class="termref">改丁</a>・<a href="#term.page-break" class="termref">改ページ</a>で始まる直前のページに1字だけ配置されるという場合は，避けるようにする（<a class="figure_ref" href="#fig2_5_10"></a>）．</p>
       </aside>
       <figure id="fig2_5_10"> 
       <img its-locale-filter-list="en" src="images/img2_5_10.png" alt="Example of just one character on a page just before a page break (to be avoided)." width="732" height="540">
+      <img its-locale-filter-list="ja" src="images_ja/img2_5_10.png" alt="改ページで始まる直前のページに1字だけ配置された例 （これは避ける）" width="737" height="544">
         <figcaption>
         <span its-locale-filter-list="en">Example of just one character on a page just before a page break (to be avoided).</span>
-        </figcaption>
+        <span its-locale-filter-list="ja">改ページで始まる直前のページに1字だけ配置された例（これは避ける）</span>        </figcaption>
 
       </figure>
     </section>
   </section>
+
+
+
+
+
+
   <section id="line-composition-sec6">
     <h3 id="tab_setting">
 <span its-locale-filter-list="en">Tab Setting</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">タブ処理</span>
 </h3>
     <section>
       <h4 id="usage_of_tab_setting">
 <span its-locale-filter-list="en">Usage of Tab Setting</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">タブ処理の利用</span>
 </h4>
       <p its-locale-filter-list="en"><a href="#term.tab-setting" class="termref">Tab setting</a> is useful for alignment of <a href="#term.table" class="termref">table</a> data, <a href="#term.itemization" class="termref">itemized lists</a>, etc. where a series of characters need to be set at specific alignment positions within a line (see <a class="figure_ref" href="#fig2_6_1"></a>).</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d6e73"><a href="#term.tab-setting" class="termref">タブ処理</a></span>とは，ある特定の文字列を行中の指定された位置に合わせて配置することである．1つあるいは複数の文字列を行の特定の位置に配置する場合に利用できる．<a href="#term.table" class="termref">表</a>形式のデータの配置，<a href="#term.itemization" class="termref">箇条書き</a>などに利用されている（<a class="figure_ref" href="#fig2_6_1"></a>）．</p>
       <figure id="fig2_6_1"> 
       <img its-locale-filter-list="en" src="images/img2_6_1.png" alt="Example of tab setting." width="547" height="255">
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_1.png" alt="タブ処理の機能を使用して配置した例" width="547" height="240">
         <figcaption>
         <span its-locale-filter-list="en">Example of tab setting.</span>
+        <span its-locale-filter-list="ja">タブ処理の機能を使用して配置した例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n146">
         <p its-locale-filter-list="en"> Tab Setting is described in "JIS X 4051 4.21 Tab Setting".</p>
+        <span its-locale-filter-list="ja">タブ処理の機能を使用して配置した例</span>
       </aside>
       <p its-locale-filter-list="en">For <a href="#term.tab-setting" class="termref2nd">tab setting</a>, it is necessary to identify tab positions, tab types (how to align the characters in the tab position), and
         the characters to be set. For this purpose, it is necessary to insert a tab sign before the tabbed character. The series of
         characters just after the tab sign are the target characters (see <a class="figure_ref" href="#fig2_6_2"></a>). If there is more than one tab sign, it is necessary to set the same numbers of tab positions and tab types as the
         number of tab signs.</p>
+      <p its-locale-filter-list="ja"><a href="#term.tab-setting" class="termref2nd">タブ処理</a>を行うためには，<span class="index" id="d6e154">タブ位置</span>及びその<span class="index" id="d6e157">タブ種</span>（配置位置にどのようにそろえるかの形式）の指定，さらに，その指定位置に配置する文字列が必要である．そこで，タブ処理を行う文字列の前にタブ記号を挿入しておく必要がある．タブ記号の直後にある文字列がタブ処理を行う対象の文字列になる（<a class="figure_ref" href="#fig2_6_2"></a>）．そして，1行中に挿入したタブ記号の数だけのタブ位置とそのタブ種を指定する．</p>
       <figure id="fig2_6_2"> 
       <img its-locale-filter-list="en" src="images/img2_6_2.png" alt="Tab signs and the target text of tab setting." width="452" height="113">
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_2.png" alt="タブ記号とタブ処理の対象となる文字列" width="486" height="98">
         <figcaption>
         <span its-locale-filter-list="en">Tab signs and the target text of tab setting.</span>
+        <span its-locale-filter-list="ja">タブ記号とタブ処理の対象となる文字列</span>
         </figcaption>
 
       </figure>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="types_of_tab_settings">
 <span its-locale-filter-list="en">Types of Tab Settings</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">タブ処理で指定する配置位置にそろえる形式</span>
 </h4>
       <p its-locale-filter-list="en">There are the following types of tab setting to align texts.</p>
+      <p its-locale-filter-list="ja">タブ処理で指定する配置位置にどのようにそろえるかの形式（<span class="index" id="d6e207">タブ種</span>）としては，次のようなものが必要になる．</p>
       <ol>
         <li id="id258">
           <p its-locale-filter-list="en">Start alignment tab setting: the start position of the text is aligned to the tab position (see <a class="figure_ref" href="#fig2_6_3"></a>).</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e220">左（上）そろえタブ</span>：タブ処理を行う対象の文字列の先頭をタブ位置に合わせて配置する（<a class="figure_ref" href="#fig2_6_3"></a>）．左そろえタブは横組の場合のタブ種，上そろえタブは縦組の場合のタブ種である．</p>
           <figure id="fig2_6_3"> 
       <img its-locale-filter-list="en" src="images/img2_6_3.png" alt="Examples of start alignment tab settings." width="534" height="252">
-            <figcaption>
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_3.png" alt="左（上）そろえタブの例" width="524" height="235">
+	  <figcaption>
         <span its-locale-filter-list="en">Examples of start alignment tab settings.</span>
+        <span its-locale-filter-list="ja">左（上）そろえタブの例</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id259">
           <p its-locale-filter-list="en">End alignment tab setting: the end position of the text is aligned to the tab position (see <a class="figure_ref" href="#fig2_6_4"></a>).</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e248">右（下）そろえタブ</span>：タブ処理を行う対象の文字列の末尾をタブ位置に合わせて配置する（<a class="figure_ref" href="#fig2_6_4"></a>）．右そろえタブは横組の場合のタブ種，下そろえタブは縦組の場合のタブ種である．</p>
           <figure id="fig2_6_4"> 
       <img its-locale-filter-list="en" src="images/img2_6_4.png" alt="Examples of end alignment tab settings." width="510" height="256">
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_4.png" alt="右（下）そろえタブの例" width="500" height="223">
             <figcaption>
         <span its-locale-filter-list="en">Examples of end alignment tab settings.</span>
+        <span its-locale-filter-list="ja">右（下）そろえタブの例</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id260">
           <p its-locale-filter-list="en">Center alignment tab setting: the center of the text is aligned to the tab position (see <a class="figure_ref" href="#fig2_6_5"></a>)．</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e276">中央そろえタブ</span>：タブ処理を行う対象の文字列の中央をタブ位置に合わせて配置する（<a class="figure_ref" href="#fig2_6_5"></a>）．</p>
           <figure id="fig2_6_5"> 
       <img its-locale-filter-list="en" src="images/img2_6_5.png" alt="Examples of center alignment tab settings." width="513" height="258">
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_5.png" alt="中央そろえタブの例" width="503" height="223">
             <figcaption>
         <span its-locale-filter-list="en">Examples of center alignment tab settings.</span>
+        <span its-locale-filter-list="ja">中央そろえタブの例</span>
         </figcaption>
 
           </figure>
@@ -4660,33 +4750,47 @@
         <li id="id261">
           <p its-locale-filter-list="en">Alignment with a specified character
             tab setting: the start position of a specified character or sign (for example, a period) in the text is aligned to the tab position (see <a class="figure_ref" href="#fig2_6_6"></a>).</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e304">指定文字そろえタブ</span>：タブ処理を行う対象の文字列の中にある指定された文字（例えばピリオド）の先頭をタブ位置に合わせて配置する（<a class="figure_ref" href="#fig2_6_6"></a>）．</p>
           <figure id="fig2_6_6"> 
       <img its-locale-filter-list="en" src="images/img2_6_6.png" alt="Examples of specified character alignment tab settings." width="486" height="213">
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_6.png" alt="指定文字そろえタブの例" width="474" height="186">
             <figcaption>
         <span its-locale-filter-list="en">Examples of specified character alignment tab settings.</span>
+        <span its-locale-filter-list="ja">指定文字そろえタブの例</span>
         </figcaption>
 
           </figure>
         </li>
       </ol>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="the_method_of_setting_the_target_text">
 <span its-locale-filter-list="en">The Method of Setting the Target Text</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">タブ処理を行う対象の文字列の配置方法</span>
 </h4>
       <p its-locale-filter-list="en">Set the text from the <a href="#term.line-head" class="termref">line head</a> to the position before the tab sign in the first tab position, set the text from the
         first tab sign to the next tab sign in the second tab position, and so on. The behavior of <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, etc. is
         same as for the <a href="#term.main-text" class="termref">main text</a>.</p>
+      <p its-locale-filter-list="ja"><a href="#term.line-head" class="termref">行頭</a>から，タブ記号で区切られた文字列と，タブ処理として指定された配置位置（タブ位置）を，順番に対応させて配置する．それぞれの文字列に含まれる<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>などの組版処理は，<a href="#term.main-text" class="termref">本文</a>と同じである．</p>
       <p its-locale-filter-list="en">Following are some examples. The behavior of text before and after the tab positions are very difficult to anticipate, so it is necessary to design using trial and error.</p>
+      <p its-locale-filter-list="ja">いくつかの<span class="index" id="d6e381">配置例</span>を示す．ただし，b以降は設計段階では予想しなかった配置となる場合が多く，一般に，タブ位置の設計のやり直しが必要になる．</p>
       <ol>
         <li id="id262">
           <p its-locale-filter-list="en">If the target string is the first series of the line, the characters should be set in the first tab position from the start
             of the line, and so on, one after another (see <a class="figure_ref" href="#fig2_6_7"></a>). </p>
+          <p its-locale-filter-list="ja">タブ処理の対象となる文字列が<span class="index" id="d6e395">行の最初の文字列</span>であれば，行頭に一番近いタブ位置にその文字列を合わせ，以下，順番に対応させて配置する（<a class="figure_ref" href="#fig2_6_7"></a>）．</p>
           <figure id="fig2_6_7"> 
       <img its-locale-filter-list="en" src="images/img2_6_7.png" alt="Example of tab setting 1." width="488" height="119">
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_7.png" alt="タブ処理による配置例1" width="450" height="120">
             <figcaption>
         <span its-locale-filter-list="en">Example of tab setting 1.</span>
+        <span its-locale-filter-list="ja">タブ処理による配置例1</span>
         </figcaption>
 
           </figure>
@@ -4694,10 +4798,13 @@
         <li id="id263">
           <p its-locale-filter-list="en">If the target string of text is too long to be set before the next tab position and overflows, the next string of text is aligned
             to the tag position after the end of the preceding string (see <a class="figure_ref" href="#fig2_6_8"></a>). </p>
+          <p its-locale-filter-list="ja">タブ処理の対象となる<span class="index" id="d6e423">文字列が長く</span>て，次にくるタブ位置をはみ出した場合は，その長い文字列の後ろのタブ処理の対象となる文字列は，そのはみ出した長い文字列の末尾以降にある最初のタブ位置が対応する（<a class="figure_ref" href="#fig2_6_8"></a>）．</p>
           <figure id="fig2_6_8"> 
       <img its-locale-filter-list="en" src="images/img2_6_8.png" alt="Example of tab setting 2." width="496" height="288">
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_8.png" alt="タブ処理による配置例2" width="474" height="287">
             <figcaption>
         <span its-locale-filter-list="en">Example of tab setting 2.</span>
+        <span its-locale-filter-list="ja">タブ処理による配置例2</span>
         </figcaption>
 
           </figure>
@@ -4705,10 +4812,13 @@
         <li id="id264">
           <p its-locale-filter-list="en"> If the beginning of the string overlaps with the end of the preceding string as the result of the tab setting indication,
             the following string is set just after the preceding string (see <a class="figure_ref" href="#fig2_6_9"></a>). </p>
+          <p its-locale-filter-list="ja">指定位置にタブ処理の対象となる文字列を配置した結果，<span class="index" id="d6e451">前の文字列と重なってしまった場合</span>は，直前の文字列の末尾に続けて配置する（<a class="figure_ref" href="#fig2_6_9"></a>）．</p>
           <figure id="fig2_6_9"> 
       <img its-locale-filter-list="en" src="images/img2_6_9.png" alt="Example of tab setting 3." width="566" height="283">
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_9.png" alt="タブ処理による配置例3" width="529" height="283">
             <figcaption>
         <span its-locale-filter-list="en">Example of tab setting 3.</span>
+        <span its-locale-filter-list="ja">タブ処理による配置例3</span>
         </figcaption>
 
           </figure>
@@ -4716,10 +4826,13 @@
         <li id="id265">
           <p its-locale-filter-list="en">If there is no tab position corresponding to the target string, the string should be set from the tab position of the next
             line, and so forth (see <a class="figure_ref" href="#fig2_6_10"></a>). </p>
+          <p its-locale-filter-list="ja">タブ処理の対象となる文字列に<span class="index" id="d6e479">対応するタブ位置がない場合</span>は，次行の先頭のタブ位置から順番に対応をとって配置する（<a class="figure_ref" href="#fig2_6_10"></a>）．</p>
           <figure id="fig2_6_10"> 
       <img its-locale-filter-list="en" src="images/img2_6_10.png" alt="Example for tab setting 4." width="619" height="297">
+      <img its-locale-filter-list="ja" src="images_ja/img2_6_10.png" alt="タブ処理による配置例4" width="576" height="297">
             <figcaption>
         <span its-locale-filter-list="en">Example for tab setting 4.</span>
+        <span its-locale-filter-list="ja">タブ処理による配置例4</span>
         </figcaption>
 
           </figure>
@@ -4727,227 +4840,318 @@
       </ol>
     </section>
   </section>
+
+
+
+
+
+
   <section id="line-composition-sec7">
     <h3 id="other_rules_of_japanese_typesetting">
 <span its-locale-filter-list="en">Other Rules of Japanese Typesetting</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">その他の行組版処理</span>
 </h3>
+
     <section>
       <h4 id="superscripts_and_superscripts">
 <span its-locale-filter-list="en">Superscripts and Superscripts</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">添え字処理</span>
 </h4>
       <p its-locale-filter-list="en"><a href="#term.superscript" class="termref">Superscripts</a> and <a href="#term.subscript" class="termref">subscripts</a> are small letters associated with base characters, and typically used to indicate SI unit symbols, or
         used for mathematical or chemical formulae.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d6e538"><a href="#term.ornament-characters" class="termref">添え字</a></span>とは，文字のそばに付ける<a href="#term.superscript" class="termref">上付き</a>文字又は<a href="#term.subscript" class="termref">下付き</a>文字をいう．国際単位系（SI）の単位，数式，化学式等で使用されている．</p>
       <aside class="note" id="n147">
         <p its-locale-filter-list="en">Superscripts and subscripts are described in JIS X 4051 sec.4.13.</p>
+        <p its-locale-filter-list="ja">添え字については，JIS X 4051では“4.13 添え字処理”に規定がある．</p>
       </aside>
       <p its-locale-filter-list="en">Superscripts and subscripts are usually set after the <a href="#term.base-characters" class="termref">base character</a>, with some exceptions for chemical formulae (which appear before the base character). They should be <a href="#term.solid-setting" class="termref">set solid</a>.</p>
-      <p its-locale-filter-list="en">For examples of superscripts and subscripts see <a class="figure_ref" href="#fig2_7_1"></a>.
-        In this document, superscripts and subscripts and their base characters are handled as <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> characters.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d6e592">上付き文字</span>は，一般に親文字の後ろに付くが，化学式では前に付く場合がある．<span class="index" id="d6e595">下付き文字</span>は，一般に<a href="#term.base-characters" class="termref">親文字</a>の後ろに付くが，化学式では前に付く場合がある．親文字と<span class="index" id="d6e601">添え字</span>との<a href="#term.inter-character-space" class="termref">字間</a>は<a href="#term.solid-setting" class="termref">ベタ組</a>にする．</p>
+      <p its-locale-filter-list="en">For examples of superscripts and subscripts see <a class="figure_ref" href="#fig2_7_1"></a>. In this document, superscripts and subscripts and their base characters are handled as <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> characters.</p>
+      <p its-locale-filter-list="ja">添え字が付く例をいくつか掲げる（<a class="figure_ref" href="#fig2_7_1"></a>）．なお，添え字については，添え字が付く親文字を含め，この文書では<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>として扱う．</p>
       <figure id="fig2_7_1"> 
       <img its-locale-filter-list="en" src="images/img2_7_1.png" alt="Examples of superscripts and subscripts." width="243" height="255">
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_1.png" alt="添え字の配置例" width="249" height="263">
         <figcaption>
         <span its-locale-filter-list="en">Examples of superscripts and subscripts.</span>
+        <span its-locale-filter-list="ja">添え字の配置例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n148">
         <p its-locale-filter-list="en">Inter-letter space between <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> and adjacent characters is described in detail in <a class="sec_ref" href="#spacing_between_characters"></a> in accordance with the character class concept in <a class="sec_ref" href="#about_character_classes"></a>.</p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>と隣接する文字間の間隔についての処理方法の詳細は，<a class="sec_ref" href="#about_character_classes"></a>で説明する文字クラスに従い，表の形式にして<a class="sec_ref" href="#spacing_between_characters"></a>に示す．</p>
       </aside>
       <p its-locale-filter-list="en">JIS X 4051 specifies the <a href="#term.character-size" class="termref">character size</a> and the <a href="#term.block-direction" class="termref">block direction</a> positioning of superscripts and subscripts alongside the base character to be implementation definable parameters. However it is recommended that the size of superscripts
         and subscripts are around 60% of the base character, depending on the size of the base character.</p>
+      <p its-locale-filter-list="ja">添え字の<a href="#term.character-size" class="termref">文字サイズ</a>及び親文字に対する添え字の<a href="#term.block-direction" class="termref">行送り方向</a>の配置位置については，JIS X 4051では，“処理系定義とする”となっている．<span class="index" id="d6e715">添え字の文字サイズ</span>は，親文字のサイズにもよるが，一般に親文字の60％くらいがよいであろう．</p>
       <p its-locale-filter-list="en">It is prohibited to <a href="#term.break" class="termref">break lines</a> within an <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> sequence. Also, it is prohibited to use inter-character spacing within an <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> sequence for <a href="#term.line-adjustment" class="termref">line adjustment</a>.</p>
+      <p its-locale-filter-list="ja">なお，<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>の文字列の字間で2行に<span class="index" id="d6e736"><a href="#term.break" class="termref">分割</a></span>してはならない．また，その文字列の字間は，<span class="index" id="d6e740"><a href="#term.line-adjustment" class="termref">行の調整処理</a></span>で字間を空ける箇所にはしない．</p>
       <aside class="note" id="n149">
         <p its-locale-filter-list="en">In <a href="#term.vertical-writing-mode" class="termref">vertical writing mode</a>, characters with superscripts or subscripts, that is <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> characters, are rotated 90 degrees clock-wise. If the length
           of the sequence is short enough, the sequence can be set as <a href="#term.tate-chu-yoko" class="termref">tate-chu-yoko</a>.</p>
+        <p its-locale-filter-list="ja"><a href="#term.vertical-writing-mode" class="termref">縦組</a>の中に<span class="index" id="d6e785">添え字</span>が付いた文字列（<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>）を配置する場合は，文字を時計回りに90度回転し，配置する．文字列が短い場合は<a href="#term.tate-chu-yoko" class="termref">縦中横</a>にして配置してもよい．</p>
       </aside>
       <aside class="note" id="n150">
         <p its-locale-filter-list="en">When both the <a href="#term.superscript" class="termref2nd">superscript</a> and the <a href="#term.subscript" class="termref2nd">subscript</a> follow the base character, usually the subscript is set first and set solid, followed by the superscript set with solid space. For chemical formulae sometimes both superscript and subscript are set vertically in the same position with respect to the base character, and with solid space between them and the base character.</p>
+        <p its-locale-filter-list="ja">親文字の後ろに<a href="#term.subscript" class="termref2nd">下付き</a>と<a href="#term.superscript" class="termref2nd">上付き</a>とが<span class="index" id="d6e836">2つ付く場合</span>がある．この場合は，数式では親文字と下付きとをベタ組で配置し，その後ろにベタ組で上付きを配置する方法が一般的である．化学式でも同様であるが，式の意味から上付きも親文字とベタ組で配置する場合もある．</p>
       </aside>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="furiwake_processing">
 <span its-locale-filter-list="en">Furiwake Processing</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">振分け処理</span>
 </h4>
       <p its-locale-filter-list="en"><a href="#term.furiwake" class="termref">Furiwake</a> is a typesetting style for setting multiple phrases or sentences in the middle of a line. Furiwake is also used to indicate
         options (see <a class="figure_ref" href="#fig2_7_2"></a>). Study guides, manuals and reference books sometimes use furiwake. In many furiwake styles, multiple lines are indicated with <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, etc.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d6e872"><a href="#term.furiwake" class="termref">振分け</a></span>とは，1行の途中に複数の言葉や文を配置する処理である．複数の選択肢を示す場合などに利用されている（<a class="figure_ref" href="#fig2_7_2"></a>）．学習参考書，マニュアル，解説書などで使用している例がある．振分けを行う場合，複数の行を括弧類でくくることも多い．</p>
       <figure id="fig2_7_2"> 
       <img its-locale-filter-list="en" src="images/img2_7_2.png" alt="Example of furiwake." width="167" height="438">
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_2.png" alt="振分けの例" width="128" height="438">
         <figcaption>
         <span its-locale-filter-list="en">Example of furiwake.</span>
+        <span its-locale-filter-list="ja">振分けの例</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en">Furiwake is usually done as follows (see <a class="figure_ref" href="#fig2_7_3"></a>). In this document, the lines which combine to make the furiwake are called furiwake-gyou.</p>
+      <p its-locale-filter-list="ja">振分け処理は，一般に次のように行っている（<a class="figure_ref" href="#fig2_7_3"></a>）．以下では，振分けするそれぞれの文字列を<span class="index" id="d6e916">振分け行</span>とよぶ．</p>
       <ol>
         <li id="id266">
           <p its-locale-filter-list="en">The character size of the furiwake-gyou is usually the same as that of the base paragraph. Sometimes, the furiwake-gyou
             is a little bit smaller than the size of the base paragraph. Sometimes, the font style of the furiwake-gyou is different <a href="#term.typeface" class="termref">typeface</a> the
             style of the base paragraph.</p>
+          <p its-locale-filter-list="ja">振分けに使用する文字は，その段落で使用している文字サイズとするが，やや小さい文字サイズにしたり，<a href="#term.typeface" class="termref">書体</a>を変える場合もある．</p>
         </li>
         <li id="id267">
           <p its-locale-filter-list="en">In the same furiwake block, the top positions of all the furiwake-gyou lines are aligned.</p>
+          <p its-locale-filter-list="ja">同一の振分け処理の中のすべての振分け行の先頭は，そろえる．</p>
         </li>
         <li id="id268">
           <p its-locale-filter-list="en">The line length of the furiwake block is the line length of the longest furiwake-gyou. However, it is permitted to indicate
             the length of the furiwake block, and break the furiwake-gyou lines. In this style, the start positions of the broken lines should be
             explicitly indicated. When there are line break marks in the furiwake-gyou, the line is broken in the indicated places. In this style,
             the start positions of the wrapped lines are aligned to the first line. The space between wrapped lines should be set solid.</p>
+          <p its-locale-filter-list="ja">振分けの行長は，同一の振分け処理の中で最も長い振分け行の行長を振分け行長とする．ただし，振分けの行長を指定し，長い同一の振分け行を折り返して複数の行にすることもある．この場合の2行目以下の行頭は指定による．同一の振分け行とする文字列中に改行の指定がある場合は，その指定箇所で振分け行を分割する．この場合の行頭は，振分け行の1行目の位置とそろえる．また，同一の振分け行を複数の行に分割した場合の行間は0とする．</p>
         </li>
         <li id="id269">
           <p its-locale-filter-list="en">The line-feed space of each furiwake block should be explicitly indicated.</p>
+          <p its-locale-filter-list="ja">異なる振分け行の行送り方向の行間は，指定による．</p>
         </li>
         <li id="id270">
           <p its-locale-filter-list="en">The center line of the furiwake block should be aligned with the center line of the <a href="#term.main-text" class="termref">main text</a>.</p>
+          <p its-locale-filter-list="ja">同一振分け処理に含まれる行送り方向の幅（の合計）の中心と，<a href="#term.main-text" class="termref">本文</a>の行の中心とをそろえて配置する．</p>
         </li>
         <li id="id271">
           <p its-locale-filter-list="en">When the furiwake block is enclosed by <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, etc. the width of brackets should be the same as
             the width of the furiwake block.</p>
+          <p its-locale-filter-list="ja">振分けの前後を括弧類で囲む場合，括弧類の行送り方向の幅は，振分け行の行送り方向の幅（の合計）とそろえる．</p>
         </li>
         <li id="id272">
           <p its-locale-filter-list="en">One furiwake block should be set per base text line. One furiwake block should not be extended across multiple base text lines.</p>
+          <p its-locale-filter-list="ja">同一の振分けは，一体として扱い，本文の複数の行にわたって配置してはならない．</p>
         </li>
       </ol>
       <figure id="fig2_7_3"> 
       <img its-locale-filter-list="en" src="images/img2_7_3.png" alt="Setting method of furiwake." width="315" height="492">
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_3.png" alt="振分けの配置方法" width="151" height="465">
         <figcaption>
         <span its-locale-filter-list="en">Setting method of furiwake.</span>
+        <span its-locale-filter-list="ja">振分けの配置方法</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en">The size of the line-feed space of the paragraph which contains the furiwake block, should be explicitly indicated.
         The space should be decided by considering the content of the furiwake block, and may therefore differ from the size of the line-feed space  of kihon-hanmen.</p>
+      <p its-locale-filter-list="ja">振分けを含む段落の行間は，指定による．そこに配置される振分けの内容を考慮して指定する必要がある．</p>
       <p its-locale-filter-list="en">In general, the width of the furiwake block is larger than the width of an inline cutting note block. However, unlike in the case of the inline cutting block, the whole furiwake block should
         be set inside of the kihon-hanmen, or a <a href="#term.column" class="termref">column</a> of the kihon-hanmen Setting a furiwake block that extends beyond the border of the kihon-hanmen
         is prohibited.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d6e1044">振分け</span>は割注と異なり，一般に行送り方向のサイズが大きくなる．そこで，版面又は<a href="#term.column" class="termref">段</a>の領域の外側へのはみ出しは認められていない．版面又は段の領域の範囲内に配置する．</p>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="jidori_processing">
 <span its-locale-filter-list="en">Jidori Processing</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">字取り処理</span>
 </h4>
       <p its-locale-filter-list="en">In cases such as lists of names of Japanese people, the length of some part of the text may be explicitly defined. In such cases, different numbers of characters are set, using adjustment of the inter-character spacing, so that they are all aligned to the same length. This is called <a href="#term.jidori" class="termref">jidori</a> processing
         (see <a class="figure_ref" href="#fig2_7_4"></a>).</p>
+      <p its-locale-filter-list="ja">日本人名の名簿を一覧にする場合など，行中の文字列の一部について全長を指定する例がある．このような場合に，行中の指定された文字列を，字間を調整して，<a href="#term.inline-direction" class="termref">字詰め方向</a>について指定された長さにする処理が<span class="index" id="d6e1080"><a href="#term.jidori" class="termref">字取り</a></span>処理である（<a class="figure_ref" href="#fig2_7_4"></a>）．人名など字数の異なる文字列を指定した一定の長さでそろえたい場合に利用できる．</p>
       <figure id="fig2_7_4"> 
       <img its-locale-filter-list="en" src="images/img2_7_4.png" alt="Example 1 of jidori processing." width="254" height="314">
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_4.png" alt="字取り処理の例1" width="254" height="320">
         <figcaption>
         <span its-locale-filter-list="en">Example 1 of jidori processing.</span>
+        <span its-locale-filter-list="ja">字取り処理の例1</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en">Sometimes, in <a href="#term.horizontal-writing-mode" class="termref">horizontal writing mode</a>, text in <a href="#term.running-head" class="termref">running heads</a> (with the exception of chapter and section numbers) are set using jidori processing. For example, three to six characters are set in a 7 character space (based on the size of the characters in the running head (see <a class="figure_ref" href="#fig2_7_5"></a>). Two characters are set in a 6 character space to avoid too much space. Seven characters are set solid in a seven character space, and eight or more characters are set solid in a space of eight or more characters. This rule can be applied to other numbers of characters, such as five, six and eight.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d6e1115"><a href="#term.horizontal-writing-mode" class="termref">横組</a>の<a href="#term.running-head" class="termref">柱</a></span>などでは，例えば，章番号などの後ろに続く文字列だけを，字取り処理する例がある．例えば，2字の文字列の字取りは，空き過ぎになるので例外的に柱の文字サイズの6倍とし，3字から6字までの文字列の字取りを柱の文字サイズの7倍とする（<a class="figure_ref" href="#fig2_7_5"></a>）．この例では，7字以上は，ベタ組とする．</p>
       <figure id="fig2_7_5"> 
       <img its-locale-filter-list="en" src="images/img2_7_5.png" alt="Example 2 of jidori processing." width="432" height="377">
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_5.png" alt="字取り処理の例2" width="432" height="377">
         <figcaption>
         <span its-locale-filter-list="en">Example 2 of jidori processing.</span>
+        <span its-locale-filter-list="ja">字取り処理の例2</span>
         </figcaption>
 
       </figure>
       <p its-locale-filter-list="en">Jidori processing should be done as follows:</p>
+      <p its-locale-filter-list="ja">字取り処理は，次のように行う．</p>
       <ol>
         <li id="id273">
           <p its-locale-filter-list="en">The length for the jidori processing should be defined as a whole number of full-width characters at the size defined for the surrounding text.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e1168">字取りの全長の指定</span>は，そこに使用されている文字サイズの整数倍とする．</p>
         </li>
         <li id="id274">
           <p its-locale-filter-list="en">The jidori text should be adjusted using spacing between characters so that the sides of the text are aligned at the defined length. The following, however, should be set solid:</p>
+          <p its-locale-filter-list="ja">指定された文字列について，字間を均等に空け，字詰め方向の先頭から末尾までを，指定された長さにする．ただし，次のような箇所は，<span class="index" id="d6e1179">空ける対象としない</span>．</p>
           <ol>
             <li id="id275">
               <p its-locale-filter-list="en">Positions where line breaks are prohibited: inter-character spaces between European numerals; between two <span class="character">EM DASH "—"</span> characters; between two <span class="character">TWO DOT LEADER "‥"</span> characters; between two <span class="character">HORIZONTAL ELLIPSIS "…"</span> characters; and so on. These sequences should be treated as a single block.</p>
+              <p its-locale-filter-list="ja">2行に分割してはならない箇所．<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>の字間，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>の字間，同一の<a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a>の字間など．これらの文字列は一体として扱いたいからである．</p>
               <aside class="note" id="n151">
                 <p its-locale-filter-list="en">The handling of <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> in jidori processing is also very controversial. Usually, the space before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and space after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> is set solid. In jidori processing, the space before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and the space after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> may be used for line adjustment, but the space after <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and the space before <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> should not used for adjustment, because it is prohibited to break lines in these positions. <a class="figure_ref" href="#fig2_7_52"></a> shows one example with even spacing for all characters, a second example as explained here, and a third example that is set solid before and after the <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>.</p>
+                <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の後ろなど行の調整処理で空ける対象箇所としない字間も問題となる．これらの箇所は，議論の分かれるところだが，字取り処理で空ける対象箇所としてよいだろう．ただし，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の後ろ及び<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の前は，2行に分割してはならない箇所なので，字取り処理で空ける対象箇所としない．次に，すべての字間を空けた例，ここで説明した方法，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>及び<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の前後をすべて空けない例を<a class="figure_ref" href="#fig2_7_52"></a>に示す．</p>
               </aside>
               <figure id="fig2_7_52"> 
       <img its-locale-filter-list="en" src="images/img2_7_52.png" alt="Examples of jidori processing including opening brackets and closing brackets." width="254" height="222">
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_52.png" alt="始め括弧類及び終わり括弧類を含んだ文字列の字取り例" width="254" height="223">
                 <figcaption>
         <span its-locale-filter-list="en">Examples of jidori processing including opening brackets and closing brackets.</span>
+        <span its-locale-filter-list="ja">始め括弧類及び終わり括弧類を含んだ文字列の字取り例</span>
         </figcaption>
 
               </figure>
             </li>
             <li id="id276">
               <p its-locale-filter-list="en">Where <a class="characterClass" href="#cl-26">Western word space (cl-26)</a> or <a class="characterClass" href="#cl-14">full-width ideographic space (cl-14)</a> are inserted, add the same space as for other inter-character spaces to the value of the Western word space or the full-width ideographic space.</p>
+              <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>，<a class="characterClass" href="#cl-14">和字間隔（cl-14）</a>など空白を挿入してある箇所は，その空白の前及び後ろの2箇所ではなく，空白の前（又は後ろ）だけとする．空白の前後2箇所で空けると空き過ぎになる．</p>
             </li>
           </ol>
         </li>
         <li id="id277">
           <p its-locale-filter-list="en">If there is only one character, it should be aligned to the left of the jidori block.</p>
+          <p its-locale-filter-list="ja">指定された文字列が1字の場合など，<span class="index" id="d6e1327">字間を空ける箇所がないとき</span>は，文字列の後ろを空けておく．</p>
         </li>
       </ol>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="processing_of_math_symbols_and_math_operators">
 <span its-locale-filter-list="en">Processing of Math Symbols and Math Operators</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">等号類と演算記号の処理</span>
 </h4>
       <p its-locale-filter-list="en">Math symbols and math operators, such as <span class="character">EQUALS SIGN "="</span>, <span class="character">APPROXIMATELY EQUAL TO OR THE IMAGE OF "≒"</span>, <span class="character">PLUS SIGN "+"</span> and <span class="character">MINUS SIGN "−"</span> are commonly used not only for scientific and technical documents but also for ordinary books. In the Japanese composition system, there are two different groups of math symbols, which are each treated differently. So in this document math symbols are classified into two different classes; <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> and <a class="characterClass" href="#cl-18">math operators (cl-18)</a>.</p>
+      <p its-locale-filter-list="ja">理工学書だけでなく，一般の本でも，等号<span class="character">[=] (EQUALS SIGN)</span>，ほとんど等しい<span class="character">[≒] (APPROXIMATELY EQUAL TO OR THE IMAGE OF)</span>，正符号<span class="character">[+] (PLUS SIGN)</span>，負符号<span class="character">[−] (MINUS SIGN)</span>などの数学記号が使用されている．日本語組版では，等号，ほとんど等しいなどと，正符号，負符号などでは組版処理方法が異なる．そこで，この文書では，等号の類似記号を<span class="index" id="d6e1368"><a class="characterClass" href="#cl-17">等号類（cl-17）</a></span>に，正符号などの類似記号を<span class="index" id="d6e1373"><a class="characterClass" href="#cl-18">演算記号（cl-18）</a></span>に分けて，それらに限り，処理方法を解説する．</p>
       <aside class="note" id="n152">
         <p its-locale-filter-list="en">The members of the <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> and <a class="characterClass" href="#cl-18">math operators (cl-18)</a> classes are described in <a class="sec_ref" href="#about_character_classes"></a>. Also, the handling of inter-character spaces between these math symbols and adjacent characters is described in <a class="sec_ref" href="#character_classes"></a> as a complete table, in accordance with the concept of character class, described in <a class="sec_ref" href="#about_character_classes"></a>.</p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-17">等号類（cl-17）</a>及び<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>にどのような記号が含まれるかは，<a class="sec_ref" href="#about_character_classes"></a>で解説する．</p>
       </aside>
       <aside class="note" id="n153">
         <p its-locale-filter-list="en">Because the math symbols, such as <span class="character">SQUARE ROOT "√"</span>, <span class="character">INTEGRAL "∫"</span> and <span class="character">GREEK CAPITAL LETTER SIGMA "Σ"</span>, are not frequently used in common books, the handling of these math symbols is considered to be out of scope for this document. Also, mathematical and scientific notations like numerical formulae are out of scope for this document.</p>
+        <p its-locale-filter-list="ja">理工学書などでは，水平の罫線を使用した分数（<span class="index" id="d6e1473">やぐら組</span>ともよばれている），根号式，積分記号，直和記号（シグマ）なども使用される．これらの記号は，一般書ではそれほど使用されていないので，この文書では，これらの処理は範囲としない．</p>
       </aside>
       <p its-locale-filter-list="en">Composition rules for <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> and <a class="characterClass" href="#cl-18">math operators (cl-18)</a> are as follows:</p>
+      <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-17">等号類（cl-17）</a>及び<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>の組版処理は，次のようにする．</p>
       <ol>
         <li id="id278">
           <p its-locale-filter-list="en">The width of <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> and <a class="characterClass" href="#cl-18">math operators (cl-18)</a> is full-width, i.e. one em (see <a class="figure_ref" href="#fig2_7_6"></a>).</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e1519"><span class="index" id="d6e1520"><a class="characterClass" href="#cl-17">等号類（cl-17）</a></span></span>及び<span class="index" id="d6e1524"><span class="index" id="d6e1525"><a class="characterClass" href="#cl-18">演算記号（cl-18）</a></span></span>の字幅は，全角とする（<a class="figure_ref" href="#fig2_7_6"></a>）．</p>
         </li>
         <li id="id279">
           <p its-locale-filter-list="en">The inter-character space between <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> or <a class="characterClass" href="#cl-18">math operators (cl-18)</a> and before and after adjacent characters, such as <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a>, <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>, and <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> in one line is set solid (see <a class="figure_ref" href="#fig2_7_6"></a>). However, when the top and/or the bottom of the mathematical formula is <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a> or <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>, the space between <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>, <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> and <a class="characterClass" href="#cl-16">katakana (cl-16)</a> is <a href="#term.quarter-em-space" class="termref">quarter em space</a>.</p>
+          <p its-locale-filter-list="ja">別行としないで，行の途中に配置する<a class="characterClass" href="#cl-17">等号類（cl-17）</a>及び<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>は，その前後に配置する<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>及び<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>との<span class="index" id="d6e1565"><span class="index" id="d6e1566">字間</span></span>をベタ組とする（<a class="figure_ref" href="#fig2_7_6"></a>）．なお，数式の先頭及び／又は末尾が<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>又は<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>の場合は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>及び<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>と数式との間は，<a href="#term.quarter-em-space" class="termref">四分アキ</a>とする．</p>
           <figure id="fig2_7_6"> 
       <img its-locale-filter-list="en" src="images/img2_7_6.png" alt="Example of math symbols and math operators set within an ordinary line." width="532" height="193">
-            <figcaption>
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_6.png" alt="行の途中に配置する等号類及び演算記号の配置例" width="532" height="163">            <figcaption>
         <span its-locale-filter-list="en">Example of math symbols and math operators set within an ordinary line.</span>
+        <span its-locale-filter-list="ja">行の途中に配置する等号類及び演算記号の配置例</span>
         </figcaption>
 
           </figure>
           <aside class="note" id="n154">
             <p its-locale-filter-list="en">The inter-character space between <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>, <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a> and <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> or <a class="characterClass" href="#cl-18">math operators (cl-18)</a> is solid. However, it is better to insert a quarter em space between <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>,<a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a> and adjacent <a class="characterClass" href="#cl-18">math operators (cl-18)</a> when the <a class="characterClass" href="#cl-18">math operators (cl-18)</a> are followed by <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a> or <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> which represent some mathematical value (see <a class="figure_ref" href="#fig2_7_62"></a>).</p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-19">漢字等（cl-19）</a>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>及び<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の前後に<a class="characterClass" href="#cl-17">等号類（cl-17）</a>又は<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>がくる場合も，その字間はベタ組とする（<a class="figure_ref" href="#fig2_7_62"></a>）．ただし，“これは<span class="math-o">－</span><span class="math-n">5</span>となり”のように<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>と<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>が連続する文字列，又は“これは<span class="math-o">－</span><span class="math-i">a</span>となり”のように<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>と量を示す<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>が連続する文字列を配置する場合は，前に配置する<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>及び<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>と演算記号との字間は四分アキとした方がよい（<a class="figure_ref" href="#fig2_7_62"></a>）．</p>
           </aside>
           <figure id="fig2_7_62"> 
       <img its-locale-filter-list="en" src="images/img2_7_62.png" alt="Example of math symbols and math operators set within an ordinary line." width="469" height="446">
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_62.png" alt="漢字等，平仮名及び片仮名の前後に統合類又は演算記号を配置した例" width="469" height="407">
             <figcaption>
         <span its-locale-filter-list="en">Example of math symbols and math operators set within an ordinary line.</span>
+        <span its-locale-filter-list="ja">漢字等，平仮名及び片仮名の前後に統合類又は演算記号を配置した例</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id280">
           <p its-locale-filter-list="en">When math formulae or chemical formulae are set in one independent line, the inter-character space between <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> and adjacent <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a>, <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> and <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> is quarter em. Also, when math formulae or chemical formulae are set in an individual line, the inter-character space between <a class="characterClass" href="#cl-18">math operators (cl-18)</a> and adjacent <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a>, <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> or <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> is set solid.</p>
+          <p its-locale-filter-list="ja">別行とする数式，化学式などに配置する<a class="characterClass" href="#cl-17">等号類（cl-17）</a>と<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>及び<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>との<span class="index" id="d6e1789"><span class="index" id="d6e1790">字間</span></span>は，四分アキとする．別行とする数式，化学式などに配置する<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>と，<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>及び<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>との字間は，ベタ組とする．</p>
           <figure id="fig2_7_7"> 
       <img its-locale-filter-list="en" src="images/img2_7_7.png" alt="Example of math symbols and math operators in one independent line." width="540" height="382">
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_7.png" alt="別行式に配置する等号類及び演算記号の配置例1" width="540" height="367">
             <figcaption>
         <span its-locale-filter-list="en">Example of math symbols and math operators in one independent line.</span>
+        <span its-locale-filter-list="ja">別行式に配置する等号類及び演算記号の配置例1</span>
         </figcaption>
 
           </figure>
           <aside class="note" id="n155">
             <p its-locale-filter-list="en">In most case when a math formula or chemical formula is set in one independent line, the position of the formula is the center of the line in horizontal writing mode, and has is indented by some indicated number of characters from the head of line in vertical writing mode.</p>
+            <p its-locale-filter-list="ja">別行とする<span class="index" id="d6e1861">数式</span>，<span class="index" id="d6e1864">化学式</span>などは，横組では版面又は段の領域の左右中央に配置する例が多い．縦組で時計回りに90度回転させて数式，化学式などを配置する場合は，行頭から指定した字下げした位置に配置する例が多い．</p>
           </aside>
           <aside class="note" id="n156">
             <p its-locale-filter-list="en">In the formula in one independent line, there is another method to set the inter-character space between <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a> or <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> and <a class="characterClass" href="#cl-17">math symbols (cl-17)</a>, solid or half em. When the inter-character space before and after the <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> is set to a quarter em or a half em, there is another method to set the inter-character space, between <a class="characterClass" href="#cl-18">math operators (cl-18)</a> and <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a> or <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>, that is, a quarter em.</p>
+            <p its-locale-filter-list="ja">別行とする数式などでは，<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>及び<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>と<a class="characterClass" href="#cl-17">等号類（cl-17）</a>の前後の字間をベタ組とする方法や二分アキとする方法もある．また，<a class="characterClass" href="#cl-17">等号類（cl-17）</a>の前後の字間を四分アキ又は二分アキとした場合は，<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>と<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>及び<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>との前後の字間を四分アキとする方法もある．</p>
           </aside>
           <figure id="fig2_7_8"> 
       <img its-locale-filter-list="en" src="images/img2_7_8.png" alt="Another example of setting math symbols  and math operators in one independent formula line." width="540" height="383">
+      <img its-locale-filter-list="ja" src="images_ja/img2_7_8.png" alt="別行式に配置する等号類及び演算記号の配置例2" width="540" height="367">
             <figcaption>
         <span its-locale-filter-list="en">Another example of setting math symbols  and math operators in one independent formula line.</span>
+        <span its-locale-filter-list="ja">別行式に配置する等号類及び演算記号の配置例2</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id281">
           <p its-locale-filter-list="en">A line can be broken between <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> or <a class="characterClass" href="#cl-18">math operators (cl-18)</a> and adjacent <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a>, <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> or <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a>.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e1952"><a class="characterClass" href="#cl-17">等号類（cl-17）</a></span>及び<span class="index" id="d6e1956"><a class="characterClass" href="#cl-18">演算記号（cl-18）</a></span>は，その前後に配置する<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>及び<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>などとの字間で2行に分割してよい．</p>
           <aside class="note" id="n157">
             <p its-locale-filter-list="en">In an independent formula line, when there are more than one place where the line can be broken the first priority is before the <a class="characterClass" href="#cl-17">math symbols (cl-17)</a>, and the next is before the <a class="characterClass" href="#cl-18">math operators (cl-18)</a>.</p>
+            <p its-locale-filter-list="ja">別行式で，2行に分割する位置をある程度任意に選択できる場合は，まず<a class="characterClass" href="#cl-17">等号類（cl-17）</a>の前で2行に分割するとよい．それができない場合は，<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>の前で2行に分割するとよい．</p>
           </aside>
           <aside class="note" id="n158">
             <p its-locale-filter-list="en">The inter-character space before and after <span class="character">KATAKANA MIDDLE DOT "・"</span>, before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> in an independent formula line is set solid, except for the case to set space between these characters and adjacent <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> or <a class="characterClass" href="#cl-18">math operators (cl-18)</a>.</p>
+            <p its-locale-filter-list="ja">数式，化学式に配置する<span class="index" id="d6e2031">中点</span><span class="character">[・] (KATAKANA MIDDLE DOT)</span>，<span class="index" id="d6e2036"><a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a></span>及び<span class="index" id="d6e2040"><a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a></span>は，<a class="characterClass" href="#cl-17">等号類（cl-17）</a>又は<a class="characterClass" href="#cl-18">演算記号（cl-18）</a>の前後に空き量を確保する場合を除き，中点<span class="character">[・] (KATAKANA MIDDLE DOT)</span>の前後，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前及び<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の後ろはベタ組とする．</p>
           </aside>
         </li>
       </ol>
     </section>
   </section>
+
+
+
+
+
+
   <section id="line-composition-sec8">
     <h3 id="line_adjustment">
 <span its-locale-filter-list="en">Line Adjustment</span>
