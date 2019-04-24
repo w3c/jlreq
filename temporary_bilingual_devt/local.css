@@ -91,14 +91,12 @@ samp, kbd {
 
 #langSwitch {
 	position: fixed;
-    /*
-	top: 40px;
-    right: 20px;
-    width: 202px;
-    text-align: right;
-	*/
 	top: -14px;
 	z-index: 10000;
+	top: 100px;
+	right: 10px;
+	width: 5em;
+	text-align: right;
 	}
 #langSwitch button {
 	background: #FFF none repeat scroll 0% 0%;
