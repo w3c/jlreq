@@ -5155,521 +5155,685 @@
   <section id="line-composition-sec8">
     <h3 id="line_adjustment">
 <span its-locale-filter-list="en">Line Adjustment</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">行の調整処理</span>
 </h3>
+
     <section>
       <h4 id="necessity_for_line_adjustment">
 <span its-locale-filter-list="en">Necessity for Line Adjustment</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">行の調整処理の必要性</span>
 </h4>
       <p its-locale-filter-list="en"><a href="#term.line-adjustment" class="termref">Line adjustment</a> processing is applied where inter-character adjustments are needed to bring the line end into the correct alignment, e.g. because of <a href="#term.line-breaking-rules" class="termref">line wrap</a> or other reasons. Within a paragraph, lines are created by separating character sequences at places where line breaking is not prohibited. Except for the end
         of the last line of a paragraph, it is necessary to set the head
         and end
         of each line at predicable,
         aligned positions. For the last line of the paragraph, it is still necessary to set the head at the aligned position, however the line end  need not aligned to the other alignment position. To achieve this, only inter-character spacing indicated in the table of <a class="sec_ref" href="#spacing_between_characters"></a>, or explicitly chosen  space sizes, are inserted, and other inter-character spaces are set solid. </p>
+      <p its-locale-filter-list="ja"><a href="#term.line-breaking-rules" class="termref">禁則処理</a>その他の要因により<span class="index" id="d6e2119">行長に過不足が出る場合</span>は，<a href="#term.line-adjustment" class="termref">行の調整処理</a>を行う．段落内では，分割禁止とされていない箇所で文字列を分割し，それぞれの行を構成していく．この際，段落末尾の1行の行長に満たない行以外の行は，指定された行長にし，段落末尾の1行の行長に満たない行以外の行頭及び行末の位置を所定の位置に配置する必要がある．<span class="index" id="d6e2125">段落末尾の1行の行長に満たない行</span>は，隣接する文字の字間に<a class="sec_ref" href="#spacing_between_characters"></a>に示した原則とする空き量を挿入するか，又は指定された空き量がある場合はその空き量を挿入する以外は，原則としてベタ組にして文字列の先頭を行頭にそろえて配置し，文字列の末尾は行末にそろえる必要はない．</p>
       <aside class="note" id="n159">
         <p its-locale-filter-list="en">In Japanese composition, there is no concept corresponding to the Western "ragged right (flush left)", "ragged left (flush right)", or "ragged center". In Japanese composition, especially common book composition, usually only "justification" is applied. Note that, in Western composition, "justification" is usually applied for only word space sizes. In Japanese composition, it is applied for not only <a class="characterClass" href="#cl-26">Western word space (cl-26)</a> but also in several other places as explained in following text.</p>
+        <p its-locale-filter-list="ja">欧文組版においてみられるragged right (flush left)，ragged left (flash right)，ragged centerとよばれる方法は，日本語組版，特に書籍の本文においては，一般に行われていない．書籍の本文における段落の処理は，欧文組版でいう“justification”が原則である．なお，欧文組版の場合のjustificationは，主に単語間の空き量（語間）を増減して1行の行長をそろえるのに対し，日本語組版では，<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>だけでなく，以下に述べるように多くの箇所を調整に利用している．</p>
       </aside>
       <aside class="note" id="n160">
         <p its-locale-filter-list="en">Usually, the last line of a paragraph needs no adjustment. However, when the last line of a paragraph is a little bit longer than the line length, inter-character space
-          reduction is applied for <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>, <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> and at other places, if possible.</p>
+          reduction is applied for <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>, <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> and at other places, if possible.</p>        <p its-locale-filter-list="ja">段落の最終行は，1行の行長以下であれば，特に調整の必要はない．ただし，最終行が行長よりわずかに長く，後述する<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>などの前後の空き量を詰めて行長にそろえる処理が可能な場合は，行長の調整処理が行われることになる．</p>
+
       </aside>
       <aside class="note" id="n161">
         <p its-locale-filter-list="en">There is another adjustment processing, besides line adjustment, called "single line alignment". Single line alignment is applied to align a run of the text that is shorter than a given line length to designated positions. Details are explained in <a class="sec_ref" href="#single_line_alignment_processing">3.5.3 Single Line Alignment Processing</a>.</p>
+        <p its-locale-filter-list="ja">段落を処理対象とした行の調整処理とは処理対象が異なるが，指定された行長以下の1行の文字列の位置を指定した位置に合わせる方法については，<a class="sec_ref" href="#single_line_alignment_processing"></a>で解説する．</p>
       </aside>
       <p its-locale-filter-list="en">There are various reasons for line adjustment processing. Examples of the most important ones will be given below.</p>
+      <p its-locale-filter-list="ja"><span class="index" id="d6e2272">行の調整処理が必要となる要因</span>は様々であるが，主なものに次のような例がある．</p>
       <ol>
         <li id="id282">
           <p its-locale-filter-list="en">Mixed use of characters and symbols (e.g. <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a> or <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>) where not all characters are full-width
             (see <a class="figure_ref" href="#fig2_51"></a>). </p>
+          <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>など字幅が全角でない文字・記号を混用する（<a class="figure_ref" href="#fig2_51"></a>）．</p>
           <figure id="fig2_51"> 
       <img its-locale-filter-list="en" src="images/img2_51.png" alt="Example of grouped numerals and Western characters." width="241" height="76">
+      <img its-locale-filter-list="ja" src="images_ja/img2_51.png" alt="連数字中の文字，欧文用文字を使用した例" width="241" height="76">
             <figcaption>
         <span its-locale-filter-list="en">Example of grouped numerals and Western characters.</span>
+        <span its-locale-filter-list="ja">連数字中の文字，欧文用文字を使用した例</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id283">
           <p its-locale-filter-list="en">Sequences of <a href="#term.punctuation-marks" class="termref">punctuation marks</a>. For example, a sequence of a <a class="characterClass" href="#cl-02">closing bracket (cl-02)</a> and a <a class="characterClass" href="#cl-06">full stop (cl-06)</a> takes one and a half em spaces together (see <a class="figure_ref" href="#fig2_52"></a>). However, if an <a class="characterClass" href="#cl-01">opening bracket (cl-01)</a> follows immediately after the full stop, these punctuation marks will need two em size spaces together. Hence, no adjustment is needed to correctly align the line end (see <a class="figure_ref" href="#fig2_52"></a>).</p>
+          <p its-locale-filter-list="ja"><a href="#term.punctuation-marks" class="termref">約物</a>が連続する．例えば，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>と<a class="characterClass" href="#cl-06">句点類（cl-06）</a>が連続した場合は，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>，<a class="characterClass" href="#cl-06">句点類（cl-06）</a>及び空き量の合計は1.5倍となる（<a class="figure_ref" href="#fig2_52"></a>）．ただし，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>，<a class="characterClass" href="#cl-06">句点類（cl-06）</a>，さらに<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>が連続した場合は，これら約物の字幅と空き量の合計は2倍となるので，過不足はでない（<a class="figure_ref" href="#fig2_52"></a>）．</p>
           <figure id="fig2_52"> 
       <img its-locale-filter-list="en" src="images/img2_52.png" alt="Examples of sequences of punctuation marks." width="218" height="241">
+      <img its-locale-filter-list="ja" src="images_ja/img2_52.png" alt="約物が連続した例" width="215" height="241">
             <figcaption>
         <span its-locale-filter-list="en">Examples of sequences of punctuation marks.</span>
+        <span its-locale-filter-list="ja">約物が連続した例</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id284">
           <p its-locale-filter-list="en">Mixtures of characters with different sizes (see <a class="figure_ref" href="#fig2_53"></a>).</p>
+          <p its-locale-filter-list="ja">文字サイズの異なる文字を混用する（<a class="figure_ref" href="#fig2_53"></a>）．</p>
           <figure id="fig2_53"> 
       <img its-locale-filter-list="en" src="images/img2_53.png" alt="Example of characters within brackets which are made a level smaller than the normal character size." width="75" height="271">
+      <img its-locale-filter-list="ja" src="images_ja/img2_53.png" alt="括弧内の文字サイズを1段階小さくした例" width="75" height="271">
             <figcaption>
         <span its-locale-filter-list="en">Example of characters within brackets which are made a level smaller than the normal character size.</span>
+        <span its-locale-filter-list="ja">括弧内の文字サイズを1段階小さくした例</span>
         </figcaption>
 
           </figure>
           <aside class="note" id="n162">
             <p its-locale-filter-list="en">In cases where  additional information like page references, explanations of terminology, etc. appear within brackets, sometimes the character
               size is a level smaller than the character size established by the <a href="#term.kihon-hanmen" class="termref">kihon-hanmen</a>. </p>
+            <p its-locale-filter-list="ja">参照ページの表示，用語の説明などにおいて括弧を付けて補足説明する場合，<a href="#term.kihon-hanmen" class="termref">基本版面</a>の文字サイズよりは1段階小さい文字サイズにする例がある．</p>
           </aside>
         </li>
         <li id="id285">
           <p its-locale-filter-list="en">Cases where <a href="#term.line-start-prohibition-rule" class="termref">line head wrapping</a>, <a href="#term.line-end-prohibition-rule" class="termref">line end wrapping</a> or <a href="#term.unbreakable-characters-rule" class="termref">unbreakable character sequences</a> should not be broken (see <a class="figure_ref" href="#fig2_33"></a>). </p>
+          <p its-locale-filter-list="ja"><a href="#term.line-start-prohibition-rule" class="termref">行頭禁則</a>，<a href="#term.line-end-prohibition-rule" class="termref">行末禁則</a>又は<a href="#term.unbreakable-characters-rule" class="termref">分割禁止</a>を回避する（<a class="figure_ref" href="#fig2_33"></a>）．</p>
         </li>
       </ol>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="reduction_and_addition_of_intercharacter_space">
 <span its-locale-filter-list="en">Reduction and Addition of Inter-Character Space</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">詰める処理と空ける処理</span>
 </h4>
       <p its-locale-filter-list="en">Line adjustment processing targets places with a predefined space size  or solid setting. Methods for line adjustment are as follows.</p>
+      <p its-locale-filter-list="ja">行の調整処理は，規定されている空き量を確保した箇所又はベタ組の字間で調整する．その方法としては，次がある．</p>
       <ol>
         <li id="id286">
           <p its-locale-filter-list="en"><a href="#term.line-adjustment-by-inter-character-space-reduction" class="termref">Line adjustment by inter-character space reduction</a>. This means that a <a href="#term.half-em-space" class="termref">half em space</a> is reduced after <a class="characterClass" href="#cl-07">commas (cl-07)</a> or <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, or before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>, and <a class="characterClass" href="#cl-26">Western word space (cl-26)</a> is reduced
             within a defined limit.</p>
+          <p its-locale-filter-list="ja">規定されている空き量を<span class="index" id="d6e2508">詰める処理</span>（<span class="index" id="d6e2511"><a href="#term.line-adjustment-by-inter-character-space-reduction" class="termref">追込み処理</a></span>）．追込み処理では，<a class="characterClass" href="#cl-07">読点類（cl-07）</a>又は<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の後ろの<a href="#term.half-em-space" class="termref">二分アキ</a>や，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前の二分アキ，<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>などの空き量を規定の範囲内で詰める処理を行う．</p>
         </li>
         <li id="id287">
           <p its-locale-filter-list="en"><a href="#term.line-adjustment-by-inter-character-space-expansion" class="termref">Line adjustment by inter-character space expansion</a>. Line adjustment by inter-character space expansion means expanding inter-character space for line adjustment, where inter-character space is allowed to be extended up to a defined limit, such as for <a class="characterClass" href="#cl-26">Western word space (cl-26)</a> or other places where it is not prohibited to extend inter-character space.</p>
+          <p its-locale-filter-list="ja">字間を<span class="index" id="d6e2558">空ける処理</span>（<span class="index" id="d6e2561"><a href="#term.line-adjustment-by-inter-character-space-expansion" class="termref">追出し処理</a></span>）．追出し処理では，<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>など規定の範囲内で空けることが許されている箇所や，行の調整処理で字間を空ける処理を避けるとされていない箇所の字間について空ける処理を行う．</p>
         </li>
       </ol>
       <p its-locale-filter-list="en">Normally line adjustment by inter-character space reduction is preferred. Only when there are no spaces that can be reduced is line adjustment by inter-character
         space expansion applied. The reason for the preference of line adjustment by inter-character space reduction comes from
         the thinking that characters in solid setting should not have more inter character space, if at all possible.</p>
+      <p its-locale-filter-list="ja">通常，詰める処理（追込み処理）を優先し，それで処理できない場合は空ける処理（追出し処理）を行う．詰める処理（追込み処理）を優先するのは，ベタ組の箇所はできるだけ空けないという考え方による．</p>
       <aside class="note" id="n163">
         <p its-locale-filter-list="en"><a href="#term.line-adjustment-by-hanging-punctuation" class="termref">Line adjustment by hanging punctuation</a> is a method of avoiding line head wrap of <a class="characterClass" href="#cl-06">full stops (cl-06)</a> and <a class="characterClass" href="#cl-07">commas (cl-07)</a>. This method is not formally defined in JIS X 4051, however JIS
           X 4051 does provide explanatory material about it. </p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-06">句点類（cl-06）</a>及び<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の行頭禁則を回避する方法として<span class="index" id="d6e2614"><a href="#term.line-adjustment-by-hanging-punctuation" class="termref">ぶら下げ組</a></span>がある．この方法は，JIS X 4051では規定していないが，その“解説”では説明が行われている．</p>
         <p its-locale-filter-list="en"><a href="#term.line-adjustment-by-hanging-punctuation" class="termref">Line adjustment by hanging punctuation</a> is a method which is only applied to <a class="characterClass" href="#cl-06">full stops (cl-06)</a> and <a class="characterClass" href="#cl-07">commas (cl-07)</a>. These touch the <a href="#term.hanmen" class="termref">hanmen</a> and
           are set in  a place outside the defined line length (see <a class="figure_ref" href="#fig2_54"></a>). This is also applied, for example, in books, in order to avoid the addition of inter character space and maintain  solid setting. However,
           line adjustment by hanging punctuation is not an appropriate method for dealing with a mixture of Japanese and Latin script text, since the latter principally does not apply line adjustment by hanging punctuation. In addition, there is another argument against
           line adjustment by hanging punctuation. Originally it was a method used in letterpress printing, to make the task of line
           adjustment easier. Furthermore, as shown at the end of line 1 and 5 of <a class="figure_ref" href="#fig2_54"></a>, if possible the <a class="characterClass" href="#cl-06">full stops (cl-06)</a> or <a class="characterClass" href="#cl-07">commas (cl-07)</a> are placed at the line end (the 18th position). In DTP there are examples of hanging punctuation
           like in line 3, but this may be regarded as unnecessary processing. </p>
+        <p its-locale-filter-list="ja"><a href="#term.line-adjustment-by-hanging-punctuation" class="termref">ぶら下げ組</a>は，<a class="characterClass" href="#cl-06">句点類（cl-06）</a>及び<a class="characterClass" href="#cl-07">読点類（cl-07）</a>に限り，<a href="#term.hanmen" class="termref">版面</a>に接して，指定の行長よりはみ出して配置する方法である（<a class="figure_ref" href="#fig2_54"></a>）．ベタ組の字間を空ける調整が避けられるとして，書籍等でも採用されている．しかし，欧文組では原則としてぶら下げ組は採用されていないので，和文と欧文との混植になじまない，また，ぶら下げ組は本来，活字組版において調整の作業を軽減するために採用されていた方法である，との反対意見がある．なお，<a class="figure_ref" href="#fig2_54"></a>において，1行目末尾及び5行目末尾のように，行末の18字目に配置できる場合は，そのまま配置する．DTPなどでは，このような句読点を3行目のようにぶら下げ組にする処理を行っている例があるが，不必要な処理といえよう．</p>
       </aside>
       <figure id="fig2_54"> 
       <img its-locale-filter-list="en" src="images/img2_54.png" alt="Examples of line adjustment by hanging punctuation." width="407" height="455">
+      <img its-locale-filter-list="ja" src="images_ja/img2_54.png" alt="ぶら下げ組の例" width="406" height="444">
         <figcaption>
         <span its-locale-filter-list="en">Examples of line adjustment by hanging punctuation.</span>
+        <span its-locale-filter-list="ja">ぶら下げ組の例</span>
         </figcaption>
 
       </figure>
       <aside class="note" id="n164">
         <p its-locale-filter-list="en">The processing mentioned here that the value of Western word spaces are reduced or added between indicated range is only applicable for the cases that Western texts are inserted into the Japanese texts in common Japanese books. In general, the value of <a class="characterClass" href="#cl-26">Western word space (cl-26)</a> shall be decided with the consideration of the kind of typeface, font size and the value of line gap. In Western typography, there is a method to decide only the minimum word space value (ex. a fourth em) and add appropriate space values, not using space reduction.</p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>の空き量を規定の範囲内で詰める処理又は空ける処理についての次項以下での処理方法は，日本語の書籍の中に欧字が混植される場合を前提にしている．<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>の空き量は，一般的にいえば，使用する欧字の書体，文字サイズや行間なども考慮する必要がある．また，詰める処理は行わないで，まず最小の空き量（例えば四分アキ）で処理し，空ける処理だけを行う方法もある．</p>
       </aside>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="procedures_for_intercharacter_space_reduction">
 <span its-locale-filter-list="en">Procedures for Inter-Character Space Reduction</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">詰める処理の優先順位</span>
 </h4>
       <p its-locale-filter-list="en">For line adjustment by inter-character space reduction decisions must first be made about
         the preferred order in which reduction processing options
         are applied, and the maximum amount of space reduction needed. Inter-character space reduction is processed with following priorities.</p>
+      <p its-locale-filter-list="ja">詰める処理（追込み処理）を行う場合は，通常，優先順位と詰める限界を決めて行う．詰める処理は，次の順序で行う．</p>
       <aside class="note" id="n165">
         <p its-locale-filter-list="en">JIS X 4051 provides also definitions for the adaptation of <a href="#term.warichu" class="termref">inline cutting note</a>, but for the purpose of this section, these are rather
           complex and hence left out. </p>
+        <p its-locale-filter-list="ja">JIS X 4051では<a href="#term.warichu" class="termref">割注</a>の調整方法も規定しているが，ここでは説明がやや複雑になるので除いた．</p>
       </aside>
       <aside class="note" id="n166">
         <p its-locale-filter-list="en">The details of inter-character spaces and where reduction processing may be applied are described in the table of <a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a>, following <a class="sec_ref" href="#about_character_classes"></a>.</p>
+        <p its-locale-filter-list="ja">行の調整処理の際に詰める処理（追込み処理）が可能な箇所の詳細は，<a class="sec_ref" href="#about_character_classes"></a>で説明する文字クラスに従い，<a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a>の表4で示す．</p>
       </aside>
       <ol>
         <li id="id288">
           <p its-locale-filter-list="en"><a class="characterClass" href="#cl-26">Western word space (cl-26)</a>, which is usually one third em,
             is reduced by equal amounts, to leave a minimum of a <a href="#term.quarter-em-space" class="termref">quarter em space</a> between words. The same space reduction is applied to all spaces on the target line at the same time.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e2845"><a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a></span>を，最小で<a href="#term.quarter-em-space" class="termref">四分アキ</a>まで文字サイズ比で均等に詰める．</p>
         </li>
         <li id="id289">
           <p its-locale-filter-list="en">The half em space after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>,<a class="characterClass" href="#cl-07">commas (cl-07)</a> and <a class="characterClass" href="#cl-06">full stops (cl-06)</a> at the end of a line, is deleted and set solid.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e2864">行末に配置する<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a></span>，<a class="characterClass" href="#cl-07">読点類（cl-07）</a>及び<a class="characterClass" href="#cl-06">句点類（cl-06）</a>の後ろの二分アキをベタ組にする．</p>
         </li>
         <li id="id290">
           <p its-locale-filter-list="en">The quarter em spaces both before and after the <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> are deleted and set solid.</p>
+          <p its-locale-filter-list="ja">行末に配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の前及び後ろの四分アキを一緒にベタ組にする．</p>
         </li>
         <li id="id291">
           <p its-locale-filter-list="en">The quarter em space before or after <a class="characterClass" href="#cl-05">middle dots (cl-05)</a>, in the middle of a line, is reduced equally with proportional character size as far as solid setting.</p>
+          <p its-locale-filter-list="ja">行中の<span class="index" id="d6e2906"><a class="characterClass" href="#cl-05">中点類（cl-05）</a></span>の前後の四分アキを，最小でベタ組まで文字サイズ比で均等に詰める．</p>
         </li>
         <li id="id292">
           <p its-locale-filter-list="en">The half em spaces before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> or after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> or <a class="characterClass" href="#cl-07">commas (cl-07)</a>,
             in the middle of a line, are reduced equally with proportional character size, as far as solid setting.</p>
+          <p its-locale-filter-list="ja">行中の<span class="index" id="d6e2921"><a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a></span>の前側，並びに<span class="index" id="d6e2925"><a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a></span>及び<span class="index" id="d6e2929"><a class="characterClass" href="#cl-07">読点類（cl-07）</a></span>の後ろ側の二分アキを，最小でベタ組まで文字サイズ比で均等に詰める．</p>
           <aside class="note" id="n167">
             <p its-locale-filter-list="en">With the exception of the line end position, the half space after <a class="characterClass" href="#cl-06">full stops (cl-06)</a> should not adapted, since it plays an important role as a sentence separator. </p>
+            <p its-locale-filter-list="ja"><span class="index" id="d6e2959"><a class="characterClass" href="#cl-06">句点類（cl-06）</a></span>の後ろの二分アキは，文の区切りとしての役割が大きいので，行末に配置する場合を除いて，調整には使用しない．</p>
           </aside>
           <aside class="note" id="n168">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-07">Commas (cl-07)</a> fulfill different roles to <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>. Hence, there are examples where it is preferred to reduce the half em space before or after brackets, rather than to reduce the half em space after commas.</p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-07">読点類（cl-07）</a>と，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>・<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>では，その役割が異なることから，始め括弧類の前，終わり括弧類の後ろの二分アキを詰める調整を，読点類の後ろの二分アキを詰める調整より優先して処理している例もある．</p>
           </aside>
           <aside class="note" id="n169">
             <p its-locale-filter-list="en">The reduction of the half em space before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> or after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> and <a class="characterClass" href="#cl-07">commas (cl-07)</a> up to solid setting is regarded as too much reduction. Hence, there are examples where the maximum amount of space reduction is up to quarter em space.</p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前の二分アキ，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>の後ろ及び<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の後ろの二分アキを，ベタ組まで詰めるのは詰め過ぎであるという考えから，詰める限界を最小で四分アキまでとして処理している例もある．</p>
           </aside>
         </li>
         <li id="id293">
           <p its-locale-filter-list="en">The quarter em space between Japanese text (<a class="characterClass" href="#cl-15">hiragana (cl-15)</a>, <a class="characterClass" href="#cl-16">katakana (cl-16)</a> and <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>) and Latin script text (<a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a>, <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> and <a class="characterClass" href="#cl-25">unit symbols (cl-25)</a>), is reduced equally
             with proportional character size, as far as one eighth em space.</p>
+          <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-15">平仮名（cl-15）</a>，<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>などと，<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>，<span class="index" id="d6e3054"><a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a></span>又は<span class="index" id="d6e3058"><a class="characterClass" href="#cl-25">単位記号中の文字（cl-25）</a></span>との字間の四分アキを，最小で八分（全角の8分の1）アキまで文字サイズ比で均等に詰める．</p>
           <aside class="note" id="n170">
             <p its-locale-filter-list="en">There are also examples where the quarter em space between Japanese text (<a class="characterClass" href="#cl-15">hiragana (cl-15)</a>, <a class="characterClass" href="#cl-16">katakana (cl-16)</a> and <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>) and Latin script text (<a class="characterClass" href="#cl-27">Western characters (cl-27)</a>, <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a> or <a class="characterClass" href="#cl-25">unit symbols (cl-25)</a>) is regarded as fixed size space, and space adaptation is not applied. </p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-19">漢字等（cl-19）</a>などと，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>，<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>又は<a class="characterClass" href="#cl-25">単位記号中の文字（cl-25）</a>との四分アキは，固定した空き量として，調整には使用しない例もある．</p>
           </aside>
         </li>
       </ol>
-      <p its-locale-filter-list="en">In JIS X 4051, the space after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, <a class="characterClass" href="#cl-07">commas (cl-07)</a> and <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> at the end of a line are set solid, and the space after <a class="characterClass" href="#cl-07">commas (cl-07)</a> at the end of a line is set to a half em. Accordingly, JIS X 4051 defines the priority of processing as follows:</p>
+      <p its-locale-filter-list="en">In JIS X 4051, the space after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, <a class="characterClass" href="#cl-07">commas (cl-07)</a> and <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> at the end of a line are set solid, and the space after <a class="characterClass" href="#cl-07">commas (cl-07)</a> at the end of a line is set to a half em. Accordingly, JIS X 4051 defines the priority of processing as follows:</p>      <p its-locale-filter-list="ja">なお，<span class="index" id="d6e3140">JIS X 4051</span>では，行末に配置する<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>，<a class="characterClass" href="#cl-07">読点類（cl-07）</a>及び<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の後ろをベタ組とし，行末に配置する<a class="characterClass" href="#cl-06">句点類（cl-06）</a>の後ろは二分アキとすることから，次の順序で処理するように規定している．</p>
       <aside class="note" id="n171">
         <p its-locale-filter-list="en">The details of the inter-character spaces, where the inter-space reduction processing can be applied, which is defined in JIS X 4051, is described in detail in the Table 5 of <a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a> in accordance with the character class concept in <a class="sec_ref" href="#about_character_classes"></a>.</p>
+        <p its-locale-filter-list="ja">JIS X 4051で規定している行の調整処理の際に詰める処理（追込み処理）が可能な箇所の詳細は，<a class="sec_ref" href="#about_character_classes"></a>で説明する文字クラスに従い，表の形式にして<a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a>の表5で示す．</p>
       </aside>
       <ol>
         <li id="id294">
           <p its-locale-filter-list="en"><a class="characterClass" href="#cl-26">Western word space (cl-26)</a>, which is usually one third em, is reduced by equal amounts, to leave a minimum of a quarter em space between words.</p>
+          <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>を，最小で四分アキまで文字サイズ比で均等に詰める．</p>
         </li>
         <li id="id295">
           <p its-locale-filter-list="en">The quarter em space before and after <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> is reduced equally with proportional character size as far as solid setting.</p>
-        </li>
+          <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-05">中点類（cl-05）</a>の前後の空き量を，最小でベタ組まで文字サイズ比で均等に詰める．</p>        </li>
         <li id="id296">
           <p its-locale-filter-list="en">The half em spaces before <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> or <a class="characterClass" href="#cl-07">commas (cl-07)</a>, are reduced equally with proportional character size as far as solid setting.</p>
+          <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前側，並びに<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>及び<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の後ろ側の二分アキを，最小でベタ組まで文字サイズ比で均等に詰める．</p>
         </li>
         <li id="id297">
           <p its-locale-filter-list="en">The quarter em spaces between Japanese text (<a class="characterClass" href="#cl-15">hiragana (cl-15)</a>, <a class="characterClass" href="#cl-16">katakana (cl-16)</a> and <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>) and Latin script text (<a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a>, <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> and <a class="characterClass" href="#cl-25">unit symbols (cl-25)</a>) are reduced equally with proportional character size, as far as a 1/8th em space.</p>
+          <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-15">平仮名（cl-15）</a>，<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>などと，<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>又は<a class="characterClass" href="#cl-25">単位記号中の文字（cl-25）</a>との字間の四分アキを，最小で八分アキまで文字サイズ比で均等に詰める．</p>
         </li>
       </ol>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="procedures_for_intercharacter_space_expansion">
 <span its-locale-filter-list="en">Procedures for Inter-Character Space Expansion</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">空ける処理の優先順位</span>
 </h4>
       <p its-locale-filter-list="en">As with line adjustment by inter-character space reduction, for line adjustment by inter-character space expansion at first
         the order of processing and the maximum amount of space to be added are defined. In JIS X 4051, the following processing order
         is defined. </p>
+      <p its-locale-filter-list="ja">空ける処理（追出し処理）を行う場合も詰める処理（追込み処理）と同様，優先順位と空ける限界を決めて行う．<span class="index" id="d6e3335">JIS X 4051</span>では，次の順序で処理するように規定している．</p>
       <ol>
         <li id="id298">
           <p its-locale-filter-list="en"><a class="characterClass" href="#cl-26">Western word space (cl-26)</a>, which is usually one third em, is added equally with proportional character size up to a maximum of a half em size for each space.</p>
+          <p its-locale-filter-list="ja"><span class="index" id="d6e3348"><a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a></span>を，最大で二分アキまで文字サイズ比で均等に空ける．</p>
         </li>
         <li id="id299">
           <p its-locale-filter-list="en">The quarter em space between Japanese text (<a class="characterClass" href="#cl-15">hiragana (cl-15)</a>, <a class="characterClass" href="#cl-16">katakana (cl-16)</a> and <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>) and Latin script text (<a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a>, <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> and <a class="characterClass" href="#cl-25">unit symbols (cl-25)</a>) is increased equally
             with proportional character size, up to half em space (or <a href="#term.one-third-em-space" class="termref">one third em space</a>).</p>
+          <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-15">平仮名（cl-15）</a>，<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>などと，<span class="index" id="d6e3370"><a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a></span>，<span class="index" id="d6e3374"><a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a></span>又は<span class="index" id="d6e3378"><a class="characterClass" href="#cl-25">単位記号中の文字（cl-25）</a></span>との字間の四分アキを，最大で二分アキまで（又は<a href="#term.one-third-em-space" class="termref">三分アキ</a>まで）文字サイズ比で均等に空ける．</p>
           <aside class="note" id="n172">
             <p its-locale-filter-list="en">Like with inter-character space reduction, there are also examples there the quarter em space between Japanese text (<a class="characterClass" href="#cl-15">hiragana (cl-15)</a>, <a class="characterClass" href="#cl-16">katakana (cl-16)</a> and <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>) and Latin
               script text (<a class="characterClass" href="#cl-27">Western characters (cl-27)</a>, <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a> and <a class="characterClass" href="#cl-25">unit symbols (cl-25)</a>) is regarded as a fixed space size, and space
               adaptation is not applied. </p>
+            <p its-locale-filter-list="ja">詰める処理と同様に，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>などと，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>，<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>又は<a class="characterClass" href="#cl-25">単位記号中の文字（cl-25）</a>との字間の四分アキは，固定した空き量として，空ける調整でも使用しないで処理している例がある．</p>
           </aside>
         </li>
         <li id="id300">
           <p its-locale-filter-list="en">For places which do not fall under (a) or (b) and which do not have
             the inseparable character rule (bunrikinshi), space is added equally with proportional character size up to a quarter em space.</p>
+          <p its-locale-filter-list="ja">a及びb以外の行の調整処理で字間を空ける処理を避けるとされていない箇所（空ける処理が可能な箇所）の字間を，最大で四分アキまで文字サイズ比で均等に空ける．</p>
         </li>
         <li id="id301">
           <p its-locale-filter-list="en">In addition to the adaptation in the manner of (a), (b) and (c), in cases where such processing is not possible, space is added
             equally with proportional character size, with the exception of places which require the inseparable character rule (bunrikinshi). </p>
+          <p its-locale-filter-list="ja">a，b，cで調整できない場合は，a，b，cに加え，分割禁止とされていない文字間を均等に空ける．</p>
           <aside class="note" id="n173">
             <p its-locale-filter-list="en">JIS X 4051 provides a definition in addition to (d). This says that it depends on each layout processing system whether inter-character space should be added equally. This includes the space between <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>. </p>
-          </aside>
+            <p its-locale-filter-list="ja">JIS X 4051ではdの処理に加えて，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>の字間を含め，均等に空けるかどうかは，処理系定義とする，となっている．</p>          </aside>
           <aside class="note" id="n174">
             <p its-locale-filter-list="en">The detail of the places where space expansion is possible for line adjustment is described in <a class="sec_ref" href="#opportunities_for_intercharacter_space_expansion_during_line_adjustment"></a> as a complete table, in accordance with the concept of character class in <a class="sec_ref" href="#about_character_classes"></a>.</p>
+            <p its-locale-filter-list="ja">行の調整処理の際に空ける処理（追い出し処理）が可能な箇所の詳細は，<a class="sec_ref" href="#about_character_classes"></a>で説明する文字クラスに従い，表の形式にして<a class="sec_ref" href="#opportunities_for_intercharacter_space_expansion_during_line_adjustment"></a>で示す．</p>
           </aside>
         </li>
       </ol>
     </section>
   </section>
+
+
+
+
+
+
   <section id="line-composition-sec9">
     <h3 id="about_character_classes">
 <span its-locale-filter-list="en">About Character Classes</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">文字クラスについて</span>
 </h3>
+
     <section>
       <h4 id="differences_in_positioning_of_characters_and_symbols">
 <span its-locale-filter-list="en">Differences in Positioning of Characters and Symbols</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">文字・記号により振る舞い方は異なる</span>
 </h4>
       <p its-locale-filter-list="en">The positioning of characters and symbols may vary depending on the following.</p>
+      <p its-locale-filter-list="ja">文字や記号を行に配置する場合，次のような点でその振る舞い（配置方法）が異なる．</p>
       <ol>
         <li id="id302">
           <p its-locale-filter-list="en">Is the character width <a href="#term.full-width" class="termref">full-width</a>, <a href="#term.half-width" class="termref">half-width</a>, or something else?</p>
+          <p its-locale-filter-list="ja">文字・記号の字幅は，<a href="#term.full-width" class="termref">全角</a>か，<a href="#term.half-width" class="termref">半角</a>か，又はそれ以外か．</p>
         </li>
         <li id="id303">
-          <p its-locale-filter-list="en">Is it allowed or forbidden to place the character or symbol at the <a href="#term.line-head" class="termref">line head</a>? If it is allowed, how will it be placed?</p>
+          <p its-locale-filter-list="en">Is it allowed or forbidden to place the character or symbol at the <a href="#term.line-head" class="termref">line head</a>? If it is allowed, how will it be placed?</p>          <p its-locale-filter-list="ja"><a href="#term.line-head" class="termref">行頭</a>に配置してよいか，又は禁止するのか．配置してよい場合，どのように配置するか．</p>
         </li>
         <li id="id304">
           <p its-locale-filter-list="en">Is it allowed or forbidden to place the character or symbol at the <a href="#term.line-end" class="termref">line end</a>? If it is allowed, how will it be placed?</p>
+          <p its-locale-filter-list="ja"><a href="#term.line-end" class="termref">行末</a>に配置してよいか，又は禁止するのか．配置してよい場合，どのように配置するか．</p>
         </li>
         <li id="id305">
           <p its-locale-filter-list="en">Are characters and symbols appearing in sequence in <a href="#term.solid-setting" class="termref">solid setting</a>, or will there be a fixed size space between them? For example,
             sequences of <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> and <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> are set solid, and for <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> following <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> there will be quarter em space. </p>
+          <p its-locale-filter-list="ja">文字・記号が並んだ場合，その字間は<a href="#term.solid-setting" class="termref">ベタ組</a>にするか，又は一定の空き量をとるのか．例えば，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>と<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>が並んだ場合，その字間はベタ組であり，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>の後ろに<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>がきた場合，その字間は四分アキとなる．</p>
         </li>
         <li id="id306">
           <p its-locale-filter-list="en">Is it allowed to have a line break within a sequence of characters? For example, there must not be a line break in a sequence
             of <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a>. </p>
+          <p its-locale-filter-list="ja">文字が並んだ場合，その字間で2行に分割してよいか．例えば，<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>が並んだ場合，その字間では2行に分割してはならない．</p>
         </li>
         <li id="id307">
           <p its-locale-filter-list="en">Is it allowed to use the space between characters in a sequence during <a href="#term.line-adjustment" class="termref">line adjustment</a> processing? For example, is inter-character
             space reduction or addition possible between the characters appearing in sequence? Another issue to be decided is the preferred
             order for adjustment processing, and the amount of the allowed adjustment. </p>
+          <p its-locale-filter-list="ja"><a href="#term.line-adjustment" class="termref">行の調整処理</a>の際に，その並んだ文字の字間を使用してよいか．例えば，字間を詰めてよいか，逆に字間を空けてよいか．なお，調整処理の優先順位と調整量の限界も問題となる．</p>
         </li>
       </ol>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="grouping_of_characters_and_symbols_depending_on_their_positioning">
 <span its-locale-filter-list="en">Grouping of Characters and Symbols depending on their Positioning</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">文字・記号を振る舞い方により分ける</span>
 </h4>
       <p its-locale-filter-list="en">During layout processing, the issues mentioned in the previous section are addressed by grouping characters and symbols according
         to their characteristics, and handling them as character classes. </p>
+      <p its-locale-filter-list="ja">組版処理を行う場合，前項で述べたような事項について，性格を同じにする文字・記号ごとにグループに分け，<span class="index" id="d6e3712">文字クラス</span>として管理する方法がある．</p>
       <p its-locale-filter-list="en">JIS X 4051 also provides similar  character classes but that are slightly different from this document. Furthermore JIS X 4051 states that it is implementation-defined how to handle characters that are not explicitly mentioned, e.g. whether they should belong to either class or not. </p>
+      <p its-locale-filter-list="ja">JIS X 4051でも，“6.1.1 文字クラス”に文字クラスが示されている．なお，JIS X 4051では，“ここに挙げた文字以外を，それぞれの文字クラスに追加するか否かは，処理系定義とする”と備考に書かれている．</p>
       <aside class="note" id="n175">
         <p its-locale-filter-list="en">In JIS X 4051 Annex 1, the member  characters and symbols of each character class are specified as a mapping table to JIS X 0213 character names.</p>
+        <p its-locale-filter-list="ja">JIS X 4051では，各文字クラスに含まれる文字・記号を特定する資料として，その附属書に各文字クラスに含まれる文字・記号とJIS X 0213との対応表が“附属書1”として掲げられている．</p>
       </aside>
       <p its-locale-filter-list="en">A few character classes of this document are modified from JIS X 4051. In <a class="sec_ref" href="#character_classes"></a>, there is a whole mapping table to ISO/IEC 10646 Annex A collection 285 (BASIC JAPANESE) and collection 286 (JAPANESE NON IDEOGRAPHIC EXTENSION). All character classes of this document are as follows:</p>
+      <p its-locale-filter-list="ja">この文書における文字クラスは，JIS X 4051における文字クラス分けを一部修正し，次のようにする．なお，<a class="sec_ref" href="#character_classes"></a>に，各文字クラスに含まれている文字・記号とISO/IEC 10646（UCS）のAnnex Aで規定されている“基本日本語文字集合”（UCSのコレクション285）及び“拡張非漢字集合”（UCSのコレクション286）に含まれる非漢字との対応を示す．</p>
       <ol class="decimal">
         <li id="id308">
-          <p id="cl-01-en">Opening brackets (cl-01)</p>
+          <p id="cl-01-en" its-locale-filter-list="en">Opening brackets (cl-01)</p>
+          <p id="cl-01-ja" its-locale-filter-list="ja"><span class="index" id="d6e3783">始め括弧類</span>（cl-01）</p>
           <div class="example">
-            <p class="asis">‘“（〔［｛〈《「『【 etc.</p>
+            <p class="asis" lang="ja">‘“（〔［｛〈《「『【 <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
         </li>
         <li id="id309">
-          <p id="cl-02-en">Closing brackets (cl-02)</p>
+          <p id="cl-02-en" its-locale-filter-list="en">Closing brackets (cl-02)</p>
+          <p id="cl-02-ja" its-locale-filter-list="ja">終わり括弧類</span>（cl-02）</p>
           <div class="example">
-            <p class="asis">’”）〕］｝〉》」』】 etc.</p>
+            <p class="asis" lang="ja">’”）〕］｝〉》」』】 <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
           <aside class="note" id="n176">
             <p its-locale-filter-list="en">In JIS X 4051, <span class="character">IDEOGRAPHIC COMMA "、"</span> and <span class="character">COMMA ","</span> are classified as <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, because they have similar positioning methods. However, in this document, the handling of <span class="character">IDEOGRAPHIC COMMA "、"</span> and <span class="character">COMMA ","</span> are described as an independent class, named <a class="characterClass" href="#cl-07">commas (cl-07)</a>.</p>
+            <p its-locale-filter-list="ja">JIS X 4051では，<span class="index" id="d6e3895">読点</span><span class="character">[、] (IDEOGRAPHIC COMMA)</span>及びコンマ<span class="character">[,] (COMMA)</span>については終わり括弧類と同様な配置法となるので，文字クラスとしては終わり括弧類に含めている．しかし，この文書では，読点及びコンマは<a class="characterClass" href="#cl-07">読点類（cl-07）</a>として文字クラスを独立させ，解説する．</p>
           </aside>
         </li>
         <li id="id310">
-          <p id="cl-03-en">Hyphens (cl-03)</p>
+          <p id="cl-03-en" its-locale-filter-list="en">Hyphens (cl-03)</p>
+          <p id="cl-03-ja" its-locale-filter-list="ja">ハイフン類（cl-03）</p>
           <div class="example">
-            <p class="asis">‐〜 etc.</p>
+            <p class="asis" lang="ja">‐〜 <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
         </li>
         <li id="id311">
-          <p id="cl-04-en">Dividing punctuation marks (cl-04)</p>
-          <div class="example">
-            <p class="asis">？！ etc.</p>
+          <p id="cl-04-en" its-locale-filter-list="en">Dividing punctuation marks (cl-04)</p>
+          <p id="cl-04-ja" its-locale-filter-list="ja">区切り約物（cl-04）</p>
+        <div class="example">
+            <p class="asis" lang="ja">？！ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
         </li>
         <li id="id312">
-          <p id="cl-05-en">Middle dots (cl-05)</p>
-          <div class="example">
-            <p class="asis">・：；</p>
+          <p id="cl-05-en" its-locale-filter-list="en">Middle dots (cl-05)</p>
+          <p id="cl-05-ja" its-locale-filter-list="ja">中点類（cl-05）</p>
+        <div class="example">
+            <p class="asis" lang="ja">・：；</p>
           </div>
         </li>
         <li id="id313">
-          <p id="cl-06-en">Full stops (cl-06)</p>
-          <div class="example">
-            <p class="asis">。．</p>
+          <p id="cl-06-en" its-locale-filter-list="en">Full stops (cl-06)</p>
+          <p id="cl-06-ja" its-locale-filter-list="ja">句点類（cl-06）</p>
+        <div class="example">
+            <p class="asis" lang="ja">。．</p>
           </div>
         </li>
         <li id="id314">
-          <p id="cl-07-en">Commas (cl-07)</p>
-          <div class="example">
-            <p class="asis">、，</p>
+          <p id="cl-07-en" its-locale-filter-list="en">Commas (cl-07)</p>
+          <p id="cl-07-ja" its-locale-filter-list="ja">読点類（cl-07）</p>
+        <div class="example">
+            <p class="asis" lang="ja">、，</p>
           </div>
         </li>
         <li id="id315">
-          <p id="cl-08-en">Inseparable characters (cl-08)</p>
-          <div class="example">
-            <p class="asis">—…‥ etc.</p>
+          <p id="cl-08-en" its-locale-filter-list="en">Inseparable characters (cl-08)</p>
+          <p id="cl-08-ja" its-locale-filter-list="ja">分離禁止文字（cl-08）</p>
+        <div class="example">
+            <p class="asis" lang="ja">—…‥ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
         </li>
         <li id="id316">
-          <p id="cl-09-en">Iteration marks (cl-09)</p>
-          <div class="example">
-            <p class="asis">ヽヾゝゞ々 etc.</p>
+          <p id="cl-09-en" its-locale-filter-list="en">Iteration marks (cl-09)</p>
+          <p id="cl-09-ja" its-locale-filter-list="ja">繰返し記号（cl-09）</p>
+        <div class="example">
+            <p class="asis" lang="ja">ヽヾゝゞ々 <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
           <aside class="note" id="n177">
             <p its-locale-filter-list="en">In JIS X 4051, iteration marks such as <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span> are classified as "no line break allowed before" characters. In this document, <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span> etc. are classified as <a class="characterClass" href="#cl-09">iteration marks (cl-09)</a>.</p>
+            <p its-locale-filter-list="ja">繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>などは，JIS X 4051では，<span class="index" id="d6e4272">行頭禁則和字</span>に含まれているが，この文書では，独立した文字クラスとした．</p>
           </aside>
           <aside class="note" id="n178">
             <p its-locale-filter-list="en">There is another method where it is permitted to  break a line before <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span>. In this case, <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span> is regarded as a member of <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>.</p>
+            <p its-locale-filter-list="ja">繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>を行頭禁則の対象としない方法がある．この場合は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の文字クラスとする．</p>
           </aside>
         </li>
         <li id="id317">
-          <p id="cl-10-en">Prolonged sound marks (cl-10)</p>
-          <div class="example">
-            <p class="asis">ー</p>
+          <p id="cl-10-en" its-locale-filter-list="en">Prolonged sound marks (cl-10)</p>
+          <p id="cl-10-ja" its-locale-filter-list="ja">長音記号（cl-10）</p>
+        <div class="example">
+            <p class="asis" lang="ja">ー</p>
           </div>
           <aside class="note" id="n179">
             <p its-locale-filter-list="en">In JIS X 4051, <span class="character">KATAKANA-HIRAGANA PROLONGED SOUND MARK "ー"</span> is a member of "Japanese characters with no line break allowed before". In this document <span class="character">KATAKANA-HIRAGANA PROLONGED SOUND MARK "ー"</span> is the only  member of <a class="characterClass" href="#cl-10">prolonged sound mark (cl-10)</a>.</p>
+            <p its-locale-filter-list="ja">長音記号<span class="character">[ー] (KATAKANA-HIRAGANA PROLONGED SOUND MARK)</span>は，JIS X 4051では，行頭禁則和字に含まれているが，この文書では，独立した文字クラスとした．</p>
           </aside>
           <aside class="note" id="n180">
             <p its-locale-filter-list="en">In JIS X 4051, it is permitted to exclude <span class="character">KATAKANA-HIRAGANA PROLONGED SOUND MARK "ー"</span> from the "Japanese characters with no line break allowed before" character class.</p>
+            <p its-locale-filter-list="ja">JIS X 4051では，処理系定義として，長音記号<span class="character">[ー] (KATAKANA-HIRAGANA PROLONGED SOUND MARK)</span>を行頭禁則和字から除くことは認められている．</p>
           </aside>
           <aside class="note" id="n181">
             <p its-locale-filter-list="en">When it is permitted to break a line before <span class="character">KATAKANA-HIRAGANA PROLONGED SOUND MARK "ー"</span>, <span class="character">KATAKANA-HIRAGANA PROLONGED SOUND MARK "ー"</span> is regarded as a member of the <a class="characterClass" href="#cl-16">katakana (cl-16)</a> class.</p>
+            <p its-locale-filter-list="ja">長音記号<span class="character">[ー] (KATAKANA-HIRAGANA PROLONGED SOUND MARK)</span>を行頭禁則の対象としない場合は，長音記号は，<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の文字クラスとする．</p>
           </aside>
         </li>
         <li id="id318">
-          <p id="cl-11-en">Small kana (cl-11)</p>
-          <div class="example">
-            <p class="asis">ぁぃぅぇぉァィゥェォっゃゅょッャュョ etc.</p>
+          <p id="cl-11-en" its-locale-filter-list="en">Small kana (cl-11)</p>
+          <p id="cl-11-ja" its-locale-filter-list="ja">小書きの仮名（cl-11）</p>
+        <div class="example">
+            <p class="asis" lang="ja">ぁぃぅぇぉァィゥェォっゃゅょッャュョ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
           <aside class="note" id="n182">
             <p its-locale-filter-list="en">In JIS X 4051, small katakana letters, such as <span class="character">KATAKANA LETTER SMALL TU "ッ"</span>, are regarded as members of "Japanese characters with no line break allowed before" character class. In this document, small katakana letters are classified in <a class="characterClass" href="#cl-11">small kana (cl-11)</a>. Accordingly, the "Japanese characters with no line break allowed before" character class in JIS X 4051 is divided to three separate classes; <a class="characterClass" href="#cl-09">iteration marks (cl-09)</a>, <a class="characterClass" href="#cl-10">prolonged sound mark (cl-10)</a> and <a class="characterClass" href="#cl-11">small kana (cl-11)</a>.</p>
+            <p its-locale-filter-list="ja">小書きの片仮名ツ<span class="character">[ッ] (KATAKANA LETTER SMALL TU)</span>などは，JIS X 4051では，行頭禁則和字に含まれているが，この文書では，独立した文字クラスとした．したがって，JIS X 4051でいう“行頭禁則和字”は，<a class="characterClass" href="#cl-09">繰返し記号（cl-09）</a>，<a class="characterClass" href="#cl-10">長音記号（cl-10）</a>及び<a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a>の3つに分解されたことになる．</p>
           </aside>
           <aside class="note" id="n183">
             <p its-locale-filter-list="en">In JIS X 4051, it is permitted to exclude <a href="#term.small-kana" class="termref">small kana</a> letters (ぁぃぅァィゥ etc.) from the "Japanese characters with no line break allowed before" character class as an implementation definable option.</p>
+            <p its-locale-filter-list="ja">JIS X 4051では，処理系定義として，<a href="#term.small-kana" class="termref">小書きの仮名</a>（ぁぃぅァィゥなど）を行頭禁則和字から除くことは認められている．</p>
           </aside>
           <aside class="note" id="n184">
             <p its-locale-filter-list="en">When it is permitted to break a line before small hiragana (ぁぃぅ etc.) are regarded as members of the <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> class, and small katakana (ァィゥ etc.) are regarded as members of the <a class="characterClass" href="#cl-16">katakana (cl-16)</a> class.</p>
+            <p its-locale-filter-list="ja">小書きの仮名を行頭禁則の対象としない場合は，そこに含まれる小書きの平仮名は<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>の文字クラス，小書きの片仮名は<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の文字クラスとする．</p>
           </aside>
         </li>
         <li id="id319">
-          <p id="cl-12-en">Prefixed abbreviations (cl-12)</p>
-          <div class="example">
-            <p class="asis">￥＄￡＃ etc.</p>
+          <p id="cl-12-en" its-locale-filter-list="en">Prefixed abbreviations (cl-12)</p>
+          <p id="cl-12-ja" its-locale-filter-list="ja">前置省略記号（cl-12）</p>
+        <div class="example">
+            <p class="asis" lang="ja">￥＄￡＃ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
         </li>
         <li id="id320">
-          <p id="cl-13-en">Postfixed abbreviations (cl-13)</p>
-          <div class="example">
-            <p class="asis">°′″℃￠％‰ etc.</p>
+          <p id="cl-13-en" its-locale-filter-list="en">Postfixed abbreviations (cl-13)</p>
+          <p id="cl-13-ja" its-locale-filter-list="ja">後置省略記号（cl-13）</p>
+        <div class="example">
+            <p class="asis" lang="ja">°′″℃￠％‰ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
         </li>
         <li id="id321">
-          <p id="cl-14-en">Full-width ideographic space (cl-14)</p>
-          <div class="example">
+          <p id="cl-14-en" its-locale-filter-list="en">Full-width ideographic space (cl-14)</p>
+          <p id="cl-14-ja" its-locale-filter-list="ja">和字間隔（cl-14）</p>
+        <div class="example">
             <p its-locale-filter-list="en">U+3000 IDEOGRAPHIC SPACE</p>
           </div>
         </li>
         <li id="id322">
-          <p id="cl-15-en">Hiragana (cl-15)</p>
-          <div class="example">
-            <p class="asis">あいうえおかがきぎ etc.</p>
+          <p id="cl-15-en" its-locale-filter-list="en">Hiragana (cl-15)</p>
+          <p id="cl-15-ja" its-locale-filter-list="ja">平仮名（cl-15）</p>
+        <div class="example">
+            <p class="asis" lang="ja">あいうえおかがきぎ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
           <aside class="note" id="n185">
             <p its-locale-filter-list="en">The reason kanji etc. (Japanese characters except 1. to 12.) and hiragana are regarded different classes in JIS X 4051, is the difference in the case of <a href="#term.ruby" class="termref">ruby</a>, and specifically the handling in terms of characters jutting out of the base and overhanging adjacent characters.</p>
+            <p its-locale-filter-list="ja">JIS X 4051で，漢字など（1.～12.以外の和字）と平仮名が別のクラスになっているのは，<a href="#term.ruby" class="termref">ルビ</a>の親文字からのはみ出しがあった場合，そのはみ出しを掛けてよいかどうかで差があるからである．</p>
           </aside>
         </li>
         <li id="id323">
-          <p id="cl-16-en">Katakana (cl-16)</p>
-          <div class="example">
-            <p class="asis">アイウエオカガキギ etc.</p>
+          <p id="cl-16-en" its-locale-filter-list="en">Katakana (cl-16)</p>
+          <p id="cl-16-ja" its-locale-filter-list="ja">片仮名（cl-16）</p>
+        <div class="example">
+            <p class="asis" lang="ja">アイウエオカガキギ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
           <aside class="note" id="n186">
             <p its-locale-filter-list="en">In JIS X 4051, katakana and kanji are included in the same class (Japanese characters except for 1. to 12.). However, in this document,  when ruby characters jut out of the base characters and overhang adjacent hiragana or katakana, the handling is same. That is the reason that in this document, <a class="characterClass" href="#cl-16">katakana (cl-16)</a> is an independent character class.</p>
+            <p its-locale-filter-list="ja"><span class="index" id="d6e4969">片仮名</span>は，JIS X 4051では，漢字などと同じ文字クラス（1.～12.以外の和字）に含まれている．しかし，この文書では，ルビのはみ出しがあった場合，平仮名と同様に掛かってよいとしたことから独立した文字クラスとした．</p>
           </aside>
         </li>
         <li id="id324">
-          <p id="cl-17-en">Math symbols (cl-17)</p>
-          <div class="example">
-            <p class="asis">＝≠＜＞≦≧⊆⊇∪∩ etc.</p>
+          <p id="cl-17-en" its-locale-filter-list="en">Math symbols (cl-17)</p>
+          <p id="cl-17-ja" its-locale-filter-list="ja">等号類（cl-17）</p>
+        <div class="example">
+            <p class="asis" lang="ja">＝≠＜＞≦≧⊆⊇∪∩ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
           <aside class="note" id="n187">
             <p its-locale-filter-list="en">In JIS X 4051, math symbols (＋－÷×etc.) and math operators (＝≠＜＞≦≧⊆⊇∪∩etc.) are included in the "Japanese characters excluded from 1. to 12." class or Western character class. However, handling of math symbols and math operators adjacent to Western character or Arabic numerals is different from kanji. So, in this document, new <a class="characterClass" href="#cl-18">math operators (cl-18)</a> and <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> classes are defined.</p>
+            <p its-locale-filter-list="ja">数式などに使う<span class="index" id="d6e5054">演算記号</span>（＋－÷×等）や等号類（＝≠＜＞≦≧⊆⊇∪∩等）は，JIS X 4051では漢字などと同じ文字クラス（1.～12.以外の和字）又は欧文用文字に含まれている．しかし，欧字やアラビア数字と連続した場合の扱いは，漢字とは異なるので，次項の演算記号とともに新たな文字クラスを作成した．</p>
           </aside>
           <aside class="note" id="n188">
             <p its-locale-filter-list="en">From mathematical view point, "∪∩∧∨⊕⊗" are included in <a class="characterClass" href="#cl-18">math operators (cl-18)</a>, however, in this document, these symbols are included in <a class="characterClass" href="#cl-17">math symbols (cl-17)</a> because these symbols are traditionally considered to behave in the same way as other Math symbols.</p>
+            <p its-locale-filter-list="ja">“∪∩∧∨⊕⊗”は，これまでの組版上の慣習的処理から等号類に含めている．</p>
           </aside>
         </li>
         <li id="id325">
-          <p id="cl-18-en">Math operators (cl-18)</p>
-          <div class="example">
-            <p class="asis">＋－÷× etc.</p>
+          <p id="cl-18-en" its-locale-filter-list="en">Math operators (cl-18)</p>
+          <p id="cl-18-ja" its-locale-filter-list="ja">演算記号（cl-18）</p>
+        <div class="example">
+            <p class="asis" lang="ja">＋－÷× <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
         </li>
         <li id="id326">
-          <p id="cl-19-en">Ideographic characters (cl-19)</p>
-          <div class="example">
-            <p class="asis">亜唖娃阿哀愛挨〃仝〆♂♀ etc.</p>
+          <p id="cl-19-en" its-locale-filter-list="en">Ideographic characters (cl-19)</p>
+          <p id="cl-19-ja" its-locale-filter-list="ja">漢字等（cl-19）</p>
+        <div class="example">
+            <p class="asis" lang="ja">亜唖娃阿哀愛挨〃仝〆♂♀ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
           <aside class="note" id="n189">
             <p its-locale-filter-list="en">In JIS X 4051, corresponding character class for <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> is "Japanese characters excluded from 1. to 12.".</p>
+            <p its-locale-filter-list="ja">JIS X 4051の文字クラス名は，“1.～12.以外の和字”である．</p>
           </aside>
         </li>
         <li id="id327">
-          <p id="cl-20-en">Characters as reference marks (cl-20)</p>
+          <p id="cl-20-en" its-locale-filter-list="en">Characters as reference marks (cl-20)</p>
+          <p id="cl-20-ja" its-locale-filter-list="ja">合印中の文字（cl-20）</p>
           <p its-locale-filter-list="en">Characters which are inside verification seal (those are characters inside a verification seal that appear in the line just after the item applicable for <a href="#term.reference-marks" class="termref">reference marks</a> of <a href="#term.note" class="termref">notes</a>). See <a class="sec_ref" href="#note_numbers">4.2.2 Note Numbers</a>.</p>
+          <p its-locale-filter-list="ja"><a href="#term.note" class="termref">注</a>の参照のために該当する項目の直後の行中に配置した<a href="#term.reference-marks" class="termref">合印</a>中の文字である（<a class="sec_ref" href="#note_numbers"></a>）．</p>
         </li>
         <li id="id328">
-          <p id="cl-21-en">Ornamented character complexes (cl-21)</p>
-          <aside class="note" id="n190">
+          <p id="cl-21-en" its-locale-filter-list="en">Ornamented character complexes (cl-21)</p>
+          <p id="cl-21-ja" its-locale-filter-list="ja">親文字群中の文字（添え字付き）（cl-21）</p>
+        <aside class="note" id="n190">
             <p its-locale-filter-list="en">The name of this class in JIS X 4051 is "Characters included in ornamented base characters complex". The meaning of "base characters complex" is characters in a complex including ruby, <a href="#term.ornament-characters" class="termref">ornament characters</a> and <a href="#term.emphasis-dots" class="termref">emphasis dots</a>.</p>
+            <p its-locale-filter-list="ja">JIS X 4051の名称は，“添え字付き親文字群中の文字”である．親文字群とは，親文字及びそれに付随するルビ，<a href="#term.ornament-characters" class="termref">添え字</a>又は<a href="#term.emphasis-dots" class="termref">圏点</a>を含めた文字群のことである．</p>
           </aside>
         </li>
         <li id="id329">
-          <p id="cl-22-en">Simple-ruby character complexes (cl-22)</p>
+          <p id="cl-22-en" its-locale-filter-list="ja">Simple-ruby character complexes (cl-22)</p>
+          <p id="cl-22-ja"><span class="index" id="d6e5340">親文字群中の文字（熟語ルビ以外のルビ付き）</span>（cl-22）</p>
           <aside class="note" id="n191">
             <p its-locale-filter-list="en">The name of this class in JIS X 4051 is "Characters included in base characters complex with ruby (excluding jukugo-ruby)".</p>
+            <p its-locale-filter-list="ja">JIS X 4051の名称は，“熟語ルビ以外のルビ付き親文字群中の文字”である．</p>
           </aside>
         </li>
         <li id="id330">
-          <p id="cl-23-en">Jukugo-ruby character complexes (cl-23)</p>
-          <aside class="note" id="n192">
+          <p id="cl-23-en" its-locale-filter-list="en">Jukugo-ruby character complexes (cl-23)</p>
+          <p id="cl-23-ja" its-locale-filter-list="ja">親文字群中の文字（熟語ルビ付き）（cl-23）</p>
+        <aside class="note" id="n192">
             <p its-locale-filter-list="en">The name of this class in JIS X 4051 is "Characters included in base characters complex with jukugo-ruby".</p>
+            <p its-locale-filter-list="ja">JIS X 4051の名称は，“熟語ルビ付き親文字群中の文字”である．</p>
           </aside>
         </li>
         <li id="id331">
-          <p id="cl-24-en">Grouped numerals (cl-24)</p>
-          <p its-locale-filter-list="en">Sequences of European numerals which are not full-width and are handled as Japanese text, the decimal point or the comma and space used as grade indicator in number.</p>
+          <p id="cl-24-en" its-locale-filter-list="en">Grouped numerals (cl-24)</p>
+          <p id="cl-24-ja" its-locale-filter-list="ja">連数字中の文字（cl-24）</p>
+        <p its-locale-filter-list="en">Sequences of European numerals which are not full-width and are handled as Japanese text, the decimal point or the comma and space used as grade indicator in number.</p>
+          <p its-locale-filter-list="ja">連数字として扱われる連続した数字（アラビア数字）及び小数点のピリオド，並びに位取りのコンマ及び空白のことである．</p>
         </li>
         <li id="id332">
-          <p id="cl-25-en">Unit symbols (cl-25)</p>
-          <p its-locale-filter-list="en">Units described here include combinations of Latin script and Greek script characters used for international units (SI).</p>
+          <p id="cl-25-en" its-locale-filter-list="en">Unit symbols (cl-25)</p>
+          <p id="cl-25-ja" its-locale-filter-list="ja">単位記号中の文字（cl-25）</p>
+        <p its-locale-filter-list="en">Units described here include combinations of Latin script and Greek script characters used for international units (SI).</p>
+          <p its-locale-filter-list="ja">ここでいう単位記号は，国際単位系（SI）として使用されているラテン文字又はギリシャ文字を組み合わせて単位を示すものである．</p>
           <aside class="note" id="n193">
             <p its-locale-filter-list="en">There are units created with combinations of Latin and Greek script characters with a full-width character frame (full-width units). Such units are not part of the characters for units described here. Furthermore, full-width characters for units are mainly used in vertical writing mode. Their usage in horizontal writing mode is regarded as bad style and should be avoided (see <a class="figure_ref" href="#fig2_9_1z"></a>).</p>
+            <p its-locale-filter-list="ja">全角の文字の外枠にラテン文字やアラビア数字などを組み合わせた<span class="index" id="d6e5495">単位記号</span>がある（<span class="index" id="d6e5498">全角単位字</span>）．このような単位記号は，ここでいう単位記号中の文字には含めない．なお，全角単位字は，主に縦組で使用するもので，横組で使用するのは，体裁がよくないので避けた方がよい（<a class="figure_ref" href="#fig2_9_1z"></a>）．</p>
           </aside>
           <figure id="fig2_9_1z"> 
       <img its-locale-filter-list="en" src="images/img2_9_1.png" alt="Example of a unit which encompasses a full-width unit character (upper part) and characters for Latin script text (lower part)." width="645" height="112">
+      <img its-locale-filter-list="ja" src="images_ja/img2_9_1.png" alt="全角単位字（上側）と欧文用文字（下側）を用いた単位記号の例" width="645" height="112">
             <figcaption>
         <span its-locale-filter-list="en">Example of a unit which encompasses a full-width unit character (upper part) and characters for Latin script text (lower part).</span>
+        <span its-locale-filter-list="ja">全角単位字（上側）と欧文用文字（下側）を用いた単位記号の例</span>
         </figcaption>
 
           </figure>
         </li>
         <li id="id333">
-          <p id="cl-26-en">Western word space (cl-26)</p>
+          <p id="cl-26-en" its-locale-filter-list="en">Western word space (cl-26)</p>
+          <p id="cl-26-ja" its-locale-filter-list="ja">欧文間隔（cl-26）</p>
         </li>
         <li id="id334">
-          <p id="cl-27-en">Western characters (cl-27)</p>
-          <aside class="note" id="n194">
+          <p id="cl-27-en" its-locale-filter-list="en">Western characters (cl-27)</p>
+          <p id="cl-27-ja" its-locale-filter-list="ja">欧文用文字（cl-27）</p>
+        <aside class="note" id="n194">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-27">Western characters (cl-27)</a> include punctuation marks, such as commas, used in Western context. Among these punctuation marks, several marks are used both in a Japanese context and Western context. However, these marks have different <a href="#term.character-shape" class="termref">character shapes</a> depending on whether they are used in a Japanese context or Western context. For example, <span class="character">LEFT PARENTHESIS "("</span> and <span class="character">RIGHT PARENTHESIS ")"</span> has not only different width (Japanese, half em, Western, proportional) but are also different in line position (Japanese, center of the <a href="#term.character-frame" class="termref">character frame</a> in the inline direction, Western, <a href="#term.base-line" class="termref">base line</a> and <a href="#term.descender-line" class="termref">descender line</a> dependent) and design (Japanese, slightly bent and  constant line thickness, Western, strongly curved and  dynamic line thickness). The usage of these two differently designed commas should be explicit. Usually, in a Japanese context Japanese design is used, and in Western context Western design is used. However, there are some ambiguous cases, such as "エディター（editor）は……". In this case, English spelling is indicated using parentheses in a Japanese line of text. In this particular case, Japanese design is better.</p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>には，欧文として使用する<span class="index" id="d6e5582">括弧類</span>などの欧文の約物を含む．なお，これらは和文でも欧文でも使用している種類がある．しかし，それらの字幅や<a href="#term.character-shape" class="termref">字形</a>は異なることが多い．例えば，始め小括弧（始め丸括弧）<span class="character">[（] (LEFT PARENTHESIS)</span>及び終わり小括弧（終わり丸括弧）<span class="character">[）] (RIGHT PARENTHESIS)</span>は，和文用と欧文用とでは，字幅が異なるだけではなく（和文用は文字の<a href="#term.character-frame" class="termref">外枠</a>の行送り方向の中央，欧文用は<a href="#term.base-line" class="termref">並び線</a>・<a href="#term.descender-line" class="termref">ディセンダライン</a>が基準），円弧の深さ（フォントにもよるが，一般に和文用は円弧が深く，欧文用は浅い），<a href="#term.character-shape" class="termref2nd">字形</a>（フォントにもよるが，和文用は線の太さの変化が小さく，欧文用は変化が大きい）といった違いがある．これらにつき，どの部分に和文用，どの部分に欧文用を使用するかは指定による．和文中は和文用を，欧文中は欧文用を使用するのが原則であるが，判断に迷う例もある．例えば，“エディター（editor）は……”のように和文中に英語の綴りを括弧内に示す例は多い．この始め小括弧（始め丸括弧）<span class="character">[(] (LEFT PARENTHESIS)</span>及び終わり小括弧（終わり丸括弧）<span class="character">[)] (RIGHT PARENTHESIS)</span>は，和文か欧文かということである．この場合の始め小括弧（始め丸括弧）<span class="character">[(] (LEFT PARENTHESIS)</span>及び終わり小括弧（終わり丸括弧）<span class="character">[)] (RIGHT PARENTHESIS)</span>は和文としてよいであろう．</p>
           </aside>
         </li>
         <li id="id335">
-          <p id="cl-28-en">Warichu opening brackets (cl-28)</p>
-          <div class="example">
-            <p class="asis">（〔［ etc.</p>
+          <p id="cl-28-en" its-locale-filter-list="en">Warichu opening brackets (cl-28)</p>
+          <p id="cl-28-ja" its-locale-filter-list="ja">割注始め括弧類（cl-28）</p>
+        <div class="example">
+            <p class="asis">（〔［ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
         </li>
         <li id="id336">
-          <p id="cl-29-en">Warichu closing brackets (cl-29)</p>
-          <div class="example">
-            <p class="asis">）〕］ etc.</p>
+          <p id="cl-29-en" its-locale-filter-list="en">Warichu closing brackets (cl-29)</p>
+          <p id="cl-29-ja" its-locale-filter-list="ja">割注終わり括弧類（cl-29）</p>
+        <div class="example">
+            <p class="asis">）〕］ <span its-locale-filter-list="en">etc.</span> <span its-locale-filter-list="ja">など</span></p>
           </div>
           <aside class="note" id="n195">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-28">warichu opening brackets (cl-28)</a> and <a class="characterClass" href="#cl-29">warichu closing brackets (cl-29)</a> are used for surrounding <a href="#term.warichu" class="termref">inline cutting notes</a> and the space. They are in a separate class since they differ from normal brackets with regard to their processing.</p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-28">割注始め括弧類（cl-28）</a>又は<a class="characterClass" href="#cl-29">割注終わり括弧類（cl-29）</a>は，<a href="#term.warichu" class="termref">割注</a>を囲むために用いる括弧類及び空き量のことである．一般に使用する括弧類と<a href="#term.composition" class="termref">組版</a>処理が異なるので，別の文字クラスにしている．</p>
           </aside>
         </li>
         <li id="id337">
-          <p id="cl-30-en">Characters in tate-chu-yoko (cl-30)</p>
+          <p id="cl-30-en" its-locale-filter-list="en">Characters in tate-chu-yoko (cl-30)</p>
+          <p id="cl-30-ja" its-locale-filter-list="ja">縦中横中の文字（cl-30）</p>
         </li>
       </ol>
     </section>
+
+
+
+
+
+
     <section>
       <h4 id="positioning_methods_for_each_character_class">
 <span its-locale-filter-list="en">Positioning Methods for each Character Class</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">各文字クラスの配置方法</span>
 </h4>
       <p its-locale-filter-list="en">For each character class it is possible to describe whether the characters may appear at the line head or line end or not,
         the positioning method for the line head or line end positions (if available), the amount of space between sequences of several
         characters, and the combination with character classes before or after the characters (in a 2 dimensional table). In JIS X
         4051 this is shown in table 5 "Amount of space (between characters)". </p>
+      <p its-locale-filter-list="ja">文字クラスごとに，行頭・行末に配置してよいか，禁止するか，さらに行頭・行末にきた場合の配置法や，それぞれが並んだ場合の文字間の空き量は，前に配置される文字クラスと後ろに配置される文字クラスの組合せ（2次元の表）で示すことができる．JIS X 4051では，表5に“（文字間の）空き量”として示されている．</p>
       <aside class="note" id="n196">
         <p its-locale-filter-list="en">For the presentation as a two dimensional table, it becomes necessary for each class to have separate items about "line head"
           (the column about the character classes appearing before) and "line end" (the column about the character classes appearing
           after). If it is forbidden that the characters of the class appear at the line head or line end, JIS X 4051 uses an "X" mark
           in the columns for "line head" and "line end". </p>
+        <p its-locale-filter-list="ja">2次元の表に示す場合，各文字クラスの他に，“行頭”（前に配置される文字クラスの欄）及び“行末”（後ろに配置される文字クラスの欄）の項目が必要になる．そして，行頭又は行末の配置を禁止する場合は，JIS X 4051では“行頭”及び“行末”の欄に×印で示している．</p>
       </aside>
       <p its-locale-filter-list="en">Also, it can be defined for each combination of the character classes (in a two dimensional table) whether the characters
         of classes appearing in sequence allow for  a line break between them, or whether it is possible during line
         adjustment processing to add inter character space between them. In JIS X 4051 these items are also shown in a two dimensional table.
         Table 6 shows whether a line break is possible, and table 7 shows if it is possible to add inter character space. </p>
+      <p its-locale-filter-list="ja">また，文字クラスの文字・記号が並んだ場合，その字間で2行に分割が可能か，行の調整処理の際に字間を空けてよいかどうかも，各文字クラスの組合せ（2次元の表）で規定できる．このような事項についても，JIS X 4051では2次元の表で示している．2行に分割が可能かどうかは表6，行の調整処理の際に字間を空けてよいかどうかは表7に示されている．</p>
       <aside class="note" id="n197">
         <p its-locale-filter-list="en">It is also possible to define for each combination of character classes whether it is possible to apply kerning during line
           adjustment processing for character classes appearing in sequence. However, JIS X 4051 does not provide this information as
           a two dimensional table, but only as a textual description. </p>
+        <p its-locale-filter-list="ja">文字クラスの文字・記号が並んだ場合，行の調整処理の際にその字間を詰めてよいかどうかも各文字クラスの組合せ（2次元の表）で規定できる．しかし，JIS X 4051では，そのような表は示されていない．文章で示されている．</p>
       </aside>
       <p its-locale-filter-list="en">The width, in principle, of the space between each character or symbol in character classes used in this document is described in the table of <a class="sec_ref" href="#spacing_between_characters"></a>.</p>
+      <p its-locale-filter-list="ja">この文書における，それぞれの文字クラスの文字・記号が並んだ場合の文字間の原則的な空き量の表を<a class="sec_ref" href="#spacing_between_characters"></a>に掲げる．</p>
       <p its-locale-filter-list="en">The combinations of adjacent characters and symbols in character classes used in this document,  and where text is breakable or not, is described in the table of <a class="sec_ref" href="#possibilities_for_linebreaking_between_characters"></a>.</p>
+      <p its-locale-filter-list="ja">この文書における，それぞれの文字クラスの文字・記号が並んだ場合に，その字間で2行に分割が可能かどうかを示す表を<a class="sec_ref" href="#possibilities_for_linebreaking_between_characters"></a>に掲げる．</p>
       <p its-locale-filter-list="en">The width of spaces between each character or symbol in character classes used in this document, and which can be reduced, is described in the table of <a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a>. Also,  expandable spaces are described in the table of <a class="sec_ref" href="#opportunities_for_intercharacter_space_expansion_during_line_adjustment"></a>.</p>
+      <p its-locale-filter-list="ja">この文書における，それぞれの文字クラスの文字・記号が並んだ場合に，行の調整処理の際に字間を詰めてよいかを示す表を<a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a>，行の調整処理の際に字間を空けてよいかを示す表を<a class="sec_ref" href="#opportunities_for_intercharacter_space_expansion_during_line_adjustment"></a>に掲げる．</p>
     </section>
   </section>
 </section>
 <!-- end of Line Composition -->
+
+
+
+
+
 
 <section id="chapter_4">
   <h2 id="hanmen-design">
@@ -5713,7 +5877,7 @@
       <aside class="note" id="n201">
         <p its-locale-filter-list="en">Some types of magazine use horizontal headings with extremely large character size, even in vertical writing mode, to emphasize the headings. Even inclined headings can sometimes be seen. However, in common books, only vertically written headings are used in vertical writing mode.</p>
       </aside>
-      <p its-locale-filter-list="en">Naka-tobira is used to separate sections of books. One whole odd page is used for the section title and the following even page is left blank. Naka-tobira sometimes includes author's names and illustrations, in addition to the section title (see <a class="figure_ref" href="#fig3_1_1"></a>). Some kinds of book, such as  encyclopedias, dictionaries and annual reports, use a different kind of paper from that in the main text.</p>
+      <p its-locale-filter-list="en">Naka-tobira is used to separate sections of books. One whole odd page is used for the section title and the following even page is left blank. Naka-tobira sometimes includes author's names and illustrations, in addition to the section title (see <a class="figure_ref" href="#fig3_1_1"></a>) (see [[[#fig3_1_1]]]). Some kinds of book, such as  encyclopedias, dictionaries and annual reports, use a different kind of paper from that in the main text.</p>
       <figure id="fig3_1_1"> 
       <img its-locale-filter-list="en" src="images/img3_1_1.png" alt="An example naka-tobira" width="369" height="522">
         <figcaption>
