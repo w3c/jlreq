@@ -22127,61 +22127,80 @@
 <section id="appendix_4" class="appendix">
   <h2 id="opportunities_for_intercharacter_space_reduction_during_line_adjustment">
 <span its-locale-filter-list="en"> Opportunities for Inter-character Space Reduction during Line Adjustment</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">行の調整処理で​詰める処理が​可能な箇所</span>
 </h2>
   <p its-locale-filter-list="en">The following tables indicate if an opportunity exists for <a href="#term.line-adjustment-by-inter-character-space-reduction" class="termref">inter-character space reduction</a> during <a href="#term.line-adjustment" class="termref">line adjustment</a> between two adjacent characters of given character classes as explained in <a class="sec_ref" href="#grouping_of_characters_and_symbols_depending_on_their_positioning"></a>. (For more detail on line adjustment, see <a class="sec_ref" href="#line_adjustment"></a>.) In the process of line adjustment by inter-character space reduction, the first place to look  (the first stage of inter-character space reduction in priority order) is for <a class="characterClass" href="#cl-26">Western word spaces (cl-26)</a>, each of which is reducible equally,  to leave a minimum of a quarter em space (or a one fifth em space) with respect to the corresponding character size. The tables are for the second and subsequent stages of inter-character space reduction in priority order, assuming the first stage of the reduction for <a class="characterClass" href="#cl-26">Western word spaces (cl-26)</a> is already done. The default unadjusted space between two adjacent characters of given character classes shall be determined according to <a class="sec_ref" href="#spacing_between_characters"></a>.</p>
+  <p its-locale-filter-list="ja"><a href="#term.line-adjustment" class="termref">行の調整処理</a>で詰める処理（<a href="#term.line-adjustment-by-inter-character-space-reduction" class="termref">追込み処理</a>）が可能な箇所かどうかを，<a class="sec_ref" href="#grouping_of_characters_and_symbols_depending_on_their_positioning"></a>で解説した，それぞれの文字クラスに含まれる文字・記号について，表にして示す（行の調整処理については，<a class="sec_ref" href="#line_adjustment"></a>を参照）．行の調整処理で詰める処理を行う場合，優先的に最初に行う処理（優先順位の第1段階の処理）は<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>であり，<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>を最小で四分アキ（又は五分アキ）まで文字サイズ比で均等に詰める処理を行う．以下の表では，それぞれの文字クラスが連続する場合の字間について，<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>の処理を行った後で行う処理，つまり，優先順位の第2段階以降の処理について示す．なお，それぞれ箇所の原則的な空き量は，<a class="sec_ref" href="#spacing_between_characters"></a>に示す．</p>
   <p its-locale-filter-list="en">There are several conventions for line adjustment, especially when it is to be achieved by inter-character space reduction. Table 3 follows the method adopted by this document, Table 4 supplies an alternative way specified by JIS X 4051, and Table 5, taking partially different approaches from the previous two, represents yet another method which can be seen in books or other publications.</p>
+  <p its-locale-filter-list="ja">行の調整処理，特に詰める処理では，複数の処理方法があるので，この文書で主に解説している方法を表3<span class="back-book"></span>，JIS X 4051の規定に従った方法を表4<span class="back-book"></span>，それらとは一部が異なるもので，書籍などで採用されている方法を表5<span class="back-book"></span>に示す．</p>
   <div class="table-pdf" id="table4_pdf">
     <p its-locale-filter-list="en">See "<a href="table_en4.pdf">Table 3 Opportunity of inter-character space reduction</a>" (PDF).</p>
+    <p its-locale-filter-list="ja">“<a href="table_ja4.pdf">表3 行の調整処理で詰める処理が可能な箇所</a>”<span class="nobook">（PDF版）</span>を参照．</p>
   </div>
   <div class="table-pdf" id="table5_pdf">
     <p its-locale-filter-list="en">See "<a href="table_en5.pdf">Table 4 Opportunity of inter-character space reduction (the method specified by JIS X 4051)</a>" (PDF).</p>
+    <p its-locale-filter-list="ja">“<a href="table_ja5.pdf">表4 行の調整処理で詰める処理が可能な箇所（JIS X 4051の規定に従った例）</a>”<span class="nobook">（PDF版）</span>を参照．</p>
   </div>
   <div class="table-pdf" id="table6_pdf">
     <p its-locale-filter-list="en">See "<a href="table_en6.pdf">Table 5 Opportunity of inter-character space reduction (the method adopted by books)</a>" (PDF).</p>
+    <p its-locale-filter-list="ja">“<a href="table_ja6.pdf">表5 行の調整処理で詰める処理が可能な箇所（書籍などで行われている例）</a>”<span class="nobook">（PDF版）</span>を参照．</p>
   </div>
+
+
+
   <section>
     <h3 id="legend_of_tables_4_5_6">
 <span its-locale-filter-list="en">Legend of Tables 3, 4 and 5</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">表3，表4及び表5の見方</span>
 </h3>
     <ol class="decimal">
       <li id="id626">
         <p its-locale-filter-list="en">The  left-most column, labeled "before", lists preceding character classes, and the top row, labeled "after", lists trailing character classes. Each cell indicates the type of opportunities of inter-character space reduction between two adjacent characters of the corresponding character classes at a given row and column. </p>
-      </li>
+        <p its-locale-filter-list="ja">“before”（表の左端）と示した欄に，前に配置する文字クラスを示し，“after”（表の上端）と示した欄に，後ろに配置する文字クラスを示す．それぞれが交差する小間（こま）に詰める処理が可能かどうかを示す．</p>      </li>
       <li id="id627">
         <p its-locale-filter-list="en">The cells in the row "line head" or the column "line end" should read if there exists opportunity for space reduction at line head or line end respectively. Tables 3, 4 and 5 all prohibit space reduction at line head. While Table 4 prohibits space reduction at line end too, Tables 3 and 5 allow it for several character classes at line end.</p>
+        <p its-locale-filter-list="ja">“line head”の欄（横方向の行）には，それぞれの文字クラスを行頭に配置する場合，“line end”（縦方向の列）の欄には，それぞれの文字クラスを行末に配置する場合に詰める処理が可能かどうかを示す．なお，行頭については，表3，表4及び表5ともに，詰める処理の対象箇所としていない（詰め処理否）．行末については，表4では詰める処理の対象箇所としていない（詰め処理否）．しかし，表3及び表5では，行末の一部の箇所で可能（詰め処理可）になっている．</p>
       </li>
       <li id="id628">
         <p its-locale-filter-list="en">The type of opportunity for space reduction is indicated in each cell in the tables using the following notation.</p>
+        <p its-locale-filter-list="ja">表のそれぞれの小間に，詰める処理の可否などを，次の記号で示す．</p>
         <ol>
           <li id="id629">
             <p its-locale-filter-list="en">Cells with a white background: No opportunity for space reduction because the two characters are set solid and there is no adjustable space between them, or because it is prohibited by rule to reduce the inter-character space for the given combination.</p>
+            <p its-locale-filter-list="ja">小間の地色が白のもの（□）：字間がベタ組などにより詰める処理をしない，又は空き量があっても，詰める処理の対象としない箇所（詰め処理否の箇所）を示す．</p>
             <ol>
               <li id="id630">
                 <p its-locale-filter-list="en">Blank: No opportunity for space reduction because the given combination of characters is set solid (or there is no space before or after the given character at line head or at line end respectively).</p>
+                <p its-locale-filter-list="ja">無印：原則的な文字間（行頭の場合は，その文字の前，行末の場合は，その文字の後ろ）がベタ組なので，詰める処理の対象にならない．</p>
               </li>
               <li id="id631">
                 <p its-locale-filter-list="en">× mark:The combination is not allowed due to line breaking rules or other restrictions.</p>
+                <p its-locale-filter-list="ja">×印：行頭禁則，行末禁則，その他により，このような配置を禁止する．</p>
               </li>
               <li id="id632">
                 <p its-locale-filter-list="en">1/2: The amount of inter-character space shall be a half em, and this space shall not be reduced (no opportunity of inter-character space reduction).</p>
+                <p its-locale-filter-list="ja">1/2：字間は二分アキとするが，詰める処理の対象としない箇所（詰め処理否の箇所）を示す．</p>
               </li>
               <li id="id633">
                 <p its-locale-filter-list="en">1/4: The amount of inter-character space shall be a quarter em, and this space shall not be reduced (no opportunity of inter-character space reduction).</p>
+                <p its-locale-filter-list="ja">1/4：字間は四分アキとするが，詰める処理の対象としない箇所（詰め処理否の箇所）を示す．</p>
               </li>
             </ol>
           </li>
           <li id="id634">
             <p its-locale-filter-list="en">Cells with a colored or gray background: An opportunity for inter-character space reduction exists.</p>
+            <p its-locale-filter-list="ja">小間の地色が色又はグレーのもの：詰める処理の対象としてよい箇所（詰め処理可の箇所）を示す．</p>
             <ol>
               <li id="id635">
                 <p its-locale-filter-list="en">Priority order in space reduction: The second highest and subsequent priorities of inter-character space reduction are indicated by the given background colors of the cells. The cells with the colors in the left are higher in priority than ones in the right. Space reduction shall be processed in this order.</p>
+                <p its-locale-filter-list="ja">詰める際の優先順位：詰める処理を行う際の第2段階以降の優先順位を，左側の高いものから，右側の低いものへと，<span class="nobook">次の</span>小間の地色で示す．この順位で，詰める処理を行う．</p>
                 <div class="Taiyaku nobook">
                   <figure id="fig_a5-1-en">
       <img its-locale-filter-list="en" src="images/img_a5_1.png" alt="Priority order in space reduction." width="278" height="28">
+      <img its-locale-filter-list="ja" src="images_ja/img_a5_1.png" alt="詰める際の優先順位" width="269" height="28">
                     <figcaption>
         <span its-locale-filter-list="en">Priority order in space reduction.</span>
+        <span its-locale-filter-list="ja">詰める際の優先順位</span>
         </figcaption>
 
                   </figure>
@@ -22189,21 +22208,27 @@
               </li>
               <li id="id636">
                 <p its-locale-filter-list="en">Amount of space reducible: the amount of space to be reduced is indicated using the following notation.</p>
+                <p its-locale-filter-list="ja">詰める処理が可能な量：詰める処理が可能な量を次の記号で示す．</p>
                 <ol>
                   <li id="id637">
                     <p its-locale-filter-list="en">1/2–0: A half em space by default, which is reducible equally, with respect to the corresponding character size, with no minimum space required (set solid).</p>
+                    <p its-locale-filter-list="ja">1/2–0：二分アキを最小でベタ組まで文字サイズ比で均等に詰める処理が可能．</p>
                   </li>
                   <li id="id638">
                     <p its-locale-filter-list="en">1/2–1/4: A half em space by default, which is reducible equally, with respect to the corresponding character size, to leave a minimum of a quarter em space.</p>
+                    <p its-locale-filter-list="ja">1/2–1/4：二分アキを最小で四分アキまで文字サイズ比で均等に詰める処理が可能．</p>
                   </li>
                   <li id="id639">
                     <p its-locale-filter-list="en">1/2=0: A half em space by default, which can be removed to set solid (it is not allowed to leave any intermediate size of space between zero to a half em, such as a quarter em space).</p>
+                    <p its-locale-filter-list="ja">1/2=0：二分アキをベタ組にする処理が可能（四分アキなどの二分アキからベタ組までの中間的なアキにする処理はできない）．</p>
                   </li>
                   <li id="id640">
                     <p its-locale-filter-list="en">1/4–0: A quarter em space by default, which is reducible equally, with respect to the corresponding character size, with no minimum space required (set solid).</p>
+                    <p its-locale-filter-list="ja">1/4–0：四分アキを最小でベタ組まで文字サイズ比で均等に詰める処理が可能．</p>
                   </li>
                   <li id="id641">
                     <p its-locale-filter-list="en">1/4–1/8: A quarter em space by default, which is reducible equally, with respect to the corresponding character size, to leave a minimum of a one eighth em space.</p>
+                    <p its-locale-filter-list="ja">1/4–1/8：四分アキを最小で八分アキまで文字サイズ比で均等に詰める処理が可能．</p>
                   </li>
                 </ol>
               </li>
@@ -22213,77 +22238,110 @@
       </li>
     </ol>
     <p its-locale-filter-list="en">Note that JIS X 4051 specifies  to not leave any space after the <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> or <a class="characterClass" href="#cl-07">commas (cl-07)</a> at the line end. Therefore, Table 4 also indicates that there is no opportunity for space reduction after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> and <a class="characterClass" href="#cl-07">commas (cl-07)</a> at the line end. Likewise, because <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> at the line end are supposed to have no space, Table 4 indicates there is no opportunity for space reduction for <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> at the line end. On the other hand, while JIS X 4051 specifies to pad with a half em space after <a class="characterClass" href="#cl-06">full stops (cl-06)</a> at the line end, which is not allowed to reduce this space for line adjustment, Table 3 and 5 allow the removal of the default half em space after <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, <a class="characterClass" href="#cl-06">full stops (cl-06)</a> and <a class="characterClass" href="#cl-07">commas (cl-07)</a> at the line end for line adjustment. Table 3 further allows the removal of the default quarter em space padding before and after <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> at the line end for line adjustment, while Table 5 does not.</p>
+    <p its-locale-filter-list="ja">なお，JIS X 4051では，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>又は<a class="characterClass" href="#cl-07">読点類（cl-07）</a>を行末に配置する場合は，それらの後ろをベタ組とすることになっている．したがって，表4の<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>及び<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の行末については，いずれも“詰め処理否”となる．また，<a class="characterClass" href="#cl-05">中点類（cl-05）</a>を行末に配置する場合も，それらの後ろをベタ組とすることになっており，表4の<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の行末については，“詰め処理否”となる．なお，<a class="characterClass" href="#cl-06">句点類（cl-06）</a>を行末に配置する場合，JIS X 4051では，その後ろを二分アキとする．しかし，この<a class="characterClass" href="#cl-06">句点類（cl-06）</a>の後ろは，JIS X 4051では，詰める調整に使用することは認められていない．これに対して，表3及び表5では，行末に配置する<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>，<a class="characterClass" href="#cl-06">句点類（cl-06）</a>及び<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の後ろは，原則として二分アキとし，ここをベタ組にする調整方法を可としている．また，表3では，行末に配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の前及び後ろは，原則として四分アキとし，<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の前及び後ろの四分アキをベタ組にする調整方法を可としている．表5では，行末に配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の前及び後ろは，四分アキとしているが，<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の前及び後ろのアキを詰める調整に使用することは認めていない．</p>
   </section>
+
+
+
+
+
+
   <section>
     <h3 id="notes_a4">
 <span its-locale-filter-list="en">Notes</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">注記</span>
 </h3>
     <ol class="decimal">
       <li id="id642">
         <p its-locale-filter-list="en">The default unadjusted space when a <a class="characterClass" href="#cl-05">middle dot (cl-05)</a> is followed by a <a class="characterClass" href="#cl-05">middle dot (cl-05)</a>, is the sum of the conditional quarter em space accompanying the preceding <a class="characterClass" href="#cl-05">middle dot (cl-05)</a> and the conditional quarter em space accompanying the trailing <a class="characterClass" href="#cl-05">middle dot (cl-05)</a>. Tables 3 and 4 allow these two quarter em spaces to be reduced, to leave no space as a minimum. The priority order in space reduction is the fourth in Table 3, and it is the second priority in Table 4.</p>
+        <p its-locale-filter-list="ja">前に配置する文字クラスが<a class="characterClass" href="#cl-05">中点類（cl-05）</a>で後ろに配置する文字クラスが<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の場合の原則的なアキは，前に配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキ＋後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキである．表3及び表4では，この2つの四分アキをベタ組まで詰める調整が可能である．表3の優先順位は第4段階，表4の優先順位は第2段階である．</p>
       </li>
       <li id="id643">
         <p its-locale-filter-list="en">The default unadjusted space when a <a class="characterClass" href="#cl-06">full stop (cl-06)</a> is followed by a <a class="characterClass" href="#cl-05">middle dot (cl-05)</a>, is the sum of the conditional half em space accompanying the preceding <a class="characterClass" href="#cl-06">full stop (cl-06)</a> and the conditional quarter em space accompanying the trailing <a class="characterClass" href="#cl-05">middle dot (cl-05)</a>. Tables 3 and 4 allow the quarter em space accompanying the trailing <a class="characterClass" href="#cl-05">middle dot (cl-05)</a> to be reduced, to leave no space as a minimum. The priority order in space reduction is the fourth in Table 3, and it is the second priority in Table 4.</p>
+        <p its-locale-filter-list="ja">前に配置する文字クラスが<a class="characterClass" href="#cl-06">句点類（cl-06）</a>で後ろに配置する文字クラスが<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の場合の原則的なアキは，前に配置する<a class="characterClass" href="#cl-06">句点類（cl-06）</a>の文字サイズの二分アキ＋後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキである．表3及び表4では，後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の四分アキをベタ組まで詰める調整が可能である．表3の優先順位は第4段階，表4の優先順位は第2段階である．</p>
       </li>
       <li id="id644">
         <p its-locale-filter-list="en">The default unadjusted space when a <a class="characterClass" href="#cl-07">comma (cl-07)</a> is followed by a <a class="characterClass" href="#cl-05">middle dot (cl-05)</a>, is the sum of the conditional half em space accompanying the preceding <a class="characterClass" href="#cl-07">comma (cl-07)</a> and the conditional quarter em space accompanying the trailing <a class="characterClass" href="#cl-05">middle dot (cl-05)</a> (in Table 4, the conditional half space accompanying preceding <a class="characterClass" href="#cl-07">comma (cl-07)</a> and the conditional quarter space accompanying trailing <a class="characterClass" href="#cl-05">middle dot (cl-05)</a> can be reduced to solid setting).
           Table 5 allows the conditional half em space accompanying preceding <a class="characterClass" href="#cl-07">comma (cl-07)</a> to be reduced to a quarter space as a minimum.
           The priority order in space reduction for the conditional space accompanying <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> is the fourth in Table 3 and the second in Table 4.
           The priority order in space reduction for the conditional space accompanying <a class="characterClass" href="#cl-07">comma (cl-07)</a> is the fifth in Table 3 and the third in Table 5.</p>
+        <p its-locale-filter-list="ja">前に配置する文字クラスが<a class="characterClass" href="#cl-07">読点類（cl-07）</a>で後ろに配置する文字クラスが<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の場合の原則的なアキは，前に配置する<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の文字サイズの二分アキ＋後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキである（表4では後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキ）．表3では，前に配置する<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の二分アキ及び後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の四分アキをベタ組まで詰める調整が可能である．表4では，後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の四分アキをベタ組まで詰める調整が可能である．表5では，前に配置する<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の二分アキを四分アキまで詰める調整が可能である．<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の調整の優先順位は，表3は第4段階，表4は第2段階である．<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の調整の優先順位は，表3は第5段階，表5は第3段階である．</p>
       </li>
       <li id="id645">
         <p its-locale-filter-list="en">There is no opportunity for space reduction for a <a class="characterClass" href="#cl-26">Western word space (cl-26)</a> at the line head and at the line end since there is supposed to be no visible space. The same applies to the <a class="characterClass" href="#cl-26">Western word space (cl-26)</a> at the line head or the line end of warichu (inline cutting note). If the condition is changed for the same text, restore the default visible space for <a class="characterClass" href="#cl-26">Western word space (cl-26)</a>.</p>
+        <p its-locale-filter-list="ja">行頭又は行末の<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>は，空き量を0とするので，詰める処理の対象にならない．割注の行頭又は行末に<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>を配置する場合も同様である．ただし，この部分が移動し，これとは異なる配置になった場合は，<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>の空き量を確保する．</p>
       </li>
       <li id="id646">
         <p its-locale-filter-list="en">Table 3, and only Table 3, allows the preceding and trailing conditional quarter em space accompanying <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> to be reduced to leave no space. The priority order is the third.</p>
+        <p its-locale-filter-list="ja">表3に限るが，行末に配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の前及び後ろの四分アキを一緒にベタ組にする処理が可能である．優先順位は第3段階である．</p>
       </li>
     </ol>
   </section>
 </section>
+
+
+
+
+
+
 <section id="appendix_5" class="appendix">
   <h2 id="opportunities_for_intercharacter_space_expansion_during_line_adjustment">
 <span its-locale-filter-list="en">Opportunities for  Inter-character Space Expansion during Line Adjustment</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">行の調整処理で​空ける処理が​可能な箇所</span>
 </h2>
   <p its-locale-filter-list="en">The following table indicates if an opportunity exists for <a href="#term.line-adjustment-by-inter-character-space-expansion" class="termref">inter-character space expansion</a> during <a href="#term.line-adjustment" class="termref">line adjustment</a> between two adjacent characters of given character classes as explained in <a class="sec_ref" href="#grouping_of_characters_and_symbols_depending_on_their_positioning"></a>. (For more detail on line adjustment, see <a class="sec_ref" href="#line_adjustment"></a>.) In the process of line adjustment by inter-character space expansion, the first place to look  (the first stage of inter-character space expansion in priority order) is for <a class="characterClass" href="#cl-26">Western word spaces (cl-26)</a>, each of which is expandable equally,  to take up and maximum of a half em space with respect to the corresponding character size. The tables are for the second and subsequent stages of inter-character space expansion in priority order, assuming the first stage of the expansion for <a class="characterClass" href="#cl-26">Western word spaces (cl-26)</a> is already done. The default unadjusted space between two adjacent characters of given character classes shall be determined according to <a class="sec_ref" href="#spacing_between_characters"></a>.</p>
+  <p its-locale-filter-list="ja"><a href="#term.line-adjustment" class="termref">行の調整処理</a>で空ける処理（<a href="#term.line-adjustment-by-inter-character-space-expansion" class="termref">追出し処理</a>）が可能な箇所かどうかを，<a class="sec_ref" href="#grouping_of_characters_and_symbols_depending_on_their_positioning"></a>で解説した，それぞれの文字クラスに含まれる文字・記号について，表6<span class="back-book"></span>として示す（行の調整処理については，<a class="sec_ref" href="#line_adjustment"></a>を参照）．行の調整処理で空ける処理を行う場合，優先的に最初に行う処理（優先順位の第1段階の処理）は<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>であり，<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>を最大で二分アキまで文字サイズ比で均等に空ける処理を行う．以下の表では，それぞれの文字クラスが連続する場合の字間について，<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>の処理を行った後で行う処理，つまり，優先順位の第2段階以降の処理について示す．なお，それぞれ箇所の原則的な空き量は，<a class="sec_ref" href="#spacing_between_characters"></a>に示す．</p>
   <div class="table-pdf" id="table7_pdf">
     <p its-locale-filter-list="en">See "<a href="table_en7.pdf">Table 6 Opportunity of inter-character space expansion</a>" (PDF).</p>
+    <p its-locale-filter-list="ja">“<a href="table_ja7.pdf">表6 行の調整処理で空ける処理が可能な箇所</a>”<span class="nobook">（PDF版）</span>を参照．</p>
   </div>
+
+
+
+
   <section>
     <h3 id="legend_of_table_7">
 <span its-locale-filter-list="en">Legend of Table 6</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">表6の見方</span>
 </h3>
     <ol class="decimal">
       <li id="id647">
         <p its-locale-filter-list="en">The  left-most column, labeled "before", lists preceding character classes, and the top row, labeled "after", lists trailing character classes. Each cell indicates the type of opportunities for inter-character space expansion between two adjacent characters of the corresponding character classes at a given row and column. Note that there are no cells involving "line head" or "line end" because there is no opportunity for inter-character space expansion before any character at the line head or after any character at the line end.</p>
+        <p its-locale-filter-list="ja">“before”（表の左端）と示した欄に，前に配置する文字クラスを示し，“after”（表の上端）と示した欄に，後ろに配置する文字クラスを示す．それぞれが交差する小間（こま）に空ける処理が可能かどうかを示す．なお，行頭に配置する文字の前，及び行末に配置する文字の後ろは，空ける処理の対象箇所とはしないので，この表からは，行頭及び行末の欄は省いた．</p>
       </li>
       <li id="id648">
         <p its-locale-filter-list="en">The type of opportunity for space expansion is indicated in each cell in the table using the following notation.</p>
+        <p its-locale-filter-list="ja">表のそれぞれの小間に，空ける処理の可否などを，次の記号で示す．</p>
         <ol>
           <li id="id649">
             <p its-locale-filter-list="en">Cells with a white background: No opportunity for space expansion.</p>
+            <p its-locale-filter-list="ja">小間の地色が白のもの（□）：空ける処理の対象としない箇所（空け処理否の箇所）を示す．</p>
             <ol>
               <li id="id650">
                 <p its-locale-filter-list="en">Blank: Inter-character space expansion is not allowed because there is no line break opportunity between the given combination of characters.</p>
+                <p its-locale-filter-list="ja">無印：分割不可とする箇所であり，空ける処理の対象としない箇所（空け処理否の箇所）を示す．</p>
               </li>
               <li id="id651">
                 <p its-locale-filter-list="en">× mark: The combination is not allowed due to line breaking rules or other restrictions.</p>
+                <p its-locale-filter-list="ja">×印：行頭禁則，行末禁則，その他により，このような配置を禁止する．</p>
               </li>
             </ol>
           </li>
           <li id="id652">
             <p its-locale-filter-list="en">Cells with a colored or gray background: An opportunity exists for inter-character space expansion.</p>
+            <p its-locale-filter-list="ja">小間の地色が色又はグレーのもの：空ける処理の対象としてよい箇所（空け処理可の箇所）を示す．</p>
             <ol>
               <li id="id653">
                 <p its-locale-filter-list="en">Priority order in space expansion: The second highest and subsequent priorities of inter-character space expansion are indicated by the given background colors of the cells. The cells with the colors in the left are higher in priority than ones in the right. Space expansion shall be processed in this order.
                   When the 4th step is needed, add same space value to the spaces of 1st, 2nd, 3rd and 4th steps.</p>
+                <p its-locale-filter-list="ja">空ける際の優先順位：空ける処理を行う際の第2段階以降の優先順位を，左側の高いものから，右側の低いものへと，<span class="nobook">次の</span>小間の地色で示す．この順位で，空ける処理を行う．第4段階の処理を行う場合は，第1段階から第3段階までで処理した空き量に追加して，優先順位の第1段階から第4段階までの箇所を均等に空ける．</p>
                 <div class="Taiyaku nobook">
                   <figure id="fig_a7-1-en">
       <img its-locale-filter-list="en" src="images/img_a7_1.png" alt="Priority order in space expansion." width="277" height="11">
+      <img its-locale-filter-list="ja" src="images_ja/img_a7_1.png" alt="空ける際の優先順位" width="269" height="11">
                     <figcaption>
         <span its-locale-filter-list="en">Priority order in space expansion.</span>
+        <span its-locale-filter-list="ja">空ける際の優先順位</span>
         </figcaption>
 
                   </figure>
@@ -22291,16 +22349,20 @@
               </li>
               <li id="id654">
                 <p its-locale-filter-list="en">Amount of space expandable: The amount of space to be expanded is indicated using the following notation.</p>
+                <p its-locale-filter-list="ja">空ける処理が可能な量：空ける処理が可能な量を次の記号で示す．</p>
                 <ol>
                   <li id="id655">
                     <p its-locale-filter-list="en">1/4–1/2: A quarter em space by default, which is expandable equally, with respect to the corresponding character size, to take up to a maximum of a half em space. However if Table 5
                       of <a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a> is adopted as the method of inter-character space reduction for line adjustment, this quarter em space shall not be expanded.</p>
+                    <p its-locale-filter-list="ja">1/4–1/2：字間の四分アキを，最大で二分アキまで（又は三分アキまで）文字サイズ比で均等に空ける処理が可能．ただし，行の調整処理の詰める調整において，<a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a>の表5の処理方法にした場合は，この箇所は空ける処理の対象箇所としない．</p>
                   </li>
                   <li id="id656">
                     <p its-locale-filter-list="en">1/4: No inter-character space by default, which is expandable equally, with respect to the corresponding character size, to take up to a maximum of a quarter em space.</p>
+                    <p its-locale-filter-list="ja">1/4：字間のアキはベタ組が原則であるが，最大で四分アキまで文字サイズ比で均等に空ける処理が可能．</p>
                   </li>
                   <li id="id657">
                     <p its-locale-filter-list="en">blank: Expandable equally with respect to the corresponding character size, only after no other expandable inter-character space is left.</p>
+                    <p its-locale-filter-list="ja">無印：以上で調整できない場合に文字サイズ比で均等に空ける処理が可能．</p>
                   </li>
                 </ol>
               </li>
@@ -22310,51 +22372,75 @@
       </li>
     </ol>
   </section>
+
+
+
+
+
+
   <section>
     <h3 id="notes_a5">
 <span its-locale-filter-list="en">Notes</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">注記</span>
 </h3>
     <ol class="decimal">
       <li id="id658">
         <p its-locale-filter-list="en">If the <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span> is allowed to appear at the head of a line or that of inline cutting note, the character shall be treated as a member of the <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> class. (For how it behaves in combination with other character classes, see the cells for <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>.)</p>
+        <p its-locale-filter-list="ja">繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>を行頭又は割注行頭に配置することを許容する場合，繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>は<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の文字クラスに含める（その扱いは<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の欄を参照）．</p>
       </li>
       <li id="id659">
         <p its-locale-filter-list="en">If  a <a class="characterClass" href="#cl-10">prolonged sound mark (cl-10)</a> is allowed to appear at the line head or that of inline cutting note, the character shall be treated as a member of the <a class="characterClass" href="#cl-16">katakana (cl-16)</a> class. (For how it behaves in combination with other character classes, see the cells for <a class="characterClass" href="#cl-16">katakana (cl-16)</a>.)</p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-10">長音記号（cl-10）</a>を行頭又は割注行頭に配置することを許容する場合，それは<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の文字クラスに含める（その扱いは<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の欄を参照）．</p>
       </li>
       <li id="id660">
         <p its-locale-filter-list="en">If <a class="characterClass" href="#cl-11">small kana (cl-11)</a> are allowed to appear at the head of a line or that of inline cutting note, the character shall be treated as a member of the <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a> class accordingly, depending on the script type of the character. (For how it behaves in combination with other character classes, see the cells for <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a>.)</p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a>を行頭又は割注行頭に配置することを許容する場合，小書きの平仮名は<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>の文字クラスに含め，小書きの片仮名は<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の文字クラスに含める（その扱いは<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>又は<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の欄を参照）．</p>
       </li>
       <li id="id661">
         <p its-locale-filter-list="en">A third order  opportunity exists for  inter-character space expansion, to take up to a  maximum of a quarter em space, with respect to the corresponding character size, between two consecutive <a class="characterClass" href="#cl-08">inseparable characters (cl-08)</a> which are of different kinds.</p>
+        <p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a>の文字が，前に配置する<a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a>とは別の種類の文字の場合，優先順位が第3段階の最大で四分アキまで文字サイズ比で均等に空ける処理は可とする．</p>
       </li>
       <li id="id662">
         <p its-locale-filter-list="en">A third order  opportunity exists for  inter-character space expansion, to take up to a  maximum of a quarter em space, with respect to the corresponding character size, between the two consecutive characters which belong to different <a class="characterClass" href="#cl-21">ornamented character complexes (cl-21)</a></p>
+        <p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>の文字が，前に配置する<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>とは別の親文字群の文字の場合，優先順位が第3段階の最大で四分アキまで文字サイズ比で均等に空ける処理は可とする．それ以外は，空け処理否とする．</p>
       </li>
       <li id="id663">
         <p its-locale-filter-list="en">A third order  opportunity exists for  inter-character space expansion, to take up to a  maximum of a quarter em space, with respect to the corresponding character size, if the two consecutive characters belong to different <a class="characterClass" href="#cl-22">simple-ruby character complexes (cl-22)</a>. If not,  inter-character space expansion is not allowed.</p>
+        <p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>の文字が，前に配置する<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>とは別の親文字群の文字の場合，優先順位が第3段階の最大で四分アキまで文字サイズ比で均等に空ける処理は可とする．それ以外は，空け処理否とする．</p>
       </li>
       <li id="id664">
         <p its-locale-filter-list="en">A third order  opportunity exists for  inter-character space expansion, to take up to a  maximum of a quarter em space, with respect to the corresponding character size, if the two consecutive base characters belonging to different <a class="characterClass" href="#cl-23">jukugo-ruby character complexes (cl-23)</a>. If not,  inter-character space expansion is not allowed.</p>
+        <p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>の文字が，前に配置する<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>とは別の親文字群の文字の場合，優先順位が第3段階の最大で四分アキまで文字サイズ比で均等に空ける処理は可とする．それ以外は，空け処理否とする．</p>
       </li>
       <li id="id665">
         <p its-locale-filter-list="en">There is no opportunity for  inter-character space expansion between a preceding <a class="characterClass" href="#cl-24">grouped numeral (cl-24)</a> and a trailing <a class="characterClass" href="#cl-13">postfixed abbreviation (cl-13)</a>, unless the alternative approach is chosen which allows a line to break between a preceding <a class="characterClass" href="#cl-24">grouped numeral (cl-24)</a> and the trailing <span class="character">PERCENT SIGN "%"</span>, where <span class="character">PERCENT SIGN "%"</span> shall be treated as a member of the <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> class, in front of which inter-character space is expandable.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>と後ろに配置する<a class="characterClass" href="#cl-13">後置省略記号（cl-13）</a>の字間は，空ける調整に使用できない．ただし，パーセント記号<span class="character">[％] (PERCENT SIGN)</span>については，前に配置する<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>との字間で2行に分割することを許容する方法もある．この場合は，パーセント記号<span class="character">[％] (PERCENT SIGN)</span>は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の文字クラスに含めるので，空ける調整が可能な箇所になる．</p>
       </li>
       <li id="id666">
         <p its-locale-filter-list="en">There is an alternative way to give a third order  opportunity for  inter-character space expansion, to take up to a  maximum of a quarter em space, with respect to the corresponding character size, between a preceding <a class="characterClass" href="#cl-24">grouped numeral (cl-24)</a> and a trailing <a class="characterClass" href="#cl-27">Western character (cl-27)</a>.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>と後ろに配置する<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>との字間で優先順位が第3段階の最大で四分アキまで文字サイズ比で均等に空ける処理は可とする方法もある．</p>
       </li>
       <li id="id667">
         <p its-locale-filter-list="en">A third order  opportunity exists for  inter-character space expansion between a preceding <a class="characterClass" href="#cl-27">Western character (cl-27)</a> and a trailing <a class="characterClass" href="#cl-13">postfixed abbreviation (cl-13)</a>, unless the preceding <a class="characterClass" href="#cl-27">Western character (cl-27)</a> is used as a symbol of a quantity or a European numeral, in which case no inter-character space expansion is allowed between them.</p>
+        <p its-locale-filter-list="ja">前に配置する<span class="index" id="d17e583"><a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a></span>と後ろに配置する<a class="characterClass" href="#cl-13">後置省略記号（cl-13）</a>の字間は，空ける調整が可能な箇所である（優先順位は第3段階）．しかし，前に配置する<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>が量を示す記号（量記号）又はアラビア数字の場合は，空ける調整箇所としてはならない．</p>
       </li>
       <li id="id668">
         <p its-locale-filter-list="en">There is an alternative way to give a fourth order  opportunity for  inter-character space expansion with respect to the corresponding character size, between two consecutive <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>と後ろに配置する<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>との字間で優先順位が第4段階の文字サイズ比で均等に空ける処理は可とする方法もある．</p>
       </li>
       <li id="id669">
         <p its-locale-filter-list="en">A third order  opportunity exists for the inter-character space expansion, to take up to a  maximum of a quarter em space, with respect to the corresponding character size, if two consecutive characters belong to different runs of <a class="characterClass" href="#cl-30">characters in tate-chu-yoko (cl-30)</a>. If not, inter-character space expansion is not allowed.</p>
+        <p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-30">縦中横中の文字（cl-30）</a>の文字が，前に配置する<a class="characterClass" href="#cl-30">縦中横中の文字（cl-30）</a>とは別のグループに属する縦中横の場合，優先順位が第3段階の最大で四分アキまで文字サイズ比で均等に空ける処理は可とする．それ以外は，空け処理否とする．</p>
       </li>
     </ol>
   </section>
 </section>
+
+
+
+
+
+
 <section id="appendix_6" class="appendix">
   <h2 id="positioning_of_jukugoruby">
 <span its-locale-filter-list="en">Positioning of Jukugo-ruby</span>
