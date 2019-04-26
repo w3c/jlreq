@@ -22,19 +22,19 @@ var L10N = {
 
   'ja': {
     selector: {
-      '#abstract-1': '摘要',
-      '#h-sotd': '關於本文檔',
-      '#table-of-contents': '內容大綱',
+      '#abstract-1': '要約',
+      '#h-sotd': 'この文書の位置付け',
+      '#table-of-contents': '目次',
       '.note-title': '注',
     },
 
     'fig': '圖',
 
     dt: {
-      'This version:': '本版本：',
-      'Latest published version:': '最新發佈草稿：',
-      'Latest editor\'s draft:': '最新編輯草稿：',
-      'Editors:': '編輯：',
+      'This version:': 'このバージョン：',
+      'Latest published version:': '最新バージョン：',
+      'Latest editor\'s draft:': '旧バージョン：',
+      'Editors:': '編者（第１版）：',
       'Bug tracker:': '錯誤跟蹤：',
       'GitHub:': 'GitHub：',
     },
