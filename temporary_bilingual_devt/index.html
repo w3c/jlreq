@@ -21622,144 +21622,218 @@
 <section id="appendix_2" class="appendix">
   <h2 id="spacing_between_characters">
 <span its-locale-filter-list="en">Spacing between Characters</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">文字間の空き量</span>
 </h2>
   <p its-locale-filter-list="en">The amount of space between two adjacent characters of given character classes explained in <a class="sec_ref" href="#grouping_of_characters_and_symbols_depending_on_their_positioning"></a> is determined by Table 1. For methods to determine the amounts of space reduction and addition by <a href="#term.line-adjustment" class="termref">line adjustments</a>, see <a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a> and <a class="sec_ref" href="#opportunities_for_intercharacter_space_expansion_during_line_adjustment"></a>.</p>
+  <p its-locale-filter-list="ja"><a class="sec_ref" href="#grouping_of_characters_and_symbols_depending_on_their_positioning"></a>で解説した，それぞれの文字クラスに含まれる文字・記号が並んだ場合の文字間の空き量は，表1<span class="back-book"></span>のようにする．なお，<a href="#term.line-adjustment" class="termref">行の調整処理</a>の際に詰めてよい箇所又は空けてよい箇所と，その空き量の調整の範囲などは，<a class="sec_ref" href="#opportunities_for_intercharacter_space_reduction_during_line_adjustment"></a>及び<a class="sec_ref" href="#opportunities_for_intercharacter_space_expansion_during_line_adjustment"></a>に示す．</p>
   <div class="table-pdf" id="table2_pdf">
     <p its-locale-filter-list="en">See "<a href="table_en2.pdf">Table 1 Spacing between characters</a>" (PDF).</p>
+    <p its-locale-filter-list="ja">“<a href="table_ja2.pdf">表1 文字間の空き量</a>”<span class="nobook">（PDF版）</span>を参照．</p>
   </div>
+  
   <section>
-    <h3 id="legend_of_table_2"><span class="heading"><span id="en-app2_1">Legend of Table 1</span></span>
+     <h3 id="legend_of_table_2">
+<span its-locale-filter-list="en">Legend of Table 1</span>
+<span its-locale-filter-list="ja">表1の見方</span>
 </h3>
     <ol class="decimal">
       <li id="id546">
         <p its-locale-filter-list="en">The  left-most column, labeled  "before", lists preceding character classes, and the top row, labeled "after", lists trailing character classes. Each cell indicates the amount of space between two characters of the corresponding character classes at the intersection of a given row and column.</p>
+        <p its-locale-filter-list="ja">“before”（表の左端）と示した欄に，前に配置する文字クラスを示し，“after”（表の上端）と示した欄に，後ろに配置する文字クラスを示す．それぞれが交差する小間（こま）に空き量を示す．</p>
       </li>
       <li id="id547">
         <p its-locale-filter-list="en">The last row, labeled "<a href="#term.line-head" class="termref">line head</a>", lists amounts of space inserted between the line head and a character of the corresponding character class in each column. Likewise, the last column, labeled "<a href="#term.line-end" class="termref">line end</a>", lists amounts of space inserted between a character of the corresponding character class in each row and the line end.</p>
+        <p its-locale-filter-list="ja">“line head”の欄（横方向の行）には，それぞれの文字クラスを<a href="#term.line-head" class="termref">行頭</a>に配置する場合の前の空き量を示し，“line end”（縦方向の列）の欄には，それぞれの文字クラスを<a href="#term.line-end" class="termref">行末</a>に配置する場合の後ろの空き量を示す．</p>
       </li>
       <li id="id548">
         <p its-locale-filter-list="en">The following notations in cells are used to indicate the amount of space or other related information.</p>
-        <ol>
+        <p its-locale-filter-list="ja">表のそれぞれの小間に，文字間の空き量などを，次の記号で示す．</p>        <ol>
           <li id="id549">
             <p its-locale-filter-list="en">blank: <a href="#term.solid-setting" class="termref">Set solid</a> between two adjacent characters (it can be that the preceding character is actually the line head or the trailing character is actually the line end).</p>
+            <p its-locale-filter-list="ja">無印：文字間（行頭の場合は，その文字の前，行末の場合は，その文字の後ろ）を<a href="#term.solid-setting" class="termref">ベタ組</a>にする．</p>
           </li>
           <li id="id550">
             <p its-locale-filter-list="en">× mark: The combination is not allowed due to line breaking rules or other restrictions.</p>
+            <p its-locale-filter-list="ja">×印：行頭禁則，行末禁則，その他により，このような配置を禁止する．</p>
           </li>
           <li id="id551">
             <p its-locale-filter-list="en">1/2 be: Insert a half em space, where the em here indicates the size of the preceding character.</p>
+            <p its-locale-filter-list="ja">1/2 be：文字間を二分アキにする．ただし，二分は，前に配置する文字サイズの二分とする．</p>
           </li>
           <li id="id552">
             <p its-locale-filter-list="en">1/2 af: Insert a half em space, where the em here indicates the size of the trailing character.</p>
+            <p its-locale-filter-list="ja">1/2 af：文字間を二分アキにする．ただし，二分は，後ろに配置する文字サイズの二分とする．</p>
             <aside class="note" id="n285">
               <p its-locale-filter-list="en"> The reason for the distinction between the two half em spaces ("be" stands for "before" and "af" stands for "after") is necessary  because there are cases where a line is composed with different sizes of characters, as shown in <a class="figure_ref" href="#fig_a1-1-en"></a> where it is necessary to disambiguate which em size we are referring to. Likewise, other instances of the notation "be" or "af" in this appendix are for the same disambiguation.</p>
+              <p its-locale-filter-list="ja"> ここで，<span class="index" id="d14e236">二分の基準</span>を前（be）又は後ろ（af）とするのは，<a class="figure_ref" href="#fig_a1-1-ja"></a>のように行中に異なる文字サイズの文字を配置する場合があり，この際の基準を示すためである．以下の“be”又は“af”と示すのも同様である．</p>
             </aside>
             <figure id="fig_a1-1-en">
       <img its-locale-filter-list="en" src="images/img_a1_1.png" alt="Referent for em in half em space." width="410" height="316">
+      <img its-locale-filter-list="ja" src="images_ja/img_a1_1.png" alt="二分アキの場合の二分の基準" width="410" height="267">
               <figcaption>
         <span its-locale-filter-list="en">Referent for em in half em space.</span>
+        <span its-locale-filter-list="ja">二分アキの場合の二分の基準</span>
         </figcaption>
 
             </figure>
           </li>
           <li id="id553">
             <p its-locale-filter-list="en">1/2 be hang: Identical to "1/2 be" in the amount of space. Ruby text can be extended up to the size of the ruby character over this "1/2 be hang" space as long as it is not reduced due to line adjustments. When it is reduced, ruby text can be extended up to the size of the reduced space and shall not be extended over the other character.</p>
+            <p its-locale-filter-list="ja">1/2 be hang：“1/2 be”（文字間を二分アキ）とする．この二分アキには，ルビ文字を最大でルビ文字の文字サイズまで掛けて配置してよい．ただし，この二分アキが行の調整処理で詰められている場合，ルビ文字を掛けてよいのは，その詰められた（調整された）空き量までとし，ルビ文字を文字間の空き量以上にはみ出して，掛けてはならない．</p>
           </li>
           <li id="id554">
             <p its-locale-filter-list="en">1/2 af hang: Identical to "1/2 af" in the amount of space. Ruby text can be extended up to the size of the ruby character over this "1/2 af hang" space as long as it is not reduced due to line adjustments. When it is reduced, ruby text can be extended up to the size of the reduced space and shall not be extended over the other character.</p>
+            <p its-locale-filter-list="ja">1/2 af hang：“1/2 af”（文字間を二分アキ）とする．この二分アキには，ルビ文字を最大でルビ文字の文字サイズまで掛けて配置してよい．ただし，この二分アキが行の調整処理で詰められている場合，ルビ文字を掛けてよいのは，その詰められた（調整された）空き量までとし，ルビ文字を文字間の空き量以上にはみ出して，掛けてはならない．</p>
           </li>
           <li id="id555">
             <p its-locale-filter-list="en">1/4 be: Insert a quarter em space, where the em here indicates the size of the preceding character.</p>
+            <p its-locale-filter-list="ja">1/4 be：文字間を四分アキにする．ただし，四分は，前に配置する文字サイズの四分とする．</p>
           </li>
           <li id="id556">
             <p its-locale-filter-list="en">1/4 af: Insert a quarter em space, where the em here indicates the size of the trailing character.</p>
+            <p its-locale-filter-list="ja">1/4 af：文字間を四分アキにする．ただし，四分は，後ろに配置する文字サイズの四分とする．</p>
           </li>
           <li id="id557">
             <p its-locale-filter-list="en">1/4 be hang: Identical to "1/4 be" in the amount of space. Ruby text can be extended up to half the size of the ruby character over this "1/4 be hang" space as long as it is not reduced due to line adjustments. When it is reduced, ruby text can be extended up to the size of the reduced space and shall not be extended over the other character.</p>
-          </li>
+            <p its-locale-filter-list="ja">1/4 be hang：“1/4 be”（文字間を四分アキ）とする．この四分アキには，ルビ文字を最大でルビ文字の文字サイズの二分まで掛けて配置してよい．ただし，この四分アキが行の調整処理で詰められている場合，ルビ文字を掛けてよいのは，その詰められた（調整された）空き量までとし，ルビ文字を文字間の空き量以上にはみ出して，掛けてはならない．</p>          </li>
           <li id="id558">
             <p its-locale-filter-list="en">1/4 af hang: Identical to "1/4 af" in the amount of space. Ruby text can be extended up to half the size of the ruby character over this "1/4 af hang" space as long as it is not reduced due to line adjustments. When it is reduced, ruby text can be extended up to the size of the reduced space and shall not be extended over the other character.</p>
+            <p its-locale-filter-list="ja">1/4 af hang：“1/4 af”（文字間を四分アキ）とする．この四分アキには，ルビ文字を最大でルビ文字の文字サイズの二分まで掛けて配置してよい．ただし，この四分アキが行の調整処理で詰められている場合，ルビ文字を掛けてよいのは，その詰められた（調整された）空き量までとし，ルビ文字を文字間の空き量以上にはみ出して，掛けてはならない．</p>
           </li>
           <li id="id559">
             <p its-locale-filter-list="en">ruby hang: Set solid. Ruby text can be extended up to the size of the ruby character over the other character (see also 7 of <a class="sec_ref" href="#notes_a2"></a>).</p>
+            <p its-locale-filter-list="ja">ruby hang：ベタ組において，ルビ文字を最大でルビ文字の文字サイズまで掛けて配置してよい（<a class="sec_ref" href="#notes_a2"></a>の7も参照）．</p>
           </li>
         </ol>
       </li>
     </ol>
   </section>
+
+
+
+
+
+
   <section>
     <h3 id="notes_a2">
 <span its-locale-filter-list="en">Notes</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">注記</span>
 </h3>
     <ol class="decimal">
       <li id="id560">
         <p its-locale-filter-list="en">When <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> are followed by a <a class="characterClass" href="#cl-22">simple-ruby character complex (cl-22)</a> or <a class="characterClass" href="#cl-23">jukugo-ruby character complex (cl-23)</a>, the preferred approach is to allow the ruby text to be extended up to the size of the ruby character over the <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>. One alternative approach is to not allow ruby text to be extended over opening brackets, and another is to allow it to be extended up to half the size of the ruby character.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の後ろに<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>又は<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>が連続する場合は，ルビ文字を最大でルビ文字の文字サイズまで掛けて配置してよい．ただし，体裁を重視する場合は，前の<span class="index" id="d14e395"><a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a></span>にルビ文字は掛けない，又はルビ文字を最大でルビ文字の文字サイズの1/2まで掛けて配置する，という方法もある．</p>
       </li>
       <li id="id561">
         <p its-locale-filter-list="en">The preferred spacing between <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> and the line end is a half em. The alternative is to set solid (JIS X 4051 adopts solid setting method, see <a class="sec_ref" href="#positioning_of_closing_brackets_full_stops_commas_and_middle_dots_at_line_end"></a>).</p>
+        <p its-locale-filter-list="ja">行末に配置する<span class="index" id="d14e423"><a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a></span>の後ろは，原則として二分アキとする．ただし，ベタ組とする方法もある（JIS X 4051ではベタ組としている，<a class="sec_ref" href="#positioning_of_closing_brackets_full_stops_commas_and_middle_dots_at_line_end"></a>参照）．</p>
       </li>
       <li id="id562">
         <p its-locale-filter-list="en">Character spacing between two consecutive <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> shall be the sum of a quarter em of the preceding middle dots and a quarter em of the trailing middle dots.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキ＋後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキとする．</p>
       </li>
       <li id="id563">
         <p its-locale-filter-list="en">The preferred spacing between <a class="characterClass" href="#cl-05">middle dots (cl-05)</a> and the line end is a quarter em. The alternative is to set solid (JIS X 4051 adopts solid setting method, see <a class="sec_ref" href="#positioning_of_closing_brackets_full_stops_commas_and_middle_dots_at_line_end">3.1.9 Positioning of Closing Brackets, Full Stops, Commas and Middle Dots at Line End</a>).</p>
+        <p its-locale-filter-list="ja">行末に配置する<span class="index" id="d14e469"><a class="characterClass" href="#cl-05">中点類（cl-05）</a></span>の後ろは，原則として四分アキとする．ただし，ベタ組とする方法もある（JIS X 4051ではベタ組としている，<a class="sec_ref" href="#positioning_of_closing_brackets_full_stops_commas_and_middle_dots_at_line_end"></a>参照）．</p>
       </li>
       <li id="id564">
         <p its-locale-filter-list="en">In this document, character spacing between a <a class="characterClass" href="#cl-06">full stop (cl-06)</a> or <a class="characterClass" href="#cl-07">comma (cl-07)</a> and a following <a class="characterClass" href="#cl-05">middle dot (cl-05)</a> is the sum of the half em space of the full stop or comma and the quarter em space of the middle dot. On the other hand, JIS X 4051 classifies <a class="characterClass" href="#cl-07">commas (cl-07)</a> as a subset of <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, and, therefore, where a <a class="characterClass" href="#cl-07">comma (cl-07)</a> is followed by a <a class="characterClass" href="#cl-05">middle dot (cl-05)</a> in JIS X 4051 the character spacing between them is just the quarter em space of the following <a class="characterClass" href="#cl-05">middle dot (cl-05)</a>.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-06">句点類（cl-06）</a>又は<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の文字サイズの二分アキ＋後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキとする．なお，JIS X 4051では，<a class="characterClass" href="#cl-07">読点類（cl-07）</a>は<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>に含まれているので，<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の後ろに<a class="characterClass" href="#cl-05">中点類（cl-05）</a>を配置する場合は，<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキとしている．</p>
       </li>
       <li id="id565">
         <p its-locale-filter-list="en">The preferred spacing between <a class="characterClass" href="#cl-06">full stops (cl-06)</a> or <a class="characterClass" href="#cl-07">commas (cl-07)</a> and the line end is a half em. The alternative is to set solid (JIS X 4051 specifies that the space after <a class="characterClass" href="#cl-06">full stop (cl-06)</a> is a half em and the space after <a class="characterClass" href="#cl-07">comma (cl-07)</a> is solid, see <a class="sec_ref" href="#positioning_of_closing_brackets_full_stops_commas_and_middle_dots_at_line_end"></a>).</p>
+        <p its-locale-filter-list="ja">行末に配置する<span class="index" id="d14e557"><a class="characterClass" href="#cl-06">句点類（cl-06）</a></span>又は<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の後ろは，原則として二分アキとする．ただし，ベタ組とする方法もある（JIS X 4051では<a class="characterClass" href="#cl-06">句点類（cl-06）</a>の後ろは二分アキ，<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の後ろはベタ組としている，<a class="sec_ref" href="#positioning_of_closing_brackets_full_stops_commas_and_middle_dots_at_line_end"></a>参照）．</p>
       </li>
       <li id="id566">
         <p its-locale-filter-list="en">When a <a class="characterClass" href="#cl-22">simple-ruby character complex (cl-22)</a> or <a class="characterClass" href="#cl-23">jukugo-ruby character complex (cl-23)</a> is adjacent to <a class="characterClass" href="#cl-16">katakana (cl-16)</a>, the preferred approach is to allow the ruby text to be extended up to the size of the ruby character over the katakana. However, if it is required to conform to JIS X 4051, ruby text shall not be extended over the katakana because katakana characters belong to the ideographic character class in JIS X 4051.</p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>又は<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>の前又は後ろに<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>，<a class="characterClass" href="#cl-10">長音記号（cl-10）</a>又は<a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a>を配置する場合，ルビ文字を最大でルビ文字の文字サイズまで掛けて配置してよい．ただし，JIS X 4051では，片仮名は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の文字クラスに含めているので，片仮名にルビ文字を掛けることは禁止されている．</p>
         <p its-locale-filter-list="en">There are alternative methods, one of which is to allow ruby text to be extended up to the size of the ruby character over any character including <a class="characterClass" href="#cl-19">ideographic (cl-19)</a> as well as <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> and <a class="characterClass" href="#cl-16">katakana (cl-16)</a> characters, and another  is NOT to allow ruby text to be extended over any character from <a class="characterClass" href="#cl-15">hiragana (cl-15)</a>, <a class="characterClass" href="#cl-16">katakana (cl-16)</a> and <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>.</p>
+        <p its-locale-filter-list="ja">なお，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>，<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>だけでなく，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>を含めて，すべてルビ文字を最大でルビ文字の文字サイズの1/2まで掛けて配置してよい，とする<span class="index" id="d14e644">方法</span>や，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>，<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>及び<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>のすべてにルビ文字を掛けない，とする処理方法もある．</p>
       </li>
       <li id="id567">
         <p its-locale-filter-list="en">Ruby text can be extended up to the size of the ruby character over the <a class="characterClass" href="#cl-14">full-width ideographic space (cl-14)</a>. The preferred approach is to apply the same for the full-width line head indent at the beginning of a paragraph. The alternative approach is not to allow ruby text to be extended over the line head indent.</p>
+        <p its-locale-filter-list="ja"><span class="index" id="d14e687"><a class="characterClass" href="#cl-14">和字間隔（cl-14）</a></span>には，ルビ文字を最大でルビ文字の文字サイズまで掛けて配置してよい．段落の先頭行の字下げを全角アキにする場合にも，この部分にルビ文字を最大でルビ文字の文字サイズまで掛けて配置してよい．ただし，段落の先頭行の字下げを全角アキにする部分にルビ掛けを禁止する処理方法もある．</p>
       </li>
       <li id="id568">
         <p its-locale-filter-list="en">When two adjacent characters belong to the same <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a> run, set them according to the method explained in <a class="sec_ref" href="#superscripts_and_superscripts">3.7.1 Superscripts and Superscripts</a>. When two adjacent characters belong to two distinct  ornamented character complex runs, set them solid.</p>
+        <p its-locale-filter-list="ja">後ろの文字が前の<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>と同一の親文字群の<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>の場合は，<a class="sec_ref" href="#superscripts_and_superscripts"></a>で解説した方法で配置する．後ろの文字が前の<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>とは別の親文字群の<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>の場合，その字間はベタ組とする．</p>
       </li>
       <li id="id569">
         <p its-locale-filter-list="en">When two adjacent characters belong to the same <a class="characterClass" href="#cl-22">simple-ruby character complex (cl-22)</a> run, set them according to the method explained in <a class="sec_ref" href="#positioning_of_monoruby_with_respect_to_base_characters"></a> or <a class="sec_ref" href="#positioning_of_groupruby_with_respect_to_base_characters"></a>. When two adjacent characters belong to two distinct  simple-ruby character complex runs, set them solid.</p>
+        <p its-locale-filter-list="ja">後ろの文字が，前の<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>と同一の親文字群の<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>の場合は，<a class="sec_ref" href="#positioning_of_monoruby_with_respect_to_base_characters"></a>又は<a class="sec_ref" href="#positioning_of_groupruby_with_respect_to_base_characters"></a>で解説した方法で配置する．後ろの文字が前の<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>とは別の親文字群の<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>の場合，その字間はベタ組とする．</p>
       </li>
       <li id="id570">
         <p its-locale-filter-list="en">When two adjacent characters belong to the same <a class="characterClass" href="#cl-23">jukugo-ruby character complex (cl-23)</a> run, set them according to the method explained in <a class="sec_ref" href="#positioning_of_jukugoruby_with_respect_to_base_characters"></a>. When two adjacent characters belong to two distinct  simple-ruby character complex runs, set them solid.</p>
+        <p its-locale-filter-list="ja">後ろの文字が前の<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>と同一の親文字群の<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>の場合は，<a class="sec_ref" href="#positioning_of_jukugoruby_with_respect_to_base_characters"></a>で解説した方法で配置する．後ろの文字が前の<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>とは別の親文字群の<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>の場合，その字間はベタ組とする．</p>
       </li>
       <li id="id571">
         <p its-locale-filter-list="en">Character spacing between a preceding <a class="characterClass" href="#cl-25">unit symbol (cl-25)</a> and a trailing <a class="characterClass" href="#cl-05">middle dot (cl-05)</a> shall be a quarter em of the trailing character. Note that <span class="character">KATAKANA MIDDLE DOT "・"</span> can be used either as a <a class="characterClass" href="#cl-25">unit symbol (cl-25)</a> or as a middle dot. When it is used as a <a class="characterClass" href="#cl-25">unit symbol (cl-25)</a>, both preceding and trailing spacing of <span class="character">KATAKANA MIDDLE DOT "・"</span> shall be zero.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-25">単位記号中の文字（cl-25）</a>と後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の字間は，後ろに配置する<a class="characterClass" href="#cl-05">中点類（cl-05）</a>の文字サイズの四分アキである．ただし，中点<span class="character">[・] (KATAKANA MIDDLE DOT)</span>は，<a class="characterClass" href="#cl-25">単位記号中の文字（cl-25）</a>としても使用する．この場合については，中点<span class="character">[・] (KATAKANA MIDDLE DOT)</span>の前及び後ろはベタ組とする．</p>
       </li>
       <li id="id572">
         <p its-locale-filter-list="en">There shall be no visible space occupied by <a class="characterClass" href="#cl-26">Western word space (cl-26)</a> at the line head and that of warichu (inline cutting note), the line end and that of warichu (inline cutting note). If the condition is changed for the same text, restore the default visible space for <a class="characterClass" href="#cl-26">Western word space (cl-26)</a>.</p>
+        <p its-locale-filter-list="ja">行頭，割注行頭，行末及び割注行末の<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>は，空き量を0とする．ただし，この部分が移動し，これとは異なる配置になった場合は，<a class="characterClass" href="#cl-26">欧文間隔（cl-26）</a>の空き量を確保する．</p>
       </li>
       <li id="id573">
         <p its-locale-filter-list="en">In principle <a class="characterClass" href="#cl-09">iteration marks (cl-09)</a> should be placed neither at the line head nor at the head of an inline cutting note. When it happens with <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span>, there are three ways to deal with this situation.</p>
+        <p its-locale-filter-list="ja">行頭又は割注行頭に<a class="characterClass" href="#cl-09">繰返し記号（cl-09）</a>を配置することは原則として禁止である．ただし，<a class="characterClass" href="#cl-09">繰返し記号（cl-09）</a>のうち，行頭に配置される<span class="index" id="d14e893">繰返し記号</span><span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>については，次の3つの処理方法がある．</p>
         <ol>
           <li id="id574">
             <p its-locale-filter-list="en">Follow the principle by applying some sort of line adjustment. In this case, <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span> remains in <a class="characterClass" href="#cl-09">iteration marks (cl-09)</a>.</p>
+            <p its-locale-filter-list="ja">原則通り行頭又は割注行頭に配置することは禁止し，なんらかの行の調整処理を行う．繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>を<a class="characterClass" href="#cl-09">繰返し記号（cl-09）</a>に含めたままとする．</p>
           </li>
           <li id="id575">
             <p its-locale-filter-list="en">Allow <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span> to be placed either at the line head or at the head of an inline cutting note. In this case, the character shall be treated as part of the <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> class.</p>
+            <p its-locale-filter-list="ja">行頭又は割注行頭に配置することを許容する．この場合は，繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>を<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>に含める．</p>
           </li>
           <li id="id576">
             <p its-locale-filter-list="en">Replace <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span> with the corresponding character.</p>
+            <p its-locale-filter-list="ja">行頭又は割注行頭に配置する繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>を元の漢字に変更する．</p>
             <div class="example">
             <table>
               <tbody><tr>
-                <td><p its-locale-filter-list="en">line end: 国</p></td>
-                <td><p its-locale-filter-list="en">line head: 々</p></td>
-                <td><p its-locale-filter-list="en">&lt;is replaced with&gt;</p></td>
-                <td><p its-locale-filter-list="en">line end: 国</p></td>
-                <td><p its-locale-filter-list="en">line head: 国</p></td>
+                <td>
+				<p its-locale-filter-list="en">line end: 国</p>
+				<p its-locale-filter-list="ja">行末：国</p>
+				</td>
+                <td>
+				<p its-locale-filter-list="en">line head: 々</p>
+				<p its-locale-filter-list="ja">行頭：々</p>
+				</td>
+                <td>
+				<p its-locale-filter-list="en">&lt;is replaced with&gt;</p>
+				<p its-locale-filter-list="ja">→</p>
+				</td>
+                <td>
+				<p its-locale-filter-list="en">line end: 国</p>
+				<p its-locale-filter-list="ja">行末：国</p>
+				</td>
+                <td>
+				<p its-locale-filter-list="en">line head: 国</p>
+				<p its-locale-filter-list="ja">行頭：国</p>
+				</td>
               </tr>
               <tr>
-                <td><p its-locale-filter-list="en">line end: 人</p></td>
-                <td><p its-locale-filter-list="en">line head: 々</p></td>
-                <td><p its-locale-filter-list="en">&lt;is replaced with&gt;</p></td>
-                <td><p its-locale-filter-list="en">line end: 人</p></td>
-                <td><p its-locale-filter-list="en">line head: 人</p></td>
+                <td>
+				<p its-locale-filter-list="en">line end: 人</p>
+				<p its-locale-filter-list="ja">行末：人</p>
+				</td>
+                <td>
+				<p its-locale-filter-list="en">line head: 々</p>
+				<p its-locale-filter-list="ja">行頭：々</p>
+				</td>
+                <td>
+				<p its-locale-filter-list="en">&lt;is replaced with&gt;</p>
+				<p its-locale-filter-list="ja">→</p>
+				</td>
+                <td>
+				<p its-locale-filter-list="en">line end: 人</p>
+				<p its-locale-filter-list="ja">行末：人</p>
+				</td>
+                <td>
+				<p its-locale-filter-list="en">line head: 人</p>
+				<p its-locale-filter-list="ja">行頭：人</p>
+				</td>
               </tr>
             </tbody></table>
             </div>
@@ -21768,205 +21842,288 @@
       </li>
       <li id="id577">
         <p its-locale-filter-list="en">In principle, a <a class="characterClass" href="#cl-10">prolonged sound mark (cl-10)</a> should be placed neither at the  head of a line nor that of an inline cutting note. If it were  allowed, the character shall be treated as part of the <a class="characterClass" href="#cl-16">katakana (cl-16)</a> class.</p>
+        <p its-locale-filter-list="ja">行頭又は割注行頭に<span class="index" id="d14e1104"><a class="characterClass" href="#cl-10">長音記号（cl-10）</a></span>を配置することは，原則として禁止である．ただし，<a class="characterClass" href="#cl-10">長音記号（cl-10）</a>を行頭又は割注行頭に配置することを許容する処理方法もあり，書籍などでもよく採用されている．この場合，<a class="characterClass" href="#cl-10">長音記号（cl-10）</a>は，<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>に含ませる．</p>
       </li>
       <li id="id578">
         <p its-locale-filter-list="en">In principle, <a class="characterClass" href="#cl-11">small kana (cl-11)</a> should be placed neither at the head of a line nor that of an inline cutting note in principle. If it were to be allowed, HIRAGANA LETTER SMALL * shall be treated as part of the <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> class, and KATAKANA LETTER SMALL * as part of the <a class="characterClass" href="#cl-16">katakana (cl-16)</a> class.</p>
+        <p its-locale-filter-list="ja">行頭又は割注行頭に<span class="index" id="d14e1135"><a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a></span>を配置することは，原則として禁止である．ただし，<a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a>を行頭又は割注行頭に配置することを許容する処理方法もあり，書籍などでもよく採用されている．この場合，平仮名の“小書きの仮名”は<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>，片仮名の“小書きの仮名”は<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>に含ませる．</p>
       </li>
       <li id="id579">
         <p its-locale-filter-list="en">The preferred character spacing between the line head and opening <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> is zero. An alternative way is not to remove a conditional half em space accompanying the characters (see <a class="sec_ref" href="#positioning_of_opening_brackets_at_line_head"></a> including methods of positioning of opening brackets at the beginning of paragraphs).</p>
+        <p its-locale-filter-list="ja">行頭に配置する<span class="index" id="d14e1169"><a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a></span>の前はベタ組である．ただし，行頭に配置する<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の前を二分アキとする方式もある（改行の行頭に配置する<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>の配置法を含め，<a class="sec_ref" href="#positioning_of_opening_brackets_at_line_head"></a>参照）．</p>
       </li>
     </ol>
   </section>
 </section>
+
+
+
+
+
+
 <section id="appendix_3" class="appendix">
   <h2 id="possibilities_for_linebreaking_between_characters">
 <span its-locale-filter-list="en">Possibilities for  Line-breaking between Characters</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">文字間での分割の可否</span>
 </h2>
   <p its-locale-filter-list="en">Line break opportunities between two adjacent characters of given character classes explained in <a class="sec_ref" href="#grouping_of_characters_and_symbols_depending_on_their_positioning"></a> shall be determined by  Table 2.</p>
+  <p its-locale-filter-list="ja"><a class="sec_ref" href="#grouping_of_characters_and_symbols_depending_on_their_positioning"></a>で解説した，それぞれの文字クラスに含まれる文字・記号が並んだ場合，その文字間で2行に分割してよいかどうかは，表2<span class="back-book"></span>のようにする．</p>
   <div class="table-pdf" id="table3_pdf">
     <p its-locale-filter-list="en">See "<a href="table_en3.pdf">Table 2 Possibility of separation between characters</a>" (PDF).</p>
+    <p its-locale-filter-list="ja">“<a href="table_ja3.pdf">表2 文字間での分割の可否</a>”<span class="nobook">（PDF版）</span>を参照．</p>
   </div>
   <section>
+  
     <h3 id="legend_of_table_3">
 <span its-locale-filter-list="en">Legend of Table 2</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">表2の見方</span>
 </h3>
     <ol class="decimal">
       <li id="id580">
         <p its-locale-filter-list="en">The  left-most column, labeled  "before", lists preceding character classes, and the top row, labeled "after", lists trailing character classes. Each cell indicates the type of line break opportunity between two adjacent characters of the corresponding character classes at a given row and column.</p>
+        <p its-locale-filter-list="ja">before”（表の左端）と示した欄に，前に配置する文字クラスを示し，“after”（表の上端）と示した欄に，後ろに配置する文字クラスを示す．それぞれが交差する小間（こま）に，2行に分割してよいかどうかを示す．</p>
       </li>
       <li id="id581">
         <p its-locale-filter-list="en">The type of line break opportunity is indicated in each cell in the table using the following notation.</p>
+        <p its-locale-filter-list="ja">表のそれぞれの小間に，2行に分割してよいかどうかを次の記号で示す．</p>
         <ol>
           <li id="id582">
             <p its-locale-filter-list="en">blank: A line is allow to end between the two characters (breakable).</p>
+            <p its-locale-filter-list="ja">空欄：その文字間で2行に分割してよい（分割可）．</p>
           </li>
           <li id="id583">
             <p its-locale-filter-list="en">not: A line is not allowed to end between the two characters (unbreakable).</p>
+            <p its-locale-filter-list="ja">not：その文字間で2行に分割してはならない（分割不可）．</p>
           </li>
           <li id="id584">
             <p its-locale-filter-list="en">× mark: the combination is not allowed due to <a href="#term.line-breaking-rules" class="termref">line breaking rules</a> or other restrictions.</p>
+            <p its-locale-filter-list="ja">×：行頭禁則，行末禁則，その他により，このような配置を禁止する．</p>
           </li>
         </ol>
       </li>
     </ol>
   </section>
+
+
+
+
+
   <section>
     <h3 id="notes_a3">
 <span its-locale-filter-list="en">Notes</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">注記</span>
 </h3>
     <ol class="decimal">
       <li id="id585">
         <p its-locale-filter-list="en">If <span class="character">IDEOGRAPHIC ITERATION MARK "々"</span> is  allowed to appear at the <a href="#term.line-head" class="termref">line head</a> or that of <a href="#term.warichu" class="termref">inline cutting note</a>, the character shall be treated as a member of the <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> class. (For how it behaves in combination with other character classes, see the cells for <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a>.)</p>
+        <p its-locale-filter-list="ja">繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>を<a href="#term.line-head" class="termref">行頭</a>又は<a href="#term.warichu" class="termref">割注</a>行頭に配置することを許容する場合，繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span>は<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の文字クラスに含める（その扱いは<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の欄を参照）．</p>
       </li>
       <li id="id586">
         <p its-locale-filter-list="en">If a <a class="characterClass" href="#cl-10">prolonged sound mark (cl-10)</a> is  allowed to appear at the head of a line or that of inline cutting note, the character shall be treated as a member of the <a class="characterClass" href="#cl-16">katakana (cl-16)</a> class. (For how it behaves in combination with other character classes, see the cells for <a class="characterClass" href="#cl-16">katakana (cl-16)</a>.)</p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-10">長音記号（cl-10）</a>を行頭又は割注行頭に配置することを許容する場合，それは<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の文字クラスに含める（その扱いは<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の欄を参照）．</p>
       </li>
       <li id="id587">
         <p its-locale-filter-list="en">If <a class="characterClass" href="#cl-11">small kana (cl-11)</a> are  allowed to appear at the head of a line or that of inline cutting note, the character shall be treated as a member of the <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a> classes accordingly, depending on the script type of the character. (For how it behaves in combination with other character classes, see the cells for <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> or <a class="characterClass" href="#cl-16">katakana (cl-16)</a>.)</p>
+        <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a>を行頭又は割注行頭に配置することを許容する場合，小書きの平仮名は<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>の文字クラスに含め，小書きの片仮名は<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の文字クラスに含める（その扱いは<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>又は<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>の欄を参照）．</p>
       </li>
       <li id="id588">
         <p its-locale-filter-list="en">For the default one em space after <a class="characterClass" href="#cl-04">dividing punctuation marks (cl-04)</a> at the end of a sentence, <a class="characterClass" href="#cl-14">full-width ideographic space (cl-14)</a> can be used. See <a class="sec_ref" href="#positioning_of_dividing_punctuation_marks"></a> for more detail on how to deal with this case.</p>
+        <p its-locale-filter-list="ja">文末に配置する<a class="characterClass" href="#cl-04">区切り約物（cl-04）</a>の後ろは，全角アキとする．その場合，<a class="characterClass" href="#cl-04">区切り約物（cl-04）</a>の後ろに<a class="characterClass" href="#cl-14">和字間隔（cl-14）</a>を配置して処理する方法がある．この場合の問題点は，<a class="sec_ref" href="#positioning_of_dividing_punctuation_marks"></a>参照．</p>
       </li>
       <li id="id589">
         <p its-locale-filter-list="en">There is no line break opportunity between following couple of consecutive <a class="characterClass" href="#cl-08">inseparable characters (cl-08)</a> as follows:</p>
+		<p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a>の文字及び前に配置する<a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a>が次に示す組合せで連続した場合は，分割不可とする．</p>
+
         <ul>
           <li id="id590">
             <p its-locale-filter-list="en"><span class="character">EM DASH "―"</span>, <span class="character">EM DASH "―"</span></p>
+            <p its-locale-filter-list="ja">前にダッシュ（全角）<span class="character">[—] (EM DASH)</span>と，後ろにダッシュ（全角）<span class="character">[—] (EM DASH)</span></p>
           </li>
           <li id="id591">
             <p its-locale-filter-list="en"><span class="character">HORIZONTAL ELLIPSIS "…"</span>, <span class="character">HORIZONTAL ELLIPSIS "…"</span></p>
+            <p its-locale-filter-list="ja">前に三点リーダ<span class="character">[…] (HORIZONTAL ELLIPSIS)</span>と，後ろに三点リーダ<span class="character">[…] (HORIZONTAL ELLIPSIS)</span></p>
           </li>
           <li id="id592">
             <p its-locale-filter-list="en"><span class="character">TWO DOT LEADER "‥"</span>, <span class="character">TWO DOT LEADER "‥"</span></p>
+            <p its-locale-filter-list="ja">前に二点リーダ<span class="character">[‥] (TWO DOT LEADER)</span>と，後ろに二点リーダ<span class="character">[‥] (TWO DOT LEADER)</span></p>
           </li>
           <li id="id593">
             <p its-locale-filter-list="en"><span class="character">VERTICAL KANA REPEAT MARK UPPER HALF "〳"</span>, <span class="character">VERTICAL KANA REPEAT MARK LOWER HALF "〵"</span></p>
+            <p its-locale-filter-list="ja">前にくの字点上<span class="character">[〳] (VERTICAL KANA REPEAT MARK UPPER HALF)</span>と，後ろにくの字点下<span class="character">[〵] (VERTICAL KANA REPEAT MARK LOWER HALF)</span></p>
           </li>
           <li id="id594">
             <p its-locale-filter-list="en"><span class="character">VERTICAL KANA REPEAT WITH VOICED SOUND MARK UPPER HALF "〴"</span>, <span class="character">VERTICAL KANA REPEAT MARK LOWER HALF "〵"</span></p>
+            <p its-locale-filter-list="ja">前にくの字点上（濁点）<span class="character">[〴] (VERTICAL KANA REPEAT WITH VOICED SOUND MARK UPPER HALF)</span>と，後ろにくの字点下<span class="character">[〵] (VERTICAL KANA REPEAT MARK LOWER HALF)</span></p>
           </li>
         </ul>
         <p its-locale-filter-list="en">When the combination of preceding <a class="characterClass" href="#cl-08">inseparable characters (cl-08)</a> and the trailing <a class="characterClass" href="#cl-08">inseparable characters (cl-08)</a> is different each other, the two characters are separable. For example, when two <span class="character">EM DASH "―"</span> appears consecutively, these two characters are inseparable, and consecutive <span class="character">EM DASH "―"</span> and <span class="character">HORIZONTAL ELLIPSIS "…"</span> are separable.</p>
+        <p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a>の文字及び前に配置する<a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a>が上記とは異なる組合せの場合は，分割可とする．例えば，ダッシュ（全角）<span class="character">[―] (EM DASH)</span>の後ろにダッシュ（全角）<span class="character">[―] (EM DASH)</span>が連続する場合，その字間では分割不可である．ダッシュ（全角）<span class="character">[―] (EM DASH)</span>の後ろに三点リーダ<span class="character">[…] (HORIZONTAL ELLIPSIS)</span>が連続する場合，その字間では分割可である．</p>
       </li>
       <li id="id595">
         <p its-locale-filter-list="en">There is no line break opportunity between two consecutive characters belonging to the same <a class="characterClass" href="#cl-21">ornamented character complex (cl-21)</a>. If two consecutive characters belong to different <a class="characterClass" href="#cl-21">ornamented character complexes (cl-21)</a>, a line break opportunity exists between them.</p>
+        <p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>の文字が，前に配置する“<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>と同一の親文字群の文字の場合は，分割不可とする．後ろに配置する<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>の文字が，前に配置する<a class="characterClass" href="#cl-21">親文字群中の文字（添え字付き）（cl-21）</a>とは別の親文字群の文字の場合は，分割可とする．</p>
       </li>
       <li id="id596">
         <p its-locale-filter-list="en">There is no line break opportunity between two consecutive characters belonging to the same <a class="characterClass" href="#cl-22">simple-ruby character complex (cl-22)</a>. If two consecutive characters belong to different <a class="characterClass" href="#cl-22">simple-ruby character complexes (cl-22)</a>, a line break opportunity exists between them.</p>
+        <p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>の文字が，前に配置する<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>と同一の親文字群の文字の場合は，分割不可とする．後ろに配置する<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>の文字が，前に配置する<a class="characterClass" href="#cl-22">親文字群中の文字（熟語ルビ以外のルビ付き）（cl-22）</a>とは別の親文字群の文字の場合は，分割可とする．</p>
       </li>
       <li id="id597">
         <p its-locale-filter-list="en">A line break opportunity exists between two consecutive base characters belonging to different <a class="characterClass" href="#cl-23">jukugo-ruby character complexes (cl-23)</a>. There is also a line break opportunity between two consecutive base characters belonging to the same <a class="characterClass" href="#cl-23">jukugo-ruby character complex (cl-23)</a> and between two runs of ruby text accompanying  the corresponding base characters. However, a base character and the accompanying ruby text shall be indivisible, hence there is no line break opportunity between any two consecutive ruby characters in a run of ruby text accompanying  a base character.</p>
+        <p its-locale-filter-list="ja">後ろに配置する<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>の文字が，前に配置する<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>とは別の親文字群の文字の場合，その親文字群間では分割可とする．また，同じ<a class="characterClass" href="#cl-23">親文字群中の文字（熟語ルビ付き）（cl-23）</a>であっても，1字の親文字とその親文字に対応するルビ文字のグループと，別の親文字とその親文字に対応するルビ文字のグループの間でも分割可とする．ただし，1字の親文字とその親文字に対応するルビ文字のグループについては一体として扱い，いずれの間でも分割不可とする．</p>
       </li>
       <li id="id598">
         <p its-locale-filter-list="en">There is no line break opportunity between preceding <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a> and  trailing <a class="characterClass" href="#cl-13">postfixed abbreviations (cl-13)</a>. The alternative approach is to allow a line to break before trailing <span class="character">PERCENT SIGN "%"</span>, in which case <span class="character">PERCENT SIGN "%"</span> shall be treated as a member of the <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> class.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>と後ろに配置する<a class="characterClass" href="#cl-13">後置省略記号（cl-13）</a>の字間では，分割不可である．ただし，<span class="index" id="d15e592">パーセント記号</span><span class="character">[％] (PERCENT SIGN)</span>については，前に配置する<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>との字間で分割を許容する方法もある．この場合，パーセント記号<span class="character">[％] (PERCENT SIGN)</span>は，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の文字クラスに含める．</p>
       </li>
       <li id="id599">
         <p its-locale-filter-list="en">There are two approaches: one is to allow a line to break between preceding <a class="characterClass" href="#cl-24">grouped numerals (cl-24)</a> and trailing <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>, and the other is not to.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-24">連数字中の文字（cl-24）</a>と後ろに配置する<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>との字間では，分割可とする方法と，分割不可とする方法とがある．</p>
       </li>
       <li id="id600">
         <p its-locale-filter-list="en">A line break opportunity generally exists between preceding <a class="characterClass" href="#cl-27">Western characters (cl-27)</a> and trailing <a class="characterClass" href="#cl-13">postfixed abbreviations (cl-13)</a>, unless the preceding <a class="characterClass" href="#cl-27">Western character (cl-27)</a> is used as a symbol of a quantity or a European numeral, in which case a line break is not allowed between them.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>の後ろに<a class="characterClass" href="#cl-13">後置省略記号（cl-13）</a>を配置する場合は，一般に分割可である．しかし，前に配置する<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>が量を示す記号（量記号）又はアラビア数字の場合は分割不可とする．</p>
       </li>
       <li id="id601">
         <p its-locale-filter-list="en">There is no line break opportunity between two consecutive <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>. In order to break a line in the middle of a Western word, it needs to be divided into two syllables first. Then a line can be broken between the two by adding <span class="character">HYPHEN "-"</span> at the line end.</p>
+        <p its-locale-filter-list="ja">前に配置する<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>と後ろに配置する<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>との字間では，分割不可である．ただし，<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>で構成する単語を音節に従い分割し，行末にハイフン<span class="character">[-] (HYPHEN)</span>を付けることで，分割が可能になる．</p>
       </li>
       <li id="id602">
         <p its-locale-filter-list="en">There is no line break opportunity between two consecutive characters belonging to the same set of <a class="characterClass" href="#cl-30">characters in tate-chu-yoko (cl-30)</a>. If two consecutive characters belong to different sets of <a class="characterClass" href="#cl-30">characters in tate-chu-yoko (cl-30)</a>, there a line break opportunity exists between them.</p>
+        <p its-locale-filter-list="ja">後ろに配置する“<a class="characterClass" href="#cl-30">縦中横中の文字（cl-30）</a>の文字が，前に配置する<a class="characterClass" href="#cl-30">縦中横中の文字（cl-30）</a>と同一の縦中横のグループに属する場合は，分割不可とする．後ろに配置する<a class="characterClass" href="#cl-30">縦中横中の文字（cl-30）</a>の文字が，前に配置する<a class="characterClass" href="#cl-30">縦中横中の文字（cl-30）</a>とは別のグループに属する縦中横の場合は，分割可とする．</p>
       </li>
     </ol>
   </section>
+
+
+
+
+
+
   <section>
     <h3 id="addendum_a3">
 <span its-locale-filter-list="en">Addendum</span>
-<span its-locale-filter-list="ja">xx</span>
+<span its-locale-filter-list="ja">補記</span>
 </h3>
     <p its-locale-filter-list="en">As noted in <a class="sec_ref" href="#spacing_between_characters"></a> and <a class="sec_ref" href="#notes_a3"></a>, there are several conventions for <a href="#term.line-start-prohibition-rule" class="termref">line-start prohibition</a>, <a href="#term.line-end-prohibition-rule" class="termref">line-end prohibition</a> and <a href="#term.unbreakable-characters-rule" class="termref">unbreakable character rules</a>. The following lists four levels of convention. Note that breaking a line after <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a> and before <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a>, <a class="characterClass" href="#cl-06">full stops (cl-06)</a> or <a class="characterClass" href="#cl-07">commas (cl-07)</a> is prohibited at all levels. Likewise, those rules common to all levels are not listed below.</p>
+    <p its-locale-filter-list="ja"><a class="sec_ref" href="#spacing_between_characters"></a>，<a class="sec_ref" href="#notes_a3"></a>などで解説しているように，<a href="#term.line-start-prohibition-rule" class="termref">行頭禁則</a>，<a href="#term.line-end-prohibition-rule" class="termref">行末禁則</a>及び<a href="#term.unbreakable-characters-rule" class="termref">分割禁止</a>については，複数の考え方がある．そこで，これらを<span class="index" id="d15e778"><span class="index" id="d15e779">レベルに分けて示す</span></span>と，以下のようになる．なお，どんなレベルでも，<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>とその後ろに配置する文字との字間，又は<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>，<a class="characterClass" href="#cl-06">句点類（cl-06）</a>若しくは<a class="characterClass" href="#cl-07">読点類（cl-07）</a>と，その前に配置する文字との字間で2行に分割することを許容することはない．このようにすべてのレベルに共通する事項は，以下では示していない．</p>
     <ol class="decimal">
       <li id="id603">
         <p its-locale-filter-list="en">Very loose (Newspapers)</p>
+        <p its-locale-filter-list="ja">レベル1（新聞など）</p>
         <p its-locale-filter-list="en">Breaking a line is allowed before or after the following character classes even though Table 2 prohibits it.</p>
+        <p its-locale-filter-list="ja">次の文字クラスの前又は後ろに配置する文字などとの字間で2行に分割することが表2で禁止とされていても，その字間で2行に分割することを許容する．</p>
         <ul>
           <li id="id604">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-03">Hyphens (cl-03)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-03">ハイフン類（cl-03）</a></p>
           </li>
           <li id="id605">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-04">Dividing punctuation marks (cl-04)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-04">区切り約物（cl-04）</a></p>
           </li>
           <li id="id606">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-05">Middle dots (cl-05)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-05">中点類（cl-05）</a></p>
           </li>
           <li id="id607">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-08">Inseparable characters (cl-08)</a> of the same kind</p>
+            <p its-locale-filter-list="ja">同一の種類の<a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a></p>
           </li>
           <li id="id608">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-09">Iteration marks (cl-09)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-09">繰返し記号（cl-09）</a></p>
           </li>
           <li id="id609">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-10">Prolonged sound mark (cl-10)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-10">長音記号（cl-10）</a></p>
           </li>
           <li id="id610">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-11">Small kana (cl-11)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a></p>
           </li>
           <li id="id611">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-12">Prefixed abbreviations (cl-12)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-12">前置省略記号（cl-12）</a></p>
           </li>
           <li id="id612">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-13">Postfixed abbreviations (cl-13)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-13">後置省略記号（cl-13）</a></p>
           </li>
         </ul>
       </li>
       <li id="id613">
         <p its-locale-filter-list="en">Loose (Magazines)</p>
-        <p its-locale-filter-list="en">Breaking a line is allowed before or after the following character classes (or characters) even though Table 2 prohibits it.</p>
+        <p its-locale-filter-list="ja">レベル2（雑誌など）</p>
+		<p its-locale-filter-list="en">Breaking a line is allowed before or after the following character classes (or characters) even though Table 2 prohibits it.</p>
+        <p its-locale-filter-list="ja">次の文字クラス（又は文字）の前又は後ろに配置する文字などとの字間で2行に分割することが表2で禁止とされていても，その字間で2行に分割することを許容する．</p>
         <ul>
           <li id="id614">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-03">Hyphens (cl-03)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-03">ハイフン類（cl-03）</a></p>
           </li>
           <li id="id615">
             <p its-locale-filter-list="en"><span class="character">KATAKANA MIDDLE DOT "・"</span></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-05">中点類（cl-05）</a>の中点<span class="character">[・] (KATAKANA MIDDLE DOT)</span></p>
           </li>
           <li id="id616">
             <p its-locale-filter-list="en">Between two consecutive <span class="character">HORIZONTAL ELLIPSIS "…"</span> and between two consecutive <span class="character">TWO DOT LEADER "‥"</span></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-08">分離禁止文字（cl-08）</a>の三点リーダ<span class="character">[…] (HORIZONTAL ELLIPSIS)</span>と三点リーダ<span class="character">[…] (HORIZONTAL ELLIPSIS)</span>の字間，及び二点リーダ<span class="character">[‥] (TWO DOT LEADER)</span>と二点リーダ<span class="character">[‥] (TWO DOT LEADER)</span>の字間</p>
           </li>
           <li id="id617">
             <p its-locale-filter-list="en"><span class="character">IDEOGRAPHIC ITERATION MARK "々"</span></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-09">繰返し記号（cl-09）</a>の繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span></p>
           </li>
           <li id="id618">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-10">Prolonged sound mark (cl-10)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-10">長音記号（cl-10）</a></p>
           </li>
           <li id="id619">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-11">Small kana (cl-11)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a></p>
           </li>
           <li id="id620">
             <p its-locale-filter-list="en"><span class="character">PERCENT SIGN "%"</span></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-13">後置省略記号（cl-13）</a>のパーセント<span class="character">[%] (PERCENT SIGN)</span></p>
           </li>
         </ul>
       </li>
       <li id="id621">
         <p its-locale-filter-list="en">Strict (Default, general publications)</p>
+        <p its-locale-filter-list="ja">レベル3（デフォルト，一般の書籍）</p>
         <p its-locale-filter-list="en">Breaking a line is allowed before or after the following character classes (or characters) even though Table 2 prohibits it.</p>
+        <p its-locale-filter-list="ja">次の文字クラス（又は文字）の前又は後ろに配置する文字などとの字間で2行に分割することが表2で禁止とされていても，その字間で2行に分割することを許容する．</p>
         <ul>
           <li id="id622">
             <p its-locale-filter-list="en"><span class="character">IDEOGRAPHIC ITERATION MARK "々"</span></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-09">繰返し記号（cl-09）</a>の繰返し記号<span class="character">[々] (IDEOGRAPHIC ITERATION MARK)</span></p>
           </li>
           <li id="id623">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-10">Prolonged sound mark (cl-10)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-10">長音記号（cl-10）</a></p>
           </li>
           <li id="id624">
             <p its-locale-filter-list="en"><a class="characterClass" href="#cl-11">Small kana (cl-11)</a></p>
+            <p its-locale-filter-list="ja"><a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a></p>
           </li>
         </ul>
       </li>
       <li id="id625">
         <p its-locale-filter-list="en">Very strict (General publications)</p>
+        <p its-locale-filter-list="ja">レベル4（一般の書籍）</p>
         <p its-locale-filter-list="en">Breaking a line is not allowed for any place where Table 2 prohibits it (no alternate rule explained in <a class="sec_ref" href="#notes_a3"></a> is  applied.).</p>
+        <p its-locale-filter-list="ja">表2で禁止とされているすべての字間で2行に分割することを禁止する（<a class="sec_ref" href="#notes_a3"></a>で説明している許容はしない）．</p>
         <p its-locale-filter-list="en">The difference between the strict and the very strict rules described above is as follows. The very strict line-breaking rule is the convention that attaches greater importance to the line-start prohibition and unbreakable character rules, and therefore it is more likely to lead to the need for line adjustment processing. In comparison, the strict line-breaking rule is the convention that weakens line-start prohibition in order to avoid line adjustment as much as possible  to make it easier to achieve solid setting. In other words, the very strict rule is for the best appearance at the line head, while the strict rule is  best to avoid inter-character space adjustment.</p>
+        <p its-locale-filter-list="ja">レベル4は，行頭の配置又は分割禁止を重視する方式である．その結果，行の調整処理が行われる場合がでてくるが，それもやむを得ないと考える方式である．これに対し，レベル3は，ベタ組を原則とする日本語組版では，行の調整処理で字間を詰めたり，空けたりすることはやむを得ない処理であり，できれば避けたい．そこで，ある程度，行頭配置が許されるものは許そうという考え方によるものである．いってみれば，レベル4は行頭の体裁重視方式，レベル3は字間の調整回避方式といえよう．</p>
       </li>
     </ol>
   </section>
 </section>
+
+
+
+
+
+
 <section id="appendix_4" class="appendix">
   <h2 id="opportunities_for_intercharacter_space_reduction_during_line_adjustment">
 <span its-locale-filter-list="en"> Opportunities for Inter-character Space Reduction during Line Adjustment</span>
