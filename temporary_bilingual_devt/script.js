@@ -18,6 +18,7 @@ function switchLang (lang) {
 			'editorsdraft': "Latest editor's draft:",
 			'authors': 'Authors:',
 			'editors': "Editors:",
+			'formerEditors': "Former editors"
 			'participate': "Participate:",
 			'fileABug': "File a bug",
 			'commitHistory': "Commit history",
@@ -34,7 +35,8 @@ function switchLang (lang) {
 			'editorsdraft': "旧バージョン：",
 			'authors': '(translate me) Authors:',
 			'editors': "編者：",
-			'participate': "(translate me) Participate':",
+			'formerEditors': "編者（第１版）："
+			'participate': "(translate me) Participate:",
 			'fileABug': "(translate me) File a bug",
 			'commitHistory': "(translate me) Commit history",
 			'pullRequests': "(translate me) Pull requests"
