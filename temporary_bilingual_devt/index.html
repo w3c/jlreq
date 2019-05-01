@@ -44,7 +44,6 @@
           ],
 		wg:           "Internationalization Core Working Group",
 		wgURI:        "https://www.w3.org/International/core/",
-		bugTracker: { new: "https://github.com/w3c/jlreq/issues", open: "https://github.com/w3c/jlreq/issues" } ,
 		//wgPublicList: "public-i18n-cjk",
         wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/32113/status",
 		edDraftURI: "https://w3c.github.io/jlreq/", 
@@ -54,7 +53,7 @@
 </head>
 
 
-<body>
+<body onload="setFrontMatterIds(); addLangAttrs(); initialiseLang()">
 <h1 class="title p-name" id="title">Requirements for Japanese Text Layout<br/><span lang="ja">日本語組版処理の要件（日本語版）</span></h1>
 
 <div id="abstract">
@@ -301,7 +300,7 @@
       <p its-locale-filter-list="ja">日本語組版に使用する<span class="index" id="d3e72"><a href="#term.japanese-characters" class="termref">和文文字</a></span>では，主に<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>及び<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>を使用する（[[[#fig1_4]]]）．</p>
       <figure id="fig1_4">
 	  	<img its-locale-filter-list="en" src="images/img1_4.png" alt="Kanji, hiragana and katakana." width="280" height="185">
-		<img its-locale-filter-list="ja" src="ja/images/img1_4.png" alt="漢字等・平仮名・片仮名" width="228" height="185">
+		<img its-locale-filter-list="ja" src="images_ja/img1_4.png" alt="漢字等・平仮名・片仮名" width="228" height="185">
         <figcaption>
         <span its-locale-filter-list="en">Kanji, hiragana and katakana.</span>
         <span its-locale-filter-list="ja">漢字等・平仮名・片仮名</span>
@@ -25096,7 +25095,6 @@ for (var i=0;i<lis.length;i++) {
 	}
 console.log(counter, i)
 </script-->
-
 
 
 </body>
