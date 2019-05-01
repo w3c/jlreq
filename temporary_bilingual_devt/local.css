@@ -141,3 +141,6 @@ ol li li {
 ol li li li {
 	list-style-type: lower-roman;
 	}
+.hidden {
+	display: none;
+	}

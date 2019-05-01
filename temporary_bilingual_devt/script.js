@@ -1,160 +1,140 @@
-void function() {
 
-var LANG_LIST = ['en', 'ja']
+function switchLang (lang) {
+// hides all elements with its-locale-filter-list set to the other language
 
-var L10N = {
-	'en': {
-    selector: {
-      '#abstract-1': 'Abstract',
-      '#h-sotd': 'Status of This Document',
-      '#table-of-contents': 'Table of Contents',
-      '.note-title': 'Note',
-    },
+	var langs = { 'ja': true, 'en':true } // en must come last (for all to work in front matter)
+	if (lang==='ja') langs.en = false
+	if (lang==='en') langs.ja = false
 
-    'fig': 'Fig. ',
+	var translations = {
+		'en': {
+			'abstract': 'Abstract',
+			'sotd': 'Status of This Document',
+			'toc': 'Table of Contents',
+			'note': 'Note',
+			'fig': 'Figure ',
+			'thisversion': 'This version:',
+			'latestpublished': 'Latest published version:',
+			'editorsdraft': "Latest editor's draft:",
+			'authors': 'Authors:',
+			'editors': "Editors:",
+			'participate': "Participate:",
+			'fileABug': "File a bug",
+			'commitHistory': "Commit history",
+			'pullRequests': "Pull requests"
+			},
+		'ja': {
+			'abstract': '要約',
+			'sotd': 'この文書の位置付け',
+			'toc': '目次',
+			'note': '注',
+			'fig': '圖',
+			'thisversion': 'このバージョン：',
+			'latestpublished': '最新バージョン：',
+			'editorsdraft': "旧バージョン：",
+			'authors': '(translate me) Authors:',
+			'editors': "編者：",
+			'participate': "(translate me) Participate':",
+			'fileABug': "(translate me) File a bug",
+			'commitHistory': "(translate me) Commit history",
+			'pullRequests': "(translate me) Pull requests"
+			},
+		}
+	
+	// show all hidden elements
+	var els = document.querySelectorAll('.hidden')
+	for (var i=0;i<els.length;i++) els[i].classList.remove('hidden') 
 
-    dt: {},
+	Object.keys(langs).forEach( function (lang) {
+		if (langs[lang]) {
+			// set the default language in html tag
+			document.documentElement.lang = lang
+			
+			// change boilerplate text
+			document.getElementById('abstract').firstChild.textContent = translations[lang].abstract
+			document.getElementById('sotd').firstChild.textContent = translations[lang].sotd
+			document.getElementById('table-of-contents').textContent = translations[lang].toc
 
-    dd: {
-      'Bug tracker:': '<a href="https://github.com/w3c/clreq/issues">file a bug</a> (<a href="https://github.com/w3c/clreq/issues">open bugs</a>)',
-    },
-  },
-
-  'ja': {
-    selector: {
-      '#abstract-1': '要約',
-      '#h-sotd': 'この文書の位置付け',
-      '#table-of-contents': '目次',
-      '.note-title': '注',
-    },
-
-    'fig': '圖',
-
-    dt: {
-      'This version:': 'このバージョン：',
-      'Latest published version:': '最新バージョン：',
-      'Latest editor\'s draft:': '旧バージョン：',
-      'Editors:': '編者（第１版）：',
-      'Bug tracker:': '錯誤跟蹤：',
-      'GitHub:': 'GitHub：',
-    },
-
-    dd: {
-      'Bug tracker:': '<a href="https://github.com/w3c/clreq/issues">反饋錯誤</a>（<a href="https://github.com/w3c/clreq/issues">修正中的錯誤</a>）',
-    }
-  },
-
-}
-
-var $root = document.documentElement
-var $$hidden = []
-
-function arrayify(obj) {
-	return Array.from ? Array.from(obj) : Array.prototype.slice.call(obj)
-}
-
-function $(selector, context) {
-  return (context || document).querySelector(selector)
-}
-
-function $$(selector, context) {
-	return arrayify((context || document).querySelectorAll(selector))
-}
-
-function toggle$rootClass(lang) {
-  $root.lang = lang === 'all' ? 'en' : lang
-
-	if (lang === 'all') {
-	  $root.classList.add('is-multilingual')
-	  $root.classList.remove('isnt-multilingual')
-	} else {
-	  $root.classList.remove('is-multilingual')
-	  $root.classList.add('isnt-multilingual')
+			document.getElementById('thisversion').textContent = translations[lang].thisversion
+			document.getElementById('latestpublished').textContent = translations[lang].latestpublished
+			document.getElementById('editorsdraft').textContent = translations[lang].editorsdraft
+			document.getElementById('editors').textContent = translations[lang].editors
+			document.getElementById('participate').textContent = translations[lang].participate
+			document.getElementById('fileABug').textContent = translations[lang].fileABug
+			document.getElementById('commitHistory').textContent = translations[lang].commitHistory
+			document.getElementById('pullRequests').textContent = translations[lang].pullRequests
+			
+			// change note and figure titles
+			var notes = document.querySelectorAll('.note-title')
+			for (let i=0;i<notes.length;i++) notes[i].textContent = translations[lang].note
+			var figcaptions = document.querySelectorAll('figcaption')
+			for (let i=0;i<figcaptions.length;i++) figcaptions[i].firstChild.textContent = translations[lang].fig
+			}
+			
+		// hide relevant elements
+		else {
+			els = document.querySelectorAll('[its-locale-filter-list='+lang+']')
+			console.log(els)
+			for (var i=0;i<els.length;i++) els[i].classList.add('hidden') 
+			}
+		})
 	}
-}
 
-function showAndHideLang(lang) {
-  // Show previously hidden parts:
-  $$hidden
-  .forEach(function($elmt) { Object.assign($elmt, { hidden: false }) })
 
-  if (lang === 'all') {
-  	return
-  }
 
-  // Hide parts of other languages:
-  $$hidden = (
-    LANG_LIST
-    .filter(function(it) { return it !== lang })
-    .reduce(function(result, it) { return result.concat($$('[its-locale-filter-list="' + it + '"]')) }, [])
-    .map(function($elmt) { return Object.assign($elmt, { hidden: true }) })
-  )
-}
+function setFrontMatterIds () {
+	// adds ids to dt elements in front matter to facilitate language switching
+	
+	var dts = document.querySelectorAll('dt')
+	for (let i=0;i<dts.length;i++) {
+		switch (dts[i].textContent) {
+			case 'This version:': dts[i].id = "thisversion"; break;
+			case 'Latest published version:': dts[i].id = "latestpublished"; break;
+			case 'Latest editor\'s draft:': dts[i].id = "editorsdraft"; break;
+			case 'Authors:': dts[i].id = "authors"; break;
+			case 'Editor:': dts[i].id = "editor"; break;
+			case 'Editors:': dts[i].id = "editors"; break;
+			case 'Participate:': dts[i].id = "participate"; break;
+			}
+		}
+	var anchors = document.querySelectorAll('.head a')
+	console.log(anchors.length)
+	for (let i=0;i<anchors.length;i++) {
+	console.log(anchors[i].textContent)
+		switch (anchors[i].textContent) {
+			case 'File a bug': anchors[i].id = "fileABug"; break;
+			case 'Commit history': anchors[i].id = "commitHistory"; break;
+			case 'Pull requests': anchors[i].id = "pullRequests"; break;
+			}
+		}
+	}
 
-function replaceBoilerplateText(lang) {
-  var l10n = L10N[lang === 'all' ? 'en' : lang]
 
-  // Alter some basic headings, etc:
-  Object.keys(l10n.selector)
-  .forEach(function(s) {
-    $$(s)
-    .forEach(function($elmt) {
-    	Object.assign($elmt, { textContent: l10n.selector[s] })
-    })
-  })
 
-  $$('figcaption, .fig-ref')
-  .forEach(function($elmt) {
-  	Object.assign($elmt.firstChild, { textContent: l10n['fig'] })
-	})
 
-  $$('h1 + h2 + dl dt')
-  .forEach(function($dt) {
-    var originalText = $dt.dataset.originalText || $dt.textContent
-    var text = l10n.dt[originalText] || originalText
+function addLangAttrs () {
+	// adds lang attributes wherever there is a data-lang attribute
+	// this is done by js to reduce burden on editors
+	// if there's already a lang attribute in the tag, that tag is skipped
+	// note that this may still produce temporarily incorrect labelling where text is awaiting translation
+	
+	var ja = document.querySelectorAll('[its-locale-filter-list=ja]')
+	for (i=0;i<ja.length;i++) { if (ja[i].lang == '') { ja[i].lang='ja'} }
+	var en = document.querySelectorAll('[its-locale-filter-list=en]')
+	for (i=0;i<en.length;i++) { if (en[i].lang == '') { en[i].lang='en'} }
+	}
 
-    if (text) {
-      $dt.textContent = text
-      $dt.dataset.originalText = originalText
-    }
 
-    if (originalText === 'Bug tracker:') {
-      $dt.nextElementSibling.innerHTML = l10n.dd['Bug tracker:']
-    }
-  })
-}
-
-/**
- * Expose to global for now since respec will re-parse the entire document
- * and event bound will be lost.
- */
-window.switchLang = function(lang) {
-  toggle$rootClass(lang)
-  showAndHideLang(lang)
-  replaceBoilerplateText(lang)
-}
-
-/**
- * Add `lang` attribute wherever there is a its-locale-filter-list attribute.
- * This is done by js to reduce burden on editors
- * If there's already a lang attribute in the tag, that tag is skipped.
- *
- * Note that this may still produce temporarily incorrect labelling
- * where text is awaiting translation.
- */
-function addLangAttr() {
-  toggle$rootClass('all')
-
-  LANG_LIST
-  .forEach(function(lang) {
-    $$('[its-locale-filter-list="' + lang + '"]')
-    .forEach(function($elmt) {
-      if (!$elmt.lang) {
-        $elmt.lang = lang
-      }
-    })
-  })
-}
-
-addLangAttr()
-}()
+function initialiseLang () {
+	// if a lang= parameter is passed with the URL, show in that language
+	var parameters = location.search.split('&')
+	parameters[0] = parameters[0].substring(1)
+	for (var p=0;p<parameters.length;p++) {  
+		var pairs = parameters[p].split('=')
+		if (pairs[0] === 'lang') { 
+			if (pairs[1]) { 
+				switchLang(pairs[1]) 
+				} 
+			}
+		}
+	}
