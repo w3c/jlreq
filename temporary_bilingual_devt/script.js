@@ -18,7 +18,7 @@ function switchLang (lang) {
 			'editorsdraft': "Latest editor's draft:",
 			'authors': 'Authors:',
 			'editors': "Editors:",
-			'formerEditors': "Former editors"
+			'formerEditors': "Former editors",
 			'participate': "Participate:",
 			'fileABug': "File a bug",
 			'commitHistory': "Commit history",
@@ -35,7 +35,7 @@ function switchLang (lang) {
 			'editorsdraft': "旧バージョン：",
 			'authors': '(translate me) Authors:',
 			'editors': "編者：",
-			'formerEditors': "編者（第１版）："
+			'formerEditors': "編者（第１版）：",
 			'participate': "(translate me) Participate:",
 			'fileABug': "(translate me) File a bug",
 			'commitHistory': "(translate me) Commit history",
@@ -76,7 +76,6 @@ function switchLang (lang) {
 		// hide relevant elements
 		else {
 			els = document.querySelectorAll('[its-locale-filter-list='+lang+']')
-			console.log(els)
 			for (var i=0;i<els.length;i++) els[i].classList.add('hidden') 
 			}
 		})
@@ -100,9 +99,7 @@ function setFrontMatterIds () {
 			}
 		}
 	var anchors = document.querySelectorAll('.head a')
-	console.log(anchors.length)
 	for (let i=0;i<anchors.length;i++) {
-	console.log(anchors[i].textContent)
 		switch (anchors[i].textContent) {
 			case 'File a bug': anchors[i].id = "fileABug"; break;
 			case 'Commit history': anchors[i].id = "commitHistory"; break;
