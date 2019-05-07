@@ -33,13 +33,13 @@ function switchLang (lang) {
 			'thisversion': 'このバージョン：',
 			'latestpublished': '最新バージョン：',
 			'editorsdraft': "旧バージョン：",
-			'authors': '(translate me) Authors:',
+			'authors': '著者：:',
 			'editors': "編者：",
 			'formerEditors': "編者（第１版）：",
-			'participate': "(translate me) Participate:",
-			'fileABug': "(translate me) File a bug",
-			'commitHistory': "(translate me) Commit history",
-			'pullRequests': "(translate me) Pull requests"
+			'participate': "参加方法：",
+			'fileABug': "問題報告",
+			'commitHistory': "変更履歴",
+			'pullRequests': "プルリクエスト"
 			},
 		}
 	
