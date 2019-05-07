@@ -3,6 +3,7 @@ function switchLang (lang) {
 // hides all elements with its-locale-filter-list set to the other language
 
 	var langs = { 'ja': true, 'en':true } // en must come last (for all to work in front matter)
+	var page_lang = (lang === 'all') ? 'ja' : lang; // catchall for 'all'
 	if (lang==='ja') langs.en = false
 	if (lang==='en') langs.ja = false
 
@@ -49,9 +50,6 @@ function switchLang (lang) {
 
 	Object.keys(langs).forEach( function (lang) {
 		if (langs[lang]) {
-			// set the default language in html tag
-			document.documentElement.lang = lang
-			
 			// change boilerplate text
 			document.getElementById('abstract').firstChild.textContent = translations[lang].abstract
 			document.getElementById('sotd').firstChild.textContent = translations[lang].sotd
@@ -79,6 +77,9 @@ function switchLang (lang) {
 			for (var i=0;i<els.length;i++) els[i].classList.add('hidden') 
 			}
 		})
+
+		// set the default language in html tag
+		document.documentElement.lang = page_lang
 	}
 
 
