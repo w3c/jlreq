@@ -144,3 +144,17 @@ ol li li li {
 .hidden {
 	display: none;
 	}
+
+.checkme::before {
+    content: ' Check this translation: ';
+    color: coral;
+    border-left: 4px solid coral;
+    padding-left: .5em;
+	}
+
+.translateme::before {
+    content: ' (Re)translate this: ';
+    color: coral;
+    border-left: 4px solid coral;
+    padding-left: .5em;
+	}
