@@ -35,7 +35,7 @@ function switchLang (lang) {
 			'editorsdraft': "旧バージョン：",
 			'authors': '著者：',
 			'editors': "編者：",
-			'formerEditors': "編者（第１版）：",
+			'formerEditors': "編者（第２版）：",
 			'participate': "参加方法：",
 			'fileABug': "問題報告",
 			'commitHistory': "変更履歴",
@@ -60,7 +60,9 @@ function switchLang (lang) {
 			document.getElementById('thisversion').textContent = translations[lang].thisversion
 			document.getElementById('latestpublished').textContent = translations[lang].latestpublished
 			document.getElementById('editorsdraft').textContent = translations[lang].editorsdraft
-			document.getElementById('editors').textContent = translations[lang].editors
+			document.getElementById('editor').textContent = translations[lang].editors
+			//document.getElementById('editors').textContent = translations[lang].editors
+			document.getElementById('formerEditors').textContent = translations[lang].formerEditors
 			document.getElementById('participate').textContent = translations[lang].participate
 			document.getElementById('fileABug').textContent = translations[lang].fileABug
 			document.getElementById('commitHistory').textContent = translations[lang].commitHistory
@@ -87,14 +89,15 @@ function setFrontMatterIds () {
 	// adds ids to dt elements in front matter to facilitate language switching
 	
 	var dts = document.querySelectorAll('dt')
-	for (let i=0;i<dts.length;i++) {
-		switch (dts[i].textContent) {
+	for (let i=0;i<dts.length;i++) { 
+		switch (dts[i].textContent.trim()) {
 			case 'This version:': dts[i].id = "thisversion"; break;
 			case 'Latest published version:': dts[i].id = "latestpublished"; break;
 			case 'Latest editor\'s draft:': dts[i].id = "editorsdraft"; break;
 			case 'Authors:': dts[i].id = "authors"; break;
 			case 'Editor:': dts[i].id = "editor"; break;
 			case 'Editors:': dts[i].id = "editors"; break;
+			case 'Former editors:': dts[i].id = "formerEditors"; break;
 			case 'Participate:': dts[i].id = "participate"; break;
 			}
 		}
