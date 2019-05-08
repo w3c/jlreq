@@ -119,7 +119,7 @@ samp, kbd {
 	text-align: start;
 	}
 
-.translateme {
+.translateme, .retranslateme {
 	background-color: #F3F3C3;
 }
 .checkme {
@@ -153,6 +153,13 @@ ol li li li {
 	}
 
 .translateme::before {
+    content: ' Translate this: ';
+    color: coral;
+    border-left: 4px solid coral;
+    padding-left: .5em;
+	}
+
+.retranslateme::before {
     content: ' (Re)translate this: ';
     color: coral;
     border-left: 4px solid coral;
