@@ -114,7 +114,7 @@ function setFrontMatterIds () {
 
 
 
-function addLangAttrs () {
+function addLangAttrs () { console.log("THIS FUNCTION IS NO LONGER NEEDED")
 	// adds lang attributes wherever there is a data-lang attribute
 	// this is done by js to reduce burden on editors
 	// if there's already a lang attribute in the tag, that tag is skipped
