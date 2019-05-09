@@ -37,6 +37,7 @@ figure {
 	}
 figure img {
 	vertical-align: middle;
+    margin: 3em !important;
   }
 figcaption {
 	text-align: center;
@@ -165,3 +166,14 @@ ol li li li {
     border-left: 4px solid coral;
     padding-left: .5em;
 	}
+
+
+
+
+
+
+
+
+
+
+
