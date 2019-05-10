@@ -1,0 +1,179 @@
+h2 {
+	margin-top: 3em;
+	margin-bottom: 0em;
+	}
+.head h2, #abstract h2, #sotd h2 {
+	margin-top: 0;
+	}
+h3 {
+	margin-top: 3em;
+	}
+h4  { 
+	font-size: 100%; 
+    font-weight: normal; 
+    color: #005a9c; 
+    margin-top: 2em;  
+    }
+h5 {
+  font-style: inherit !important;
+}
+.leadin {
+	font-weight: bold;
+	}
+
+ins { 
+	background-color: #99FF99; 
+	text-decoration: none; 
+	}
+del { 
+	display: inline; 
+	color: silver; 
+	}
+
+figure { 
+	margin-bottom: 2em; 
+	text-align: center;
+	vertical-align: top;
+	}
+figure img {
+	vertical-align: middle;
+    margin: 3em !important;
+  }
+figcaption {
+	text-align: center;
+	margin: 0.5em 2em;
+	font-style: italic;
+	font-size: 90%;
+	}
+.figno:after {
+	content: ':\00A0  ';
+}
+
+a.termref:link {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+a.termref:hover {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+a.termref:visited {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+a.termref:active {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+
+.qterm:before, .qchar:before { content: "'"; }
+.qterm:after, .qchar:after { content: "'"; }
+.quote:before { content: '"'; }
+.quote:after { content: '"'; }
+code { 
+	color: #A52A2A; 
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace; 
+    font-size: 100%; 
+    }
+samp, kbd { 
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace; 
+    font-size: 100%; 
+    }
+.uname {
+	text-transform: uppercase;
+	font-size: 85%;
+	letter-spacing:0.03em;
+	}
+
+
+#langSwitch {
+	position: fixed;
+	top: -14px;
+	z-index: 10000;
+	top: 100px;
+	right: 10px;
+	width: 5em;
+	text-align: right;
+	}
+#langSwitch button {
+	background: #FFF none repeat scroll 0% 0%;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	}
+
+.punctuation {
+	border-collapse: collapse;
+	}
+.punctuation td, .punctuation th {
+	border: 1px solid #ddd;
+	vertical-align: top;
+	padding: 5px;
+	}
+.punctuation th.topth:lang(en) {
+	font-size: 80%;
+	padding: 5px;
+	vertical-align: bottom;
+	text-align: start;
+	}
+
+.translateme, .retranslateme {
+	background-color: #F3F3C3;
+}
+.checkme {
+	background-color: #BBEFFC;
+}
+
+a .fig-title { 
+	display: none;
+	}
+a .figno:after {
+	content: '';
+	}
+ol li {
+	list-style-type: lower-alpha;
+	}
+ol li li { 
+	list-style-type: decimal;
+	}
+ol li li li {
+	list-style-type: lower-roman;
+	}
+.hidden {
+	display: none;
+	}
+
+.checkme::before {
+    content: ' Check this translation: ';
+    color: coral;
+    border-left: 4px solid coral;
+    padding-left: .5em;
+	}
+
+.translateme::before {
+    content: ' Translate this: ';
+    color: coral;
+    border-left: 4px solid coral;
+    padding-left: .5em;
+	}
+
+.retranslateme::before {
+    content: ' (Re)translate this: ';
+    color: coral;
+    border-left: 4px solid coral;
+    padding-left: .5em;
+	}
+
+
+
+
+
+
+
+
+
+
+
