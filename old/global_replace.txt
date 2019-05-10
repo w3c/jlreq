@@ -1,0 +1,79 @@
+
+
+
+<h3 id="([^"]+)">[^<]+<span class="heading"><span id="[^"]+">([^<]+)</span></span></h3>
+
+<h3 id="$1">$2</h3>
+
+
+<h4 id="([^"]+)">[^<]+<span class="heading"><span class="index" id="[^"]+">([^<]+)</span></span></h4>
+
+<h4 id="([^"]+)">[^<]+<span class="heading"><span id="[^"]+">([^<]+)</span></span></h4>
+
+<h4 id="([^"]+)">[^<]+<span class="heading"><span id="[^"]+" class="index">([^<]+)</span></span></h4>
+
+<h4 id="$1">$2</h4>
+
+
+<h4 id="([^"]+)">[^<]+<span class="heading"><span id="[^<]+">([^<]+)<span class="index" id="[^"]+">([^<]+)</span>([^<]+)</span></span></h4>
+
+<h4 id="$1">$2$3$4</h4>
+
+
+
+<div class="figure" id="([^"]+)">
+\s+<div class="figure-float">
+\s+<div><img src="([^"]+)" alt="([^"]+)" width="([^"]+)" height="([^"]+)" />
+\s+<div class="figureCaption">[^<]+<span class="caption-body">([^<]+)</span></div>
+\s+</div>
+\s+</div>
+\s+</div>
+
+<div class="figure" id="([^"]+)"><div class="figure-float"><div><img src="([^"]+)" alt="([^"]+)" width="([^"]+)" height="([^"]+)" /><div class="figureCaption">[^<]+<span class="caption-body">([^<]+)</span></div></div></div></div>
+
+<div class="figure" id="([^"]+)"><div class="figure-float"><div><img src="([^"]+)" alt="([^"]+)" width="([^"]+)" height="([^"]+)" /><div class="figureCaption">[^<]+<span class="caption-body">([^<]+)<span class="sub-caption">([^<]+)</span></span></div></div></div></div>
+
+<div id="([^"]+)" class="figure">
+\s+<div class="figure-float">
+\s+<div><img src="([^"]+)" alt="([^"]+)" width="([^"]+)" height="([^"]+)" />
+\s+<div class="figureCaption">[^<]+<span class="caption-body">([^<]+)</span></div>
+\s+</div>
+\s+</div>
+\s+</div>
+
+<div id="([^"]+)" class="figure"><div class="figure-float"><div><img src="([^"]+)" alt="([^"]+)" width="([^"]+)" height="([^"]+)" /><div class="figureCaption">[^<]+<span class="caption-body">([^<]+)</span></div></div></div></div>
+
+<div class="figure" id="([^"]+)">\s+<div class="figure-float">\s+<div><img src="([^"]+)" alt="([^"]+)" width="([^"]+)" height="([^"]+)" />\s+<div class="figureCaption">[^<]+<span class="caption-body">([^<]+)<span class="sub-caption">([^<]+)</span></span></div>\s+</div>\s+</div>\s+</div>
+
+<figure id="$1">
+	<img src="$2" alt="$3" width="$4" height="$5" />
+	<figcaption>$6$7</figcaption>
+	</figure>
+	
+
+
+replace <table class="t_note"> with <aside class="note">
+replace class="t_note" with class="note"
+
+<aside class="note">\s*<tr>\s*<td class="ft" rowspan="1" colspan="1">\s*<p>[^<]+</p>\s*</td>\s*<td rowspan="1" colspan="1">
+
+<aside class="note">
+
+
+
+</td>\s*</tr>\s*</aside>
+
+</aside>
+
+
+
+(for leftovers inside aside only)
+</td>\s*</tr>\s*<tr>\s*<td class="ft" rowspan="1" colspan="1">\s*<p>[^<]+</p>\s*</td>\s*<td rowspan="1" colspan="1">
+</aside><aside class="note">
+
+
+>図[^<]+<
+
+><
+
+
