@@ -1,17 +1,17 @@
 var switched = false;
 
-function switch2zh () {
+function switch2ja () {
 	if (switched) { alert('Refresh the page, then click on this button again.'); return; }
 	
-	var en = document.querySelectorAll('[data-lang=en]')
+	var en = document.querySelectorAll('[its-locale-filter-list=en]')
 	for (var i=0;i<en.length;i++) en[i].style.display='none' 
 	document.getElementById('languageStyling').textContent=''
 	
-	var zhHans = document.querySelectorAll('[data-lang=zh-hans]')
-	for (var i=0;i<zhHans.length;i++) zhHans[i].style.display='none' 
+	var ja = document.querySelectorAll('[its-locale-filter-list=ja]')
+	for (var i=0;i<ja.length;i++) ja[i].style.display='none' 
 	document.getElementById('languageStyling').textContent=''
 
-	document.documentElement.lang = 'zh'
+	document.documentElement.lang = 'ja'
 	switched = true;
 	
 	// change boilerplate text
@@ -37,24 +37,24 @@ function switch2zh () {
 		case 'Latest editor\'s draft:': dts[i].textContent = '最新编辑草稿：'; break;
 		case 'Editors:': dts[i].textContent = '编辑：'; break;
 		case 'Bug tracker:': dts[i].textContent = '错误跟踪：'; 
-			dts[i].nextSibling.nextSibling.innerHTML = '<a href="https://github.com/w3c/clreq/issues">反馈错误</a>（<a href="https://github.com/w3c/clreq/issues">修正中的错误</a>）'; break;
+			dts[i].nextSibling.nextSibling.innerHTML = '<a href="https://github.com/w3c/jlreq/issues">反馈错误</a>（<a href="https://github.com/w3c/clreq/issues">修正中的错误</a>）'; break;
 		}
 		}
 	}
 	
 	
-function switch2zhHans () {
+function switch2ja () {
 	if (switched) { alert('Refresh the page, then click on this button again.'); return; }
 	
-	var en = document.querySelectorAll('[data-lang=en]')
+	var en = document.querySelectorAll('[its-locale-filter-list=en]')
 	for (var i=0;i<en.length;i++) en[i].style.display='none' 
 	document.getElementById('languageStyling').textContent=''
 	
-	var zh = document.querySelectorAll('[data-lang=zh-hant]')
-	for (var i=0;i<zh.length;i++) zh[i].style.display='none' 
+	var ja = document.querySelectorAll('[its-locale-filter-list=ja]')
+	for (var i=0;i<ja.length;i++) ja[i].style.display='none' 
 	document.getElementById('languageStyling').textContent=''
 
-	document.documentElement.lang = 'zh-hans'
+	document.documentElement.lang = 'ja'
 	switched = true;
 	
 	// change boilerplate text
@@ -89,12 +89,12 @@ function switch2zhHans () {
 function switch2en () {
 	if (switched) { alert('Refresh the page, then click on this button again.'); return; }
 	
-	var zh = document.querySelectorAll('[data-lang=zh-hant]')
-	for (var i=0;i<zh.length;i++) zh[i].style.display='none' 
+	var ja = document.querySelectorAll('[its-locale-filter-list=ja]')
+	for (var i=0;i<ja.length;i++) ja[i].style.display='none' 
 	document.getElementById('languageStyling').textContent=''
 	
-	var zhHans = document.querySelectorAll('[data-lang=zh-hans]')
-	for (var i=0;i<zhHans.length;i++) zhHans[i].style.display='none' 
+	var ja = document.querySelectorAll('[its-locale-filter-list=ja]')
+	for (var i=0;i<ja.length;i++) ja[i].style.display='none' 
 	document.getElementById('languageStyling').textContent=''
 
 	document.documentElement.lang = 'en'
@@ -103,16 +103,16 @@ function switch2en () {
 
 
 function addLangAttrs () {
-	// adds lang attributes wherever there is a data-lang attribute
+	// adds lang attributes wherever there is a its-locale-filter-list attribute
 	// this is done by js to reduce burden on editors
 	// if there's already a lang attribute in the tag, that tag is skipped
 	// note that this may still produce temporarily incorrect labelling where text is awaiting translation
 	
-	var zh = document.querySelectorAll('[data-lang=zh]')
-	for (i=0;i<zh.length;i++) { if (zh[i].lang == '') { zh[i].lang='zh'} }
+	var ja = document.querySelectorAll('[its-locale-filter-list=ja]')
+	for (i=0;i<ja.length;i++) { if (ja[i].lang == '') { ja[i].lang='ja'} }
 	
-	var zhHans = document.querySelectorAll('[data-lang=zh-hans]')
-	for (i=0;i<zhHans.length;i++) { if (zhHans[i].lang == '') { zhHans[i].lang='zh-hans'} }
+	var ja = document.querySelectorAll('[its-locale-filter-list=ja]')
+	for (i=0;i<ja.length;i++) { if (ja[i].lang == '') { ja[i].lang='ja'} }
 	}
 
 document.addEventListener( 'DOMContentLoaded', addLangAttrs );
