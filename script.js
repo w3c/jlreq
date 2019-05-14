@@ -18,7 +18,7 @@ function switchLang (lang) {
 			'editorsdraft': "Latest editor's draft:",
 			'authors': 'Authors:',
 			'editors': "Editors:",
-			'formerEditors': "Former editors",
+			'formerEditors': "Former editors:",
 			'participate': "Participate:",
 			'fileABug': "File a bug",
 			'commitHistory': "Commit history",
