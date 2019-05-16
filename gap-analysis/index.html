@@ -344,30 +344,30 @@
 
 <section id="inlinenotes" class="basic">
     <h3>Inline notes &amp; annotations</h3>
-    <p class="status_prompt">The ruby spec currently specifies an initial subset of requirements for fine-tuning the typography of phonetic and semantic annotations of East Asian text, including furigana, pinyin and zhuyin fuhao systems.  Is is adequate for what it sets out to do?  What other controls will be needed in the future? What about other types of inline annotation, such as warichu? (For referent-type notes such as footnotes, see below.) <a href="https://w3c.github.io/typography/index#ruby_annotation">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aruby%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">The ruby spec currently specifies an initial subset of requirements for fine-tuning the typography of phonetic and semantic annotations of East Asian text, including furigana, pinyin and zhuyin fuhao systems.  Is is adequate for what it sets out to do?  What other controls will be needed in the future? What about other types of inline annotation, such as warichu? (For referent-type notes such as footnotes, see below.) <a href="https://w3c.github.io/typography/index#inline_notes">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Atype-info-request%20label%3Ainline_notes">check for currently needed data</a>.</p>
 
 
 <section id="tabular_markup">
 <h4>Tabular markup not supported</h4>
-<p>The basic pattern here is <code>ruby-base ruby-base ... ruby-text ruby-text ...,</code> which we'll refer to as tabular. An advantage to this approach is that it enables you to style the ruby text to appear inline in such a way that all the ruby text for a word follows that word together. Inline styling can be useful in space-constrained situations, where it would be too difficult to read small ruby characters. <a href="https://w3c.github.io/i18n-drafts/articles/ruby/markup.en.html#tabular">Read more</a>.</p>
+<p>The basic pattern of 'tabular' markup is <code>ruby-base ruby-base ... ruby-text ruby-text ...</code>. An advantage to this approach is that it enables you to style the ruby text to appear inline in such a way that all the ruby text for a word follows that word together. Inline styling can be useful in space-constrained situations, where it would be too difficult to read small ruby characters. <a href="https://w3c.github.io/i18n-drafts/articles/ruby/markup.en.html#tabular">Read more</a>.</p>
 <p>This also makes certain applications of double-sided ruby impossible when the ruby on each side of the base spans a different set of base characters.</p>
-<p>Only <span class="pass">Firefox</span> supports tabular ruby markup. <span class="fail">Chrome</span>, <span class="fail">Safari</span>, &amp; <span class="fail">Edge</span> do not. More Tests: <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form.html" target="text">standard syntax</a> • <a href="https://w3c.github.io/i18n-drafts/articles/vertical-text/index-data/vertical-form-pref.html" target="text">proprietary syntax</a></p>
-<p>For creation of HTML with jukugo ruby this is advanced in impact, however there are other implications when tabular markup is not supported that have a more important impact.</p>
-<p>When text is marked up in mono-ruby way. searching may not work well. If you have the following markup</p>
+<p>When text is marked up in mono-ruby way, searching may not work well. If you have the following markup</p>
 <p><code>&lt;p&gt;&lt;ruby&gt;漢&lt;rt&gt;かん&lt;/rt&gt;字&lt;rt&gt;じ&lt;/rt&gt;&lt;/ruby&gt;&lt;/p&gt;</code></p>
 <p>and search for the base text &quot;漢字&quot; in a browser, you will not get a result. Tabular markup could solve this problem.</p>
+<p>Only <span class="pass">Firefox</span> supports tabular ruby markup. <span class="fail">Chrome</span>, <span class="fail">Safari</span>, &amp; <span class="fail">Edge</span> do not. See <a href="https://w3c.github.io/i18n-drafts/articles/ruby/markup-data/eg_tabular">a test</a>. See more <a href="https://w3c.github.io/i18n-tests/results/ruby-html">tests for ruby in HTML markup</a></p>
+<p>For creation of HTML with jukugo ruby this is advanced in impact, however there are other implications when tabular markup is not supported that have a more important impact.</p>
 </section>
 
 <section id="double_sided_ruby">
 <h4>Double-sided ruby not supported well</h4>
-<p>In order to get double-sided ruby to appear on either side of the base text in HTML, you need the CSS <code class="kw" translate="no">ruby-position</code> property to work with the value <code class="kw" translate="no">under</code>. It currently works per the standard only with <span class="pass">Firefox</span>. It works with the proprietary<code class="kw" translate="no"> -webkit</code> prefix in <span class="partial">Chrome</span> and <span class="partial">Safari</span>, but doesn't work with <span class="fail">Edge</span>. <a href="https://www.w3.org/International/tests/repo/results/css-ruby#ruby_position_under">See test results</a>.</p>
+<p>In order to get double-sided ruby to appear on either side of the base text in HTML, you need the CSS <code class="kw" translate="no">ruby-position</code> property to work with the value <code class="kw" translate="no">under</code>. It currently works per the standard only with <span class="pass">Firefox</span>. It works with the proprietary<code class="kw" translate="no"> -webkit</code> prefix in <span class="partial">Chrome</span> and <span class="partial">Safari</span>, but doesn't work with <span class="fail">Edge</span>. <a href="https://w3c.github.io/i18n-tests/results/css-ruby#ruby_position">See test results</a>.</p>
 <p>Double-sided ruby doesn't appear often in Japanese text, but it is used, and should be available to content authors.</p>
 </section>
 
 <section id="ruby_align">
 <h4>Ruby aligment and other styling unavailable</h4>
 <p>For background information read <a href="https://w3c.github.io/i18n-drafts/articles/ruby/styling.en.html#alignment">Aligning annotations and bases</a>.</p>
-<p>Fine control in HTML over the placement of ruby annotations relative to the base require the availability of the CSS property <code class="kw" translate="no">ruby-align</code>. This only works in <span class="pass">Firefox</span>, and sometimes in <span class="partial">Edge</span> with proprietary syntax. It doesn't work for <span class="fail">Chrome</span> or <span class="fail">Safari</span>. See <a href="https://www.w3.org/International/tests/repo/results/css-ruby#ruby_align_space_between">results for major browsers</a>.</p>
+<p>Fine control in HTML over the placement of ruby annotations relative to the base require the availability of the CSS property <code class="kw" translate="no">ruby-align</code>. This only works in <span class="pass">Firefox</span>, and sometimes in <span class="partial">Edge</span> with proprietary syntax. It doesn't work for <span class="fail">Chrome</span> or <span class="fail">Safari</span>. See <a href="https://w3c.github.io/i18n-tests/results/css-ruby#ruby_align">results for major browsers</a>.</p>
 <p>The impact of this is probably more important for advanced typographic layout.</p>
 </section>
     </section>
