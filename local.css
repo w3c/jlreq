@@ -167,10 +167,18 @@ ol li li li {
     padding-left: .5em;
 	}
 
+table.termlist th.colminwidth {
+	min-width: 4em;
+	}
 
-
-
-
+table.termlist {
+	border-collapse: collapse;
+	}
+table.termlist th,
+table.termlist td {
+	border: solid thin gray;
+	padding: 0.2em;
+	}
 
 
 
