@@ -35,7 +35,7 @@ function switchLang (lang) {
 			'editorsdraft': "旧バージョン：",
 			'authors': '著者：',
 			'editors': "編者：",
-			'formerEditors': "編者（第２版）：",
+			'formerEditors': "以前の版の編者：",
 			'participate': "参加方法：",
 			'fileABug': "問題報告",
 			'commitHistory': "変更履歴",
