@@ -1,5 +1,5 @@
 # Japanese Text Layout task force (jlreq) （JLReq 日本語組版タスクフォース）
-
+     
 This group allows a network of experts to share information about gaps and requirements for support of Japanese on the Web and in eBooks. 
 
 JLReq タスクフォースは、Web や eBook で日本語をサポートするための要件と現実のギャップ (gap) や要件 (requirements) 自体について、エキスパートの人たちが知識を交換・共有するために作りました。
