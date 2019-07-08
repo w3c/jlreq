@@ -167,6 +167,10 @@ ol li li li {
     padding-left: .5em;
 	}
 
+.termlist th span:not(.hidden) {
+	display: inline-block;
+	}
+
 .termlist th {
 	min-width: 4em;
 	}
