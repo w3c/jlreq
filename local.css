@@ -173,6 +173,7 @@ ol li li li {
 
 .termlist th {
 	min-width: 4em;
+    white-space: nowrap;
 	}
 
 .termlist {
