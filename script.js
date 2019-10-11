@@ -60,7 +60,7 @@ function switchLang (lang) {
 			document.getElementById('thisversion').textContent = translations[lang].thisversion
 			document.getElementById('latestpublished').textContent = translations[lang].latestpublished
 			document.getElementById('editorsdraft').textContent = translations[lang].editorsdraft
-			document.getElementById('editor').textContent = translations[lang].editors
+			document.getElementById('editors').textContent = translations[lang].editors
 			//document.getElementById('editors').textContent = translations[lang].editors
 			document.getElementById('formerEditors').textContent = translations[lang].formerEditors
 			document.getElementById('participate').textContent = translations[lang].participate
@@ -97,7 +97,7 @@ function setFrontMatterIds () {
 			case 'Authors:': dts[i].id = "authors"; break;
 			case 'Editor:': dts[i].id = "editor"; break;
 			case 'Editors:': dts[i].id = "editors"; break;
-			case 'Former editors:': dts[i].id = "formerEditors"; break;
+			case 'Former editor:': dts[i].id = "formerEditors"; break;
 			case 'Participate:': dts[i].id = "participate"; break;
 			}
 		}
