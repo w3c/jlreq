@@ -182,7 +182,7 @@ ol li li li {
 
 .termlist th,
 .termlist td {
-	border: solid 1px #ccc,
+	border: solid 1px #ccc;
 	padding: 0 0.5em;
 	}
 
