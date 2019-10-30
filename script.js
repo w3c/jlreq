@@ -29,7 +29,7 @@ function switchLang (lang) {
 			'sotd': 'この文書の位置付け',
 			'toc': '目次',
 			'note': '注',
-			'fig': '圖',
+			'fig': '図',
 			'thisversion': 'このバージョン：',
 			'latestpublished': '最新バージョン：',
 			'editorsdraft': "旧バージョン：",
