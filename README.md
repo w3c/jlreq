@@ -14,7 +14,7 @@ Some experts go a step further, and contribute to the gap-analysis or requiremen
 
 Topics for discussion are suggested by [the gap-analysis document](https://w3c.github.io/jlreq/gap-analysis/). This work supports the development of the [language matrix](https://w3c.github.io/typography/gap-analysis/language-matrix.html) which indicates hot-spots for language support. You can find a list of open issues, including those from Working Groups, on the [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=jlreq) page. (That link applies a `jlreq` filter.)
 
-この場で主に議論すべき項目はギャップ分析文書 [the gap-analysis document](https://w3c.github.io/jlreq/gap-analysis/) に示されています。その結果は言語サポートにおける重要課題 (hot-spot) を示す [language matrix](https://w3c.github.io/typography/gap-analysis/language-matrix.html) の開発に貢献します。JLReq タスクフォースや他の Working Group の日本語に関する未解決の問題（open issues）は [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=jlreq) のページで見ることができます。
+この場で主に議論すべき項目はギャップ分析文書 [the gap-analysis document](https://w3c.github.io/jlreq/gap-analysis/) に示されています。その結果は言語サポートにおける重要課題 (hot-spot) を示す [language matrix](https://w3c.github.io/typography/gap-analysis/language-matrix.html) の開発に貢献します。JLReq タスクフォースや他の Working Group の日本語に関する未解決の問題（open issues）は [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=jlreq) のページで見ることができます。(このリンクのリストは `jlreq` でフィルターされたものです。)
 
 The focus is especially on typographic features for which information in English is hard to find, such as justification, letter-spacing, vertical text, text decoration, page layout, emphasis, etc.   We want to ensure that we have captured local user needs in CSS, HTML, Timed Text, Web Payments, Web Publishing, and the many other specifications that the W3C produces. 
 
@@ -27,9 +27,13 @@ The focus is especially on typographic features for which information in English
 - [Requirements for Japanese Text Layout](https://www.w3.org/TR/2012/NOTE-jlreq-20120403/ja/) (Japanese version、日本語版)
 
 ### Feedback
-Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to report issues for language support, for discussions, and to send feedback about documents. (Learn [how GitHub issues work](http://w3c.github.io/i18n-activity/guidelines/issues.html).)
+Please use the [GitHub issue](https://github.com/w3c/jlreq/issues) to report issues for language support, for discussions, and to send feedback about documents. (Learn [how GitHub issues work](http://w3c.github.io/i18n-activity/guidelines/issues.html).)
+
+言語の機能についての問題報告、議論、文書への意見については、[GitHub issue](https://github.com/w3c/jlreq/issues) にお願いします。([GitHub issues の利用](http://w3c.github.io/i18n-activity/guidelines/issues.html)についての文書を参考ください。)
 
 Note: The public-i18n-cjk mailing list is used to send notification digests & meeting minutes. It is **not** for technical discussion.
+
+注: public-i18n-cjk メールリストは要約通知や議事録の送信先です。技術的議論のためでは**ありません**。
 
 **You may raise issues in Japanese, however any substantive discussions should be summarised in English at some point, so that non-Japanese speakers can follow the rationale and contribute comments.**
 
