@@ -167,19 +167,24 @@ ol li li li {
     padding-left: .5em;
 	}
 
+.charclass th span:not(.hidden), 
 .termlist th span:not(.hidden) {
 	display: inline-block;
 	}
 
+.charclass th, 
 .termlist th {
 	min-width: 4em;
     white-space: nowrap;
 	}
 
+.charclass, 
 .termlist {
 	border-collapse: collapse;
 	}
 
+.charclass th,
+.charclass td, 
 .termlist th,
 .termlist td {
 	border: solid 1px #ccc;
