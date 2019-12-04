@@ -133,13 +133,13 @@ a .fig-title {
 a .figno:after {
 	content: '';
 	}
-ol li {
+ol > li {
 	list-style-type: lower-alpha;
 	}
-ol li li { 
+ol li ol > li { 
 	list-style-type: decimal;
 	}
-ol li li li {
+ol li li ol > li {
 	list-style-type: lower-roman;
 	}
 .hidden {
