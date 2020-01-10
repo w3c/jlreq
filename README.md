@@ -39,31 +39,22 @@ Note: The public-i18n-cjk mailing list is used to send notification digests & me
 
 **GitHub issues での議論は日本語で構いません。ただし重要な議論が日本語で行われた場合は、日本語の判らないメンバーが議論を理解しコメントできるよう、適当な時点で英語での要約が必要です。**
 
-### Following（参加する方法）
-Rather than just 'Watch' this repository, it is best to subscribe to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list. That list is notified once a day (in digest form) about activity in this repository, but also about any activity for other W3C Working Group issues related to Japanese, Chinese and Korean. (Please use github issues rather than the mailing list to send feedback. The main purpose of the public-i18n-cjk mailing list is for notifications; meeting minutes are also sent to that list).
+### Participate (参加する方法)
+You can participate in the task force work at various levels. In order of increasing commitment, these include Follower, Contributor, Participant, Editor, and Chair. [Find your level](https://github.com/w3c/i18n-activity/wiki/Layout-task-force-roles).
 
-JLReq タスクフォースに参加するには [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) メーリングリストに参加するのがベストです。メーリングリストは1日1回、JLReq GitHub で起こっている議論をまとめて伝えます。W3C の他のグループで日本語、中国語、韓国語に関係する議論が行われていたらその内容も伝えます。（フィードバックを送るにはメーリングリストではなく GitHub issues を使ってください。この public-i18n-cjk リストの主な目的は通知です。会議録もこのリストに送られます）
+このタスクフォースにはいくつかの立場で参加可能です。活動を活発にするために、追跡者、貢献者、参加者、編者、議長の分類があります。それぞれの詳細は、[参加の立場](https://github.com/w3c/i18n-activity/wiki/Layout-task-force-roles)についてのリストを参照してください。
 
-You can find a list of open issues, including those from Working Groups, on the [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=jlreq) page. (That link applies a `japanese` filter.)
+**To just follow the work:** Rather than 'Watch' this repository, subscribe to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list. That list is notified (no more than once a day, and in digest form), about changes to issues in this repository, but also about other W3C Working Group issues related to the Japanese, Chinese, & Korean writing systems.
 
-JLReq タスクフォースや他の Working Group の日本語に関する未解決の問題（open issues）は [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=jlreq) のページで見ることができます。
+**活動を追跡だけする場合:** このレポジトリを 'Watch' するよりも、[public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) メーリングリストに参加してください。このリストには、このレポジトリにある issue の更新のみでなく、他の W3C Working Group の日本語・中国語・韓国語に関する issue についても送信されます (最大一日一度、ダイジェスト形式です)。
 
-### Contributing（参加する方法）
-All contributors must read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
+**To contribute content:** All contributors should read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
-全ての参加者は  [CONTRIBUTING.md](CONTRIBUTING.md) を読み、それに同意する必要があります。
+**文書に貢献するには:** 全ての参加者は  [CONTRIBUTING.md](CONTRIBUTING.md) を読み、それに同意する必要があります。
 
-Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to to report issues for language support, for discussions, and to send feedback about documents. (Learn [how GitHub issues work](http://w3c.github.io/i18n-activity/guidelines/issues.html).)
+**To become a participant, editor, or chair:** contact [Richard Ishida](mailto:ishida@w3.org) or [木田泰夫 (Yasuo Kida)](mailto:kida@me.com). We welcome participation requests. 
 
-日本語に関する問題の報告、議論や文書へのフィードバックには [GitHub issue list](https://github.com/w3c/jlreq/issues) を使ってください（[GitHub issues の使い方](http://w3c.github.io/i18n-activity/guidelines/issues.html)（英語））
-
-**You may raise issues in Japanese, however any substantive discussions should be summarised in English at some point, so that non-Japanese speakers can follow the rationale and contribute comments.**
-
-**GitHub issues での議論は日本語で構いません。ただし重要な議論が日本語で行われた場合は、日本語の判らないメンバーが議論を理解しコメントできるよう、適当な時点で英語での要約が必要です。**
-
-Group _members_ are expert contributors participate actively in producing the work of the group, contributing text and advice to create the outputs, and participating in any meetings. For more information about becoming a group member contact [Richard Ishida](mailto:ishida@w3.org) or [木田泰夫 (Yasuo Kida)](mailto:kida@me.com). We welcome participation requests.
-
-参加者のうち ”Group members” と呼ばれる人達は、このグループが作成する成果物の作成に直接に貢献します。例えば、ドキュメントを執筆する、執筆上のアドバイスを提供する、ミーティングに参加するなどが含まれます。興味のある方は  [Richard Ishida](mailto:ishida@w3.org) か [木田泰夫 (Yasuo Kida)](mailto:kida@me.com) に連絡してください。参加の申し込みを歓迎します。
+**参加者、編者、議長に興味がある方:** [Richard Ishida](mailto:ishida@w3.org) か [木田泰夫 (Yasuo Kida)](mailto:kida@me.com) に連絡してください。参加の申し込みを歓迎します。
 
 ### Contacts（連絡先）
 
