@@ -69,7 +69,8 @@ Chair: [木田泰夫 (Yasuo Kida)](mailto:kida@me.com) • W3C staff: [下農淳
 - [Writing i18n tests](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
 - Meeting info (tbd)
-- [Mail archive](https://lists.w3.org/Archives/Public/public-i18n-cjk/)
+- [public-i18n-japanese mail archive](https://lists.w3.org/Archives/Public/public-i18n-japanese/)
+- [public-i18n-cjk mail archive](https://lists.w3.org/Archives/Public/public-i18n-cjk/)
 
 ### Links to background information（W3C 国際化関連のリンク）
 The following information describes work going on at the W3C to support languages on the Web.
