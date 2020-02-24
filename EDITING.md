@@ -66,7 +66,7 @@ Here are some tips on how to maintain the parallel language structure in markup.
     </div>
     ```
 
-- **Headings** should use `span`s for `zh` and `en` versions, and there should be a line break between spans.
+- **Headings** should use `span`s for `ja` and `en` versions, and there should be a line break between spans.
 
     ```html
     <h2>
