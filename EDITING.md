@@ -24,7 +24,14 @@ For example:
 <p its-locale-filter-list="ja">日本語のテキスト。</p>
 ```
 
-Likewise, if you change existing text, and if that change requires a change in the parallel translation but you are unable to do so, add `class="translateme"` to the text that needs to be updated.
+Likewise, if you change existing text, and if that change requires a change in the parallel translation but you are unable to do so, add `class="retranslateme"` to the text that needs to be updated.
+
+For example:
+
+```html
+<p its-locale-filter-list="en" class="retranslateme">Text in English.</p>
+<p its-locale-filter-list="ja">日本語のテキストを更新しました。</p>
+```
 
 **If you need someone to check the translation you provided**, add `class="checkme"` to the relevant tag.
 
@@ -37,7 +44,7 @@ For example:
 
 The class names listed above produce special colouring effects in the displayed document.
 
-When text highlighted by the `translateme` or `checkme` class is updated to a final translation, the class should be removed.
+When text highlighted by the `translateme`, `retranslateme`, or `checkme` class is updated to a final translation, the class should be removed.
 
 
 ### Markup requirements 
