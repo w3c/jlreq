@@ -548,7 +548,7 @@ it is explained last.</p>
     (see <a href="#protruding-group"></a>).
     Also, when the ruby string is longer than the base character string,
     protrudes, and is located at the start or end of the line,
-    the processing is also identical to that of mono-ruby.</p>
+    the resulting layout is also identical to that of mono-ruby.</p>
     <figure id=protruding-group>
       <img src="img/fig14.svg" />
       <figcaption>Example of protruding group-ruby</figcaption>
@@ -604,9 +604,10 @@ it is explained last.</p>
     </ul>
   </li>
   <li>
-    <p>If even a single ruby string is longer than its corresponding base character
+    <p>For simple ruby implementations,
+	if even a single ruby string is longer than its corresponding base character
     when laid out without inter-letter spacing,
-    the processing is identical to group-ruby
+    the resulting layout would look identical to group-ruby
     (see <a href=#jukugo-2></a> and <a href=#jukugo-3></a>).
     <figure id=jukugo-2>
       <img src="img/fig17.svg" />
@@ -622,10 +623,10 @@ it is explained last.</p>
     and line wrap opportunities are allowed between two base characters.
     When such a line wrap occurs,
     if a single base character that is part of the jukugo is placed alone at the end or at the start of a line,
-    it is processed identically to mono-ruby;
+    it is laid out identically to mono-ruby;
     conversely when several base characters that are part of the jukugo
     are placed together at the end or start of a line,
-    they are processed together as has been described in this section about jukugo-ruby
+    they are laid out together as has been described in this section about jukugo-ruby
     (see <a href=#wrap-jukugo></a>).
     <figure id=wrap-jukugo>
       <img src="img/fig19.svg" />
@@ -638,7 +639,7 @@ it is explained last.</p>
     is handled in the same way as with mono-ruby.
     Also, when the ruby string is longer than the base character string,
     protrudes, and is located at the start or end of the line,
-    the processing is also identical to that of mono-ruby.</li>
+    the resulting layout is also identical to that of mono-ruby.</li>
 </ol>
 </section>
 </section>
