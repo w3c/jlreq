@@ -550,8 +550,10 @@ it is explained last.</p>
     so there is no line wrapping opportunity inside either string.</p>
     <aside class=note title="Wrap opportunities in group-ruby">
       As group-ruby is treated as a unit, there is no wrap opportunity.
-      However, in some exceptional cases where it is wrapped,
-      it is then processed similarly to jukugo-ruby.
+      However, there are examples where allowing wrapping may be desirable.
+      In such cases, based on appropriate association of base characters and ruby characters,
+      handling the wrapping opportunities the same way the are handled for jukugo-ruby
+      may be appropriate.
       <figure id=wrap-group>
         <img src="img/fig15.svg" />
         <figcaption>Wrapping group-ruby</figcaption>
