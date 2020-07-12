@@ -122,13 +122,13 @@ Here are some tips on how to maintain the parallel language structure in markup.
 - To link to a section, use the Respec feature, ie. link to the id on the section tag and leave the link text empty.
 
     ```html
-    <a class="sec_ref" href="#mySectionId"></a>
+    [[[#mySectionId]]]
     ```
 
 - To link to a figure, use the Respec feature, ie. link to the id on the figure tag and leave the link text empty.
 
     ```html
-    <a class="fig_ref" href="#myFigureId"></a>
+    [[[#myFigureId]]]
     ```
 
 
