@@ -119,13 +119,13 @@ Here are some tips on how to maintain the parallel language structure in markup.
     <span class="codepoint" translate="no"><span lang="ja">。</span> [<span class="uname">U+3002 IDEOGRAPHIC FULL STOP</span>]</span>
     ```
 
-- To link to a section, use the ReSpec feature, ie. link to the id on the section tag and leave the link text empty.
+- To link to a section, use the ReSpec feature, ie. link to the id on the `section` tag and leave the link text empty.
 
     ```html
     [[[#mySectionId]]]
     ```
 
-- To link to a figure, use the ReSpec feature, ie. link to the id on the figure tag and leave the link text empty.
+- To link to a figure, use the ReSpec feature, ie. link to the id on the `figure` tag and leave the link text empty.
 
     ```html
     [[[#myFigureId]]]
