@@ -9,8 +9,8 @@ When creating new content, you should **always create markup for both English an
 
 For example:  
 ```html
-<p its-locale-filter-list="en">Text in English.</p>
-<p its-locale-filter-list="ja">日本語のテキスト。</p>
+<p its-locale-filter-list="en" lang="en">Text in English.</p>
+<p its-locale-filter-list="ja" lang="ja">日本語のテキスト。</p>
 ```
 
 If you are able to create text in both English and Japanese, please do so. 
@@ -20,8 +20,8 @@ If you are able to create text in both English and Japanese, please do so.
 For example:
 
 ```html
-<p its-locale-filter-list="en" class="translateme">日本語のテキスト。</p>
-<p its-locale-filter-list="ja">日本語のテキスト。</p>
+<p its-locale-filter-list="en" lang="en" class="translateme">日本語のテキスト。</p>
+<p its-locale-filter-list="ja" lang="ja">日本語のテキスト。</p>
 ```
 
 Likewise, if you change existing text, and if that change requires a change in the parallel translation but you are unable to do so, add `class="retranslateme"` to the text that needs to be updated.
@@ -29,8 +29,8 @@ Likewise, if you change existing text, and if that change requires a change in t
 For example:
 
 ```html
-<p its-locale-filter-list="en" class="retranslateme">Text in English.</p>
-<p its-locale-filter-list="ja">日本語のテキストを更新しました。</p>
+<p its-locale-filter-list="en" lang="en" class="retranslateme">Text in English.</p>
+<p its-locale-filter-list="ja" lang="ja">日本語のテキストを更新しました。</p>
 ```
 
 **If you need someone to check the translation you provided**, add `class="checkme"` to the relevant tag.
@@ -38,8 +38,8 @@ For example:
 For example:
 
 ```html
-<p its-locale-filter-list="en" class="checkme">Text in English.</p>
-<p its-locale-filter-list="ja">日本語のテキスト。</p>
+<p its-locale-filter-list="en" lang="en" class="checkme">Text in English.</p>
+<p its-locale-filter-list="ja" lang="ja">日本語のテキスト。</p>
 ```
 
 The class names listed above produce special colouring effects in the displayed document.
@@ -58,8 +58,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
 
     ```html
     <li id="abcd">
-      <p its-locale-filter-list="en">Text in English.</p>
-      <p its-locale-filter-list="ja">日本語のテキスト。</p>
+      <p its-locale-filter-list="en" lang="en">Text in English.</p>
+      <p its-locale-filter-list="ja" lang="ja">日本語のテキスト。</p>
     </li>
     ```
 
@@ -68,8 +68,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
 
     ```html
     <div id="abcd">
-      <p its-locale-filter-list="en">Text in English.</p>
-      <p its-locale-filter-list="ja">日本語のテキスト。</p>
+      <p its-locale-filter-list="en" lang="en">Text in English.</p>
+      <p its-locale-filter-list="ja" lang="ja">日本語のテキスト。</p>
     </div>
     ```
 
@@ -77,8 +77,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
 
     ```html
     <h2>
-      <span its-locale-filter-list="en">Heading in English.</span>
-      <span its-locale-filter-list="ja">日本語の見出し</span>
+      <span its-locale-filter-list="en" lang="en">Heading in English.</span>
+      <span its-locale-filter-list="ja" lang="ja">日本語の見出し</span>
     </h2>
     ```
 
@@ -87,8 +87,8 @@ Here are some tips on how to maintain the parallel language structure in markup.
     ```html
     <section id="h_my_heading">
       <h2>
-        <span its-locale-filter-list="en">Heading in English</span>
-        <span its-locale-filter-list="ja">日本語の見出し</span>
+        <span its-locale-filter-list="en" lang="en">Heading in English</span>
+        <span its-locale-filter-list="ja" lang="ja">日本語の見出し</span>
       </h2>
       …
     ``` 
@@ -96,19 +96,19 @@ Here are some tips on how to maintain the parallel language structure in markup.
 - **Attribute `id`s on `dfn` elements** should start with `xxdef`, where `xx` is either `ja` or `en`.
 
     ```html
-    <p its-locale-filter-list="en">The <dfn id="endef_page_format">page format</dfn> of a Japanese document is specified by:</p>
-    <p its-locale-filter-list="ja">日本語文書の<dfn id="jadef_page_format">組体裁</dfn>は，以下の順序で設計する．</p>
+    <p its-locale-filter-list="en" lang="en">The <dfn id="endef_page_format">page format</dfn> of a Japanese document is specified by:</p>
+    <p its-locale-filter-list="ja" lang="ja">日本語文書の<dfn id="jadef_page_format">組体裁</dfn>は，以下の順序で設計する．</p>
     ```
 
 - **Figures and figure captions** should repeat the information. Japanese images are stored in images_ja directory. Captions use `span`s for the different language versions. There is just one id for the figure.
 
     ```html
     <figure id="myid">
-      <img its-locale-filter-list="en" src="images/mypicture.png"/>
-      <img its-locale-filter-list="ja" src="images_ja/mypicture.png"/>
+      <img its-locale-filter-list="en" lang="en" src="images/mypicture.png"/>
+      <img its-locale-filter-list="ja" lang="ja" src="images_ja/mypicture.png"/>
       <figcaption>
-        <span its-locale-filter-list="en">Caption in English</span>
-        <span its-locale-filter-list="ja">日本語のキャプション</span>
+        <span its-locale-filter-list="en" lang="en">Caption in English</span>
+        <span its-locale-filter-list="ja" lang="ja">日本語のキャプション</span>
       </figcaption>
     </figure>
     ```
@@ -155,7 +155,7 @@ THIS SECTION NEEDS REVIEW. THINGS MAY HAVE CHANGED SINCE IT WAS WRITTEN.
 
     ```html
     Requirements for Chinese Text Layout 
-    <span its-locale-filter-list="ja" lang="ja">中文排版需求</span>
+    <span its-locale-filter-list="ja" lang="ja" lang="ja">中文排版需求</span>
     ```
 
 2. Remove:
