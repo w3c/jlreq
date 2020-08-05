@@ -27,6 +27,10 @@ The focus is especially on typographic features for which information in English
 - [Requirements for Japanese Text Layout](https://www.w3.org/TR/2012/NOTE-jlreq-20120403/ja/) (Japanese version、日本語版)
 - [Rules for Simple Placement of Japanese Ruby](https://w3c.github.io/simple-ruby/)
 
+### Related documents
+- [Current Status of Japanese Typography Using Web Technologies](https://www.w3.org/Submission/2017/SUBM-CSJTUWT-20170102/)
+- [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
+
 ### Feedback
 Please use the [GitHub issue](https://github.com/w3c/jlreq/issues) to report issues for language support, for discussions, and to send feedback about documents. (Learn [how GitHub issues work](http://w3c.github.io/i18n-activity/guidelines/issues.html).)
 
