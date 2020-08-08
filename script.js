@@ -16,6 +16,7 @@ function switchLang (lang) {
 			'thisversion': 'This version:',
 			'latestpublished': 'Latest published version:',
 			'editorsdraft': "Latest editor's draft:",
+			'previousversion': "Previous version:",
 			'authors': 'Authors:',
 			'editors': "Editors:",
 			'formerEditors': "Former editors:",
@@ -32,7 +33,8 @@ function switchLang (lang) {
 			'fig': '図',
 			'thisversion': 'このバージョン：',
 			'latestpublished': '最新バージョン：',
-			'editorsdraft': "旧バージョン：",
+			'previousversion': "旧バージョン：",
+			'editorsdraft': "最新の編集用草案：",
 			'authors': '著者：',
 			'editors': "編者：",
 			'formerEditors': "以前の版の編者：",
@@ -60,6 +62,7 @@ function switchLang (lang) {
 			document.getElementById('thisversion').textContent = translations[lang].thisversion
 			document.getElementById('latestpublished').textContent = translations[lang].latestpublished
 			document.getElementById('editorsdraft').textContent = translations[lang].editorsdraft
+			document.getElementById('previousversion').textContent = translations[lang].previousversion
 			document.getElementById('editors').textContent = translations[lang].editors
 			//document.getElementById('editors').textContent = translations[lang].editors
 			document.getElementById('formerEditors').textContent = translations[lang].formerEditors
@@ -93,6 +96,7 @@ function setFrontMatterIds () {
 		switch (dts[i].textContent.trim()) {
 			case 'This version:': dts[i].id = "thisversion"; break;
 			case 'Latest published version:': dts[i].id = "latestpublished"; break;
+			case 'Previous version:': dts[i].id = "previousversion"; break;
 			case 'Latest editor\'s draft:': dts[i].id = "editorsdraft"; break;
 			case 'Authors:': dts[i].id = "authors"; break;
 			case 'Editor:': dts[i].id = "editor"; break;
