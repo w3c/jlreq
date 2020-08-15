@@ -17,8 +17,11 @@ function switchLang (lang) {
 			'latestpublished': 'Latest published version:',
 			'editorsdraft': "Latest editor's draft:",
 			'previousversion': "Previous version:",
+			'author': 'Author:',
 			'authors': 'Authors:',
+			'editor': "Editor:",
 			'editors': "Editors:",
+			'formerEditor': "Former editor:",
 			'formerEditors': "Former editors:",
 			'participate': "Participate:",
 			'fileABug': "File a bug",
@@ -35,8 +38,11 @@ function switchLang (lang) {
 			'latestpublished': '最新バージョン：',
 			'previousversion': "旧バージョン：",
 			'editorsdraft': "最新の編集用草案：",
+			'author': '著者：',
 			'authors': '著者：',
+			'editor': "編者：",
 			'editors': "編者：",
+			'formerEditor': "以前の版の編者：",
 			'formerEditors': "以前の版の編者：",
 			'participate': "参加方法：",
 			'fileABug': "問題報告",
@@ -62,14 +68,42 @@ function switchLang (lang) {
 			document.getElementById('thisversion').textContent = translations[lang].thisversion
 			document.getElementById('latestpublished').textContent = translations[lang].latestpublished
 			document.getElementById('editorsdraft').textContent = translations[lang].editorsdraft
-			document.getElementById('previousversion').textContent = translations[lang].previousversion
-			document.getElementById('editors').textContent = translations[lang].editors
-			//document.getElementById('editors').textContent = translations[lang].editors
-			document.getElementById('formerEditors').textContent = translations[lang].formerEditors
-			document.getElementById('participate').textContent = translations[lang].participate
-			document.getElementById('fileABug').textContent = translations[lang].fileABug
-			document.getElementById('commitHistory').textContent = translations[lang].commitHistory
-			document.getElementById('pullRequests').textContent = translations[lang].pullRequests
+
+			if (document.getElementById('previousversion')) {
+				document.getElementById('previousversion').textContent = translations[lang].previousversion
+			}
+
+			if (document.getElementById('editor')) {
+				document.getElementById('editor').textContent = translations[lang].editor
+			}
+
+			if (document.getElementById('editors')) {
+				document.getElementById('editors').textContent = translations[lang].editors
+			}
+
+			if (document.getElementById('formerEditor')) {
+				document.getElementById('formerEditor').textContent = translations[lang].formerEditor
+			}
+
+			if (document.getElementById('formerEditors')) {
+				document.getElementById('formerEditors').textContent = translations[lang].formerEditors
+			}
+
+			if (document.getElementById('participate')) {
+				document.getElementById('participate').textContent = translations[lang].participate
+			}
+
+			if (document.getElementById('fileABug')) {
+				document.getElementById('fileABug').textContent = translations[lang].fileABug
+			}
+
+			if (document.getElementById('commitHistory')) {
+				document.getElementById('commitHistory').textContent = translations[lang].commitHistory
+			}
+
+			if (document.getElementById('pullRequests')) {
+				document.getElementById('pullRequests').textContent = translations[lang].pullRequests
+			}
 			
 			// change note and figure titles
 			var notes = document.querySelectorAll('.note-title')
@@ -101,7 +135,8 @@ function setFrontMatterIds () {
 			case 'Authors:': dts[i].id = "authors"; break;
 			case 'Editor:': dts[i].id = "editor"; break;
 			case 'Editors:': dts[i].id = "editors"; break;
-			case 'Former editor:': dts[i].id = "formerEditors"; break;
+			case 'Former editor:': dts[i].id = "formerEditor"; break;
+			case 'Former editors:': dts[i].id = "formerEditors"; break;
 			case 'Participate:': dts[i].id = "participate"; break;
 			}
 		}
