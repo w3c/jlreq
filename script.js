@@ -1,49 +1,54 @@
+var translations = {
+	'en': {
+		'abstract': 'Abstract',
+		'sotd': 'Status of This Document',
+		'toc': 'Table of Contents',
+		'note': 'Note',
+		'fig': 'Figure ',
+		'thisversion': 'This version:',
+		'latestpublished': 'Latest published version:',
+		'editorsdraft': "Latest editor's draft:",
+		'previousversion': "Previous version:",
+		'author': 'Author:',
+		'authors': 'Authors:',
+		'editor': "Editor:",
+		'editors': "Editors:",
+		'formerEditor': "Former editor:",
+		'formerEditors': "Former editors:",
+		'participate': "Participate:",
+		'fileABug': "File a bug",
+		'commitHistory': "Commit history",
+		'pullRequests': "Pull requests"
+		},
+	'ja': {
+		'abstract': '要約',
+		'sotd': 'この文書の位置付け',
+		'toc': '目次',
+		'note': '注',
+		'fig': '図',
+		'thisversion': 'このバージョン：',
+		'latestpublished': '最新バージョン：',
+		'previousversion': "旧バージョン：",
+		'editorsdraft': "最新の編集用草案：",
+		'author': '著者：',
+		'authors': '著者：',
+		'editor': "編者：",
+		'editors': "編者：",
+		'formerEditor': "以前の版の編者：",
+		'formerEditors': "以前の版の編者：",
+		'participate': "参加方法：",
+		'fileABug': "問題報告",
+		'commitHistory': "変更履歴",
+		'pullRequests': "プルリクエスト"
+		},
+	}
 
 function switchLang (lang) {
 // hides all elements with its-locale-filter-list set to the other language
 
-	var langs = { 'ja': true, 'en':true } // en must come last (for all to work in front matter)
+    var langs = { 'ja': true, 'en':true } // en must come last (for all to work in front matter)
 	if (lang==='ja') langs.en = false
 	if (lang==='en') langs.ja = false
-
-	var translations = {
-		'en': {
-			'abstract': 'Abstract',
-			'sotd': 'Status of This Document',
-			'toc': 'Table of Contents',
-			'note': 'Note',
-			'fig': 'Figure ',
-			'thisversion': 'This version:',
-			'latestpublished': 'Latest published version:',
-			'editorsdraft': "Latest editor's draft:",
-			'previousversion': "Previous version:",
-			'authors': 'Authors:',
-			'editors': "Editors:",
-			'formerEditors': "Former editors:",
-			'participate': "Participate:",
-			'fileABug': "File a bug",
-			'commitHistory': "Commit history",
-			'pullRequests': "Pull requests"
-			},
-		'ja': {
-			'abstract': '要約',
-			'sotd': 'この文書の位置付け',
-			'toc': '目次',
-			'note': '注',
-			'fig': '図',
-			'thisversion': 'このバージョン：',
-			'latestpublished': '最新バージョン：',
-			'previousversion': "旧バージョン：",
-			'editorsdraft': "最新の編集用草案：",
-			'authors': '著者：',
-			'editors': "編者：",
-			'formerEditors': "以前の版の編者：",
-			'participate': "参加方法：",
-			'fileABug': "問題報告",
-			'commitHistory': "変更履歴",
-			'pullRequests': "プルリクエスト"
-			},
-		}
 	
 	// show all hidden elements
 	var els = document.querySelectorAll('.hidden')
@@ -59,17 +64,18 @@ function switchLang (lang) {
 			document.getElementById('sotd').firstChild.textContent = translations[lang].sotd
 			document.getElementById('table-of-contents').textContent = translations[lang].toc
 
-			document.getElementById('thisversion').textContent = translations[lang].thisversion
-			document.getElementById('latestpublished').textContent = translations[lang].latestpublished
-			document.getElementById('editorsdraft').textContent = translations[lang].editorsdraft
-			document.getElementById('previousversion').textContent = translations[lang].previousversion
-			document.getElementById('editors').textContent = translations[lang].editors
-			//document.getElementById('editors').textContent = translations[lang].editors
-			document.getElementById('formerEditors').textContent = translations[lang].formerEditors
-			document.getElementById('participate').textContent = translations[lang].participate
-			document.getElementById('fileABug').textContent = translations[lang].fileABug
-			document.getElementById('commitHistory').textContent = translations[lang].commitHistory
-			document.getElementById('pullRequests').textContent = translations[lang].pullRequests
+			changeBoilerplate ('thisversion', lang);
+			changeBoilerplate ('latestpublished', lang);
+			changeBoilerplate ('editorsdraft', lang);
+			changeBoilerplate ('previousversion', lang);
+			changeBoilerplate ('editor', lang);
+			changeBoilerplate ('editors', lang);
+			changeBoilerplate ('formerEditor', lang);
+			changeBoilerplate ('formerEditors', lang);
+			changeBoilerplate ('participate', lang);
+			changeBoilerplate ('fileABug', lang);
+			changeBoilerplate ('commitHistory', lang);
+			changeBoilerplate ('pullRequests', lang);
 			
 			// change note and figure titles
 			var notes = document.querySelectorAll('.note-title')
@@ -101,7 +107,8 @@ function setFrontMatterIds () {
 			case 'Authors:': dts[i].id = "authors"; break;
 			case 'Editor:': dts[i].id = "editor"; break;
 			case 'Editors:': dts[i].id = "editors"; break;
-			case 'Former editor:': dts[i].id = "formerEditors"; break;
+			case 'Former editor:': dts[i].id = "formerEditor"; break;
+			case 'Former editors:': dts[i].id = "formerEditors"; break;
 			case 'Participate:': dts[i].id = "participate"; break;
 			}
 		}
@@ -116,7 +123,17 @@ function setFrontMatterIds () {
 	}
 
 
-
+function changeBoilerplate (id, lang, translationsid) {
+	if (translationsid === undefined) {
+		translationsid = id;
+		}
+	if (document.getElementById(id)) {
+		document.getElementById(id).textContent = translations[lang][translationsid]
+	} else {
+		console.log("%s does not exist.", id);
+		}
+	}
+	
 
 function addLangAttrs () { console.log("THIS FUNCTION IS NO LONGER NEEDED")
 	// adds lang attributes wherever there is a data-lang attribute
