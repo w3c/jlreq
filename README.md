@@ -71,6 +71,7 @@ Chair: [木田泰夫 (Yasuo Kida)](mailto:kida@me.com) • W3C staff: [下農淳
 - [Charter](https://w3c.github.io/jlreq/charter/)
 - [List of group members](https://www.w3.org/2000/09/dbwg/details?group=109193&public=1)
 - Action tracker (tbd)
+- [How to contribute to a gap-analysis document](https://github.com/w3c/typography/blob/gh-pages/gap-analysis/HOWTO.md)
 - [Writing i18n tests](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
 - Meeting info (tbd)
