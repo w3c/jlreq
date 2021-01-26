@@ -428,21 +428,16 @@
 
 
 
-
 <details>
-<summary style="margin-top:4em; cursor: pointer;">Summary</summary>
+<summary style="margin-top:4em; cursor: pointer;" onclick="setUpSummary(); printSummary(true)">Show summary</summary>
 <pre id="summaryPlaceholder" style="white-space: pre-wrap;"></pre>
 </details>
-
-
-
-
-<script class="remove">
-setUpSummary()
-addPrompts() 
-getAllData('jlreq','doc:jlreq')
-printSummary(true)
+<script>
+if (window.location.href.includes('/TR/')) document.getElementById('summaryStats').style.display = 'none'
 </script>
+
+
+
 
 
 
