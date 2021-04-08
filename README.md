@@ -70,7 +70,7 @@ To get an idea about what's involved, see  [Get involved with Language Enablemen
 - [Mail archive (メールリストアーカイブ)](https://lists.w3.org/Archives/Public/public-i18n-japanese/)
 - [Writing i18n tests (国際化関連テストを作成するには)](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
 - [Practical tips for task forces (タスクフォースの実用的 tips)](https://www.w3.org/International/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
-
+- [Meeting info (定例会議情報)](https://www.w3.org/2021/04/jlreq-meeting-info.html)
 
 ### Links to background information（W3C 国際化関連のリンク）
 The following information describes work going on at the W3C to support languages on the Web.
