@@ -30,9 +30,10 @@ Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to repor
 
 言語の機能についての問題報告、議論、文書への意見については、[GitHub issue](https://github.com/w3c/jlreq/issues) にお願いします。([GitHub issues の利用](https://www.w3.org/International/i18n-activity/guidelines/issues.html)についての文書を参考ください。)
 
-Note that the public-jlreq-admin mailing list is used to send notification digests & meeting minutes. It is **not** for technical discussion.
+Note that the public-i18n-japanese mailing list is used to send notification digests & meeting minutes. It is **not** for technical discussion.
+(Some technical discussion takes place on that list for the Japanese language enablement, but it is **strongly preferred** to use GitHub issues whenever possible.)
 
-注: public-jlreq-admin メールリストは要約通知や議事録の送信先です。技術的議論のためでは**ありません**。
+注: public-i18n-japanese メールリストは要約通知や議事録の送信先です。技術的議論のためでは**ありません**。（多少の日本語組版に関する技術的議論が行われることはありますが、GitHub issuesを利用することが**強く推奨されます**。）
 
 **You may raise issues in Japanese, however any substantive discussions should be summarised in English at some point, so that non-Japanese speakers can follow the rationale and contribute comments.**
 
@@ -44,17 +45,17 @@ You can participate in the task force work at various levels. In order of increa
 
 このタスクフォースにはいくつかの立場で参加可能です。活動を活発にするために、追跡者、貢献者、参加者、編者、議長の分類があります。それぞれの詳細は、[参加の立場](https://www.w3.org/International/i18n-drafts/pages/task_force_roles)についてのリストを参照してください。
 
-**To just follow the work:** Rather than 'Watch' this repository, [subscribe](mailto:public-jlreq-admin-request@w3.org?subject=subscribe) to the [public-jlreq-admin](https://lists.w3.org/Archives/Public/public-jlreq-admin/) mailing list. That list is notified (no more than once a day, and in digest form), about changes to issues in this repository, but also about other W3C Working Group issues related to the Japanese writing systems.
+**To just follow the work:** Rather than 'Watch' this repository, [subscribe](mailto:public-i18n-japanese-request@w3.org?subject=subscribe) to the [public-i18n-japanese](https://lists.w3.org/Archives/Public/public-i18n-japanese/) mailing list. That list is notified (no more than once a day, and in digest form), about changes to issues in this repository, but also about other W3C Working Group issues related to the Japanese writing systems.
 
-**活動を追跡だけする場合:** このレポジトリを 'Watch' するよりも、[public-jlreq-admin](https://lists.w3.org/Archives/Public/public-jlreq-admin/) メーリングリストに[参加](mailto:public-jlreq-admin-request@w3.org?subject=subscribe)してください。このリストには、このレポジトリにある issue の更新のみでなく、他の W3C Working Group の日本語に関する issue についても送信されます (最大一日一度、ダイジェスト形式です)。
+**活動を追跡だけする場合:** このレポジトリを 'Watch' するよりも、[public-i18n-japanese](https://lists.w3.org/Archives/Public/public-i18n-japanese/) メーリングリストに参加してください。このリストには、このレポジトリにある issue の更新のみでなく、他の W3C Working Group の日本語に関する issue についても送信されます (最大一日一度、ダイジェスト形式です)。
 
 **To contribute content:** All contributors should read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 **文書に貢献するには:** 全ての参加者は  [CONTRIBUTING.md](CONTRIBUTING.md) を読み、それに同意する必要があります。
 
-**To become a participant, editor, or chair:** contact [Richard Ishida](mailto:ishida@w3.org) or [木田泰夫 (Yasuo Kida)](mailto:kida@me.com). We welcome participation requests. In addition to discussions at [GitHub issues](https://github.com/w3c/jlreq/issues), this group operates discussion mailing list ([public-i18n-japanese](https://lists.w3.org/Archives/Public/public-i18n-japanese/)) in Japanese.
+**To become a participant, editor, or chair:** contact [Richard Ishida](mailto:ishida@w3.org) or [木田泰夫 (Yasuo Kida)](mailto:kida@me.com). We welcome participation requests.
 
-**参加者、編者、議長に興味がある方:** [Richard Ishida](mailto:ishida@w3.org) か [木田泰夫 (Yasuo Kida)](mailto:kida@me.com) に連絡してください。参加の申し込みを歓迎します。このグループでは、[GitHub issues](https://github.com/w3c/jlreq/issues)での議論に加えて、日本語での議論用メーリングリスト([public-i18n-japanese](https://lists.w3.org/Archives/Public/public-i18n-japanese/))を利用しています。
+**参加者、編者、議長に興味がある方:** [Richard Ishida](mailto:ishida@w3.org) か [木田泰夫 (Yasuo Kida)](mailto:kida@me.com) に連絡してください。参加の申し込みを歓迎します。
 
 To get an idea about what's involved, see  [Get involved with Language Enablement!](https://www.w3.org/International/i18n-drafts/pages/languagedev_participation). 
 
@@ -68,8 +69,7 @@ To get an idea about what's involved, see  [Get involved with Language Enablemen
 
 
 ### Links to practical information (実用的な情報へのリンク)
-- [Mail archive (メールリストアーカイブ)](https://lists.w3.org/Archives/Public/public-jlreq-admin/)
-- [Discussion list mail archive (グループ内議論メールリストのアーカイブ)](https://lists.w3.org/Archives/Public/public-i18n-japanese/)
+- [Mail archive (メールリストアーカイブ)](https://lists.w3.org/Archives/Public/public-i18n-japanese/)
 - [Writing i18n tests (国際化関連テストを作成するには)](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
 - [Practical tips for task forces (タスクフォースの実用的 tips)](https://www.w3.org/International/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
 - [Meeting info (定例会議情報)](https://www.w3.org/2021/04/jlreq-meeting-info.html)
