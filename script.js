@@ -90,6 +90,14 @@ function switchLang (lang) {
 			for (var i=0;i<els.length;i++) els[i].classList.add('hidden') 
 			}
 		})
+
+		const url = new URL(document.location);
+		const params = url.searchParams;
+		if (lang == 'all')
+			params.delete('lang', lang);
+		else
+			params.set('lang', lang);
+		history.replaceState(null, null, url.toString());
 	}
 
 
