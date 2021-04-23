@@ -94,7 +94,7 @@ function switchLang (lang) {
 
 
 
-function setFrontMatterIds () {
+function setFrontMatterIds (config, document) {
 	// adds ids to dt elements in front matter to facilitate language switching
 	
 	var dts = document.querySelectorAll('dt')
@@ -148,7 +148,7 @@ function addLangAttrs () { console.log("THIS FUNCTION IS NO LONGER NEEDED")
 	}
 
 
-function initialiseLang () {
+function initialiseLang (config, document) {
 	// if a lang= parameter is passed with the URL, show in that language
 	var parameters = location.search.split('&')
 	parameters[0] = parameters[0].substring(1)
