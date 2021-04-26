@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="local.css" />
 
-<script defer src="script.js"></script>
+<script src="script.js"></script>
 <script defer class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
 
 <script class="remove">
@@ -54,12 +54,13 @@
 		//wgPublicList: "public-i18n-cjk",
 		edDraftURI: "https://w3c.github.io/jlreq/", 
  		github: "w3c/jlreq",
+        postProcess: [setFrontMatterIds],
 		};
     </script>
 </head>
 
 
-<body onload="setFrontMatterIds(); /*addLangAttrs();*/ initialiseLang()">
+<body>
 <h1 class="title p-name" id="title">Requirements for Japanese Text Layout <br/><span lang="ja">日本語組版処理の要件（日本語版）</span></h1>
 
 <div id="abstract">
