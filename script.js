@@ -96,7 +96,8 @@ function initialiseLang () {
 			}
 		}
 	}
-window.addEventListener('DOMContentLoaded', () => { if (document.getElementById('js-respec')) {console.log('found'); } else {console.log('not-found'); initialiseLang(); }} );
+async function initialiseLang_p () { initialiseLang(); }
+window.addEventListener('DOMContentLoaded', () => { if (! document.getElementById('js-respec')) {initialiseLang(); }} );
 
 //figures = document.querySelectorAll('figure')
 //for (let i=0;i<figures.length;i++) console.log(figures[i].id)
