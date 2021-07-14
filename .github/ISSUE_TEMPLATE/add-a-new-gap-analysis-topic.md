@@ -1,6 +1,6 @@
 ---
-name: Add a new gap-analysis topic
-about: Only those in the jlreq group should use this template.
+name: Add a new gap-analysis topic / 新規項目をギャップ分析に追加する
+about: Only those in the jlreq group should use this template. / JLreq TFのメンバーのみ利用可
 title: Brief_description_of_the_problem
 labels: doc:jlreq, gap
 assignees: ''
