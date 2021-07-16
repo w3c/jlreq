@@ -1,6 +1,6 @@
 ---
-name: Ask a question
-about: Use to ask about how people use a language or script.
+name: Ask a question / 質問を投稿する
+about: Use to ask about how people use a language or script. / 言語・文字がどのように利用されているかについての質問用
 title: Short_version_of_the_question?
 labels: question
 assignees: ''
