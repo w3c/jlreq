@@ -212,49 +212,25 @@ PropList に Terminal_Punctuation がある（全角コロン、セミコロン�
 
 ### J: アルファベットとの間に空間を必要とする文字 = 仮名や漢字
 ```
-平仮名：全角、Script=Katakana、GC=L*（ヽヾが Lm、その他は Lo）注1
-片仮名：全角、Script=Katakana、GC=L*（ゝゞが Lm、その他は Lo）注1
-象形文字：全角、PropList = Ideographic, GC=Lo/Nl 注2
+・平仮名：全角、GC=L*, Script=Katakana（ヽヾが Lm、その他は Lo）
+・片仮名：全角、GC=L*, Script=Katakana（ゝゞが Lm、その他は Lo）
+・漢字、仮名漢字に準じる文字：全角、GC=L*/Nl, Script=Han/Common、長音とU+16FE3を除く（漢字、〆々〻〱〲〳〴〵〼〇、蘇州号碼）
+・漢字を含む象形文字：全角、PropList=Ideographic, GC=Lo/Nl （漢字、〆〇、蘇州号碼、女真文字、西夏文字、契丹文字）
 ```
 
-注1: GC=L* を入れないと丸で囲まれた片仮名などが捕まってしまう。GC=Lm のものは cl-09 で「簡便な行組版ルール(案)」においても和字、つまり J として扱われている。（が、大多数の cl-09 はここから漏れてしまう）
-
-注2: GC は Lo か Nl のみ。CG=Nl を外すと〇および蘇州号碼 (HANGZHOU NUMERAL) が外れる。蘇州号碼は漢数字の一部も使用するので、これが入ることは理屈に合う。この定義で〆も拾う。漢字（Script=Han）以外の Script は、Common（〆のみ）, Khitan_Small_Script, Tangut, Nushu。
+#### 議論
+- U+16FE3 OLD CHINESE ITERATION MARK は漢文の返点のようなレイアウトをする特殊な文字（https://www.unicode.org/L2/L2017/17310-n4847-two-marks.pdf）
+- 「仮名や漢字に準じる文字」の定義で全ての漢字を拾うことができるので、女真文字、西夏文字、契丹文字をこのクラスから除外するなら、この定義は不要。
+- 偏や旁のブロックは文の中では使われることを想定しておらず、文中でで使われる場合には周りの文字と紛らわしくないように何らかの約物を伴って現れると思われるのでクラスJから除外。
+- ハングル文字は klreq によると、全角の場合とプロポーショナルの場合があり、どちらでもラテン文字との間にスペースを取らない。ゆえクラスJから除外。同様にボポモフォなどEAW=F/Wでかつ象形文字でない文字も入れない。
 
 #### 新たに加わる文字
 - JIS X 0213 の範囲以外の漢字
+- くの字点の断片である〳〴〵（これらはもともと cl-08 で欧文との間に空間を作らない）
+- 蘇州号碼（蘇州で使われている漢数字）
 - 女真文字
 - 西夏文字
 - 契丹文字
-- 蘇州号碼
-
-#### 議論
-漢字や仮名と交換して使われる記号をどうするか。8/3 のミーティングで、〇 は数字の十や百などと入れ替わるので入れる、他はベタでも良いことに。ただし上の定義だと〆も J に入る。
-
-上の定義で J に入るもの
-- ゝ	U+309D	HIRAGANA ITERATION MARK (Lm, Script=Hiragana)
-- ゞ	U+309E	HIRAGANA VOICED ITERATION MARK (Lm, Script=Hiragana)
-- ヽ	U+30FD	KATAKANA ITERATION MARK (Lm, Script=Katakana)
-- ヾ	U+30FE	KATAKANA VOICED ITERATION MARK (Lm, Script=Katakana)
-- 〆	U+3006	IDEOGRAPHIC CLOSING MARK (Lo, Ideographic, Script=Common)
-- 〇	U+3007	IDEOGRAPHIC NUMBER ZERO (Nl, Ideographic, Script=Han)
-
-入らないもの cl-09（全て GC=Lm, Block = CJK Symbols and Punctuation）
-- 々	U+3005	IDEOGRAPHIC ITERATION MARK (Script=Han)
-- 〻	U+303B	VERTICAL IDEOGRAPHIC ITERATION MARK (Script=Han)
-- 〱	U+3031	VERTICAL KANA REPEAT MARK（およびその断片）(Script=Common)
-- 〲	U+3032	VERTICAL KANA REPEAT WITH VOICED SOUND MARK（およびその断片）
-
-入らないもの cl-19（全て Block = CJK Symbols and Punctuation, Script=Common）
-- 〓	U+3013	GETA MARK (GC=So)
-- 〼	U+303C	MASU MARK (GC=Lo, cl-19 かつ GC=Lo なのはこれと〆)
-- 〃	U+3003	DITTO MARK (GC=Po、つまり約物)
-
-
-偏や旁のブロックは文の中では使われることを想定しておらず、文中でで使われる場合には周りの文字と紛らわしくないように何らかの約物を伴って現れると思われる。クラス O で OK。
-
-ハングル文字は klreq によると、全角の場合とプロポーショナルの場合があり、どちらでもラテン文字との間にスペースを取らない。ゆえこのクラスに入れないのが適当。
-
 
 ### L: 漢字類との間に空間を必要とする外国語文字
 ```
@@ -264,10 +240,6 @@ PropList に Terminal_Punctuation がある（全角コロン、セミコロン�
 - JIS X 0213 にある以外のラテンアルファベット、ギリシャ文字、キリル文字
 - JIS X 0213 にある以外の数字 (GC=Nd)
 - 全ての全角でない文字（GC=L*）
-
-#### 議論
-ローマ数字など GC=Nl はここに入るべき？　桁を表す ⅬⅭⅮⅯ などローマ字そっりの字もある。
-
 
 ### O: どの文字ともベタとなる文字
 ```
