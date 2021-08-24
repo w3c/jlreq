@@ -3,26 +3,28 @@
 ### Why is UAX 50 relevant?
 As we see more vertical text on digital devices with web technologies, the stability of the glyph orientation among different web browsers and fonts is becoming more imporatnt. It was not an issue when vertical text was created primarily on word processor applications and distributed in print on paper or on PDF.
 
-## Mandatory changes
-These changes are required for AJ1 to match the glyph orientation to UAX 50
+## Changes required for AJ1 fonts to adopt UAX 50
+There are only three orientation mismatches between AJ1 and UAX 50. ¹
 
-Remove vert¹
+#### Remove vert
+The following characters rotate while UAX 50 expects upright (U). The vert feature for these characters needs to be removed to make them upright
 * U+2016	DOUBLE VERTICAL LINE (双柱) ²
-* U+2702	SCISSORS (ハサミ)³
+* U+2702	SCISSORS ³
 
-Add the rotateg glyph and vert
-* U+3030	WAVY DASH⁴
-
-U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "TR", and AJ1 is "U". They do not match. However it is not documented clearly in UAX 50, the "U" orientation is allowed for U+FF1B according to Koji Ishii. In fact "Table 2. Glyph Changes for Vertical Orientation" in UAX 50 shows both upright and rotated glyphs.
+#### Add rotated glyph
+The following character appear upright while UAX 50 expects rotation with special glyph (Tr). Add a rotated glyph, a vert feature
+* U+3030	WAVY DASH ⁴
 
 #### Note
-1. In addition AJ1 fonts would need to add an appropriate table to make the original rotated glyphs accessible via a feature
-2. DOUBLE VERTICAL LINE (双柱) is used as a separator. So, the expectation is that it is rotated in vertical text. c.f. 句読点、記号・符号活用辞典 (punctuation dictionary) by Shogakkan.
-3. This character is emoji-like and therefore the reasonable expectation would be "U"
-4. This is a dash, and therefore the reasonable expectation would be "R"
+1. There is one more mismatch but it seems it is OK. U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "Tr", and AJ1 is "U". According to Koji Ishii, the "U" orientation is allowed for U+FF1B. The "Table 2. Glyph Changes for Vertical Orientation" in UAX 50 shows both upright and rotated glyphs. As it is not clear from the document, probably it should be improved.
+2. As DOUBLE VERTICAL LINE is a separator, "R" would be the natural expectation. c.f. 句読点、記号・符号活用辞典 (punctuation dictionary) by Shogakkan.
+3. As SCISSORS is emoji-like, "U" would be the natural expectation.
+4. As WAVY DASH is a dash, "R" would be the natural expectation.
 
-## Long term effects
-### Proportional glyphs are expected
+## Impacts of applications adopting UAX 50
+Significant number of characters change thier orientation because of the change of the application behaviour. Most of the changes look reasonable. Nonetheless the document layout based on UAX 50 is not compatible with existing one. It also has an impact to fonts, because the change of the character orientation changes the natural expectation for the character width, i.e. usually rotated glyphs are expected to be proportional. However it is not a necessary change for fonts to adopt UAX 50, adoption by applications will have such an impact on them.
+
+#### Proportional glyphs are generally expected to these characters
 これらの文字は UAX#50 対応アプリケーションが回転させる。従来正立だったものが欧文扱いになるため、プロポーショナル幅が期待される。
 環境がJISで閉じていた時代と異なり、複合フォントで構成される国際化システムにおいて、これらの文字全てを日本語フォントが持ち続ける必要があるのか、再考の余地がある。
 * ギリシア文字
@@ -32,7 +34,9 @@ U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "TR", and AJ1 is "U". They do not ma
 
 文字のリストは Appendix 1 を参照。
 
-#### 使われなくなるvert
+#### vert feature for these characters will no longer be used
+As long as applications rotates them at the center correctly, there will be no impacts.
+
 これらの文字は、AJ1フォントが全角中心で回転されることを保証するために vert で回転している文字たち。事実上 R であり、文字方向は UAX#50 と一致している。UAX#50 対応アプリケーションはこれらの文字をアプリケーションが回転させ、vert を使わない。
 - ハイフンなどの欧文約物
 - 矢印
@@ -41,66 +45,6 @@ U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "TR", and AJ1 is "U". They do not ma
 
 文字のリストは Appendix 3 参照
 
-## 上記変更を行わない場合の UAX#50 対応アプリケーションにおける AJ1 フォントの問題点
-
-UAX#50 の期待に反して回転になる文字
-* U+2016	双柱, DOUBLE VERTICAL LINE
-* U+2702	ハサミ
-
-UAX#50 の期待に反して正立になる文字
-* U+3030	WAVY DASH
-
-「対応には必須ではないが、長期的に期待される変更点」に対応する文字は全角のまま横転となるが、それ以外の問題はない
-「使われなくなるvert」は残しておいても単に使われず害なし
-
-## UAX#50に対応するメリット、デメリット
-
-メリット
-* 全ての対応が完了すると、どのアプリケーション & フォントの組み合わせでも同一の結果が期待できる
-* 変更の内容の多くは国際化システムから見て合理的に思える
-
-デメリット
-* 一言で言うと社会的コストが大きい
-  * フォントの縦書き文字の方向ほ変更は互換性のために不可能であるので、別のフォント名を持った新しい商品を作る必要がある。開発および商品ラインアップを増やすコスト
-  * UAX#50 の目標達成のためには、ユーザーが所有するフォントを全て入れ替える必要がある。そのコスト及び移行にかかる期間の問題
-  * 移行期間中、一時的に不統一が拡大する。対応／非対応アプリケーション、対応／非対応フォント、の四つの組み合わせができる
-
-## UAX#50への対応にかかる社会的コストを下げる提案
-
-対応に必須な変更が4文字なので、逆に言うと、 これら4文字の UAX#50 の定義を変更することで AJ1 フォントを as-is で UAX#50 対応とすることができる。
-つまり日本の主なフォントが一挙に UAX#50 対応になる。
-
-#### U+2016	双柱, DOUBLE VERTICAL LINE
-- AJ1: R もしくは Tr 相当。vert が横書き字形を機械的に回転した字形を指している
-- アプリケーション：InDesign は vert を使わず回転（R 動作）。ブラウザはブラウザとフォントの組み合わせで複雑にバラバラ
-- フォント（mac）：和文書体以外に Times や Helvetica を含む多くの欧文フォントがこの文字を持っている
-- 現状のUAX#50: U
-
-提案：UAX#50 を R に変更する
-
-#### U+2702	ハサミ
-- AJ1: R もしくは Tr 相当。vert が横書き字形を機械的に回転した字形を指している
-- アプリケーション：InDesign は回転？　ブラウザとフォントの組み合わせで複雑にバラバラ。 U+2016 の方向と同一
-- フォント（mac）：Apple Emoji が下向きである以外は、和文書体、Arial Unicode、Zapf Dingbats がこの文字を持っていて全て右向き。絵文字的なのでUが本来ではある
-- 現状のUAX#50: U
-
-提案 A：UAX#50 を R に変更する
-提案 B：もしくは、U+FF1A/B 全角コロンとセミコロンが Tr だが U/Tu 実装を例外的に許容しているのと同じ扱いにし、本来は U だが、Tu / Tr 動作を許容する
-
-#### U+3030	WAVY DASH
-- AJ1: U。vert なし
-- アプリケーション：InDesign 正立。ブラウザはほぼ回転。Chrome はフォントに関わらず正立
-- フォント（mac）：Apple Emoji、他は全て和文書体
-- 現状のUAX#50: Tr。フォントが vert を持っていて回転されることを期待
-
-提案：UAX#50 を R にしてアプリケーションに回転させる、もしくは U/Tu に変更して正立させる、ことで互換性を取ることができる。R がより広く実質的な互換性を確保できる
-
->参考情報
->文字の性質：石井さんによると、一部のフォントは回転かつ反転している。その動作を保存する必要のある場合のために Tr になっているとのこと。
->村上さんによると、そのようなフォントはMS明朝などに限られ例外的とのこと
-
-
-## この提案の与える影響と残る課題
 上記の提案によって AJ1 フォントは変更なしで UAX#50 対応となる。
 ただしアプリケーションが UAX#50 に対応することで、文字によって縦書き字形が変わる場合のあることに注意する必要がある。
 これは字形の選択がアプリケーションとフォントの協調によって決まるからである。
@@ -121,6 +65,53 @@ R|Tr|回転 → UAX#50の期待に反する正立|全角セミコロン、WAVY D
 
 アプリケーションへの影響は文書互換性。レイアウトを保つことが重要なアプリケーションでは、UAX#50 に対応する際に UAX#50 モードを導入するなどの対応が必要になるかもしれない。
 CSS にも同様なスイッチが必要になる可能性がある。この場合、UAX#50 とJIS互換モードの切り替えになるが、このJIS互換モード、の定義が必要となろう。
+
+## Issues that are blocking the adoption
+
+メリット
+* 全ての対応が完了すると、どのアプリケーション & フォントの組み合わせでも同一の結果が期待できる
+* 変更の内容の多くは国際化システムから見て合理的に思える
+
+デメリット
+* 一言で言うと社会的コストが大きい
+  * フォントの縦書き文字の方向ほ変更は互換性のために不可能であるので、別のフォント名を持った新しい商品を作る必要がある。開発および商品ラインアップを増やすコスト
+  * UAX#50 の目標達成のためには、ユーザーが所有するフォントを全て入れ替える必要がある。そのコスト及び移行にかかる期間の問題
+  * 移行期間中、一時的に不統一が拡大する。対応／非対応アプリケーション、対応／非対応フォント、の四つの組み合わせができる
+
+## A proposal to reduce the UAX 50 adoption cost
+
+対応に必須な変更が4文字なので、逆に言うと、 これら4文字の UAX#50 の定義を変更することで AJ1 フォントを as-is で UAX#50 対応とすることができる。
+つまり日本の主なフォントが一挙に UAX#50 対応になる。
+
+#### U+2016	双柱, DOUBLE VERTICAL LINE
+- AJ1: R もしくは Tr 相当。vert が横書き字形を機械的に回転した字形を指している
+- アプリケーション：InDesign は vert を使わず回転（R 動作）。ブラウザはブラウザとフォントの組み合わせで複雑にバラバラ
+- フォント（mac）：和文書体以外に Times や Helvetica を含む多くの欧文フォントがこの文字を持っている
+- 現状のUAX#50: U
+
+提案：UAX#50 を R に変更する
+
+#### U+2702	SCISSORS
+- AJ1: R もしくは Tr 相当。vert が横書き字形を機械的に回転した字形を指している
+- アプリケーション：InDesign は回転？　ブラウザとフォントの組み合わせで複雑にバラバラ。 U+2016 の方向と同一
+- フォント（mac）：Apple Emoji が下向きである以外は、和文書体、Arial Unicode、Zapf Dingbats がこの文字を持っていて全て右向き。絵文字的なのでUが本来ではある
+- 現状のUAX#50: U
+
+提案 A：UAX#50 を R に変更する
+提案 B：もしくは、U+FF1A/B 全角コロンとセミコロンが Tr だが U/Tu 実装を例外的に許容しているのと同じ扱いにし、本来は U だが、Tu / Tr 動作を許容する
+
+#### U+3030	WAVY DASH
+- AJ1: U。vert なし
+- アプリケーション：InDesign 正立。ブラウザはほぼ回転。Chrome はフォントに関わらず正立
+- フォント（mac）：Apple Emoji、他は全て和文書体
+- 現状のUAX#50: Tr。フォントが vert を持っていて回転されることを期待
+
+提案：UAX#50 を R にしてアプリケーションに回転させる、もしくは U/Tu に変更して正立させる、ことで互換性を取ることができる。R がより広く実質的な互換性を確保できる
+
+>参考情報
+>文字の性質：石井さんによると、一部のフォントは回転かつ反転している。その動作を保存する必要のある場合のために Tr になっているとのこと。
+>村上さんによると、そのようなフォントはMS明朝などに限られ例外的とのこと
+
 
 ## Apppendix
 
