@@ -1,26 +1,27 @@
-# Analysis of changes required for AJ1 Japanese fonts to adopt UAX#50
+# Analysis of changes required for Adobe-Japan1 (AJ1) Japanese fonts to adopt UAX#50
 
-### UAX#50の背景
-印刷からデジタルテキストへ、モデルの移行が UAX#50 の必要になる要因である。
-印刷モデルでは作成者の画面上の結果を紙や PDF に固定して受け取り手に送るので、フォントやアプリケーション間で動作がバラバラでも困らなかった。
-Web や EPUB などのデジタルテキストでは、受け取り手において組版、描画されるので、アプリケーションやフォントに依存せず同じ結果を得られる必要がある。
+### Why is UAX 50 relevant?
+As we see more vertical text on digital devices with web technologies, the stability of the glyph orientation among different web browsers and fonts is becoming more imporatnt. It was not an issue when vertical text was created primarily on word processor applications and distributed in print on paper or on PDF, because rendering results are fixed at the time of authornig.
 
-## AJ1フォントがUAX#50に対応するために、必須の、及び必須でない変更点
-### 縦書き字形をUAX#50の期待する方向に合わせるために必須の変更¹
-vert を取り除く
-* U+2016	双柱, DOUBLE VERTICAL LINE²
-* U+2702	ハサミ³
+## Mandatory changes and long term effects for AJ1 fonts to adopt UAX 50
 
-90度回転した縦書き字形への vert を加える
+### Mandatory changes
+These are required for AJ1 to match the glyph orientation to UAX 50
+
+Remove vert¹
+* U+2016	DOUBLE VERTICAL LINE (双柱) ²
+* U+2702	SCISSORS (ハサミ)³
+
+Add the rotateg glyph and vert
 * U+3030	WAVY DASH⁴
 
-U+FF1B 全角セミコロンは UAX#50=Tr, AJ1=U なので食い違いがある。石井さんによると明確にドキュメントされていないが UAX#50 において全角コロンとセミコロンは例外で U/Tu 動作が許容されているとのこと。ゆえ U のままで UAX#50 適合。
+U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "TR", and AJ1 is "U". They do not match. However it is not documented clearly in UAX 50, the "U" orientation is allowed for U+FF1B according to Koji Ishii. In fact "Table 2. Glyph Changes for Vertical Orientation" in UAX 50 shows both upright and rotated glyphs.
 
-#### 注
-1. これらの変更に従って、元のグリフを得るための適切な OpenType テーブルを加える必要があるかもしれない
-2. ただし、小学館の「句読点、記号・符号活用辞典」によるとこの文字は区切りとして使われる。その場合縦書きで回転する現在の AJ1 の動作が合理的に思われる
-3. この文字は絵文字的であり、フォントによって方向が異なる。絵文字的な文字と考えて、正立が合理的だと思われる
-4. Dash であるので UAX#50 の回転が合理的だと思われる
+#### Note
+1. In addition AJ1 fonts would need to add an appropriate feature to make rotated glyphs accessible.
+2. DOUBLE VERTICAL LINE (双柱) is used as a separator. So, the expectation is that it is rotated in vertical text. c.f. 句読点、記号・符号活用辞典 (punctuation dictionary) by Shogakkan.
+3. This character is emoji-like and therefore the reasonable expectation would be "U"
+4. This is a dash, and therefore the reasonable expectation would be "R"
 
 ### 対応には必須ではないが、長期的に期待される変更点
 これらの文字は UAX#50 対応アプリケーションが回転させる。従来正立だったものが欧文扱いになるため、プロポーショナル幅が期待される。
