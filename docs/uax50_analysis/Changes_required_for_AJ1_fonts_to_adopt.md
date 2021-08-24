@@ -1,12 +1,10 @@
-# Analysis of changes required for Adobe-Japan1 (AJ1) Japanese fonts to adopt UAX#50
+# Analysis of changes required for Adobe-Japan1 (AJ1) Japanese fonts to adopt UAX 50
 
 ### Why is UAX 50 relevant?
-As we see more vertical text on digital devices with web technologies, the stability of the glyph orientation among different web browsers and fonts is becoming more imporatnt. It was not an issue when vertical text was created primarily on word processor applications and distributed in print on paper or on PDF, because rendering results are fixed at the time of authornig.
+As we see more vertical text on digital devices with web technologies, the stability of the glyph orientation among different web browsers and fonts is becoming more imporatnt. It was not an issue when vertical text was created primarily on word processor applications and distributed in print on paper or on PDF.
 
-## Mandatory changes and long term effects for AJ1 fonts to adopt UAX 50
-
-### Mandatory changes
-These are required for AJ1 to match the glyph orientation to UAX 50
+## Mandatory changes
+These changes are required for AJ1 to match the glyph orientation to UAX 50
 
 Remove vert¹
 * U+2016	DOUBLE VERTICAL LINE (双柱) ²
@@ -18,12 +16,13 @@ Add the rotateg glyph and vert
 U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "TR", and AJ1 is "U". They do not match. However it is not documented clearly in UAX 50, the "U" orientation is allowed for U+FF1B according to Koji Ishii. In fact "Table 2. Glyph Changes for Vertical Orientation" in UAX 50 shows both upright and rotated glyphs.
 
 #### Note
-1. In addition AJ1 fonts would need to add an appropriate feature to make rotated glyphs accessible.
+1. In addition AJ1 fonts would need to add an appropriate table to make the original rotated glyphs accessible via a feature
 2. DOUBLE VERTICAL LINE (双柱) is used as a separator. So, the expectation is that it is rotated in vertical text. c.f. 句読点、記号・符号活用辞典 (punctuation dictionary) by Shogakkan.
 3. This character is emoji-like and therefore the reasonable expectation would be "U"
 4. This is a dash, and therefore the reasonable expectation would be "R"
 
-### 対応には必須ではないが、長期的に期待される変更点
+## Long term effects
+### Proportional glyphs are expected
 これらの文字は UAX#50 対応アプリケーションが回転させる。従来正立だったものが欧文扱いになるため、プロポーショナル幅が期待される。
 環境がJISで閉じていた時代と異なり、複合フォントで構成される国際化システムにおいて、これらの文字全てを日本語フォントが持ち続ける必要があるのか、再考の余地がある。
 * ギリシア文字
@@ -33,7 +32,7 @@ U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "TR", and AJ1 is "U". They do not ma
 
 文字のリストは Appendix 1 を参照。
 
-### 使われなくなるvert
+#### 使われなくなるvert
 これらの文字は、AJ1フォントが全角中心で回転されることを保証するために vert で回転している文字たち。事実上 R であり、文字方向は UAX#50 と一致している。UAX#50 対応アプリケーションはこれらの文字をアプリケーションが回転させ、vert を使わない。
 - ハイフンなどの欧文約物
 - 矢印
