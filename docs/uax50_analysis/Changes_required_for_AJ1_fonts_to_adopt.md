@@ -1,7 +1,7 @@
 # Analysis of changes required for Adobe-Japan1 (AJ1) Japanese fonts to adopt UAX 50
 
 ### Why is UAX 50 relevant?
-As we see more vertical text on digital devices with web technologies, the stability of the glyph orientation among different web browsers and fonts is becoming more imporatnt. It was not an issue when vertical text was created primarily on word processor applications and distributed in print on paper or on PDF.
+As we see more vertical text on digital devices with web technologies, the stability of the glyph orientation among different web browsers and fonts is becoming more critical. It was not an issue when the vertical text was created primarily on word processor applications and distributed in print on paper or PDF.
 
 ## Changes required for AJ1 fonts to adopt UAX 50
 There are three orientation mismatches between AJ1 and UAX 50. ¹
@@ -12,17 +12,17 @@ The following characters rotate while UAX 50 expects upright (U). The vert featu
 * U+2702	SCISSORS ³
 
 #### Add rotated glyph
-The following character appear upright while UAX 50 expects rotation with special glyph (Tr). Add a rotated glyph, a vert feature
+The following character appears upright while UAX 50 expects rotation with a special glyph (Tr). Add a rotated glyph, a vert feature
 * U+3030	WAVY DASH ⁴
 
 #### Note
-1. There is one more mismatch but it seems it is OK. U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "Tr", and AJ1 is "U". According to Koji Ishii, the "U" orientation is allowed for U+FF1B. The "Table 2. Glyph Changes for Vertical Orientation" in UAX 50 shows both upright and rotated glyphs. As it is not clear from the document, the documentatino would need be improved.
+1. There is one more mismatch, but it seems it is OK. U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "Tr", and AJ1 is "U". According to Koji Ishii, the "U" orientation is allowed for U+FF1B. The "Table 2. Glyph Changes for Vertical Orientation" in UAX 50 shows both upright and rotated glyphs. As it is not clear from the document, the documentation would need to be improved.
 2. As DOUBLE VERTICAL LINE is a separator, "R" would be the natural expectation. c.f. 句読点、記号・符号活用辞典 (punctuation dictionary) by Shogakkan.
 3. As SCISSORS is emoji-like, "U" would be the natural expectation.
 4. As WAVY DASH is a dash, "R" would be the natural expectation.
 
 ## Impacts of applications adopting UAX 50
-Significant number of characters change thier orientation because of the change of the application behaviour. Most of the changes look reasonable. Nonetheless the document layout based on UAX 50 is not compatible with existing one. It also has an impact to fonts, because the change of the character orientation changes the natural expectation for the character width, i.e. usually rotated glyphs are expected to be proportional. However it is not a necessary change for fonts to adopt UAX 50, adoption by applications will have such an impact on them.
+A significant number of characters change their orientation because of the change of the application behaviour. Most of the changes look reasonable. Nonetheless, the document layout based on UAX 50 is not compatible with the existing one. It also impacts fonts because people expect rotated glyphs to be proportional. While changing glyphs is not necessary to adopt UAX 50, application adoption will affect them long-term.
 
 #### Proportional glyphs are generally expected to these characters
 これらの文字は UAX#50 対応アプリケーションが回転させる。従来正立だったものが欧文扱いになるため、プロポーショナル幅が期待される。
