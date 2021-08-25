@@ -22,17 +22,15 @@ The following character appears upright while UAX 50 expects rotation with a spe
 4. As WAVY DASH is a dash, "R" would be the natural expectation.
 
 ## Impacts of applications adopting UAX 50
-A significant number of characters change their orientation because of the change of the application behaviour. Most of the changes look reasonable. Nonetheless, the document layout based on UAX 50 is not compatible with the existing one. It also impacts fonts because people expect rotated glyphs to be proportional. While changing glyphs is not necessary to adopt UAX 50, application adoption will affect them long-term.
+A significant number of characters change their orientation because of the change of the application behaviour. Most of the changes look reasonable. Nonetheless, the document layout based on UAX 50 is not compatible with the existing one. It also impacts fonts because changing orientation also changes the semantic of the character. Generally speaking, it is a part of the phrase when a character is upright. When characters are rotated, it is part of an inserted foreign language, and proportional glyphs are expected. While changing the glyph width is not necessary for fonts to adopt UAX 50, adoption by applications might affect them long-term.
 
 #### Proportional glyphs are generally expected to these characters
-これらの文字は UAX#50 対応アプリケーションが回転させる。従来正立だったものが欧文扱いになるため、プロポーショナル幅が期待される。
-環境がJISで閉じていた時代と異なり、複合フォントで構成される国際化システムにおいて、これらの文字全てを日本語フォントが持ち続ける必要があるのか、再考の余地がある。
-* ギリシア文字
-* キリール文字
-* 算術記号（ただし、ヒラギノは現在でもプロポーショナル）
-* 矢印の一部など
-
-文字のリストは Appendix 1 を参照。
+These characters are rotated by applications when they adopt UAX 50. As a result, proportional glyphs are generally expected. Most of them are characters of foreign scripts or math symbols, and many of them do not frequently appear in Japanese text. As modern internationalized systems employ multiple fonts to cover multiple scripts, Japanese fonts do not necessarily cover these scripts. It might be worth considering if Japanese fonts need to keep having these characters.
+- Greek
+- Cyrillic
+- Math symbols (these are already proportional in some Japanese fonts)
+- Other symbols
+See Appendix 1 for the list of characters.
 
 #### vert feature for these characters will no longer be used
 As long as applications rotates them at the center correctly, there will be no impacts.
