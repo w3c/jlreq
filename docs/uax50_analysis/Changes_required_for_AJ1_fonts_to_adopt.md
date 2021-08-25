@@ -25,7 +25,7 @@ The following character appears upright while UAX 50 expects rotation with a spe
 A significant number of characters change their orientation because of the change of the application behaviour. Most of the changes look reasonable. Nonetheless, the document layout based on UAX 50 is not compatible with the existing one. It also impacts fonts because changing orientation also changes the semantic of the character. Generally speaking, it is a part of the phrase when a character is upright. When characters are rotated, it is part of an inserted foreign language, and proportional glyphs are expected. While changing the glyph width is not necessary for fonts to adopt UAX 50, adoption by applications might affect them long-term.
 
 #### Proportional glyphs are generally expected to these characters
-These characters are rotated by applications when they adopt UAX 50. As a result, proportional glyphs are generally expected. Most of them are characters of foreign scripts or math symbols, and many of them do not frequently appear in Japanese text. As modern internationalized systems employ multiple fonts to cover multiple scripts, Japanese fonts do not necessarily cover these scripts. It might be worth considering if Japanese fonts need to keep having these characters.
+These characters are rotated by applications when they adopt UAX 50. As a result, proportional glyphs are generally expected.　Most of them are characters of foreign scripts or math symbols, and most of them, except a few, do not frequently appear in Japanese text. As modern internationalized systems employ multiple fonts to cover multiple scripts, Japanese fonts do not necessarily cover these scripts. It might be worth considering if Japanese fonts need to keep having these characters.
 - Greek
 - Cyrillic
 - Math symbols (these are already proportional in some Japanese fonts)
@@ -33,15 +33,9 @@ These characters are rotated by applications when they adopt UAX 50. As a result
 See Appendix 1 for the list of characters.
 
 #### vert feature for these characters will no longer be used
-As long as applications rotates them at the center correctly, there will be no impacts.
+There will be no impacts as long as applications rotates glyphs correctly at the center. See Appendix 3 for the list of characters.
 
-これらの文字は、AJ1フォントが全角中心で回転されることを保証するために vert で回転している文字たち。事実上 R であり、文字方向は UAX#50 と一致している。UAX#50 対応アプリケーションはこれらの文字をアプリケーションが回転させ、vert を使わない。
-- ハイフンなどの欧文約物
-- 矢印
-- 大きな括弧の断片
-- 罫線素片
 
-文字のリストは Appendix 3 参照
 
 上記の提案によって AJ1 フォントは変更なしで UAX#50 対応となる。
 ただしアプリケーションが UAX#50 に対応することで、文字によって縦書き字形が変わる場合のあることに注意する必要がある。
