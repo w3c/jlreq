@@ -1,94 +1,26 @@
 # Analysis of changes required for Adobe-Japan1 (AJ1) Japanese fonts to adopt UAX 50
 
 ### Why is UAX 50 relevant?
-As we see more vertical text on digital devices with web technologies, the stability of the glyph orientation among different web browsers and fonts is becoming more critical. It was not an issue when the vertical text was created primarily on word processor applications and distributed in print on paper or PDF.
+When the vertical text was created primarily on word processor applications and distributed in print on paper or PDF, the stability of glyph orientation was so much of an issue. As we see, however, more vertical text on digital devices with web technologies, the stability of the glyph orientation among different web browsers and fonts is becoming important, and especially with EPUB it is critical.
 
 ## Changes required for AJ1 fonts to adopt UAX 50
-There are three orientation mismatches between AJ1 and UAX 50. ¹
+There are four orientation mismatches between AJ1 and UAX 50.
 
 #### Remove vert
-The following characters rotate (Tr) while UAX 50 expects upright (U). The vert feature for these characters needs to be removed to make them upright
-* ‖ U+2016 DOUBLE VERTICAL LINE (双柱) ²
-* ✂ U+2702	SCISSORS ³
+The following characters rotate (Tr) with AJ1 fonts while UAX 50 expects upright (U). The vert feature for these characters need to be removed to make them upright
+- ‖ U+2016 DOUBLE VERTICAL LINE (双柱) ¹
+- ✂ U+2702	SCISSORS ²
 
 #### Add rotated glyph
 The following character appears upright (U) while UAX 50 expects rotation with a special glyph (Tr). Add a rotated glyph, a vert feature
-* 〰 U+3030	WAVY DASH ⁴
+- 〰 U+3030	WAVY DASH ³
+- ； FULLWIDTH SEMICOLON ⁴
 
 #### Note
-1. There is one more, but it seems it is OK. U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "Tr", and AJ1 is "U". However it is not clear from the UAX documentation, according to Koji Ishii, the "U" orientation is allowed for U+FF1B. In fact, the "Table 2. Glyph Changes for Vertical Orientation" in UAX 50 shows both upright and rotated glyphs.
-2. As DOUBLE VERTICAL LINE is a separator, "R" would be the natural expectation. c.f. 句読点、記号・符号活用辞典 (punctuation dictionary) by Shogakkan.
-3. As SCISSORS is emoji-like, "U" would be the natural expectation.
-4. As WAVY DASH is a dash, "R" would be the natural expectation.
-
-## Impacts of applications adopting UAX 50
-Independently, a significant number of characters can change their orientation when applications adopt UAX 50.
-
-Current↓ \ UAX→|R|Tr|Tu|U
---|--|--|--|--
-R |√|v:F  |v:F |v:F
-Tr|R:(′″) |√|Tr:F|Tr:F(‖✂)
-Tu|R:2 |Tu:F1|√|√
-U |R:!! |U:F(〰)|√|√
-
-
-
-
-Current|UAX 50|影響|文字の例
-----|-----|----|------
-U/Tu|R|全角文字が回転。影響の大きいカテゴリ|ギリシャ文字、キリル文字、数学記号など。Appendix 1
-Tr|R|回転された縦書き字形の調整が不可能になる|問題となる文字は知られていない。上記「使われなくなるvert」参照
-U/Tu|Tr||(U+3030	WAVY DASH)
-Tr|U/Tu|この例は知られていない。
-
-R|U/Tu|アプリケーションが回転 → vertがないので正立|若干の約物、分数、数学記号など。Appendix 2
-R|Tr|回転 → UAX#50の期待に反する正立|(全角セミコロン、WAVY DASH。上記提案のUAX#50の変更で解決)
-
-
-
-Applications for the publishing market are affected the most, and web browsers with less extent. The impact is mainly because UAX 50 rotates characters that have been traditionally upright in Japanese layout. Such characters include Greek, Cyrillic, math operators and some other symbols. The change itself looks reasonable for most cases.
-
-Nonetheless, the document layout based on UAX 50 is not compatible with the existing one due to the change. It also impacts fonts because changing orientation also changes the subtle semantic of the character. Generally speaking, it is a part of the phrase when a character is upright. Rotated characters are a part of inserted foreign words, and proportional glyphs are expected. While changing the glyph width is not necessary for fonts to adopt UAX 50, adoption by applications would affect them long-term.
-
-#### Characters that have been traditionally upright but rotated with UAX 50
-- Greek
-- Cyrillic
-- Math symbols (these are already proportional in some Japanese fonts)
-- Other symbols
-See Appendix 1 for the list of characters.
-
-#### Characters that have been traditionally rotated but upright with UAX 50
-
-
-#### vert entries that are no longer be used
-There will be no impacts as long as applications rotates glyphs correctly at the center. See Appendix 3 for the list of characters.
-
-AJ1 で U+2032, U+2033 は Tr 動作に見える
-
-
-上記の提案によって AJ1 フォントは変更なしで UAX#50 対応となる。
-ただしアプリケーションが UAX#50 に対応することで、文字によって縦書き字形が変わる場合のあることに注意する必要がある。
-これは字形の選択がアプリケーションとフォントの協調によって決まるからである。
-簡単に言うと、アプリケーションは、文字が UAX#50 用語で言うところの R である場合には自ら回転させ、その他の場合にはフォントに従う。
-ゆえ、アプリケーションが UAX#50 に対応することで R への変更または R からの変更のある文字の縦書き字形に影響がある。以下にまとめる。
-
-現状|UAX#50|影響|文字の例
-----|-----|----|------
-U/Tu|R|全角文字が回転。影響の大きいカテゴリ|ギリシャ文字、キリル文字、数学記号など。Appendix 1
-Tr|R|回転された縦書き字形の調整が不可能になる|問題となる文字は知られていない。上記「使われなくなるvert」参照
-R|U/Tu|アプリケーションが回転 → vertがないので正立|若干の約物、分数、数学記号など。Appendix 2
-R|Tr|回転 → UAX#50の期待に反する正立|全角セミコロン、WAVY DASH。上記提案のUAX#50の変更で解決
-
-これによりフォントへの長期的影響がある。現状全角で実装されているギリシャ文字や数学記号などはプロポーショナルに移行することが期待されるであろう。
-国際化システムにおいては、日本語文脈においても、これらの文字には他のフォントが用いられることも多い。
-日本語フォントにあるギリシア文字のセットはギリシア語を表すには不十分であるし、また数式にはもっぱら専用の数学記号フォントが用いられる。
-日本語フォントがこれらの文字を持ち続ける意味を再考する必要があろう。
-
-アプリケーションへの影響は文書互換性。レイアウトを保つことが重要なアプリケーションでは、UAX#50 に対応する際に UAX#50 モードを導入するなどの対応が必要になるかもしれない。
-CSS にも同様なスイッチが必要になる可能性がある。この場合、UAX#50 とJIS互換モードの切り替えになるが、このJIS互換モード、の定義が必要となろう。
-
-
-
+1. As DOUBLE VERTICAL LINE is a separator, "R" would be the natural expectation. c.f. 句読点、記号・符号活用辞典 (punctuation dictionary) by Shogakkan.
+2. As SCISSORS is emoji-like, "U" would be the natural expectation.
+3. As WAVY DASH is a dash, "R" would be the natural expectation.
+4. U+FF1B FULLWIDTH SEMICOLON has UAX 50 value "Tr", and AJ1 is "U". However it is not clear from the UAX documentation, according to Koji Ishii, the "U" orientation is allowed for U+FF1B. In fact, the "Table 2. Glyph Changes for Vertical Orientation" in UAX 50 shows both upright and rotated glyphs. If the glyph orientation shown with the Table 2 is a normative part of the document, this change is not necessary.
 
 ## Issues that are blocking the adoption
 
@@ -136,7 +68,75 @@ CSS にも同様なスイッチが必要になる可能性がある。この場�
 >文字の性質：石井さんによると、一部のフォントは回転かつ反転している。その動作を保存する必要のある場合のために Tr になっているとのこと。
 >村上さんによると、そのようなフォントはMS明朝などに限られ例外的とのこと
 
-## analysis of the impact of the proposal
+
+## Remaining issues
+UAX 50 orientation is achieved by the coordination of applications and fonts, i.e. both of them need to adopt to achieve the UAX 50 orientation. Generally speaking regardless of UAX 50 adoption status applications rotate glyphs when their expected orientation is R, and otherwise leave them to the font. Depending on the application's current behavior a significant number of characters can change their orientation when they adopt UAX 50. Applications for publishing market are affected the most. It is mainly because UAX 50 applications rotate characters that have been traditionally upright in Japanese layout. They include Greek, Cyrillic, some math operators and other symbols. While most changes look reasonable especially in an internationalized environment, an issue is that the document layout based on UAX 50 is not compatible with the existing one due to the change. Also, the change of the glyph orientation happens regardless of the original design intent of the glyphs in the fonts.
+
+I can think of two possible impacts:
+- Applications / CSS might need to add a switch that allows users to choose between UAX 50 layout vs traditional layout.
+- While changing the glyph design is not necessary for fonts to adopt UAX 50, adoption by applications might affect them long-term.
+
+
+
+↓Current behevior|UAX R|UAX Tr|UAX Tu|UAX U
+--|--|--|--|--
+R |OK|add Tr glyph|check glyph|check glyph
+Tr|check glyph (′″ Appendix x)|confirmed OK (「」： Appendix x)|remove vert|remove vert (‖✂)
+Tu|check glyph|add Tr glyph|confirmed OK (ぁ、Appendix x)|OK
+U |check glyph|add Tr glyph (〰；)|OK (!?)|OK
+
+
+Current|UAX 50|影響|文字の例
+----|-----|----|------
+U/Tu|R|全角文字が回転。影響の大きいカテゴリ|ギリシャ文字、キリル文字、数学記号など。Appendix 1
+Tr|R|回転された縦書き字形の調整が不可能になる|問題となる文字は知られていない。上記「使われなくなるvert」参照
+U/Tu|Tr||(U+3030	WAVY DASH)
+Tr|U/Tu|この例は知られていない。
+R|U/Tu|アプリケーションが回転 → vertがないので正立|若干の約物、分数、数学記号など。Appendix 2
+R|Tr|回転 → UAX#50の期待に反する正立|(全角セミコロン、WAVY DASH。上記提案のUAX#50の変更で解決)
+
+
+
+Applications for the publishing market are affected the most, and web browsers with less extent. The impact is mainly because UAX 50 rotates characters that have been traditionally upright in Japanese layout. Such characters include Greek, Cyrillic, math operators and some other symbols. The change itself looks reasonable for most cases.
+
+Nonetheless, the document layout based on UAX 50 is not compatible with the existing one due to the change. It also impacts fonts because changing orientation also changes the subtle semantic of the character. Generally speaking, it is a part of the phrase when a character is upright. Rotated characters are a part of inserted foreign words, and proportional glyphs are expected. While changing the glyph width is not necessary for fonts to adopt UAX 50, adoption by applications would affect them long-term.
+
+#### Characters that have been traditionally upright but rotated with UAX 50
+- Greek
+- Cyrillic
+- Math symbols (these are already proportional in some Japanese fonts)
+- Other symbols
+See Appendix 1 for the list of characters.
+
+#### Characters that have been traditionally rotated but upright with UAX 50
+
+
+#### vert entries that are no longer be used
+There will be no impacts as long as applications rotates glyphs correctly at the center. See Appendix 3 for the list of characters.
+
+AJ1 で U+2032, U+2033 は Tr 動作に見える
+
+
+上記の提案によって AJ1 フォントは変更なしで UAX#50 対応となる。
+ただしアプリケーションが UAX#50 に対応することで、文字によって縦書き字形が変わる場合のあることに注意する必要がある。
+これは字形の選択がアプリケーションとフォントの協調によって決まるからである。
+簡単に言うと、アプリケーションは、文字が UAX#50 用語で言うところの R である場合には自ら回転させ、その他の場合にはフォントに従う。
+ゆえ、アプリケーションが UAX#50 に対応することで R への変更または R からの変更のある文字の縦書き字形に影響がある。以下にまとめる。
+
+現状|UAX#50|影響|文字の例
+----|-----|----|------
+U/Tu|R|全角文字が回転。影響の大きいカテゴリ|ギリシャ文字、キリル文字、数学記号など。Appendix 1
+Tr|R|回転された縦書き字形の調整が不可能になる|問題となる文字は知られていない。上記「使われなくなるvert」参照
+R|U/Tu|アプリケーションが回転 → vertがないので正立|若干の約物、分数、数学記号など。Appendix 2
+R|Tr|回転 → UAX#50の期待に反する正立|全角セミコロン、WAVY DASH。上記提案のUAX#50の変更で解決
+
+これによりフォントへの長期的影響がある。現状全角で実装されているギリシャ文字や数学記号などはプロポーショナルに移行することが期待されるであろう。
+国際化システムにおいては、日本語文脈においても、これらの文字には他のフォントが用いられることも多い。
+日本語フォントにあるギリシア文字のセットはギリシア語を表すには不十分であるし、また数式にはもっぱら専用の数学記号フォントが用いられる。
+日本語フォントがこれらの文字を持ち続ける意味を再考する必要があろう。
+
+アプリケーションへの影響は文書互換性。レイアウトを保つことが重要なアプリケーションでは、UAX#50 に対応する際に UAX#50 モードを導入するなどの対応が必要になるかもしれない。
+CSS にも同様なスイッチが必要になる可能性がある。この場合、UAX#50 とJIS互換モードの切り替えになるが、このJIS互換モード、の定義が必要となろう。
 
 
 ## Apppendix
