@@ -1,7 +1,7 @@
 # Analysis of changes required for Adobe-Japan1 (AJ1) Japanese fonts to adopt UAX 50
 
 ### Why is UAX 50 relevant?
-When vertical text was created primarily on word processor applications, and distributed in their proprietary format or in print on paper or PDF, the stability of glyph orientation between different applications and fonts was not an issue. With web technologies, especially with EPUB, the stability of the glyph orientation is important.
+The stability of glyph orientation between different applications and fonts was not an issue when vertical text was primarily created on word processor applications, and distributed in their proprietary formats or in print on paper or PDF. With web technologies, especially with EPUB, however, the stability of the glyph orientation becomes critical.
 
 ## Changes required for AJ1 fonts to adopt UAX 50
 There are four orientation mismatches between AJ1 and UAX 50.
@@ -14,7 +14,7 @@ The following characters rotate (Tr) with AJ1 fonts while UAX 50 expects upright
 #### Add rotated glyph
 The following character appears upright (U) while UAX 50 expects rotation with a special glyph (Tr). Add a rotated glyph, a vert feature
 - 〰 U+3030	WAVY DASH ³
-- ； FULLWIDTH SEMICOLON ⁴
+- ； U+FF1B FULLWIDTH SEMICOLON ⁴
 
 #### Note
 1. As DOUBLE VERTICAL LINE is a separator, "R" would be the natural expectation. c.f. 句読点、記号・符号活用辞典 (punctuation dictionary) by Shogakkan.
@@ -24,17 +24,14 @@ The following character appears upright (U) while UAX 50 expects rotation with a
 
 ## Issues that are blocking the adoption
 
-メリット
-* 全ての対応が完了すると、どのアプリケーション & フォントの組み合わせでも同一の結果が期待できる
-* 変更の内容の多くは国際化システムから見て合理的に思える
+2015 年に UAX 50 ができたが、momentum がほぼない。
 
-デメリット
-* 一言で言うと社会的コストが大きい
+* 一言で言うと社会的コストが大きすぎる
   * フォントの縦書き文字の方向ほ変更は互換性のために不可能であるので、別のフォント名を持った新しい商品を作る必要がある。開発および商品ラインアップを増やすコスト
   * UAX#50 の目標達成のためには、ユーザーが所有するフォントを全て入れ替える必要がある。そのコスト及び移行にかかる期間の問題
   * 移行期間中、一時的に不統一が拡大する。対応／非対応アプリケーション、対応／非対応フォント、の四つの組み合わせができる
 
-## A proposal to reduce the UAX 50 adoption cost
+## A proposal to make all AJ1 fonts UAX 50 compliant as-is
 
 対応に必須な変更が4文字なので、逆に言うと、 これら4文字の UAX#50 の定義を変更することで AJ1 フォントを as-is で UAX#50 対応とすることができる。
 つまり日本の主なフォントが一挙に UAX#50 対応になる。
@@ -68,6 +65,14 @@ The following character appears upright (U) while UAX 50 expects rotation with a
 >文字の性質：石井さんによると、一部のフォントは回転かつ反転している。その動作を保存する必要のある場合のために Tr になっているとのこと。
 >村上さんによると、そのようなフォントはMS明朝などに限られ例外的とのこと
 
+#### U+FF1B	FULLWIDTH SEMICOLON
+- AJ1: U。vert なし
+- アプリケーション：InDesign 正立
+- フォント（mac）：Apple Emoji、他は全て和文書体
+- 現状のUAX#50: Tr。フォントが vert を持っていて回転されることを期待
+
+提案：UAX#50 を U/Tu に変更して正立させることで互換性を取ることができる
+
 
 ## Remaining issues
 UAX 50 orientation is achieved by the coordination of applications and fonts, i.e. both of them need to adopt to achieve the UAX 50 orientation. Generally speaking regardless of UAX 50 adoption status applications rotate glyphs when their expected orientation is R, and otherwise leave them to the font. Depending on the application's current behavior a significant number of characters can change their orientation when they adopt UAX 50. Applications for publishing market are affected the most. It is mainly because UAX 50 applications rotate characters that have been traditionally upright in Japanese layout. They include Greek, Cyrillic, some math operators and other symbols. While most changes look reasonable especially in an internationalized environment, an issue is that the document layout based on UAX 50 is not compatible with the existing one due to the change. Also, the change of the glyph orientation happens regardless of the original design intent of the glyphs in the fonts.
@@ -76,7 +81,8 @@ I can think of two possible impacts:
 - Applications / CSS might need to add a switch that allows users to choose between UAX 50 layout vs traditional layout.
 - While changing the glyph design is not necessary for fonts to adopt UAX 50, adoption by applications might affect them long-term.
 
-
+## Analysis
+Here are the complete analysis.
 
 ↓Current behevior|UAX R|UAX Tr|UAX Tu|UAX U
 --|--|--|--|--
@@ -95,11 +101,6 @@ Tr|U/Tu|この例は知られていない。
 R|U/Tu|アプリケーションが回転 → vertがないので正立|若干の約物、分数、数学記号など。Appendix 2
 R|Tr|回転 → UAX#50の期待に反する正立|(全角セミコロン、WAVY DASH。上記提案のUAX#50の変更で解決)
 
-
-
-Applications for the publishing market are affected the most, and web browsers with less extent. The impact is mainly because UAX 50 rotates characters that have been traditionally upright in Japanese layout. Such characters include Greek, Cyrillic, math operators and some other symbols. The change itself looks reasonable for most cases.
-
-Nonetheless, the document layout based on UAX 50 is not compatible with the existing one due to the change. It also impacts fonts because changing orientation also changes the subtle semantic of the character. Generally speaking, it is a part of the phrase when a character is upright. Rotated characters are a part of inserted foreign words, and proportional glyphs are expected. While changing the glyph width is not necessary for fonts to adopt UAX 50, adoption by applications would affect them long-term.
 
 #### Characters that have been traditionally upright but rotated with UAX 50
 - Greek
