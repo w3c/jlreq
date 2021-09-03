@@ -1,7 +1,7 @@
 # Analysis of changes required for Adobe-Japan1 (AJ1) Japanese fonts to adopt UAX 50
 
 ### Why is UAX 50 relevant?
-When the vertical text was created primarily on word processor applications and distributed in print on paper or PDF, the stability of glyph orientation was so much of an issue. As we see, however, more vertical text on digital devices with web technologies, the stability of the glyph orientation among different web browsers and fonts is becoming important, and especially with EPUB it is critical.
+When vertical text was created primarily on word processor applications, and distributed in their proprietary format or in print on paper or PDF, the stability of glyph orientation between different applications and fonts was not an issue. With web technologies, especially with EPUB, the stability of the glyph orientation is important.
 
 ## Changes required for AJ1 fonts to adopt UAX 50
 There are four orientation mismatches between AJ1 and UAX 50.
