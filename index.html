@@ -254,7 +254,7 @@
      <p its-locale-filter-list="ja" lang="ja">[[[#basics_of_japanese_composition]]]では，日本語組版で使用される文字の特徴，<a href="#term.vertical-writing-mode" class="termref">縦組</a>と<a href="#term.horizontal-writing-mode" class="termref">横組</a>の相違点，<a href="#term.kihon-hanmen" class="termref">基本版面</a>の設計方法及びその適用方法などについて解説する．</p>
    <p its-locale-filter-list="en" lang="en">[[[#line-composition]]] explains line composition
       methods for <a class="characterClass" href="#cl-19">ideographic (cl-19)</a>, <a class="characterClass" href="#cl-15">hiragana (cl-15)</a>, <a class="characterClass" href="#cl-16">katakana (cl-16)</a> characters and <a href="#term.punctuation-marks" class="termref">punctuation marks</a>, together with ruby
-      (inter-line pronunciation information and annotation) and <a href="#term.japanese-and-western-mixed-text-composition" class="termref">Japanese and Western mixed text composition</a>, i.e. mixtures of Japanese characters and <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>.</p>
+      (interlinear pronunciation information and annotation) and <a href="#term.japanese-and-western-mixed-text-composition" class="termref">Japanese and Western mixed text composition</a>, i.e. mixtures of Japanese characters and <a class="characterClass" href="#cl-27">Western characters (cl-27)</a>.</p>
      <p its-locale-filter-list="ja" lang="ja">[[[#line-composition]]]では，<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>，<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>及び<a href="#term.punctuation-marks" class="termref">約物</a>だけでなく文字に添えて行間に配置されるルビ処理及び<a class="characterClass" href="#cl-27">欧文用文字（cl-27）</a>を含む<a href="#term.japanese-and-western-mixed-text-composition" class="termref">和欧文混植</a>などの行の組版処理並びに行内での文字配置方法を解説する．</p>
    <p its-locale-filter-list="en" lang="en"> [[[#hanmen-design]]] describes
       construction methods and composition methods for <a href="#term.heading" class="termref">headings</a>, <a href="#term.note" class="termref">notes</a>, <a href="#term.illustrations" class="termref">illustrations</a> and <a href="#term.table" class="termref">tables</a>.</p>
@@ -1212,10 +1212,10 @@
             <p its-locale-filter-list="ja" lang="ja"><span class="index" id="d3e4234"><a href="#term.warichu" class="termref">割注</a></span>は，基本版面で設定した<a href="#term.block-direction" class="termref">行送り方向</a>の行の幅（基本版面で設定した文字サイズ）よりはみ出して配置する．この場合でも，割注の入らない部分の行間を一定にし，割注のある箇所は狭くなるようにする（[[[#fig_ad1_18]]]）．したがって，割注が入る場合は，行間をある程度大きくしておく必要がある．この他に，<span class="index" id="d3e4265"><a href="#term.tate-chu-yoko" class="termref">縦中横</a></span>，<a href="#term.superscript" class="termref">上付き</a>・<a href="#term.subscript" class="termref">下付き</a>の<span class="index" id="d3e4276"><a href="#term.ornament-characters" class="termref">添え字</a></span>などについても，行送り方向の<span class="index" id="d3e4284">行の幅よりはみ出して配置する場合</span>は，同様に扱う．なお，割注などの配置法そのものについては，[[[#line-composition]]]で解説する．</p>
           </aside>
           <figure id="fig_ad1_18"> 
-      <img its-locale-filter-list="en" src="images/img_ad1_18.png" alt="Example of inter-line processing with warichu between lines." width="268" height="512">
+      <img its-locale-filter-list="en" src="images/img_ad1_18.png" alt="Example of interlinear processing with warichu between lines." width="268" height="512">
       <img its-locale-filter-list="ja" lang="ja" src="images_ja/img_ad1_18.png" alt="割注が入った場合の行間の処理例" width="260" height="496">
             <figcaption>
-        <span its-locale-filter-list="en" lang="en">Example of inter-line processing with warichu between lines.</span>
+        <span its-locale-filter-list="en" lang="en">Example of interlinear processing with warichu between lines.</span>
         <span its-locale-filter-list="ja" lang="ja">割注が入った場合の行間の処理例</span>
         </figcaption>
 
@@ -5276,14 +5276,14 @@
       </ol>
       <p its-locale-filter-list="en" lang="en">Normally line adjustment by inter-character spacing reduction is preferred. Only when there is no spacing that can be reduced is line adjustment by inter-character
         spacing expansion applied. The reason for the preference of line adjustment by inter-character spacing reduction comes from
-        the thinking that characters in solid setting should not have more inter character spacing, if at all possible.</p>
+        the thinking that characters in solid setting should not have more inter-character spacing, if at all possible.</p>
       <p its-locale-filter-list="ja" lang="ja">通常，詰める処理（追込み処理）を優先し，それで処理できない場合は空ける処理（追出し処理）を行う．詰める処理（追込み処理）を優先するのは，ベタ組の箇所はできるだけ空けないという考え方による．</p>
       <aside class="note" id="n163">
         <p its-locale-filter-list="en" lang="en"><a href="#term.line-adjustment-by-hanging-punctuation" class="termref">Line adjustment by hanging punctuation</a> is a method of avoiding line head wrap of <a class="characterClass" href="#cl-06">full stops (cl-06)</a> and <a class="characterClass" href="#cl-07">commas (cl-07)</a>. This method is not formally defined in JIS X 4051, however JIS
           X 4051 does provide explanatory material about it. </p>
         <p its-locale-filter-list="ja" lang="ja"><a class="characterClass" href="#cl-06">句点類（cl-06）</a>及び<a class="characterClass" href="#cl-07">読点類（cl-07）</a>の行頭禁則を回避する方法として<span class="index" id="d6e2614"><a href="#term.line-adjustment-by-hanging-punctuation" class="termref">ぶら下げ組</a></span>がある．この方法は，JIS X 4051では規定していないが，その“解説”では説明が行われている．</p>
         <p its-locale-filter-list="en" lang="en"><a href="#term.line-adjustment-by-hanging-punctuation" class="termref">Line adjustment by hanging punctuation</a> is a method which is only applied to <a class="characterClass" href="#cl-06">full stops (cl-06)</a> and <a class="characterClass" href="#cl-07">commas (cl-07)</a>. These touch the <a href="#term.hanmen" class="termref">hanmen</a> and
-          are set in  a place outside the defined line length (see [[[#fig2_54]]]). This is also applied, for example, in books, in order to avoid the addition of inter character spacing and maintain  solid setting. However,
+          are set in  a place outside the defined line length (see [[[#fig2_54]]]). This is also applied, for example, in books, in order to avoid the addition of inter-character spacing and maintain  solid setting. However,
           line adjustment by hanging punctuation is not an appropriate method for dealing with a mixture of Japanese and Latin script text, since the latter principally does not apply line adjustment by hanging punctuation. In addition, there is another argument against
           line adjustment by hanging punctuation. Originally it was a method used in letterpress printing, to make the task of line
           adjustment easier. Furthermore, as shown at the end of line 1 and 5 of [[[#fig2_54]]], if possible the <a class="characterClass" href="#cl-06">full stops (cl-06)</a> or <a class="characterClass" href="#cl-07">commas (cl-07)</a> are placed at the line end (the 18th position). In DTP there are examples of hanging punctuation
@@ -5825,7 +5825,7 @@
       </aside>
       <p its-locale-filter-list="en" lang="en">Also, it can be defined for each combination of the character classes (in a two dimensional table) whether the characters
         of classes appearing in sequence allow for  a line break between them, or whether it is possible during line
-        adjustment processing to add inter character spacing between them. In JIS X 4051 these items are also shown in a two dimensional table.
+        adjustment processing to add inter-character spacing between them. In JIS X 4051 these items are also shown in a two dimensional table.
         Table 6 shows whether a line break is possible, and table 7 shows if it is possible to add inter-character spacing. </p>
       <p its-locale-filter-list="ja" lang="ja">また，文字クラスの文字・記号が並んだ場合，その字間で2行に分割が可能か，行の調整処理の際に字間を空けてよいかどうかも，各文字クラスの組合せ（2次元の表）で規定できる．このような事項についても，JIS X 4051では2次元の表で示している．2行に分割が可能かどうかは表6，行の調整処理の際に字間を空けてよいかどうかは表7に示されている．</p>
       <aside class="note" id="n197">
@@ -7007,19 +7007,19 @@
       <p its-locale-filter-list="en" lang="en">The method where the reference mark is set on the right side (vertical writing mode) or above (horizontal writing mode) is as follows (see [[[#fig3_2_12]]], [[[#fig3_2_13]]]).</p>
       <p its-locale-filter-list="ja" lang="ja"><span class="index" id="d9e1090">該当項目の右側（縦組）又は上側（横組）に配置する場合</span>は，次のようにする（[[[#fig3_2_12]]]，[[[#fig3_2_13]]]）．</p>
 <figure id="fig3_2_12"> 
-      <img its-locale-filter-list="en" src="images/img3_2_12.png" alt="An example where reference marks are set in the right inter-line space in vertical writing mode" width="260" height="345">
+      <img its-locale-filter-list="en" src="images/img3_2_12.png" alt="An example where reference marks are set in the right interlinear space in vertical writing mode" width="260" height="345">
       <img its-locale-filter-list="ja" lang="ja" src="images_ja/img3_2_12.png" alt="縦組の合印中の文字を右側の行間に配置する例" width="233" height="344">
         <figcaption>
-        <span its-locale-filter-list="en" lang="en">An example where reference marks are set in the right inter-line space in vertical writing mode</span>
+        <span its-locale-filter-list="en" lang="en">An example where reference marks are set in the right interlinear space in vertical writing mode</span>
         <span its-locale-filter-list="ja" lang="ja">縦組の合印中の文字を右側の行間に配置する例</span>
 </figcaption>
 
       </figure>
       <figure id="fig3_2_13"> 
-      <img its-locale-filter-list="en" src="images/img3_2_13.png" alt="An example where reference marks are set in inter-line space above in horizontal writing mode" width="396" height="221">
+      <img its-locale-filter-list="en" src="images/img3_2_13.png" alt="An example where reference marks are set in interlinear space above in horizontal writing mode" width="396" height="221">
       <img its-locale-filter-list="ja" lang="ja" src="images_ja/img3_2_13.png" alt="横組の合印を上側の行間に配置する例" width="347" height="220">
         <figcaption>
-        <span its-locale-filter-list="en" lang="en">An example where reference marks are set in inter-line space above in horizontal writing mode</span>
+        <span its-locale-filter-list="en" lang="en">An example where reference marks are set in interlinear space above in horizontal writing mode</span>
         <span its-locale-filter-list="ja" lang="ja">横組の合印を上側の行間に配置する例</span>
       </figcaption>
 
@@ -7665,7 +7665,7 @@
 
           </figure>
           <aside class="note" id="n249">
-            <p its-locale-filter-list="en" lang="en">Illustrations are often accompanied by <a class="termref" href="#term.caption">captions</a> or <a class="termref" href="#term.note">notes</a>. Captions are normally positioned below the illustration. Captions also frequently include illustration numbers. The <a class="termref" href="#term.character-size">character size</a> in captions is smaller than in the main text, and often a different <a class="termref" href="#term.font">font</a> is used. If the caption stretches across more than 2 lines, <a class="termref" href="#term.line-gap">inter-line spacing</a> is not too large, so that the caption looks compact. If the font of the caption is changed, the whole caption will be in
+            <p its-locale-filter-list="en" lang="en">Illustrations are often accompanied by <a class="termref" href="#term.caption">captions</a> or <a class="termref" href="#term.note">notes</a>. Captions are normally positioned below the illustration. Captions also frequently include illustration numbers. The <a class="termref" href="#term.character-size">character size</a> in captions is smaller than in the main text, and often a different <a class="termref" href="#term.font">font</a> is used. If the caption stretches across more than 2 lines, <a class="termref" href="#term.line-gap">interlinear spacing</a> is not too large, so that the caption looks compact. If the font of the caption is changed, the whole caption will be in
               a <a class="termref" href="#term.japanese-gothic-face">gothic typeface</a>, or only the illustration number will be in a gothic typeface. The latter case means a moderate emphasis of the illustration and can be used for putting the figure into the background
               (see [[[#fig3_3]]]). </p>
             <p its-locale-filter-list="ja" lang="ja">図版には，<a class="termref" href="#term.caption">キャプション</a>及び<a class="termref" href="#term.note">注</a>が付く場合が多い．<span class="index" id="d10e356"><span class="index" id="d10e357">キャプション</span></span>は，一般に図版の下側に配置する．また，キャプションには，図版番号が付く例も多い．キャプションは，本文の<a class="termref" href="#term.character-size">文字サイズ</a>よりは小さくし，<a class="termref" href="#term.font">フォント</a>も変える場合が多い．2行以上になった場合では，キャプションがまとまって見えるように<a class="termref" href="#term.line-gap">行間</a>はあまり空けないようにする．キャプションのフォントを変える場合，キャプション全体をゴシック体にする方法（[[[#fig3_3]]]の上側の例）と，図番号だけを<a class="termref" href="#term.japanese-gothic-face">ゴシック体</a>にする方法（[[[#fig3_3]]]の下側の例）がある．後者の方法は，適度に強調されるので，図版をそれほど挿入しない場合に採用できる方法である．</p>
@@ -23591,7 +23591,7 @@
             <td>基本版面</td>
             <td>kihon hanmen<br/>きほんはんめん</td>
             <td>
-              <p its-locale-filter-list="en" lang="en">The default dimensions of the main area of a typeset page specified by text direction, number of columns, character size, number of characters in a line, number of lines in a column, inter-line spacing and inter-column spacing. (JIS X 4051)</p>
+              <p its-locale-filter-list="en" lang="en">The default dimensions of the main area of a typeset page specified by text direction, number of columns, character size, number of characters in a line, number of lines in a column, interlinear spacing and inter-column spacing. (JIS X 4051)</p>
               <p its-locale-filter-list="ja" lang="ja">本の基本として設計される版面体裁．組方向，段数，文字サイズ，字詰め数，行数，行間及び段間で指定する．（JIS X 4051）</p>
             </td>
           </tr>
