@@ -23,7 +23,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 ### Related documents (関連文書)
 - [Current Status of Japanese Typography Using Web Technologies](https://www.w3.org/Submission/2017/SUBM-CSJTUWT-20170102/)
 - [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
-
+- [Directory for building block documents for discussion of next generation JLReq (次期JLReqに向けた議論用文書ディレクトリ)](docs/)
 
 ### Feedback
 Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to report issues for language support, for discussions, and to send feedback about documents. (Learn [how GitHub issues work](https://www.w3.org/International/i18n-activity/guidelines/issues.html).)
