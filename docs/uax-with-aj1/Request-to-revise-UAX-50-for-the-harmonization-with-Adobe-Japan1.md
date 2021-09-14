@@ -1,4 +1,10 @@
+# Request to revise UAX 50 for the harmonization with Adobe Japan1
+
+[W3C Japanese Layout Task Force](https://www.w3.org/groups/tf/i18n-jlreq) is a group under [W3C Internationalization Interest Group](https://www.w3.org/groups/ig/i18n) and is working to share information about gaps and requirements for support of Japanese on the Web and in eBooks. We discussed about gaps between UAX 50 and implementation of vertical glyphs in Japanese fonts. This proposal was written by the group, and is endorsed by [W3C Internationalization Working Group](https://www.w3.org/groups/wg/i18n-core) and [CITPC(Council for the Promotion of Character Information Technology)](https://moji.or.jp/).
+CITPC is a general incorporated association in Japan.  CITPC aims to enhance the interoperability of character information processing in Japan.  Most of the font vendors in Japan are members of CITPC.  
+
 ### Contributors:
+
 * Yasuo Kida (independent)
 * Taro Yamamoto (Adobe)
 * Nat McCully (Adobe)
@@ -8,9 +14,7 @@
 * Shinyu MURAKAMI (Vivliostyle)
 * MURATA Makoto (Keio University)
 
-***
-
-[CITPC(Council for the Promotion of Character Information Technology)](https://moji.or.jp/) is a general incorporated association in Japan.  CITPC aims to enhance the interoperability of character information processing in Japan.  Most of the font vendors in Japan are members of CITPC.  
+## Background
 
 [UAX 50](https://www.unicode.org/reports/tr50/) was designed as a cornerstone of vertical writing for the Web and EPUB.  CITPC is grateful to the Unicode Consortium for the timely development of UAX 50 and its ongoing maintenance.   
 
@@ -20,8 +24,9 @@ Although the technical content of UAX 50 has been fairly stable since 2015, neit
 
 CITPC would like to request the Unicode Consortium to revisit the categorization of four characters in UAX 50. Although the current categorization is sensible, its practical benefits are less significant than the adoption cost, as we see it.  If these changes are accepted, existing Japanese AJ1 fonts will become compliant with UAX 50. 
 
+## Proposal
 
-## U+2016 DOUBLE VERTICAL LINE
+### U+2016 DOUBLE VERTICAL LINE
 
 Current status in UAX#50: This character is classified as U.
 
@@ -32,7 +37,7 @@ Vertical-writing behaviors of current applications: InDesign rotates this charac
 Proposal: We propose to modify the classification of this character from U to R.  
 
 
-## U+2702 SCISSORS
+### U+2702 SCISSORS
 
 Current status in UAX#50: This character is classified as U.
 
@@ -42,7 +47,7 @@ Vertical-writing behaviors of current applications:  InDesign rotates this chara
 
 Proposal: We propose to modify the classification of this character from U to R or Tr.
 
-## U+3030 WAVY DASH
+### U+3030 WAVY DASH
 
 Current status in UAX#50: This character is classified as Tr.
 
