@@ -10,7 +10,7 @@
 
 ***
 
-[CITPC(Council for the Promotion of Character Information Technology)](https://moji.or.jo/) is a general incorporated association in Japan.  CITPC aims to enhance the interoperability of character information processing in Japan.  Most of the font vendors in Japan are members of CITPC.  
+[CITPC(Council for the Promotion of Character Information Technology)](https://moji.or.jp/) is a general incorporated association in Japan.  CITPC aims to enhance the interoperability of character information processing in Japan.  Most of the font vendors in Japan are members of CITPC.  
 
 [UAX 50](https://www.unicode.org/reports/tr50/) was designed as a cornerstone of vertical writing for the Web and EPUB.  CITPC is grateful to the Unicode Consortium for the timely development of UAX 50 and its ongoing maintenance.   
 
