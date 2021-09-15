@@ -1,6 +1,7 @@
 # Request to revise UAX 50 for the harmonization with Adobe Japan1
 
-[W3C Japanese Layout Task Force](https://www.w3.org/groups/tf/i18n-jlreq) is a group under [W3C Internationalization Interest Group](https://www.w3.org/groups/ig/i18n) and is working to share information about gaps and requirements for support of Japanese on the Web and in eBooks. We discussed about gaps between UAX 50 and implementation of vertical glyphs in Japanese fonts. This proposal was written by the group, and is endorsed by [W3C Internationalization Working Group](https://www.w3.org/groups/wg/i18n-core) and [CITPC(Council for the Promotion of Character Information Technology)](https://moji.or.jp/).
+[W3C Japanese Layout Task Force](https://www.w3.org/groups/tf/i18n-jlreq) is a group under [W3C Internationalization Interest Group](https://www.w3.org/groups/ig/i18n) and is working to share information about gaps and requirements for support of Japanese on the Web and in eBooks. We discussed about gaps between UAX 50 and implementation of vertical glyphs in Japanese fonts. This proposal was written by the group, and is endorsed by [W3C Internationalization Working Group](https://www.w3.org/groups/wg/i18n-core) and [CITPC (Council for the Promotion of Character Information Technology)](https://moji.or.jp/).
+
 CITPC is a general incorporated association in Japan.  CITPC aims to enhance the interoperability of character information processing in Japan.  Most of the font vendors in Japan are members of CITPC.  
 
 ### Contributors:
