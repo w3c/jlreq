@@ -24,7 +24,7 @@ However, there are some inconsistencies between UAX 50 and the Adobe Japan1 char
 
 Although the technical content of UAX 50 has been fairly stable since 2015, neither the Adobe Japan1 character collection nor existing AJ1 fonts have been modified according to UAX 50. Moreover, to the best of our knowledge, no font vendors in CITPC plan such modification.  We believe that there are two reasons. First, such modifications without changing font names will cause serious interoperability problems to existing documents and applications. Second, new fonts with different names will cause migration troubles such as installation burden and mismatch of new applications and old fonts.
 
-CITPC requests that the Unicode Consortium revisit the categorization of four characters in UAX 50. Although the current categorization is sensible, its practical benefits are less significant than the adoption cost, as we see it.  If these changes are accepted, existing Japanese AJ1 fonts will become compliant with UAX 50. 
+CITPC requests that the Unicode Consortium revisit the categorization of three characters in UAX 50. Although the current categorization is sensible, its practical benefits are less significant than the adoption cost, as we see it.  If these changes are accepted, existing Japanese AJ1 fonts will become compliant with UAX 50. 
 
 ## Proposal
 
