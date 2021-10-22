@@ -36,6 +36,9 @@ describe_the_results
 Why_you_chose_the_priority
 
 
+IF THIS IS NOT THE ISSUE THAT IS BEING TRACKED BY THE GAP-ANALYSIS PIPELINE, ADD A POINTER TO THAT ISSUE.  THE INITIAL BRIEF INTRO SHOULD REMAIN, AND MAY BE TAILORED WITH EXAMPLES RELEVANT TO THIS LANGUAGE.  YOU MAY, OPTIONALLY, ALSO ADD OTHER DETAILS IF THEY ARE SPECIFIC TO THIS LANGUAGE. THEN ADD THIS:
+<b class="meta">For more details, see [this GitHub issue](https://github.com/w3c/XXXX/issues/XX), which is being used to track this gap. Please add any discussion there, and not to this issue.</b>
+
 
 TEXT FOR THE SECOND COMMENT FIELD: ADAPT THE LINKS AS NEEDED; IF THE DOCS SPAN REPOS, BOLD THE ONE THAT IS REFERRED TO FROM THE PIPELINE
 _The first comment in this issue contains text that will automatically appear in one or more gap-analysis documents as a subsection with the same title as this issue. Any edits made to that comment will be immediately available in the document. Proposals for changes or discussion of the content can be made in comments below this point._
