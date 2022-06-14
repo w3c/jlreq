@@ -19,6 +19,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 - [**Japanese Gap Analysis （日本語ギャップ分析）**](https://www.w3.org/TR/jpan-gap) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/gap-analysis/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/gap-analysis/index.html) • [*Edit on GitHub (GitHub上の問題点リストの編集)*](https://github.com/w3c/jlreq/labels/doc%3Ajlreq)
 - [**Requirements for Japanese Text Layout (日本語組版処理の要件)**](https://www.w3.org/TR/jlreq) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/index.html)
 - [**Rules for Simple Placement of Japanese Ruby (ルビの簡便な配置ルール)**](https://www.w3.org/TR/simple-ruby/) • [*Editor's draft (編集草案)*](https://w3c.github.io/simple-ruby/) • [*Latest commits (直近の更新)*](https://github.com/w3c/simple-ruby/commits/gh-pages/index.html)
+- [**Requirements for Japanese Digital Text Layout (日本語デジタルテキストの組版要件)**](https://github.com/w3c/jlreq-d) • [*draft Table of Contents (目次案)*](https://github.com/w3c/jlreq-d/wiki/jlreq-d-ToC-draft)
 
 ### Related documents (関連文書)
 - [Current Status of Japanese Typography Using Web Technologies](https://www.w3.org/Submission/2017/SUBM-CSJTUWT-20170102/)
