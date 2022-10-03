@@ -165,6 +165,8 @@ Decomposition Type が vertical や small でない
 普通の全角かつ General Category = Ps (Open_Punctuation: an opening punctuation mark (of a pair))
 ```
 
+[文字リスト](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5B%3AGeneral_Category+%3D+Ps%3A%5D+%26+%5B%5B%3A+East_Asian_Width+%3D+W+%3A%5D+%5B%3A+East_Asian_Width+%3D+F+%3A%5D%5D+%26+%5B%3ADecomposition_Type+%21%3D+vertical+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+small+%3A%5D%0D%0A&g=&i=)
+
 #### 新たに加わる文字
 新規に下二つの文字が加わる。どれもEAW全角で、手元の環境ではグリフ前半に半角空白があり、クラス B に含めて問題がなさそうだが、要確認。
 - 〈	U+2329	LEFT-POINTING ANGLE BRACKET
@@ -179,6 +181,8 @@ General Category = Pe（終わり括弧類）
 PropList に Terminal_Punctuation がある (cl-06, 07)（これらは GC=Po）（句読点）
 ］
 ```
+
+[文字リスト](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5B%5B%3AGeneral_Category+%3D+Pe%3A%5D%5B%3ATerminal_Punctuation%3A%5D%5D+%26+%5B%5B%3A+East_Asian_Width+%3D+W+%3A%5D+%5B%3A+East_Asian_Width+%3D+F+%3A%5D%5D+%26+%5B%3ADecomposition_Type+%21%3D+vertical+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+small+%3A%5D%0D%0A&g=&i=)
 
 #### 新たに加わる文字
 新規に下三つの文字が加わる。どれもEAW全角で、手元の環境ではグリフ後半に半角空白があり、クラス A に含めて問題がなさそうだが、要確認。
@@ -199,6 +203,8 @@ PropList に Terminal_Punctuation がある（全角コロン、セミコロン�
 ］
 ```
 注：A で述べたように上の全角コロン、セミコロンを捕まえる条件で cl-04 区切り約物、cl-05/06 句読点も捕まってしまう。議論は A を参照。
+
+[文字リスト](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5B%5B%5B%3AGeneral_Category+%3D+Po%3A%5D+%26+%5B%3AHyphen%3A%5D%5D+%5B%3ATerminal_Punctuation%3A%5D%5D+%26+%5B%5B%3A+East_Asian_Width+%3D+W+%3A%5D+%5B%3A+East_Asian_Width+%3D+F+%3A%5D%5D+%26+%5B%3ADecomposition_Type+%21%3D+vertical+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+small+%3A%5D%0D%0A&g=&i=)
 
 #### 新たに加わる文字
 なし
