@@ -63,15 +63,20 @@ JLReq の国際化に向けて、JLReq 第二版 (11 August 2020) が定義し�
 文字間の空き量、および行の調整処理で空ける処理が可能な箇所の定義に必要なクラスを7つに単純化することができた。それぞれのクラスは空き要求の性質だけで簡潔に説明することができる。
 
 以下にそのクラスのプロパティ値、空き要求の簡潔な説明、およびJLReq第2版の文字クラスの文字がどこに属するかを示す。
-- B (space before): 前に空間を必要とする約物：始め括弧類 cl-01
-- A (space after): 後ろに空間を必要とする約物：終わり括弧類と句読点 cl-02, 06, 07
-- BA (space before and after): 両側に空間を必要とする約物：中点類 cl-05
-- S (space): そのものが空間である文字：和字間隔 cl-14
-- J (japanese): Lとの間に空間を必要とする文字：仮名と漢字 cl-09,10,11,15,16、および cl-19 の漢字
-- L (latin): Jとの間に空間を必要とする文字：cl-27 のうち Letter であるもの
-- O (other): どの文字ともベタの文字：その他全ての文字。cl-03, 04, 08, 17, 18, 26、cl-19 の非漢字、cl-27 の非ラテンアルファベット
+- [B (space before)](#b-前に空間を必要とする約物始め括弧類の拡張): 前に空間を必要とする約物：始め括弧類 cl-01
+- [A (space after)](#a-後ろに空間を必要とする約物終わり括弧類と句読点の拡張): 後ろに空間を必要とする約物：終わり括弧類と句読点 cl-02, 06, 07
+- [BA (space before and after)](#ba-両側に空間を必要とする約物中点類の拡張): 両側に空間を必要とする約物：中点類 cl-05
+- [S (space)](#s-そのものが空間な約物和字間隔): そのものが空間である文字：和字間隔 cl-14
+- [J (japanese)](#j-アルファベットとの間に空間を必要とする文字--仮名や漢字): Lとの間に空間を必要とする文字：仮名と漢字 cl-09,10,11,15,16、および cl-19 の漢字
+- [L (latin)](#l-漢字類との間に空間を必要とする外国語文字): Jとの間に空間を必要とする文字：cl-27 のうち Letter であるもの
+- [O (other)](#o-どの文字ともベタとなる文字): どの文字ともベタの文字：その他全ての文字。cl-03, 04, 08, 17, 18, 26、cl-19 の非漢字、cl-27 の非ラテンアルファベット
 
 ここで、B / A / BA に属する文字は、デジタルフォントの実装において、グリフ内部に必要な空間が埋め込まれているので、組版の際に文字の組み合わせによってそのスペースを削除するというレイアウト動作が必要になる。
+また、これらの約物に対しB / A / BA以外の非CJKな約物が連続するという文字の組み合わせの場合にも同様のレイアウト操作が必要とされるため、これらの定義のためにB / A / BA / Sの各文字クラスに対応する非CJK文字の文字クラスとして以下の4つを追加する。
+- [Bp](#bp-後ろに空間を必要としない約物--非全角の始め括弧類): 後ろに空間を必要としない約物 : 非全角の始め括弧類
+- [Ap](#ap-前に空間を必要としない約物--非全角の終わり括弧類と句読点): 前に空間を必要としない約物 : 非全角の終わり括弧類と句読点
+- [BAp](#bap-非全角の中点類): 非全角の中点類
+- [Sp](#sp-和字間隔以外の空間である文字): 和字間隔以外の空間である文字
 
 また、典型的なデジタルフォントの実装では、B / A / BA / S / J の文字は全角幅、L の文字はプロポーショナル幅で実装されるが、そのような実装を必要とするわけではない。
 
@@ -159,6 +164,11 @@ cl-27 をラテンアルファベットと記号に分離。ラテンアルフ�
 East Asian Width = W/F（全角）かつ
 Decomposition Type が vertical や small でない
 
+また、B / A / BA / Sに対応する普通の全角でない文字クラスについて、「非全角」を
+EAWがWideでもFullwidthでない かつ
+Decomposition TypeがVerticalやSmallでない
+と定義する。
+
 
 ### B: 前に空間を必要とする約物：始め括弧類の拡張
 ```
@@ -171,6 +181,14 @@ Decomposition Type が vertical や small でない
 新規に下二つの文字が加わる。どれもEAW全角で、手元の環境ではグリフ前半に半角空白があり、クラス B に含めて問題がなさそうだが、要確認。
 - 〈	U+2329	LEFT-POINTING ANGLE BRACKET
 - 〚	U+301A	LEFT WHITE SQUARE BRACKET
+
+#### Bp: 後ろに空間を必要としない約物 : 非全角の始め括弧類
+```
+非全角かつ General Category = Ps (Open_Punctuation: an opening punctuation mark (of a pair))
+```
+
+[文字リスト (51)](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5B%3AGeneral_Category+%3D+Ps%3A%5D+%26+%5B%5B%3A+East_Asian_Width+%21%3D+W+%3A%5D+%26+%5B%3A+East_Asian_Width+%21%3D+F+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+vertical+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+small+%3A%5D%5D&g=&i=)
+
 
 ### A: 後ろに空間を必要とする約物：終わり括弧類と句読点の拡張
 ```
@@ -192,6 +210,17 @@ PropList に Terminal_Punctuation がある (cl-06, 07)（これらは GC=Po）�
 
 注：上の条件で区切り約物 cl-04 と中点類 cl-05 の全角コロン、セミコロンが混入する。これらはどれも句読点と同様に文を区切る役割があり、約物の役割としては同一なので既存 Unicode プロパティで見分けることができない。cl-06, 07 を独特にしているのはアキの必要量だけだと考えられるので、これらを見分けるには、アキの必要量を示す属性が Unicode に必要なことになる。が、字間プロパティ自体をプロパティにする方がスマートかもしれない。
 
+#### Ap: 前に空間を必要としない約物 : 非全角の終わり括弧類と句読点
+```
+非全角かつ
+［
+General Category = Pe（終わり括弧類）
+または
+PropList に Terminal_Punctuation がある（これらは GC=Po）（句読点）
+］
+```
+
+[文字リスト (311)](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5B%5B%3AGeneral_Category+%3D+Pe%3A%5D%5B%3ATerminal_Punctuation%3A%5D%5D+%26+%5B%5B%3A+East_Asian_Width+%21%3D+W+%3A%5D+%26+%5B%3A+East_Asian_Width+%21%3D+F+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+vertical+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+small+%3A%5D%5D&g=&i=)
 
 ### BA: 両側に空間を必要とする約物：中点類の拡張
 ```
@@ -209,12 +238,32 @@ PropList に Terminal_Punctuation がある（全角コロン、セミコロン�
 #### 新たに加わる文字
 なし
 
+#### BAp: 非全角の中点類
+```
+非全角かつ
+［
+PropList に Hyphen があり、かつ General Category = Po (Other_Punctuation)
+または
+PropList に Terminal_Punctuation がある
+］
+```
+
+[文字リスト (264)](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5B%5B%5B%3AGeneral_Category+%3D+Po%3A%5D+%26+%5B%3AHyphen%3A%5D%5D+%5B%3ATerminal_Punctuation%3A%5D%5D+%26+%5B%5B%3A+East_Asian_Width+%21%3D+W+%3A%5D+%26+%5B%3A+East_Asian_Width+%21%3D+F+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+vertical+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+small+%3A%5D%5D&g=&i=)
+
 ### S: そのものが空間な約物：和字間隔
 ```
 属する文字は一文字なので U+3000 決め打ち。
 ```
 #### 新たに加わる文字
 なし
+
+#### Sp: 和字間隔以外の空間である文字
+```
+非全角かつ
+PropListにSpace_separatorがある
+```
+
+[文字リスト (16)](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5B%3Aspace_separator%3A%5D+%26+%5B%5B%3A+East_Asian_Width+%21%3D+W+%3A%5D+%26+%5B%3A+East_Asian_Width+%21%3D+F+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+vertical+%3A%5D+%26+%5B%3ADecomposition_Type+%21%3D+small+%3A%5D%5D&g=&i=)
 
 ### J: アルファベットとの間に空間を必要とする文字 = 仮名や漢字
 ```
