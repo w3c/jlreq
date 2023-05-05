@@ -15,6 +15,16 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 ### Key links (重要なリンク)
 [GitHub repo](https://github.com/w3c/jlreq) • [Discussion threads (議論のリスト)](https://github.com/w3c/jlreq/issues) • [Issue tracker (論点追跡リスト)](https://www.w3.org/International/i18n-activity/textlayout/?filter=jlreq) (with jlreq filter、`jlreq`でのフィルター) • [Charter (活動憲章)](https://www.w3.org/International/jlreq/charter/)
 
+
+---
+## Help wanted! ###
+**We're looking for information about this writing system. Follow the link for specific questions.**
+
+**[Japanese](https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)**
+
+---
+
+
 ### Documents （文書）
 - [**Japanese Gap Analysis （日本語ギャップ分析）**](https://www.w3.org/TR/jpan-gap) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/gap-analysis/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/gap-analysis/index.html) • [*Edit on GitHub (GitHub上の問題点リストの編集)*](https://github.com/w3c/jlreq/labels/doc%3Ajlreq)
 - [**Requirements for Japanese Text Layout (日本語組版処理の要件)**](https://www.w3.org/TR/jlreq) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/index.html)
