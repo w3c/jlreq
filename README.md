@@ -52,7 +52,7 @@ Note that the public-i18n-japanese mailing list is used to send notification dig
 
 
 ### Participate  (参加する方法)
-You can participate in the task force work at various levels. In order of increasing commitment, these include Follower, Contributor, Participant, Editor, and Chair. [Find your level](https://www.w3.org/International/i18n-drafts/pages/task_force_roles).
+You can participate in the work at various levels. In order of increasing commitment, these include List subscriber, Participant, Editor, and Chair. [Explore the options](https://www.w3.org/International/i18n-drafts/pages/languagedev_participation.html).
 
 このタスクフォースにはいくつかの立場で参加可能です。活動を活発にするために、追跡者、貢献者、参加者、編者、議長の分類があります。それぞれの詳細は、[参加の立場](https://www.w3.org/International/i18n-drafts/pages/task_force_roles)についてのリストを参照してください。
 
