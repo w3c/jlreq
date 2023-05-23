@@ -20,7 +20,9 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 ## Help wanted! ###
 **We're looking for information about this writing system. Follow the link for specific questions.**
 
-**[Japanese](https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)**
+**この言語についての情報提供をお待ちしています。以下のリンクから質問を一覧できます。**
+
+**[Japanese (日本語についてのリスト)](https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)**
 
 ---
 
@@ -54,7 +56,7 @@ Note that the public-i18n-japanese mailing list is used to send notification dig
 ### Participate  (参加する方法)
 You can participate in the work at various levels. In order of increasing commitment, these include List subscriber, Participant, Editor, and Chair. [Explore the options](https://www.w3.org/International/i18n-drafts/pages/languagedev_participation.html).
 
-このタスクフォースにはいくつかの立場で参加可能です。活動を活発にするために、追跡者、貢献者、参加者、編者、議長の分類があります。それぞれの詳細は、[参加の立場](https://www.w3.org/International/i18n-drafts/pages/task_force_roles)についてのリストを参照してください。
+この活動にはいくつかの立場で参加可能です。活動を活発にするために、リスト受信者、参加者、編者、議長の分類があります。[参加方法について](ttps://www.w3.org/International/i18n-drafts/pages/languagedev_participation.html)も参考にしてください。
 
 **To just follow the work:** Rather than 'Watch' this repository, [subscribe](mailto:public-i18n-japanese-request@w3.org?subject=subscribe) to the [public-i18n-japanese](https://lists.w3.org/Archives/Public/public-i18n-japanese/) mailing list. That list is notified (no more than once a day, and in digest form), about changes to issues in this repository, but also about other W3C Working Group issues related to the Japanese writing systems.
 
