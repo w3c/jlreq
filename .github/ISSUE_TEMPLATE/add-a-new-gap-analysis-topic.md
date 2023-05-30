@@ -70,7 +70,7 @@ Brief_description_of_developments
 
 
 
-### Priority:<
+### Priority:
 Why_you_chose_the_priority
 
 
