@@ -17,7 +17,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 ---
-## Help wanted! ###
+## Help wanted! (助力募集中！)
 **We're looking for information about this writing system. Follow the link for specific questions.**
 
 **この言語についての情報提供をお待ちしています。以下のリンクから質問を一覧できます。**
@@ -35,11 +35,11 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 
-### Discussions
-- **Japanese** • [*Questions*](https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)
-• [*Gap reports*](https://github.com/w3c/jlreq/labels/doc%3Ajlreq)
-• [*Other*](https://github.com/w3c/jlreq/issues?q=is%3Aopen+-label%3Aquestion+-label%3Agap) 
-• [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ajlreq+label%3Aspec-type-issue)
+### Discussions (議論項目)
+- **Japanese** • [*Questions (質問)*](https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)
+• [*Gap reports (ギャップ分析)*](https://github.com/w3c/jlreq/labels/doc%3Ajlreq)
+• [*Other (その他)*](https://github.com/w3c/jlreq/issues?q=is%3Aopen+-label%3Aquestion+-label%3Agap) 
+• [*Spec issues (仕様書についての議論)*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ajlreq+label%3Aspec-type-issue)
 
 
 ### Related documents (関連文書)
@@ -47,7 +47,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 - [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
 
 
-### Feedback
+### Feedback (意見の提供)
 Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to report issues for language support, for discussions, and to send feedback about documents. (Learn [how GitHub issues work](https://www.w3.org/International/i18n-activity/guidelines/issues.html).)
 
 言語の機能についての問題報告、議論、文書への意見については、[GitHub issue](https://github.com/w3c/jlreq/issues) にお願いします。([GitHub issues の利用](https://www.w3.org/International/i18n-activity/guidelines/issues.html)についての文書を参考ください。)
