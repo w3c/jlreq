@@ -73,6 +73,8 @@ If you prefer to receive notifications of all discussions for Chinese, Japanese,
 
 **活動を追跡だけする場合:** このレポジトリを 'Watch' するよりも、[public-i18n-japanese](https://lists.w3.org/Archives/Public/public-i18n-japanese/) メーリングリストに参加してください。このリストには、このレポジトリにある issue の更新のみでなく、他の W3C Working Group の日本語に関する issue についても送信されます (最大一日一度、ダイジェスト形式です)。
 
+CJK(中国語・日本語・韓国語)すべてについての通知を受け取りたい場合は、[public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/)メーリングリストに[登録](mailto:public-i18n-cjk-request@w3.org?subject=subscribe)してください。
+
 **To contribute content:** All contributors should read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 **文書に貢献するには:** 全ての参加者は  [CONTRIBUTING.md](CONTRIBUTING.md) を読み、それに同意する必要があります。
