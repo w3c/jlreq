@@ -1,93 +1,50 @@
-var translations = {
-	'en': {
-		'abstract': 'Abstract',
-		'sotd': 'Status of This Document',
-		'toc': 'Table of Contents',
-		'note': 'Note',
-		'fig': 'Figure ',
-		'thisversion': 'This version:',
-		'latestpublished': 'Latest published version:',
-		'editorsdraft': "Latest editor's draft:",
-		'previousversion': "Previous version:",
-		'author': 'Author:',
-		'authors': 'Authors:',
-		'editor': "Editor:",
-		'editors': "Editors:",
-		'formerEditor': "Former editor:",
-		'formerEditors': "Former editors:",
-		'participate': "Participate:",
-		'fileABug': "File a bug",
-		'commitHistory': "Commit history",
-		'pullRequests': "Pull requests"
-		},
-	'ja': {
-		'abstract': '要約',
-		'sotd': 'この文書の位置付け',
-		'toc': '目次',
-		'note': '注',
-		'fig': '図',
-		'thisversion': 'このバージョン：',
-		'latestpublished': '最新バージョン：',
-		'previousversion': "旧バージョン：",
-		'editorsdraft': "最新の編集用草案：",
-		'author': '著者：',
-		'authors': '著者：',
-		'editor': "編者：",
-		'editors': "編者：",
-		'formerEditor': "以前の版の編者：",
-		'formerEditors': "以前の版の編者：",
-		'participate': "参加方法：",
-		'fileABug': "問題報告",
-		'commitHistory': "変更履歴",
-		'pullRequests': "プルリクエスト"
-		},
-	}
+const translations = {
+	'abstract': {'en': 'Abstract', 'ja': '要約' },
+	'sotd': {'en': 'Status of This Document', 'ja': 'この文書の位置付け' },
+	'toc': {'en': 'Table of Contents', 'ja': '目次' },
+	'note': {'en': 'Note', 'ja': '注' },
+	'fig': {'en': 'Figure ', 'ja': '図' },
+	'thisversion': {'en': 'This version:', 'ja': 'このバージョン：' },
+	'latestpublished': {'en': 'Latest published version:', 'ja': '最新バージョン：' },
+	'editorsdraft': {'en': "Latest editor's draft:", 'ja': "最新の編集用草案：" },
+	'previousversion': {'en': "Previous version:", 'ja': "旧バージョン：" },
+	'author': {'en': 'Author:', 'ja': '著者：' },
+	'authors': {'en': 'Authors:', 'ja': '著者：' },
+	'editor': {'en': "Editor:", 'ja': "編者：" },
+	'editors': {'en': "Editors:", 'ja': "編者：" },
+	'formerEditor': {'en': "Former editor:", 'ja': "以前の版の編者：" },
+	'formerEditors': {'en': "Former editors:", 'ja': "以前の版の編者：" },
+	'participate': {'en': "Participate:", 'ja': "参加方法：" },
+	'fileABug': {'en': "File a bug", 'ja': "問題報告" },
+	'commitHistory': {'en': "Commit history", 'ja': "変更履歴" },
+	'pullRequests': {'en': "Pull requests", 'ja': "プルリクエスト" }
+}
 
 function switchLang (lang) {
-// hides all elements with its-locale-filter-list set to the other language
+	// hides all elements with its-locale-filter-list set to the other language
 
-    var langs = { 'ja': true, 'en':true } // en must come last (for all to work in front matter)
-	if (lang==='ja') langs.en = false
-	if (lang==='en') langs.ja = false
-	
-	// show all hidden elements
-	var els = document.querySelectorAll('.hidden')
-	for (var i=0;i<els.length;i++) els[i].classList.remove('hidden') 
+	// set lang
+	var langs = { 'ja': true, 'en':true } // en must come last (for all to work in front matter)
+	if (lang === 'ja') langs.en = false
+	if (lang === 'en') langs.ja = false
 
-	Object.keys(langs).forEach( function (lang) {
+	// show all
+	document.querySelectorAll('.hidden').forEach(obj => obj.classList.remove('hidden'));
+
+	Object.keys(langs).forEach(lang => {
 		if (langs[lang]) {
-			// set the default language in html tag
-			document.documentElement.lang = lang
-			
-			// change boilerplate text
-			document.getElementById('abstract').firstChild.textContent = translations[lang].abstract
-			document.getElementById('sotd').firstChild.textContent = translations[lang].sotd
-			document.getElementById('table-of-contents').textContent = translations[lang].toc
-
-			changeBoilerplate ('thisversion', lang);
-			changeBoilerplate ('latestpublished', lang);
-			changeBoilerplate ('editorsdraft', lang);
-			changeBoilerplate ('previousversion', lang);
-			changeBoilerplate ('editor', lang);
-			changeBoilerplate ('editors', lang);
-			changeBoilerplate ('formerEditor', lang);
-			changeBoilerplate ('formerEditors', lang);
-			changeBoilerplate ('participate', lang);
-			changeBoilerplate ('fileABug', lang);
-			changeBoilerplate ('commitHistory', lang);
-			changeBoilerplate ('pullRequests', lang);
-			
+			document.documentElement.lang = lang;
+			document.getElementById('abstract').firstChild.textContent = translations['abstract'][lang];
+			document.getElementById('sotd').firstChild.textContent = translations['sotd'][lang];
+			document.getElementById('table-of-contents').textContent = translations['toc'][lang];
+      let changeBoilerplate = function (obj) {if (obj.id) {obj.textContent = translations[obj.id][lang] }}
+			document.querySelectorAll('dt').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('.head a').forEach(obj => changeBoilerplate(obj))
 			// change note and figure titles
-			var notes = document.querySelectorAll('.note-title')
-			for (let i=0;i<notes.length;i++) notes[i].textContent = translations[lang].note
-			var figcaptions = document.querySelectorAll('figcaption')
-			for (let i=0;i<figcaptions.length;i++) figcaptions[i].firstChild.textContent = translations[lang].fig
-			}
-			
-		// hide relevant elements
-		else {
-			els = document.querySelectorAll('[its-locale-filter-list='+lang+']')
-			for (var i=0;i<els.length;i++) els[i].classList.add('hidden') 
+			document.querySelectorAll('.note-title').forEach(obj => obj.textContent = translations['note'][lang])
+			document.querySelectorAll('figcaption').forEach(obj => obj.firstChild.textContent = translations['fig'][lang])
+		} else {
+			document.querySelectorAll('[its-locale-filter-list='+lang+']').forEach(obj => obj.classList.add('hidden'))
 			}
 		})
 
@@ -101,46 +58,24 @@ function switchLang (lang) {
 	}
 
 
+async function setFrontMatterIds() {
+	// first constract reverse hash from en string to id
+	let en2id = [];
+	Object.keys(translations).forEach(key => en2id[translations[key]['en']] = key);
+	let addLangData = function (obj) {
+		let ctxt = obj.textContent.trim();
+		if (ctxt in en2id) {
+			obj.id = en2id[ctxt];
+			Object.keys(translations[obj.id]).forEach(langid => obj.dataset['loc_' + langid] = translations[obj.id][langid]);
+			delete en2id[ctxt]; // debugout
+		}
+	};
+	document.querySelectorAll('dt').forEach(obj => addLangData(obj))
+	document.querySelectorAll('.head a').forEach(obj => addLangData(obj))
+	console.log("Items not used:"); // debugout
+	Object.keys(en2id).forEach(key => console.log(en2id[key])); // debugout
+}
 
-function setFrontMatterIds () {
-	// adds ids to dt elements in front matter to facilitate language switching
-	
-	var dts = document.querySelectorAll('dt')
-	for (let i=0;i<dts.length;i++) { 
-		switch (dts[i].textContent.trim()) {
-			case 'This version:': dts[i].id = "thisversion"; break;
-			case 'Latest published version:': dts[i].id = "latestpublished"; break;
-			case 'Previous version:': dts[i].id = "previousversion"; break;
-			case 'Latest editor\'s draft:': dts[i].id = "editorsdraft"; break;
-			case 'Authors:': dts[i].id = "authors"; break;
-			case 'Editor:': dts[i].id = "editor"; break;
-			case 'Editors:': dts[i].id = "editors"; break;
-			case 'Former editor:': dts[i].id = "formerEditor"; break;
-			case 'Former editors:': dts[i].id = "formerEditors"; break;
-			case 'Participate:': dts[i].id = "participate"; break;
-			}
-		}
-	var anchors = document.querySelectorAll('.head a')
-	for (let i=0;i<anchors.length;i++) {
-		switch (anchors[i].textContent) {
-			case 'File a bug': anchors[i].id = "fileABug"; break;
-			case 'Commit history': anchors[i].id = "commitHistory"; break;
-			case 'Pull requests': anchors[i].id = "pullRequests"; break;
-			}
-		}
-	}
-
-
-function changeBoilerplate (id, lang, translationsid) {
-	if (translationsid === undefined) {
-		translationsid = id;
-		}
-	if (document.getElementById(id)) {
-		document.getElementById(id).textContent = translations[lang][translationsid]
-	} else {
-		console.log("%s does not exist.", id);
-		}
-	}
 	
 
 function addLangAttrs () { console.log("THIS FUNCTION IS NO LONGER NEEDED")
@@ -169,6 +104,8 @@ function initialiseLang () {
 			}
 		}
 	}
+async function initialiseLang_p () { initialiseLang(); }
+window.addEventListener('DOMContentLoaded', () => { if (! document.getElementById('js-respec')) {initialiseLang(); }} );
 
 //figures = document.querySelectorAll('figure')
 //for (let i=0;i<figures.length;i++) console.log(figures[i].id)
