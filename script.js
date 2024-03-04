@@ -17,7 +17,11 @@ const translations = {
 	'participate': {'en': "Participate:", 'ja': "参加方法：" },
 	'fileABug': {'en': "File a bug", 'ja': "問題報告" },
 	'commitHistory': {'en': "Commit history", 'ja': "変更履歴" },
-	'pullRequests': {'en': "Pull requests", 'ja': "プルリクエスト" }
+	'history': {'en': 'History:', 'ja': '更新履歴：' },
+	'feedback': { 'en': 'Feedback:', 'ja': '意見・提案：' },
+	'pullRequests': {'en': "Pull requests", 'ja': "プルリクエスト" },
+	'title': {'en': 'Requirements for Japanese Text Layout', 'ja': '日本語組版処理の要件（日本語版）' },
+	'detailDocument': {'en': 'More details about this document', 'ja': 'この文書についての詳細情報' }
 }
 
 function switchLang (lang) {
@@ -34,12 +38,18 @@ function switchLang (lang) {
 	Object.keys(langs).forEach(lang => {
 		if (langs[lang]) {
 			document.documentElement.lang = lang;
-			document.getElementById('abstract').firstChild.textContent = translations['abstract'][lang];
-			document.getElementById('sotd').firstChild.textContent = translations['sotd'][lang];
 			document.getElementById('table-of-contents').textContent = translations['toc'][lang];
-      let changeBoilerplate = function (obj) {if (obj.id) {obj.textContent = translations[obj.id][lang] }}
-			document.querySelectorAll('dt').forEach(obj => changeBoilerplate(obj))
+			let changeBoilerplate = function (obj) {
+				if ('loc_' + lang in obj.dataset) {
+					obj.textContent = obj.dataset['loc_' + lang];
+				}
+			}
+			document.querySelectorAll('.head dt').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('.head a').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('.head summary').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('section h2').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('div h2').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('title').forEach(obj => changeBoilerplate(obj))
 			// change note and figure titles
 			document.querySelectorAll('.note-title').forEach(obj => obj.textContent = translations['note'][lang])
 			document.querySelectorAll('figcaption').forEach(obj => obj.firstChild.textContent = translations['fig'][lang])
@@ -70,8 +80,14 @@ async function setFrontMatterIds() {
 			delete en2id[ctxt]; // debugout
 		}
 	};
-	document.querySelectorAll('dt').forEach(obj => addLangData(obj))
+	document.querySelectorAll('.head dt').forEach(obj => addLangData(obj))
 	document.querySelectorAll('.head a').forEach(obj => addLangData(obj))
+	document.querySelectorAll('.head summary').forEach(obj => addLangData(obj))
+	document.querySelectorAll('section h2').forEach(obj => addLangData(obj))
+	document.querySelectorAll('div h2').forEach(obj => addLangData(obj))
+	document.querySelectorAll('title').forEach(obj => {
+		Object.keys(translations['title']).forEach(langid => obj.dataset['loc_' + langid] = translations['title'][langid]);
+	})
 	console.log("Items not used:"); // debugout
 	Object.keys(en2id).forEach(key => console.log(en2id[key])); // debugout
 }
