@@ -35,7 +35,11 @@ function switchLang (lang) {
 		if (langs[lang]) {
 			document.documentElement.lang = lang;
 			document.getElementById('table-of-contents').textContent = translations['toc'][lang];
-      let changeBoilerplate = function (obj) {if (obj.id) {obj.textContent = translations[obj.id][lang] }}
+			let changeBoilerplate = function (obj) {
+				if ('loc_' + lang in obj.dataset) {
+					obj.textContent = obj.dataset['loc_' + lang];
+				}
+			}
 			document.querySelectorAll('dt').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('.head a').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('section h2').forEach(obj => changeBoilerplate(obj))
