@@ -20,7 +20,8 @@ const translations = {
 	'history': {'en': 'History:', 'ja': '更新履歴：' },
 	'feedback': { 'en': 'Feedback:', 'ja': '意見・提案：' },
 	'pullRequests': {'en': "Pull requests", 'ja': "プルリクエスト" },
-	'title': {'en': 'Requirements for Japanese Text Layout', 'ja': '日本語組版処理の要件（日本語版）' }
+	'title': {'en': 'Requirements for Japanese Text Layout', 'ja': '日本語組版処理の要件（日本語版）' },
+	'detailDocument': {'en': 'More details about this document', 'ja': 'この文書についての詳細情報' }
 }
 
 function switchLang (lang) {
@@ -43,8 +44,9 @@ function switchLang (lang) {
 					obj.textContent = obj.dataset['loc_' + lang];
 				}
 			}
-			document.querySelectorAll('dt').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('.head dt').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('.head a').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('.head summary').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('section h2').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('div h2').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('title').forEach(obj => changeBoilerplate(obj))
@@ -80,6 +82,7 @@ async function setFrontMatterIds() {
 	};
 	document.querySelectorAll('.head dt').forEach(obj => addLangData(obj))
 	document.querySelectorAll('.head a').forEach(obj => addLangData(obj))
+	document.querySelectorAll('.head summary').forEach(obj => addLangData(obj))
 	document.querySelectorAll('section h2').forEach(obj => addLangData(obj))
 	document.querySelectorAll('div h2').forEach(obj => addLangData(obj))
 	document.querySelectorAll('title').forEach(obj => {
