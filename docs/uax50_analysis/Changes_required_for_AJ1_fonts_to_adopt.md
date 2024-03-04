@@ -84,7 +84,7 @@ I can think of two possible impacts:
 ## Analysis
 Here are the complete analysis.
 
-↓Current behevior|UAX R|UAX Tr|UAX Tu|UAX U
+↓Current behavior|UAX R|UAX Tr|UAX Tu|UAX U
 --|--|--|--|--
 R |OK|add Tr glyph|check glyph|check glyph
 Tr|check glyph (′″ Appendix x)|confirmed OK (「」： Appendix x)|remove vert|remove vert (‖✂)
