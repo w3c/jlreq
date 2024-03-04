@@ -34,12 +34,12 @@ function switchLang (lang) {
 	Object.keys(langs).forEach(lang => {
 		if (langs[lang]) {
 			document.documentElement.lang = lang;
-			document.getElementById('abstract').firstChild.textContent = translations['abstract'][lang];
-			document.getElementById('sotd').firstChild.textContent = translations['sotd'][lang];
 			document.getElementById('table-of-contents').textContent = translations['toc'][lang];
       let changeBoilerplate = function (obj) {if (obj.id) {obj.textContent = translations[obj.id][lang] }}
 			document.querySelectorAll('dt').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('.head a').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('section h2').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('div h2').forEach(obj => changeBoilerplate(obj))
 			// change note and figure titles
 			document.querySelectorAll('.note-title').forEach(obj => obj.textContent = translations['note'][lang])
 			document.querySelectorAll('figcaption').forEach(obj => obj.firstChild.textContent = translations['fig'][lang])
@@ -70,8 +70,10 @@ async function setFrontMatterIds() {
 			delete en2id[ctxt]; // debugout
 		}
 	};
-	document.querySelectorAll('dt').forEach(obj => addLangData(obj))
+	document.querySelectorAll('.head dt').forEach(obj => addLangData(obj))
 	document.querySelectorAll('.head a').forEach(obj => addLangData(obj))
+	document.querySelectorAll('section h2').forEach(obj => addLangData(obj))
+	document.querySelectorAll('div h2').forEach(obj => addLangData(obj))
 	console.log("Items not used:"); // debugout
 	Object.keys(en2id).forEach(key => console.log(en2id[key])); // debugout
 }
