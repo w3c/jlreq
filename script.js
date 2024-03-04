@@ -17,8 +17,8 @@ const translations = {
 	'participate': {'en': "Participate:", 'ja': "参加方法：" },
 	'fileABug': {'en': "File a bug", 'ja': "問題報告" },
 	'commitHistory': {'en': "Commit history", 'ja': "変更履歴" },
-	'history': {'en': 'History', 'ja': '更新履歴' },
-	'feedback': { 'en': 'Feedback', 'ja': '意見・提案' },
+	'history': {'en': 'History:', 'ja': '更新履歴：' },
+	'feedback': { 'en': 'Feedback:', 'ja': '意見・提案：' },
 	'pullRequests': {'en': "Pull requests", 'ja': "プルリクエスト" },
 	'title': {'en': 'Requirements for Japanese Text Layout', 'ja': '日本語組版処理の要件（日本語版）' }
 }
@@ -82,7 +82,9 @@ async function setFrontMatterIds() {
 	document.querySelectorAll('.head a').forEach(obj => addLangData(obj))
 	document.querySelectorAll('section h2').forEach(obj => addLangData(obj))
 	document.querySelectorAll('div h2').forEach(obj => addLangData(obj))
-	document.querySelectorAll('title').forEach(obj => addLangData(obj))
+	document.querySelectorAll('title').forEach(obj => {
+		Object.keys(translations['title']).forEach(langid => obj.dataset['loc_' + langid] = translations['title'][langid]);
+	})
 	console.log("Items not used:"); // debugout
 	Object.keys(en2id).forEach(key => console.log(en2id[key])); // debugout
 }
