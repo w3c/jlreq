@@ -45,9 +45,9 @@ function switchLang (lang) {
 			document.querySelectorAll('figcaption').forEach(obj => obj.firstChild.textContent = translations['fig'][lang])
 		} else {
 			document.querySelectorAll('[its-locale-filter-list='+lang+']').forEach(obj => obj.classList.add('hidden'))
-		}
-	})
-}
+			}
+		})
+	}
 
 
 async function setFrontMatterIds() {
