@@ -17,7 +17,10 @@ const translations = {
 	'participate': {'en': "Participate:", 'ja': "参加方法：" },
 	'fileABug': {'en': "File a bug", 'ja': "問題報告" },
 	'commitHistory': {'en': "Commit history", 'ja': "変更履歴" },
-	'pullRequests': {'en': "Pull requests", 'ja': "プルリクエスト" }
+	'history': {'en': 'History', 'ja': '更新履歴' },
+	'feedback': { 'en': 'Feedback', 'ja': '意見・提案' },
+	'pullRequests': {'en': "Pull requests", 'ja': "プルリクエスト" },
+	'title': {'en': 'Requirements for Japanese Text Layout', 'ja': '日本語組版処理の要件（日本語版）' }
 }
 
 function switchLang (lang) {
@@ -44,6 +47,7 @@ function switchLang (lang) {
 			document.querySelectorAll('.head a').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('section h2').forEach(obj => changeBoilerplate(obj))
 			document.querySelectorAll('div h2').forEach(obj => changeBoilerplate(obj))
+			document.querySelectorAll('title').forEach(obj => changeBoilerplate(obj))
 			// change note and figure titles
 			document.querySelectorAll('.note-title').forEach(obj => obj.textContent = translations['note'][lang])
 			document.querySelectorAll('figcaption').forEach(obj => obj.firstChild.textContent = translations['fig'][lang])
@@ -78,6 +82,7 @@ async function setFrontMatterIds() {
 	document.querySelectorAll('.head a').forEach(obj => addLangData(obj))
 	document.querySelectorAll('section h2').forEach(obj => addLangData(obj))
 	document.querySelectorAll('div h2').forEach(obj => addLangData(obj))
+	document.querySelectorAll('title').forEach(obj => addLangData(obj))
 	console.log("Items not used:"); // debugout
 	Object.keys(en2id).forEach(key => console.log(en2id[key])); // debugout
 }
