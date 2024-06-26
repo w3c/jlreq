@@ -13,7 +13,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 論点は[ギャップ分析のテンプレート](https://www.w3.org/International/i18n-activity/templates/gap-analysis/gap-analysis_template.html)にまとめられています。議論の結果はウェブでの言語に関する問題についてのヒートマップである[言語マトリクス](https://www.w3.org/International/typography/gap-analysis/language-matrix.html)にも反映されます。
 
 ### Key links (重要なリンク)
-[GitHub repo](https://github.com/w3c/jlreq) • [Discussion threads (議論のリスト)](https://github.com/w3c/jlreq/issues) • [Issue tracker (論点追跡リスト)](https://www.w3.org/International/i18n-activity/textlayout/?filter=jlreq) (with jlreq filter、`jlreq`でのフィルター) • [Charter (活動憲章)](https://www.w3.org/International/jlreq/charter/)
+[GitHub repo](https://github.com/w3c/jlreq) • [Discussion threads (議論のリスト)](https://github.com/w3c/jlreq/issues) • [Charter (活動憲章)](https://www.w3.org/International/jlreq/charter/)
 
 
 ---
