@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 
 <title>Japanese Gap Analysis</title>
-<script class="remove" src="../../i18n-activity/textlayout/resources/gap-analysis-github.js"></script>
+<script class="remove" src="../../i18n-activity/templates/gap-analysis/gap-analysis-github.js"></script>
 <script class="remove" src="../../i18n-activity/templates/gap-analysis/prompts.js"></script>
 
 <script src="https://www.w3.org/Tools/respec/respec-w3c" async="" class="remove">
@@ -61,6 +61,12 @@
 			}
 		],
       
+      
+      // langs array lists languages addressed by this document, in order of speaker (highest first)
+      // it is used to generate the javascript needed for the matrix
+      langs: ['Japanese'],
+      langTags: ['ja'],
+      gapDocPath: 'https://www.w3.org/TR/jpan-gap/',
     };
   </script>
 <link rel="stylesheet" data-import href="https://w3c.github.io/typography/gap-analysis/gapanalysis.css">
@@ -114,14 +120,21 @@
     <p>A cell can be scored as OK if the feature in question is specified in an appropriate specification, and is supported by user agents. A specification that is in CR or later and has two implementations in 'major' browsers will count. This means that the feature may not be supported in all browsers yet. (At some point in the future we may try to distinguish, visually, whether support is available in a specification but still pending in major browsers or applications.) </p>
     </section>
 </section>
-    
-    
-    
+
+
+
+
+
+
+
 
 
 <section id="direction">
 <h2>Text direction</h2>
+
 <p>See also General page layout &amp; progression for features such as column layout, page turning direction, etc. that are affected by text direction.</p>
+
+
 
 
 <section id="vertical_text" class="tbd">
@@ -130,6 +143,7 @@
 
 <div id="insert-vertical_text"></div>
 </section>
+
 
 
 
@@ -146,22 +160,25 @@
 
 
 
-<section id="h_characters_and_phrases">
-<h2>Characters and phrases</h2>
-    
-    
-    
-<section id="charset" class="ok">
-<h3>Characters &amp; encoding</h3>
-<p id="prompt-charset" class="status_prompt promptStub"></p>
-
-<div id="insert-charset"></div>
-</section>
 
 
 
-<section id="fonts" class="tbd">
-<h3>Fonts</h3>
+
+
+
+
+
+
+
+
+
+<section id="h_shaping">
+<h2>Glyph shaping &amp; positioning</h2>
+
+
+
+<section id="fonts" class="ok">
+<h3>Fonts &amp; font styles</h3>
 <p id="prompt-fonts" class="status_prompt promptStub"></p>
 
 
@@ -170,23 +187,40 @@
 
 
 
-<section id="font_style" class="tbd">
-<h3>Font  styles, weight, etc</h3>
-<p id="prompt-font_style" class="status_prompt promptStub"></p>
-
-
-<div id="insert-font_style"></div>
-</section>
 
 
 
-<section id="glyphs" class="na">
-<h3>Glyph shaping and positioning</h3>
+
+
+
+<section id="glyphs" class="tbd">
+<h3>Context-based shaping and positioning</h3>
 <p id="prompt-glyphs" class="status_prompt promptStub"></p>
 
 
 <div id="insert-glyphs"></div>
 </section>
+
+
+
+
+
+
+
+
+
+<section id="letterforms" class="ok">
+<h3>Letterform slopes, weights, &amp; italics</h3>
+<p id="prompt-letterforms" class="status_prompt promptStub"></p>
+
+
+<div id="insert-letterforms"></div>
+</section>
+
+
+
+
+
 
 
 
@@ -200,64 +234,143 @@
 
 
 
-<section id="baselines" class="tbd">
-<h3>Baselines, line-height, etc</h3>
-<p id="prompt-baselines" class="status_prompt promptStub"></p>
 
 
-<div id="insert-baselines"></div>
-</section>
 
 
 
 
 <section id="transforms" class="tbd">
-<h3>Transforming characters</h3>
+<h3>Case &amp; other character transforms</h3>
 <p id="prompt-transforms" class="status_prompt promptStub"></p>
 
 
 <div id="insert-transforms"></div>
 </section>
+</section>
 
 
 
 
-<section id="segmentation" class="tbd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h_units">
+<h2>Typographic units</h2>
+
+
+<section id="encoding" class="ok">
+<h3>Characters &amp; encoding</h3>
+<p id="prompt-encoding" class="status_prompt promptStub"></p>
+
+<div id="insert-encoding"></div>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="segmentation" class="ok">
 <h3>Grapheme/word segmentation &amp; selection</h3>
 <p id="prompt-segmentation" class="status_prompt promptStub"></p>
 
 
 <div id="insert-segmentation"></div>
 </section>
- 
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h_inline">
+<h2>Punctuation &amp; inline features</h2>
+
 
 
 <section id="punctuation_etc" class="tbd">
-<h3>Inline features &amp; punctuation</h3><p id="prompt-punctuation_etc" class="status_prompt promptStub"></p>
+<h3>Phrase &amp; section boundaries</h3>
+<p id="prompt-punctuation_etc" class="status_prompt promptStub"></p>
 
 
 <div id="insert-punctuation_etc"></div>
 </section>
-   
-    
-    
-<section id="text_decoration" class="tbd">
-<h3>Text decoration</h3>
-<p id="prompt-text_decoration" class="status_prompt promptStub"></p>
 
 
-<div id="insert-text_decoration"></div>
-</section>
+
+
+
 
 
 
 <section id="quotations" class="tbd">
-<h3>Quotations</h3>
+<h3>Quotations &amp; citations</h3>
 <p id="prompt-quotations" class="status_prompt promptStub"></p>
-	
-	
+
+
 <div id="insert-quotations"></div>
 </section>
+
+
+
+
+
+
+
+
+<section id="emphasis" class="tbd">
+<h3>Emphasis &amp; highlighting</h3>
+<p id="prompt-emphasis" class="status_prompt promptStub"></p>
+
+
+<div id="insert-emphasis"></div>
+</section>
+
+
+
+
+
+
+
+
+<section id="abbrev" class="tbd">
+<h3>Abbreviation, ellipsis &amp; repetition</h3>
+<p id="prompt-abbrev" class="status_prompt promptStub"></p>
+
+
+<div id="insert-abbrev"></div>
+</section>
+
+
+
+
+
+
+
 
 
 <section id="inline_notes" class="tbd">
@@ -270,6 +383,25 @@
 
 
 
+
+
+
+
+<section id="text_decoration" class="tbd">
+<h3>Text decoration &amp; other inline features</h3>
+<p id="prompt-text_decoration" class="status_prompt promptStub"></p>
+
+
+<div id="insert-text_decoration"></div>
+</section>
+
+
+
+
+
+
+
+
 <section id="data_formats" class="tbd">
 <h3>Data formats &amp; numbers</h3>
 <p id="prompt-data_formats" class="status_prompt promptStub"></p>
@@ -277,6 +409,22 @@
 
 <div id="insert-data_formats"></div>
 </section>
+
+
+
+
+
+
+
+
+<!--section id="otherinline" class="tbd">
+<h3>Other inline features</h3>
+<p class="status_prompt">Does the script have special ways of representing inline notes (such as  kumimoji in Japanese) or other inline features that need to be supported? <a href="https://w3c.github.io/typography/index#other_inline_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-features%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+<p></p>
+</section-->
+
 </section>
 
 
@@ -284,12 +432,21 @@
 
 
 
-<section id="h_lines_and_paragraphs">
-<h2>Lines and Paragraphs</h2>
 
- 
+
+
+
+
+
+
+
+
+<section id="h_lines_and_paragraphs">
+<h2>Line and paragraph layout</h2>
+
+
 <section id="line_breaking" class="tbd">
-<h3>Line breaking</h3>
+<h3>Line breaking &amp; hyphenation</h3>
 <p id="prompt-line_breaking" class="status_prompt promptStub"></p>
 
 
@@ -298,13 +455,8 @@
 
 
 
-<section id="hyphenation" class="na">
-<h3>Hyphenation</h3>
-<p id="prompt-hyphenation" class="status_prompt promptStub"></p>
 
 
-<div id="insert-hyphenation"></div>
-</section>
 
 
 
@@ -318,14 +470,41 @@
 
 
 
+
+
+
+
+
+
+
 <section id="spacing" class="tbd">
-<h3>Letter spacing</h3>
+<h3>Text spacing</h3>
 <p id="prompt-spacing" class="status_prompt promptStub"></p>
 
 
 
 <div id="insert-spacing"></div>
 </section>
+
+
+
+
+
+
+
+
+<section id="baselines" class="ok">
+<h3>Baselines, line-height, etc</h3>
+<p id="prompt-baselines" class="status_prompt promptStub"></p>
+
+
+<div id="insert-baselines"></div>
+</section>
+
+
+
+
+
 
 
 
@@ -339,6 +518,11 @@
 
 
 
+
+
+
+
+
 <section id="initials" class="tbd">
 <h3>Styling initials</h3>
 <p id="prompt-initials" class="status_prompt promptStub"></p>
@@ -346,7 +530,34 @@
 
 <div id="insert-initials"></div>
 </section>
+
+
+
+
+
+
+
+
+<!--section id="otherpara" class="tbd">
+<h3>Other paragraph features</h3>
+<p class="status_prompt">IAre there other features of paragraph design that are peculiar to your script? <a href="https://w3c.github.io/typography/index#other_para_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aparagraph-features%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+<p></p>
+</section-->
+
 </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -357,17 +568,37 @@
 <section id="h_pages">
 <h2>Page &amp; book layout</h2>
 
-<section id="page_layout" class="tbd">
+<section id="page_layout" class="ok">
 <h3>General page layout &amp; progression</h3>
 <p id="prompt-page_layout" class="status_prompt promptStub"></p>
 
 
-<div id="insert-page_layout"></div>
+<div id="insert-page-layout"></div>
 </section>
 
 
 
-<section id="footnotes_etc" class="tbd">
+
+
+
+
+
+<section id="grids_tables" class="ok">
+<h3>Grids &amp; tables</h3>
+<p id="prompt-grids_tables" class="status_prompt promptStub"></p>
+
+
+<div id="insert-grids_tables"></div>
+</section>
+
+
+
+
+
+
+
+
+<section id="footnotes_etc" class="ok">
 <h3>Footnotes, endnotes, etc.</h3>
 <p id="prompt-footnotes_etc" class="status_prompt promptStub"></p>
 
@@ -377,7 +608,12 @@
 
 
 
-<section id="headers_footers" class="tbd">
+
+
+
+
+
+<section id="headers_footers" class="ok">
 <h3>Page headers, footers, etc.</h3>
 <p id="prompt-headers_footers" class="status_prompt promptStub"></p>
 
@@ -388,14 +624,44 @@
 
 
 
-<section id="interaction" class="basic">
+
+
+
+
+
+<section id="interaction" class="ok">
 <h3>Forms &amp; user interaction</h3>
 <p id="prompt-interaction" class="status_prompt promptStub"></p>
 
 
 <div id="insert-interaction"></div>
 </section>
+
+
+
+
+
+
+
+
+<!--section id="morepage" class="ok">
+<h3>Other page layout &amp; pagination features</h3>
+
+
+<p></p>
+</section-->
 </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -435,6 +701,7 @@
 <script>
 if (window.location.href.includes('/TR/')) document.getElementById('summaryStats').style.display = 'none'
 </script>
+
 
 
 
