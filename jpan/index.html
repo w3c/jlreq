@@ -1,0 +1,2287 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Japanese Script Resources</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  <script class="remove">
+  var respecConfig = {
+    // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
+    specStatus:           "ED",
+    //publishDate:  		"2020-06-16",
+
+    noRecTrack:           true,
+    shortName:            "jlreq-lreq",
+    copyrightStart:       "2018",
+    edDraftURI:           "https://w3c.github.io/jlreq/",
+
+    editors:  [
+    { name: "Richard Ishida", mailto: "ishida@w3.org", company: "W3C", w3cid: 3439 }
+    ],
+
+
+    group:      "i18n",
+    github: 	"w3c/jlreq",
+
+
+    postProcess: [
+            async function importStyleSheet() { 
+                const elems = document.querySelectorAll(`link[rel='stylesheet'][data-import]`)
+                await Promise.all(
+                    [...elems].map(async link => {
+                        const text = await fetch(link.href).then(r => r.text())
+                        const style = document.createElement("style")
+                        style.textContent = text
+                        link.replaceWith(style)
+                        })
+                    )
+                }
+            ],
+        };
+  </script>
+
+<link rel="stylesheet" data-import href="https://w3c.github.io/i18n-drafts/style/respec_2022.css">
+<link rel="stylesheet" href="local.css">
+</head>
+
+<body>
+<div id="abstract">
+<p>This document  points to resources for the layout and presentation of text in languages that use the Japanese script. The target audience includes developers of Web standards and technologies, such as HTML, CSS, Mobile Web, Digital Publications, and Unicode, as well as implementers of web browsers, ebook readers, and other applications that need to render Japanese text.</p>
+</div>
+
+<div id="sotd">
+<p>This document  points to resources for Japanese script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and digital publications about how to support languages written using the Japanese script. The information here is developed in conjunction with a <a href="https://www.w3.org/TR/jpan-gap/">document that summarises gaps</a> where the Web fails to adequately support the Japanese script.</p>
+
+<p>The editor's draft of this document is being developed in the GitHub repository <a href="https://w3c.github.io/jlreq/">Japanese Language Enablement (jlreq)</a>, with contributors from the <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/International/i18n-activity/i18n-ig/">Internationalization Interest Group</a>. It is published by the <a href="https://www.w3.org/International/i18n-activity/i18n-wg/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
+
+<p>To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on using a URL.</p>
+</div>
+
+
+<div id="linkWarning">
+<p>Some links on this page point to repositories or pages to which information will be added over time. Initially, the link may produce no results, but as issues, tests, etc. are created they will show up.</p>
+
+<p>Links that have a gray color led to no content the last time this document was updated.  They are still live, however, since relevant content could be added at any time. When the document is updated, links that now point to results will have their live colour restored.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<section id="h_introduction">
+<h2>Introduction</h2>
+
+
+
+<section id="h_acknowledgements">
+<h3>Contributors</h3>
+
+<p>This document was created by Richard Ishida.</p>
+
+<!--<p>The following people contributed information that was used in preparing this document (in alphabetic order): XXXX.</p>
+-->
+<p data-lang="en">See also the <a href="https://github.com/w3c/jlreq/graphs/contributors">GitHub contributors list</a> for the Japanese Language Enablement project, and the <a href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan">discussions related to the Japanese script</a>.</p>
+</section>
+
+
+
+
+
+
+<section id="h_about_this_document">
+<h3>About this document</h3>
+
+<p>This document points to resources for Japanese script layout and text support on the Web and in eBooks. These resources provide information for developers of Web technologies such as CSS, HTML and digital publications, and for application developers, about how to support languages written using the Japanese script. They include requirements, tests, GitHub discussions, type samples, and more,</p>
+
+<p>The document focuses on typographic layout issues.  For a deeper understanding of the Japanese script and how it works see <cite>Japanese Orthography Notes</cite>, which includes topics such as: 
+<a href="https://r12a.github.io/scripts/jpan/ja.html#phonology">Phonology</a>,  and
+<a href="https://r12a.github.io/scripts/jpan/ja.html#characters">Characters</a>.
+<!--<a href="https://r12a.github.io/scripts/jpan/ja.html#encoding">Encoding choices</a>,--> 
+<!--<a href="https://r12a.github.io/scripts/jpan/ja.html#numbers">Numbers</a>-->
+</p>
+</section>
+
+
+
+
+
+
+<section id="h_gap_analysis">
+<h3>Gap analysis</h3>
+
+<p>This document should be used alongside a separate document, <a href="https://www.w3.org/TR/jpan-gap/"><cite>Japanese Gap Analysis</cite></a>, which describes gaps in language support for users of the Japanese script, and prioritises and describes the impact of those gaps on the user.</p>
+
+<p>Gap reports are brought to the attention of spec and browser implementers, and are tracked via the <a href="https://github.com/orgs/w3c/projects/95" target="_blank">Gap Analysis Pipeline</a>. (<a href="https://github.com/orgs/w3c/projects/95/views/1?filterQuery=label%3A%22s%3Ajpan%22" target="_blank">Filter for Japanese script items</a>)</p>
+</section>
+
+
+
+
+
+
+
+<section id="h_info_requests">
+<h3>Related resources</h3>
+
+<p>The document <a href="https://www.w3.org/TR/typography/"><cite>Language enablement index</cite></a> points to this document and others, and provides a central location for developers and implementers to find information related to various scripts.</p>
+
+<p>The <abbr title="World Wide Web Consortium">W3C</abbr> also has a repository with discussion threads related to the Japanese script, including requests from developers to the user community for information about how scripts/languages work, and a notification system that tracks issues in <abbr title="World Wide Web Consortium">W3C</abbr> working groups related to the Japanese script. See a list of <a target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion+label%3As%3AJapanese">unresolved questions</a> for Japanese experts. Each section below points to related discussions. See also the <a href="https://w3c.github.io/jlreq/home">repository home page</a>.</p>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h_script_overview">
+<h2>Japanese Script Overview</h2>
+
+<p>The Japanese script is an <a class="termref" href="https://w3.org/TR/i18n-glossary/#alphabet">alphabet</a>, ie. a writing system in which both consonants and vowels are indicated.</p>
+
+<p>Modern Japanese can be written using a subset of the letters available in the Japanese Unicode block. The remainder are used for writing Todo, Sibe, and Manchu, or for writing foriegn words, especially in Tibetan and Sanskrit.</p>
+
+<p>Mongolian text runs top to bottom in vertical lines and  (unusually) the lines flow <em>left to right</em>.</p>
+
+<p>The script is <a class="termref" href="https://w3.org/TR/i18n-glossary/#cursive">cursive</a>, ie. letters in a word are joined. All letters join both on the left and right.</p>
+
+<p>Words are separated by spaces, but also <em>contain</em> narrow spaces that precede suffixes and may produce shaping differences to the surrounding letters. These are part of the word, and the parts on either side should not be separated.</p>
+
+<p class="addToConsonants">Modern  Mongolian uses 16 basic consonant letters and 11 more for representing foreign sounds.</p>
+In the Traditional Mongolian alphabet  vowels are written using 8 vowel letters, including one for foreign sounds.
+<p class="addToVowels">Mongolian has separate code points for each sound in Mongolian, but many of these look indistinguishable from each other when rendered. This creates difficulties for novices to reproduce Mongolian text without access to the source..</p>
+
+<p><a class="termref" href="https://r12a.github.io/scripts/jpan/ja#diglossia">Vowel reduction</a> is a significant feature of Mongolian. Non-initial short vowels are reduced to vestiges or to zero, and non-initial long vowels in the orthography are reduced to short vowel length.</p>
+
+<p><a class="termref" href="https://r12a.github.io/scripts/jpan/ja#harmony">Vowel harmony</a> is another key feature, grouping vowels in a way that indicates a front or back position for the tongue root (ATR).</p>
+
+<p>The script is monocameral.</p>
+
+<p>There is a set of  Mongolian digits.</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+<h2>All topics</h2>
+
+
+<aside class="prompts">Links reveal all results, regardless of topic, for issues, tests, and samples. </aside>
+
+
+
+
+<dl class="reslinks">
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen">Open requests for information</a></li>
+
+<li><a target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan">All Japanese issues in the jlreq repo</a></li>
+
+<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=is%3Aissue+label%3Ascript-jpan">All Japanese issues in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan">W3C type samples</a></li>
+
+<li><a target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a target="_blank" href="https://github.com/w3c/text_direction_tests/issues?q=is%3Aissue+label%3As%3Ajpan">Text direction</a> • 
+<a target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Ajpan">Glyphs &amp; characters</a> •
+<a target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3As%3Ajpan">Punctuation &amp; inline</a> •
+<a target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue+label%3As%3Ajpan">Lines &amp; paragraphs</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/">Japanese</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+<h2 id="h_text_direction">Text direction</h2>
+
+
+<section id="h_vertical_text">
+<h3>Vertical text</h3>
+
+<aside class="prompts">Are the script requirements for vertically oriented text met? What about if you mix vertical text with scripts that are normally only horizontal? Do you need a switch to use different characters in vertical vs. horizontal text? Does the browser support short runs of horizontal text in vertical lines (tate-chu-yoko in Japanese) as expected? Is the orientation of characters and the directional ordering of characters supported as needed?</aside>
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#vertical_writing_mode_and_horizontal_writing_mode">Vertical Writing Mode and Horizontal Writing Mode</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#japanese_and_western_mixed_text_composition">Japanese and Western Mixed Text Composition (including Horizontal-in-Vertical Text Composition)</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#direction">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+is%3Aopen+label%3Aquestion+label%3Ai%3Avertical_text">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Avertical_text">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+is%3Aissue+label%3Ascript-jpan+label%3Ai%3Avertical_text">Japanese issues in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Avertical_text">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.direction">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-vertical-text.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/text_direction_tests/issues?q=is%3Aissue++label%3As%3Ajpan+label%3Ai%3Avertical_text">Exploratory/interactive test repo</a></li>
+</ul>
+</dd>
+
+
+<dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#vertical_text">Vertical text</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#vertical_text">Vertical text</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+<!--
+<section id="h_bidi_text">
+<h3>Bidirectional text</h3>
+
+<aside class="prompts">If this script runs right-to-left, are there any issues when handling that? Is bidirectional text adequately supported? What about numbers and expressions? Do the Unicode bidi controls and HTML markup provide the support needed? Is isolation of directional runs problematic?</aside>
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#direction">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+is%3Aopen+label%3Aquestion+label%3Ai%3Abidi_text">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Abidi_text">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+is%3Aissue+label%3Ascript-jpan+label%3Ai%3Abidi_text">Japanese issues in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Abidi_text">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.direction">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-bidi-text.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/text_direction_tests/issues?q=is%3Aissue++label%3As%3Ajpan+label%3Ai%3Abidirectional_text">Exploratory/interactive test repo</a></li>
+</ul>
+</dd>
+
+
+<dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#bidi_text">Bidirectional text</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#bidi_text">Bidirectional text</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+-->
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h_shaping">
+<h2>Glyph shaping &amp; positioning</h2>
+
+
+<section id="h_writing_styles">
+<h3>Fonts &amp; font styles</h3>
+
+<aside class="prompts">How are fonts grouped into recognisable writing styles? How is each writing style used? Are OpenType features needed? What other font-related requirements and issue exist?</aside>
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#writingstyles">Japanese</a></li>
+
+<!--<li style="color:red; font-size:150%; background-color: yellow;"><a target="_blank" href="https://github.com/w3c/i18n-discuss/wiki/Generic-font-families">Generic font families</a> (XXXX)</li>
+-->
+<li><a target="_blank" href="https://r12a.github.io/scripts/fontlist/index.html?script=jpan">List of system fonts</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Afonts">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Afonts">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Afonts">Japanese issues in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Afonts">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.writingstyles">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-fonts.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Afonts">Exploratory/interactive test repo</a></li>
+</ul>
+
+
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#fonts">Fonts &amp; font styles</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#fonts">Fonts &amp; font styles</a></li>
+</ul>
+</dd>
+</dl>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="h_context">
+<h3>Context-based shaping &amp; positioning</h3>
+
+<aside class="prompts">Are special glyph forms needed, depending on the context in which a character is used? Do glyphs interact in some circumstances? Are there requirements to position diacritics or other items specially, depending on context? Does the script have multiple diacritics competing for the same location relative to the base?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#context">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Aglyphs">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aglyphs">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Aglyphs">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Aglyphs">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.context">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+</dd>
+
+
+<dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a class="variable" target="_blank" href="https://www.w3.org/TR/jpan-gap/#glyphs">Context-based shaping &amp; positioning</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a class="variable" target="_blank" href="https://www.w3.org/TR/typography/#glyphs">Context-based shaping &amp; positioning</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!--
+<section class="h_cursive">
+<h3>Cursive text</h3>
+
+<aside class="prompts">If this script is cursive (eg. Arabic, N’Ko, Syriac, etc), are there problems or needed features related to the handling of cursive text? Do cursive links break if parts of a word are marked up or styled? Do Unicode joiner and non-joiner characters behave as expected?</aside>
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#cursive">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Acursive">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Acursive">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Acursive">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Acursive">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.cursive">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-cursive.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Acursive">Exploratory/interactive test repo</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#cursive">Cursive text</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#cursive">Cursive text</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+-->
+
+
+
+
+
+
+
+
+
+<section class="h_fontstyle">
+<h3>Letterform slopes, weights, &amp; italics</h3>
+
+<aside class="prompts">Are italicisation, bolding, oblique, etc relevant? Do italic fonts lean in the right direction? Is synthesised italicisation problematic? Are there other problems relating to bolding or italicisation - perhaps relating to generalised assumptions of applicability?</aside>
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Implementing Japanese Subtitles on Netflix</cite>: <a target="_blank" href="https://netflixtechblog.com/implementing-japanese-subtitles-on-netflix-c165fbe61989#6d57">Slanted Text</a></li>
+
+<!--<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#fontstyle">Japanese</a></li>
+--></ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Aletterforms">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aletterforms">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Aletterforms+">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Aletterforms">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.letterforms">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-letterforms.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aletterforms">Exploratory/interactive test repo</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#letterforms">Letterform slopes, weights, &amp; italics</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#letterforms">Letterform slopes, weights, &amp; italics</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="h_transforms">
+<h3>Case &amp; other character transforms</h3>
+
+<aside class="prompts">Is the orthography bicameral? Are there other character pairings, especially when transforms are needed to convert between the two?</aside>
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#transforms">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Atransforms">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Atransforms">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Atransforms">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Atransforms">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.transforms">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-transforms.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Atransforms">Exploratory/interactive test repo</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#transforms">Case &amp; other character transforms</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#transforms">Case &amp; other character transforms</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="h_graphemes">
+<h2>Typographic units</h2>
+
+
+
+
+<section class="h_transforms">
+<h3>Characters &amp; encoding</h3>
+
+
+<aside class="prompts">Most languages are now supported by Unicode, but there are still occasional issues. In particular, there may be issues related to ordering of characters, or competing encodings (as in Myanmar), or standardisation of variation selectors or the encoding model (as in Mongolian).</aside>
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>, Characters: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#characters">Japanese</a></li>
+
+<!--<li>Character usage: <a target="_blank" href="https://r12a.github.io/app-charuse/index.html?script=Japanese">Japanese</a></li>
+--></ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Aencoding">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aencoding">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Aencoding">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Aencoding">W3C type samples</a></li>
+
+<li><cite>r12a type samples</cite>: <a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.consonants">consonants</a> • 
+<a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.vowels">vowels</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+</dd>
+
+
+
+<dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#encoding">Characters &amp; encoding</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#encoding">Characters &amp; encoding</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+
+<section class="h_segmentation">
+<h3>Grapheme/word segmentation &amp; selection</h3>
+
+<aside class="prompts">Do Unicode grapheme clusters appropriately segment character units for the script? Are there special requirements for the following operations: forwards/backwards deletion, cursor movement &amp; selection, character counts, searching &amp; matching, text insertion, line-breaking, justification, case conversions, sorting? Are words separated by spaces, or other characters? Are there special requirements when double-clicking on the text? Are words hyphenated?</aside>
+
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>, Word boundaries: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#word">Japanese</a></li>
+
+<li><cite>Orthography Notes</cite>, Graphemes: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#graphemes">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Asegmentation">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Asegmentation">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Asegmentation">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Asegmentation">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.word">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tools</dt>
+<dd>
+<ul>
+<li><a href="https://r12a.github.io/scripts/apps/graphemes/index.html" target="_blank">Grapheme segmenter</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-grapheme-word-segmentation.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Asegmentation">Exploratory/interactive test repo</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#segmentation">Grapheme/word segmentation &amp; selection</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#segmentation">Grapheme/word segmentation &amp; selection</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h_characters_and_phrases">
+<h2>Punctuation &amp; inline features</h2>
+
+
+
+<section id="h_phrase">
+<h3>Phrase &amp; section boundaries</h3>
+
+
+<aside class="prompts">What characters are used to indicate the boundaries of phrases, sentences, and sections? What about other punctuation, such as dashes, connectors, separators, etc?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#characters_used_for_japanese_composition">Characters Used for Japanese Composition</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#line_composition_rules_for_punctuation_marks">Line Composition Rules for Punctuation Marks</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#examples_of_items_jutting_out_of_the_kihonhanmen">Examples of Items Jutting Out of the Kihon-hanmen</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#character_positioning_based_on_kihonhanmen_design">Character Positioning based on Kihon-hanmen</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#grouping_of_characters_and_symbols_depending_on_their_positioning">Design Grouping of Characters and Symbols depending on their Positioning</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#phrase">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Apunctuation_etc">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Apunctuation_etc">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Apunctuation_etc">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Apunctuation_etc">W3C type samples</a></li>
+
+<li><cite>r12a type samples</cite>: <a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.phrase">phrases</a> • 
+<a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.bracketing">bracketing</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#punctuation_etc">Phrase &amp; section boundaries</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#punctuation_etc">Phrase &amp; section boundaries</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h_quotations">
+<h3>Quotations &amp; citations</h3>
+
+
+<aside class="prompts">What characters are used to indicate quotations? Do quotations within quotations use different characters? What characters are used to indicate dialogue? Are the same mechanisms used to cite words, or for scare quotes, etc? What about citing book or article names?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#line_head_indent_and_line_end_indent">Line Head Indent and Line End Indent</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#processing_of_spaces_between_paragraphs">Processing of Spaces between Paragraphs</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#adjustment_of_processing_of_realm_in_block_direction">Adjustment of Processing of Realm in Block Direction</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#differences_in_vertical_and_horizontal_composition_in_use_of_punctuation_marks">Differences in Vertical and Horizontal Composition in Use of Punctuation Marks</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#quotations">Japanese</a></li>
+
+<li><cite>Wikipedia</cite>: <a  target="_blank" href="https://en.wikipedia.org/wiki/Quotation_mark" class="external">Quotation mark</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Aquotations">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aquotations">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Aquotations">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Aquotations">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.quotations">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-quotations.html#jpan">Exploratory/interactive test results</a>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aquotations">Exploratory/interactive test repo</a></li>
+</li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#quotations">Quotations &amp; citations</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#quotations">Quotations &amp; citations</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_emphasis">
+<h3>Emphasis &amp; highlighting</h3>
+
+
+<aside class="prompts">How are emphasis and highlighting achieved? If lines or marks are drawn alongside, over or through the text, do they need to be a special distance from the text itself? Is it important to skip characters when underlining, etc? How do things change for vertically set text?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#composition_of_emphasis_dots">Composition of Emphasis Dots</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#emphasis">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Aemphasis">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aemphasis">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Aemphasis">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Aemphasis">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.emphasis">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-emphasis.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aemphasis">Exploratory/interactive test repo</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#emphasis">Emphasis &amp; highlighting</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#emphasis">Emphasis &amp; highlighting</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_abbrev">
+<h3>Abbreviation, ellipsis &amp; repetition</h3>
+
+
+<aside class="prompts">What characters or other methods are used to indicate abbreviation, ellipsis &amp; repetition?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#abbrev">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Aabbrev">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aabbrev">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Aabbrev">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Aabbrev">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.abbrev">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#abbrev">Abbreviation, ellipsis &amp; repetition</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#abbrev">Abbreviation, ellipsis &amp; repetition</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_inlinenotes">
+<h3>Inline notes &amp; annotations</h3>
+
+
+<aside class="prompts">What mechanisms, if any, are used to create *inline* notes and annotations? (For referent-type notes such as footnotes, see further down.)</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#ruby_and_emphasis_dots">Ruby and Emphasis Dots</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#positioning_of_jukugoruby">Positioning of Jukugo-ruby</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#inline_cutting_note">Inline Cutting Note (Warichu)</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#superscripts_and_superscripts">Superscripts and Superscripts</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#furiwake_processing">Furiwake Processing</a></li>
+
+<li><cite>Implementing Japanese Subtitles on Netflix</cite>: <a target="_blank" href="https://netflixtechblog.com/implementing-japanese-subtitles-on-netflix-c165fbe61989#8caf">Vertical Subtitles</a><span class="dot"> •
+</span><a target="_blank" href="https://netflixtechblog.com/implementing-japanese-subtitles-on-netflix-c165fbe61989#877a">Tate-chu-yoko</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#inlinenotes">Japanese</a></li>
+
+<li><cite><a target="_blank" href="https://www.w3.org/TR/ruby-use-cases/">Use Cases &amp; Exploratory Approaches for Ruby Markup</a></cite> </li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Ainline_notes">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Ainline_notes">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Ainline_notes">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Ainline_notes">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.inlinenotes">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-inline-notes-annotations.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Ainline_notes">Exploratory/interactive test repo</a></li>
+
+<li><a target="_blank" href="https://w3c.github.io/i18n-tests/results/ruby-html">HTML5: The ruby element and its children</a></li>
+
+<li><a target="_blank" href="https://w3c.github.io/i18n-tests/results/css-ruby">CSS Ruby</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#inline_notes">Inline notes &amp; annotations</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#inline_notes">Inline notes &amp; annotations</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_otherinline">
+<h3>Text decoration &amp; other inline features</h3>
+
+
+<aside class="prompts">Any other form of highlighting or marking of text, such as underlining, numeric overbars, etc. What characters or methods (eg. text decoration) are used to convey information about a range of text? If lines are drawn alongside, over or through the text, do they need to be a special distance from the text itself? Is it important to skip characters when underlining, etc? How do things change for vertically set text?  Are there other punctuation marks that were not covered in preceding sections?</aside>
+
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#examples_of_items_jutting_out_of_the_kihonhanmen">Examples of Items Jutting Out of the Kihon-hanmen</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#line_gap_arrangement_with_ruby_and_other_objects">Line Gap Arrangement with Ruby and Other Objects</a></li>
+
+<li><cite>Japanese Layout Requirements</cite>:
+<ul class="linkList">
+<li><a href="https://w3c.github.io/jlreq/#inline_cutting_note"> Inline Cutting Note (Warichu)</a></li>
+<li><a href="https://w3c.github.io/jlreq/#furiwake_processing"> Furiwake Processing</a></li>
+<li><a href="https://w3c.github.io/jlreq/#superscripts_and_superscripts"> Superscripts and Superscripts</a></li>
+</ul>
+</li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#otherinline">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Atext_decoration">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Atext_decoration">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Atext_decoration">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Atext_decoration">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.otherinline">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-text-decoration.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Atext_decoration">Exploratory/interactive test repo</a></li>
+
+<li><a target="_blank" href="https://w3c.github.io/i18n-tests/results/line-decoration">CSS3 Text decoration, Line decoration</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#text_decoration">Text decoration &amp; other inline features</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#text_decoration">Text decoration &amp; other inline features</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_data_formats">
+<h3>Data formats &amp; numbers</h3>
+
+
+<aside class="prompts">If the script has its own set of number digits, are there any issues in how they are used? Does the script or language use special format patterns that are problematic (eg. 12,34,000 in India)? What about date/time formats and selection - and are non-Gregorian calendars needed? Do percent signs and other symbols associated with number work correctly, and do numbers need special decorations, (like in Ethiopic or Syriac)? How about the management of personal names, addresses, etc. in web pages: are there issues?</aside>
+
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#numbers">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Adata_formats">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Adata_formats">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ascript-jpan+label%3Ai%3Adata_formats">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Adata_formats">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.otherinline">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-text-decoration.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Adata_formats">Exploratory/interactive test repo</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#data_formats">Data formats &amp; numbers</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#data_formats">Data formats &amp; numbers</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h_lines_and_paragraphs">
+<h2>Line &amp; paragraph layout</h2>
+
+
+<section id="h_line_breaking">
+<h3>Line breaking &amp; hyphenation</h3>
+
+<aside class="prompts">Are there special rules about the way text wraps when it hits the end of a line? Does line-breaking wrap whole 'words' at a time, or characters, or something else (such as syllables in Tibetan and Javanese)? What characters should not appear at the end or start of a line, and what should be done to prevent that? Is hyphenation used, or something else? What rules are used? What difficulties exist?</aside>
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd class="reqs">
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#possibilities_for_linebreaking_between_characters">Possibilities for Line-breaking between Characters</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#linebreak">Japanese</a></li>
+
+<li><a target="_blank" href="https://www.w3.org/International/articles/typography/linebreak">Approaches to line-breaking</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd class="gh_discussions">
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Aline_breaking+">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aline_breaking">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Aline_breaking">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Aline_breaking">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.linebreak">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd class="tests">
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-line-breaking.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue++label%3As%3Ajpan+label%3Ai%3Aline_breaking">Exploratory/interactive test repo</a></li>
+</ul>
+</dd>
+
+
+<dt>Gap analysis</dt>
+<dd class="gap_analysis">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#line_breaking">Line breaking &amp; hyphenation</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#line_breaking">Line breaking</a> • <a target="_blank" href="https://www.w3.org/TR/typography/#hyphenation">Hyphenation</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+<section id="h_alignment">
+<h3>Text alignment &amp; justification</h3>
+
+<aside class="prompts">Does text in a paragraph needs to have flush lines down both sides? Does the script allow punctuation to hang outside the text box at the start or end of a line? Where adjustments are need to make a line flush, how is that done? Does the script shrink/stretch space between words and/or letters? Are word baselines stretched, as in Arabic? What about paragraph indents?</aside>
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#line_adjustment">Line Adjustment</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#opportunities_for_intercharacter_space_reduction_during_line_adjustment">Opportunities for Inter-character Space Reduction during Line Adjustment</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#opportunities_for_intercharacter_space_expansion_during_line_adjustment">Opportunities for Inter-character Space Expansion during Line Adjustment</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#paragraph_adjustment_rules">Paragraph Adjustment Rules</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#justification">Japanese</a></li>
+
+<li><a target="_blank" href="https://www.w3.org/International/articles/typography/justification">Approaches to full justification</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Ajustification">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Ajustification">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Ajustification">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Ajustification">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.justification">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-text-alignment-justification.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue++label%3As%3Ajpan+label%3Ai%3Ajustification">Exploratory/interactive test repo</a></li>
+</ul>
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#justification">Text alignment &amp; justification</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#justification">Text alignment &amp; justification</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_spacing">
+<h3>Text spacing</h3>
+
+<aside class="prompts">This section looks at ways in which spacing is applied between characters over and above that which is introduced during justification. For example, does the orthography create emphasis or other effects by spacing out the words, letters or syllables in a word? (For justification related spacing, see Text alignment &amp; justification, above).</aside>
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#positioning_of_consecutive_opening_brackets_closing_brackets_comma_full_stops_and_middle_dots">Positioning of Consecutive Opening Brackets, Closing Brackets, Commas, Full Stops and Middle Dots</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#handling_of_western_text_in_japanese_text_using_proportional_western_fonts">Handling of Western Text in Japanese Text using Proportional Western Fonts</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#letterspace">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Aspacing">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aspacing">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Aspacing">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Aspacing">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.spacing">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-letter-spacing.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aspacing">Exploratory/interactive test repo</a></li>
+</ul>
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#spacing">Text spacing</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#spacing">Text spacing</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_baselines">
+<h3>Baselines, line height, etc.</h3>
+
+<aside class="prompts">Does the script have special requirements for baseline alignment between mixed scripts and in general? Is line height special for this script? Are there other aspects that affect line spacing, or positioning of items vertically within a line?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#baselines">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Abaselines">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Abaselines">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Abaselines">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Abaselines">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.baselines">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#baselines"> Baselines, line-height, etc</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#baselines">Baselines, line-height, etc</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_counters">
+<h3>Lists, counters, etc.</h3>
+
+<aside class="prompts">Are there list or other counter styles in use? If so, what is the format used? Do counters need to be upright in vertical text? Are there other aspects related to counters and lists that need to be addressed?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#lists">Japanese</a></li>
+
+<li><cite> Ready-made Counter Styles</cite>: <a target="_blank" href="https://www.w3.org/TR/predefined-counter-styles/#kana-styles">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Alists">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Alists">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Alists">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Alists">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.lists">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-lists-counters-etc.html#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue++label%3As%3Ajpan+label%3Ai%3Alists">Exploratory/interactive test repo</a></li>
+
+<li><a target="_blank" href="https://w3c.github.io/i18n-tests/results/predefined-counter-styles#complexlimited">I18n test suite: CSS3 Counter Styles, predefined styles</a></li>
+
+<li><a target="_blank" href="https://w3c.github.io/i18n-tests/results/custom-counter-styles#chinese">I18n test suite: Custom counter styles</a></li>
+</ul>
+
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#lists"> Lists, counters, etc</a></li>
+</ul>
+</dd>
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#lists">Lists, counters, etc</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_initials">
+<h3>Styling initials</h3>
+
+<aside class="prompts">Does the script use special styling of the initial letter of a line or paragraph, such as for drop caps or similar? How about the size relationship between the large letter and the lines alongide? where does the large letter anchor relative to the lines alongside? is it normal to include initial quote marks in the large letter? is the large letter really a syllable? Are dropped, sunken, and raised types found? etc.</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#initials">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Ainitials">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Ainitials">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Ainitials">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Ainitials">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.initials">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-styling-initials#jpan">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Ainitials">Exploratory/interactive test repo</a></li>
+</ul>
+
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#initials">Styling initials</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#initials">Styling initials</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h_page">
+<h2>Page &amp; book layout</h2>
+
+
+
+
+<section id="h_generallayout">
+<h3>General page layout &amp; progression</h3>
+
+<aside class="prompts">How are the main text area and ancilliary areas positioned and defined? Are there any special requirements here, such as dimensions in characters for the Japanese kihon hanmen? The book cover for scripts that are read right-to-left scripts is on the right of the spine, rather than the left. When content can flow vertically and to the left or right, how to specify the location of objects, text, etc. relative to the flow? Do tables and grid layouts work as expected? How do coluLANGTAGs work in vertical text? Can you mix block of vertical and horizontal text? Does text scroll in a different direction?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#vertical_writing_mode_and_horizontal_writing_mode">Vertical Writing Mode and Horizontal Writing Mode</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#page_formats_for_japanese_documents">Page Formats for Japanese Documents</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#specifying_the_kihonhanmen">Specifying the Kihon-hanmen</a><span class="dot"> •
+</span><a target="_blank" href="https://www.w3.org/TR/jlreq/#block_direction_setting_process_of_lines_paragraphs">Block Direction Setting Process of Lines, Paragraphs etc.</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#generallayout">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Apage_layout">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Apage_layout">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Apage_layout">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Apage_layout">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.generallayout">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#page_layout">General page layout &amp; progression</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#page_layout">General page layout &amp; progression</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_grids_tables">
+<h3>Grids &amp; tables</h3>
+
+<aside class="prompts">Does the script have special requirements for character grids or tables?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li>
+<!--<cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#grids">Japanese</a>-->
+</li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Agrids_tables">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Agrids_tables">All Japanese issues on this topic in the jlreq repo</a></li><li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Agrids_tables">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Agrids_tables">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.grids">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#grids_tables">Grids &amp; tables</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#grids_tables">Grids &amp; tables</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_footnotes_etc">
+<h3>Footnotes, endnotes, etc</h3>
+
+<aside class="prompts">Support for footnotes, endnotes or other necessary annotations of this kind may vary in other cultures. In some cases, a script may use a very idiosyncratic approach to locate the notes or to link to them from the text. (See Inline notes &amp; annotations for purely inline annotations, such as ruby or warichu. This section is about annotation systems that separate the reference marks and the content of the notes.)</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#processing_of_notes">Processing of Notes</a></li>
+
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#footnotes">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Afootnotes_etc">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Afootnotes_etc">All Japanese issues on this topic in the jlreq repo</a></li><li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Afootnotes_etc">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Afootnotes_etc">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.footnotes_etc">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#footnotes_etc">Footnotes, endnotes, etc</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#footnotes_etc">Footnotes, endnotes, etc</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section id="h_headers_footers">
+<h3>Page headers, footers, etc</h3>
+
+<aside class="prompts">Are there special conventions for page numbering, or the way that running headers and the like are handled?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul><li><cite>Japanese Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/jlreq/#running_heads_and_page_numbers">Running Heads and Page Numbers</a></li>
+
+<!--<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#headers_footers">Japanese</a></li>
+--></ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Aheaders_footers">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Aheaders_footers">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ascript-jpan+label%3Ai%3Aheaders_footers">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Aheaders_footers">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.headers">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#headers_footers">Page headers, footers, etc</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#headers_footers">Page headers, footers, etc</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+<section id="h_interaction">
+<h3>Forms &amp; user interaction</h3>
+
+<aside class="prompts">Are vertical form controls needed? Are scroll bars in an unusual position? Other special requirements for user interaction?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/jpan/ja#interaction">Japanese</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Aquestion+is%3Aopen+label%3Ai%3Ainteraction">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/jlreq/issues?q=is%3Aissue+label%3As%3Ajpan+label%3Ai%3Ainteraction">All Japanese issues on this topic in the jlreq repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=is%3Aissue+label%3As%jpan+label%3Ai%3Ainteraction">Japanese issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Ajpan+label%3Ai%3Ainteraction">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.jpan+label%3Ah.interaction">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/jpan-gap/#interaction">Forms &amp; user interaction</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#interaction">Forms &amp; user interaction</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<section id="a_changes" class="appendix">
+<h2>Change log</h2>
+
+<ul>
+<li>Applied new template.</li>
+</ul>
+</section>
+--></body>
+</html>
