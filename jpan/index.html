@@ -246,11 +246,11 @@
 
 
 
-<section>
-<h2 id="h_text_direction">Text direction</h2>
+<section id="h_direction">
+<h2>Text direction</h2>
 
 
-<section id="h_vertical_text">
+<section id="vertical_text">
 <h3>Vertical text</h3>
 
 <aside class="prompts">Are the script requirements for vertically oriented text met? What about if you mix vertical text with scripts that are normally only horizontal? Do you need a switch to use different characters in vertical vs. horizontal text? Does the browser support short runs of horizontal text in vertical lines (tate-chu-yoko in Japanese) as expected? Is the orientation of characters and the directional ordering of characters supported as needed?</aside>
@@ -322,7 +322,7 @@
 
 
 <!--
-<section id="h_bidi_text">
+<section id="bidi_text">
 <h3>Bidirectional text</h3>
 
 <aside class="prompts">If this script runs right-to-left, are there any issues when handling that? Is bidirectional text adequately supported? What about numbers and expressions? Do the Unicode bidi controls and HTML markup provide the support needed? Is isolation of directional runs problematic?</aside>
@@ -402,7 +402,7 @@
 <h2>Glyph shaping &amp; positioning</h2>
 
 
-<section id="h_writing_styles">
+<section id="fonts">
 <h3>Fonts &amp; font styles</h3>
 
 <aside class="prompts">How are fonts grouped into recognisable writing styles? How is each writing style used? Are OpenType features needed? What other font-related requirements and issue exist?</aside>
@@ -466,8 +466,6 @@
 </ul>
 </dd>
 </dl>
-
-
 </section>
 
 
@@ -477,7 +475,7 @@
 
 
 
-<section class="h_context">
+<section id="glyphs">
 <h3>Context-based shaping &amp; positioning</h3>
 
 <aside class="prompts">Are special glyph forms needed, depending on the context in which a character is used? Do glyphs interact in some circumstances? Are there requirements to position diacritics or other items specially, depending on context? Does the script have multiple diacritics competing for the same location relative to the base?</aside>
@@ -550,7 +548,7 @@
 
 
 <!--
-<section class="h_cursive">
+<section id="cursive">
 <h3>Cursive text</h3>
 
 <aside class="prompts">If this script is cursive (eg. Arabic, N’Ko, Syriac, etc), are there problems or needed features related to the handling of cursive text? Do cursive links break if parts of a word are marked up or styled? Do Unicode joiner and non-joiner characters behave as expected?</aside>
@@ -620,7 +618,7 @@
 
 
 
-<section class="h_fontstyle">
+<section id="letterforms">
 <h3>Letterform slopes, weights, &amp; italics</h3>
 
 <aside class="prompts">Are italicisation, bolding, oblique, etc relevant? Do italic fonts lean in the right direction? Is synthesised italicisation problematic? Are there other problems relating to bolding or italicisation - perhaps relating to generalised assumptions of applicability?</aside>
@@ -691,7 +689,7 @@
 
 
 
-<section class="h_transforms">
+<section id="transforms">
 <h3>Case &amp; other character transforms</h3>
 
 <aside class="prompts">Is the orthography bicameral? Are there other character pairings, especially when transforms are needed to convert between the two?</aside>
@@ -761,13 +759,13 @@
 
 
 
-<section class="h_graphemes">
+<section class="h_segmentation">
 <h2>Typographic units</h2>
 
 
 
 
-<section class="h_transforms">
+<section id="encoding">
 <h3>Characters &amp; encoding</h3>
 
 
@@ -841,7 +839,7 @@
 
 
 
-<section class="h_segmentation">
+<section id="segmentation">
 <h3>Grapheme/word segmentation &amp; selection</h3>
 
 <aside class="prompts">Do Unicode grapheme clusters appropriately segment character units for the script? Are there special requirements for the following operations: forwards/backwards deletion, cursor movement &amp; selection, character counts, searching &amp; matching, text insertion, line-breaking, justification, case conversions, sorting? Are words separated by spaces, or other characters? Are there special requirements when double-clicking on the text? Are words hyphenated?</aside>
@@ -926,12 +924,12 @@
 
 
 
-<section id="h_characters_and_phrases">
+<section id="h_inline">
 <h2>Punctuation &amp; inline features</h2>
 
 
 
-<section id="h_phrase">
+<section id="punctuation_etc">
 <h3>Phrase &amp; section boundaries</h3>
 
 
@@ -1011,7 +1009,7 @@
 
 
 
-<section id="h_quotations">
+<section id="quotations">
 <h3>Quotations &amp; citations</h3>
 
 
@@ -1087,7 +1085,7 @@
 
 
 
-<section id="h_emphasis">
+<section id="emphasis">
 <h3>Emphasis &amp; highlighting</h3>
 
 
@@ -1157,7 +1155,7 @@
 
 
 
-<section id="h_abbrev">
+<section id="abbrev">
 <h3>Abbreviation, ellipsis &amp; repetition</h3>
 
 
@@ -1225,7 +1223,7 @@
 
 
 
-<section id="h_inlinenotes">
+<section id="inline_notes">
 <h3>Inline notes &amp; annotations</h3>
 
 
@@ -1310,7 +1308,7 @@
 
 
 
-<section id="h_otherinline">
+<section id="text_decoration">
 <h3>Text decoration &amp; other inline features</h3>
 
 
@@ -1392,7 +1390,7 @@
 
 
 
-<section id="h_data_formats">
+<section id="data_formats">
 <h3>Data formats &amp; numbers</h3>
 
 
@@ -1471,11 +1469,11 @@
 
 
 
-<section id="h_lines_and_paragraphs">
+<section id="h_para">
 <h2>Line &amp; paragraph layout</h2>
 
 
-<section id="h_line_breaking">
+<section id="line_breaking">
 <h3>Line breaking &amp; hyphenation</h3>
 
 <aside class="prompts">Are there special rules about the way text wraps when it hits the end of a line? Does line-breaking wrap whole 'words' at a time, or characters, or something else (such as syllables in Tibetan and Javanese)? What characters should not appear at the end or start of a line, and what should be done to prevent that? Is hyphenation used, or something else? What rules are used? What difficulties exist?</aside>
@@ -1546,7 +1544,7 @@
 
 
 
-<section id="h_alignment">
+<section id="justification">
 <h3>Text alignment &amp; justification</h3>
 
 <aside class="prompts">Does text in a paragraph needs to have flush lines down both sides? Does the script allow punctuation to hang outside the text box at the start or end of a line? Where adjustments are need to make a line flush, how is that done? Does the script shrink/stretch space between words and/or letters? Are word baselines stretched, as in Arabic? What about paragraph indents?</aside>
@@ -1618,7 +1616,7 @@
 
 
 
-<section id="h_spacing">
+<section id="spacing">
 <h3>Text spacing</h3>
 
 <aside class="prompts">This section looks at ways in which spacing is applied between characters over and above that which is introduced during justification. For example, does the orthography create emphasis or other effects by spacing out the words, letters or syllables in a word? (For justification related spacing, see Text alignment &amp; justification, above).</aside>
@@ -1685,7 +1683,7 @@
 
 
 
-<section id="h_baselines">
+<section id="baselines">
 <h3>Baselines, line height, etc.</h3>
 
 <aside class="prompts">Does the script have special requirements for baseline alignment between mixed scripts and in general? Is line height special for this script? Are there other aspects that affect line spacing, or positioning of items vertically within a line?</aside>
@@ -1751,7 +1749,7 @@
 
 
 
-<section id="h_counters">
+<section id="lists">
 <h3>Lists, counters, etc.</h3>
 
 <aside class="prompts">Are there list or other counter styles in use? If so, what is the format used? Do counters need to be upright in vertical text? Are there other aspects related to counters and lists that need to be addressed?</aside>
@@ -1825,7 +1823,7 @@
 
 
 
-<section id="h_initials">
+<section id="initials">
 <h3>Styling initials</h3>
 
 <aside class="prompts">Does the script use special styling of the initial letter of a line or paragraph, such as for drop caps or similar? How about the size relationship between the large letter and the lines alongide? where does the large letter anchor relative to the lines alongside? is it normal to include initial quote marks in the large letter? is the large letter really a syllable? Are dropped, sunken, and raised types found? etc.</aside>
@@ -1906,7 +1904,7 @@
 
 
 
-<section id="h_generallayout">
+<section id="page_layout">
 <h3>General page layout &amp; progression</h3>
 
 <aside class="prompts">How are the main text area and ancilliary areas positioned and defined? Are there any special requirements here, such as dimensions in characters for the Japanese kihon hanmen? The book cover for scripts that are read right-to-left scripts is on the right of the spine, rather than the left. When content can flow vertically and to the left or right, how to specify the location of objects, text, etc. relative to the flow? Do tables and grid layouts work as expected? How do coluLANGTAGs work in vertical text? Can you mix block of vertical and horizontal text? Does text scroll in a different direction?</aside>
@@ -1980,7 +1978,7 @@
 
 
 
-<section id="h_grids_tables">
+<section id="grids_tables">
 <h3>Grids &amp; tables</h3>
 
 <aside class="prompts">Does the script have special requirements for character grids or tables?</aside>
@@ -2048,7 +2046,7 @@
 
 
 
-<section id="h_footnotes_etc">
+<section id="footnotes_etc">
 <h3>Footnotes, endnotes, etc</h3>
 
 <aside class="prompts">Support for footnotes, endnotes or other necessary annotations of this kind may vary in other cultures. In some cases, a script may use a very idiosyncratic approach to locate the notes or to link to them from the text. (See Inline notes &amp; annotations for purely inline annotations, such as ruby or warichu. This section is about annotation systems that separate the reference marks and the content of the notes.)</aside>
@@ -2119,7 +2117,7 @@
 
 
 
-<section id="h_headers_footers">
+<section id="headers_footers">
 <h3>Page headers, footers, etc</h3>
 
 <aside class="prompts">Are there special conventions for page numbering, or the way that running headers and the like are handled?</aside>
@@ -2189,7 +2187,7 @@
 
 
 
-<section id="h_interaction">
+<section id="interaction">
 <h3>Forms &amp; user interaction</h3>
 
 <aside class="prompts">Are vertical form controls needed? Are scroll bars in an unusual position? Other special requirements for user interaction?</aside>
