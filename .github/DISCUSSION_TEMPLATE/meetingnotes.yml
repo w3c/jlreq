@@ -6,7 +6,7 @@ body:
         # How to add new meeting note
         Fill following fields, and edit markdown formatting after submission if you need.
   - type: input
-    id: JLreq TF meeting notes
+    id: meetingnotes
     attributes:
       label: JLreq TF meeting notes
       description: input date as yyyy-mm-dd
@@ -35,7 +35,7 @@ body:
         ## Agenda 2
         XXXX
   - type: input
-    id: The next JLreq TF meeting
+    id: nextmeeting
     attributes:
       label: The next JLreq TF meeting
       description: put date of next meeting
