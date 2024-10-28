@@ -7,12 +7,14 @@ body:
         Fill following fields, and edit markdown formatting after submission if you need.
   - type: input
     id: JLreq TF meeting notes
-    Attributes:
+    attributes:
+      label: JLreq TF meeting notes
       description: input date as yyyy-mm-dd
       value: yyyy-mm-dd
   - type: input
     id: Attendee
     attributes:
+      label: Attendee
       description: input names of attendee
   - type: textarea
     id: Agenda
@@ -35,5 +37,6 @@ body:
   - type: input
     id: The next JLreq TF meeting
     attributes:
+      label: The next JLreq TF meeting
       description: put date of next meeting
       value: yyyy-mm-dd
