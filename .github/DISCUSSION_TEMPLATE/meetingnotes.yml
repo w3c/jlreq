@@ -1,5 +1,4 @@
 title: "Meeting Notes"
-labels: []
 body:
   - type: markdown
     attributes:
@@ -8,26 +7,33 @@ body:
         Fill following fields, and edit markdown formatting after submission if you need.
   - type: input
     id: JLreq TF meeting notes
-    description: input date as yyyy-mm-dd
-    value: yyyy-mm-dd
+    Attributes:
+      description: input date as yyyy-mm-dd
+      value: yyyy-mm-dd
   - type: input
     id: Attendee
-    description: input names of attendee
+    attributes:
+      description: input names of attendee
   - type: textarea
     id: Agenda
-    description: list agenda items
-    value: |
-      ## Previous meeting on [yyyy-mm-dd]()
-      ## For this meeting
+    attributes: 
+      label: Agenda
+      description: list agenda items
+      value: |
+        ## Previous meeting on [yyyy-mm-dd]()
+        ## For this meeting
   - type: textarea
     id: Minutes
-    description: paste minutes here
-    value: |
-      ## Agenda 1
-      XXXX
-      ## Agenda 2
-      XXXX
+    attributes:
+      label: Minutes
+      description: paste minutes here
+      value: |
+        ## Agenda 1
+        XXXX
+        ## Agenda 2
+        XXXX
   - type: input
     id: The next JLreq TF meeting
-    description: put date of next meeting
-    value: yyyy-mm-dd
+    attributes:
+      description: put date of next meeting
+      value: yyyy-mm-dd
