@@ -13,14 +13,38 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 論点は[ギャップ分析のテンプレート](https://www.w3.org/International/i18n-activity/templates/gap-analysis/gap-analysis_template.html)にまとめられています。議論の結果はウェブでの言語に関する問題についてのヒートマップである[言語マトリクス](https://www.w3.org/International/typography/gap-analysis/language-matrix.html)にも反映されます。
 
 ### Key links (重要なリンク)
-[GitHub repo](https://github.com/w3c/jlreq) • [Discussion threads (議論のリスト)](https://github.com/w3c/jlreq/issues) • [Issue tracker (論点追跡リスト)](https://www.w3.org/International/i18n-activity/textlayout/?filter=jlreq) (with jlreq filter、`jlreq`でのフィルター) • [Charter (活動憲章)](https://www.w3.org/International/jlreq/charter/)
+[GitHub repo](https://github.com/w3c/jlreq) • [Discussion threads (議論のリスト)](https://github.com/w3c/jlreq/issues) • [Charter (活動憲章)](https://www.w3.org/International/jlreq/charter/)
 
-### Documents （文書）
-- [**Japanese Gap Analysis （日本語ギャップ分析）**](https://www.w3.org/TR/jpan-gap) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/gap-analysis/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/gap-analysis/index.html) • [*Edit on GitHub (GitHub上の問題点リストの編集)*](https://github.com/w3c/jlreq/labels/doc%3Ajlreq)
-- [**Requirements for Japanese Text Layout (日本語組版処理の要件)**](https://www.w3.org/TR/jlreq) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/index.html)
-- [**Rules for Simple Placement of Japanese Ruby (ルビの簡便な配置ルール)**](https://www.w3.org/TR/simple-ruby/) • [*Editor's draft (編集草案)*](https://w3c.github.io/simple-ruby/) • [*Latest commits (直近の更新)*](https://github.com/w3c/simple-ruby/commits/gh-pages/index.html)
-- Following new document is under development (以下の文書を新しく準備中です)
-  - **Requirements for Japanese Digital Text Layout (日本語デジタルテキスト組版の要件)** • [GitHub jlreq-d repository](https://github.com/w3c/jlreq-d/) • [draft table of contents and text in Japanese (目次と内容の草案)](https://github.com/w3c/jlreq-d/wiki)
+
+---
+## Help wanted! (助力募集中！)
+**We're looking for information about this writing system. Follow the link for specific questions.**
+
+**この言語についての情報提供をお待ちしています。以下のリンクから質問を一覧できます。**
+
+**[Japanese (日本語についてのリスト)](https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)**
+
+---
+
+
+### Resource & requirement docs （文書）
+- **Japanese Script Resources** • [*DNOTE*](https://www.w3.org/TR/jpan-lreq/) • [*Editor's draft (編集草案)*](https://w3c.github.io/jlreq/jpan/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/jpan/)
+- **Requirements for Japanese Text Layout (日本語組版処理の要件)** • [DNOTE](https://www.w3.org/TR/jlreq) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/index.html)
+- **Rules for Simple Placement of Japanese Ruby (ルビの簡便な配置ルール)** • [DNOTE](https://www.w3.org/TR/simple-ruby/) • [*Editor's draft (編集草案)*](https://w3c.github.io/simple-ruby/) • [*Latest commits (直近の更新)*](https://github.com/w3c/simple-ruby/commits/gh-pages/index.html)
+- **Requirements for Japanese Digital Text Layout (日本語デジタルテキストの組版要件)** • [DNOTE](https://github.com/w3c/jlreq-d) • [draft Table of Contents and text in Japanese (目次と内容の草案)](https://github.com/w3c/jlreq-d/wiki)
+
+
+
+### Gap-analysis docs （文書）
+- **Japanese Gap Analysis （日本語ギャップ分析）** • [DNOTE](https://www.w3.org/TR/jpan-gap) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/gap-analysis/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/gap-analysis/index.html)
+
+
+
+### Discussions (議論項目)
+- **Japanese** • [*Questions (質問)*](https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)
+• [*Gap reports (ギャップ分析)*](https://github.com/w3c/jlreq/labels/doc%3Ajlreq)
+• [*Other (その他)*](https://github.com/w3c/jlreq/issues?q=is%3Aopen+-label%3Aquestion+-label%3Agap) 
+• [*Spec issues (仕様書についての議論)*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ajlreq+label%3Aspec-type-issue)
 
 ### Related documents (関連文書)
 - [Current Status of Japanese Typography Using Web Technologies](https://www.w3.org/Submission/2017/SUBM-CSJTUWT-20170102/)
@@ -36,7 +60,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
     - Originally developed as Rurles for Simple Placement of Japanese Ruby, accessibility section is kept here after main parts have moved to [simple-ruby repository](https://github.com/w3c/simple-ruby/). (ルビの簡便な配置ルールの文書として作成されましたが、[主要部分がsimple-ruby](https://github.com/w3c/simple-ruby/)へ移動した後、アクセシビリティーの節の中身のみが残されています。)
 
 
-### Feedback
+### Feedback (意見の提供)
 Please use the [GitHub issue list](https://github.com/w3c/jlreq/issues) to report issues for language support, for discussions, and to send feedback about documents. (Learn [how GitHub issues work](https://www.w3.org/International/i18n-activity/guidelines/issues.html).)
 
 言語の機能についての問題報告、議論、文書への意見については、[GitHub issue](https://github.com/w3c/jlreq/issues) にお願いします。([GitHub issues の利用](https://www.w3.org/International/i18n-activity/guidelines/issues.html)についての文書を参考ください。)
@@ -52,13 +76,17 @@ Note that the public-i18n-japanese mailing list is used to send notification dig
 
 
 ### Participate  (参加する方法)
-You can participate in the task force work at various levels. In order of increasing commitment, these include Follower, Contributor, Participant, Editor, and Chair. [Find your level](https://www.w3.org/International/i18n-drafts/pages/task_force_roles).
+You can participate in the work at various levels. In order of increasing commitment, these include List subscriber, Participant, Editor, and Chair. [Explore the options](https://www.w3.org/International/i18n-drafts/pages/languagedev_participation.html).
 
-このタスクフォースにはいくつかの立場で参加可能です。活動を活発にするために、追跡者、貢献者、参加者、編者、議長の分類があります。それぞれの詳細は、[参加の立場](https://www.w3.org/International/i18n-drafts/pages/task_force_roles)についてのリストを参照してください。
+この活動にはいくつかの立場で参加可能です。活動を活発にするために、リスト受信者、参加者、編者、議長の分類があります。[参加方法について](ttps://www.w3.org/International/i18n-drafts/pages/languagedev_participation.html)も参考にしてください。
 
 **To just follow the work:** Rather than 'Watch' this repository, [subscribe](mailto:public-i18n-japanese-request@w3.org?subject=subscribe) to the [public-i18n-japanese](https://lists.w3.org/Archives/Public/public-i18n-japanese/) mailing list. That list is notified (no more than once a day, and in digest form), about changes to issues in this repository, but also about other W3C Working Group issues related to the Japanese writing systems.
 
+If you prefer to receive notifications of all discussions for Chinese, Japanese, and Korean languages,  [subscribe](mailto:public-i18n-cjk-request@w3.org?subject=subscribe) to the [public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/) mailing list.
+
 **活動を追跡だけする場合:** このレポジトリを 'Watch' するよりも、[public-i18n-japanese](https://lists.w3.org/Archives/Public/public-i18n-japanese/) メーリングリストに参加してください。このリストには、このレポジトリにある issue の更新のみでなく、他の W3C Working Group の日本語に関する issue についても送信されます (最大一日一度、ダイジェスト形式です)。
+
+CJK(中国語・日本語・韓国語)すべてについての通知を受け取りたい場合は、[public-i18n-cjk](https://lists.w3.org/Archives/Public/public-i18n-cjk/)メーリングリストに[登録](mailto:public-i18n-cjk-request@w3.org?subject=subscribe)してください。
 
 **To contribute content:** All contributors should read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -80,7 +108,8 @@ To get an idea about what's involved, see  [Get involved with Language Enablemen
 
 
 ### Links to practical information (実用的な情報へのリンク)
-- [Mail archive (メールリストアーカイブ)](https://lists.w3.org/Archives/Public/public-i18n-japanese/)
+- [public-i18n-japanese mail archive (メールリストアーカイブ)](https://lists.w3.org/Archives/Public/public-i18n-japanese/)
+- [public-i18n-cjk mail archive (メールリストアーカイブ)](https://lists.w3.org/Archives/Public/public-i18n-cjk/)
 - [Writing i18n tests (国際化関連テストを作成するには)](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
 - [Practical tips for task forces (タスクフォースの実用的 tips)](https://www.w3.org/International/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
 - [Meeting info (定例会議情報)](https://www.w3.org/2021/04/jlreq-meeting-info.html)
