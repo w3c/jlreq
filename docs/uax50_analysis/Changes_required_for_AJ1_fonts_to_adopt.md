@@ -84,7 +84,7 @@ I can think of two possible impacts:
 ## Analysis
 Here are the complete analysis.
 
-↓Current behevior|UAX R|UAX Tr|UAX Tu|UAX U
+↓Current behavior|UAX R|UAX Tr|UAX Tu|UAX U
 --|--|--|--|--
 R |OK|add Tr glyph|check glyph|check glyph
 Tr|check glyph (′″ Appendix x)|confirmed OK (「」： Appendix x)|remove vert|remove vert (‖✂)
@@ -140,7 +140,7 @@ R|Tr|回転 → UAX#50の期待に反する正立|全角セミコロン、WAVY D
 CSS にも同様なスイッチが必要になる可能性がある。この場合、UAX#50 とJIS互換モードの切り替えになるが、このJIS互換モード、の定義が必要となろう。
 
 
-## Apppendix
+## Appendix
 
 注意：下記のリストは JIS X 0213 の範囲内での調査。AJ1の文字全てをカバーするわけではない
 

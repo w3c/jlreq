@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Requirements for Japanese Text Layout 日本語組版処理の要件（日本語版）</title>
+<title>Requirements for Japanese Text Layout - 日本語組版処理の要件（日本語版）</title>
 
 <link rel="stylesheet" href="local.css" />
 
-<script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
-<script defer src="script.js"></script>
+<script src="script.js"></script>
+<script defer id="js-respec" class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
 
 <script class="remove">
       var respecConfig = {
@@ -20,31 +20,44 @@
 		  noRecTrack: true,
           editors: [
                 {   name:       "<span lang='ja'>千葉 弘幸</span> (Hiroyuki Chiba)",
-                    company:    "Invited Expert" },
+                    company:    "Invited Expert",
+                    w3cid:      "40236" },
                 {   name:       "<span lang='ja'>枝本 順三郎</span> (Junsaburo Edamoto)",
-                    company:    "Invited Expert" },
+                    company:    "Invited Expert",
+                    w3cid:      "40799" },
                 {   name:       "Richard Ishida",
-                    company:    "W3C" },
+                    company:    "W3C",
+                    w3cid:      "3439" },
                 {   name:       "<span lang='ja'>石野 恵一郎</span> (Keiichiro Ishino)",
-                    company:    "Antenna House" },
+                    company:    "Antenna House",
+                    w3cid:      "134219" },
                 {   name:       "<span lang='ja'>加藤 誠一</span> (Seiichi Kato), (<span lang='ja'>第２版</span> 2nd edition)",
-                    company:    "Microsoft" },
+                    company:    "Microsoft",
+                    w3cid:      "45143" },
                 {   name:       "<span lang='ja'>小林 龍生</span> (Tatsuo Kobayashi)",
-                    company:    "1st edition, JustSystems; 2nd edition, Invited Expert" },
+                    company:    "1st edition, JustSystems; 2nd edition, Invited Expert",
+                    w3cid:      "37983" },
                 {   name:       "<span lang='ja'>小林 敏</span> (Toshi Kobayashi)",
-                    company:    "Invited Expert" },
+                    company:    "Invited Expert",
+                    w3cid:      "40266" },
                 {   name:       "Nathaniel McCully, (<span lang='ja'>第２版</span> 2nd edition)",
-                    company:    "Adobe" },
+                    company:    "Adobe",
+                    w3cid:      "41643" },
                 {   name:       "<span lang='ja'>小野澤 賢三</span> (Kenzou Onozawa)",
-                    company:    "Invited Expert" },
+                    company:    "Invited Expert",
+                    w3cid:      "40219" },
                 {   name:       "Felix Sasaki",
-                    company:    "1st edition, University of Applied Sciences Potsdam; 2nd edition, DFKI GmbH" },
+                    company:    "1st edition, University of Applied Sciences Potsdam; 2nd edition, DFKI GmbH",
+                    w3cid:      "37415" },
                 {   name:       "<span lang='ja'>下農 淳司</span> (Atsushi Shimono), (<span lang='ja'>第２版</span> 2nd edition)",
-                    company:    "W3C" },
+                    company:    "W3C",
+                    w3cid:      "110639"},
                 {   name:       "<span lang='ja'>塩澤 元</span> (Hajime Shiozawa), (<span lang='ja'>第２版</span> 2nd edition)",
-                    company:    "Invited Expert" },
+                    company:    "Invited Expert",
+                    w3cid:      "45399" },
                 {   name:       "<span lang='ja'>薛 富僑</span> (Fuqiao Xue), (<span lang='ja'>第２版</span> 2nd edition)",
-                    company:    "W3C" },
+                    company:    "W3C",
+                    w3cid:      "95475" },
           ],
           formerEditors: [
                 {   name:       "<span lang='ja'>阿南 康宏</span> (Yasuhiro Anan), (<span lang='ja'>第１版</span> 1st edition)",
@@ -54,12 +67,13 @@
 		//wgPublicList: "public-i18n-cjk",
 		edDraftURI: "https://w3c.github.io/jlreq/", 
  		github: "w3c/jlreq",
+        postProcess: [ setFrontMatterIds, initialiseLang_p ],
 		};
     </script>
 </head>
 
 
-<body onload="setFrontMatterIds(); /*addLangAttrs();*/ initialiseLang()">
+<body>
 <h1 class="title p-name" id="title">Requirements for Japanese Text Layout <br/><span lang="ja">日本語組版処理の要件（日本語版）</span></h1>
 
 <div id="abstract">
@@ -94,7 +108,7 @@
 </p><p its-locale-filter-list="ja" lang="ja" data-deliverer="32113">
 この文書は<a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> 特許ポリシー</a>に従って運営されているグループにより作成されました．このグループはこの文書を <abbr title="World Wide Web Consortium">W3C</abbr> 勧告とすることを想定していません．
 </p><p its-locale-filter-list="ja" lang="ja">
-この文書は<a href="https://www.w3.org/2020/Process-20200915/">2020年9月15日版の<abbr title="World Wide Web Consortium">W3C</abbr> プロセス文書</a>に従っています．
+この文書は<a href="https://www.w3.org/2023/Process-20230612/">2023年6月12日版の<abbr title="World Wide Web Consortium">W3C</abbr> プロセス文書</a>に従っています．
 </p>
 
 </div>
@@ -281,7 +295,7 @@
 <span its-locale-filter-list="en" lang="en">Reference of Definition and Others</span>
 <span its-locale-filter-list="ja" lang="ja">用語の参照その他</span>
 </h3>
-    <p its-locale-filter-list="en" lang="en">The definitions of technical terms are described in the [[[#terminology]]] appendix. Terms are linked to corresponding places in the Terminology appendix only at first appearance and in important places. If there is no appropriate English terminology for Japanese terminology, or the English terminology may possibly cause misunderstanding, the Japanese terminology is only transliterated to Hepburn style romaji notation (except that "m", not "n", is used  before "b", "m" and "p"). </p>
+    <p its-locale-filter-list="en" lang="en">The definitions of technical terms are described in the [[[#terminology]]] appendix. Terms are linked to corresponding places in the Terminology appendix only at first appearance and in important places. If there is no appropriate English terminology for Japanese terminology, or the English terminology may possibly cause misunderstanding, the Japanese terminology is only transliterated to Hepburn style romaji notation (except that "n", not "m", is used  before "b", "m" and "p"). </p>
     <p its-locale-filter-list="ja" lang="ja">この文書で使用している用語の定義は，[[[#terminology]]]に掲げる．用語の表記，参照等は，次のように行った．“用語集”に掲げる用語への参照は，節項目の初出の箇所以外は，特に関連が深い箇所に限って行った．なお，英語版の対応用語については，対応する英語の用語がない，あるいは意味の近い用語があっても，その用語の使用により誤解を生む恐れがある用語は，ヘボン式のローマ字表記とした（ただし，<span class="punct-trim-all">b，m，p</span>の前では“m”としないで，“n”とした）．</p>
     <p its-locale-filter-list="en" lang="en">Also, the definitions of terminology in the Terminology appendix are basically the same as the definitions of JIS Z 8125 or JIS X 4051, with respect to common Japanese usage of terminology. </p>
     <p its-locale-filter-list="ja" lang="ja">また，“用語集”に掲げる用語については，日本における標準的な定義を示すことを考慮し，JIS Z 8125 又は JIS X 4051 に定義されている用語で，かつ，この文書で使用する用語の意味と差異のないものは，そこに示されている定義を掲げた．</p>
@@ -381,9 +395,9 @@
 <span its-locale-filter-list="ja" lang="ja">漢字及び仮名の配置の原則</span>
 </h4>
       <p its-locale-filter-list="en" lang="en">In principle, when composing a line with <a class="characterClass" href="#cl-19">ideographic (cl-19)</a>, <a class="characterClass" href="#cl-15">hiragana (cl-15)</a> and <a class="characterClass" href="#cl-16">katakana (cl-16)</a> characters no extra spacing appears between their <a href="#term.character-frame" class="termref">character frame</a>.
-        This is called  solid setting
+        This is called  <a href="#term.solid-setting" class="termref">solid setting</a>
         (see [[[#fig1_8]]]).</p>
-      <p its-locale-filter-list="ja" lang="ja"><span class="index" id="d3e509"><a class="characterClass" href="#cl-19">漢字等（cl-19）</a></span>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>及び<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>は，行に文字を配置していく際には，原則として，文字の外枠を密着させて配置する<span class="index" id="d3e519"><a href="#term.solid-setting" class="termref">ベタ組</a></span>にする（[[[#fig1_8]]]）．</p>
+      <p its-locale-filter-list="ja" lang="ja"><span class="index" id="d3e509"><a class="characterClass" href="#cl-19">漢字等（cl-19）</a></span>，<a class="characterClass" href="#cl-15">平仮名（cl-15）</a>及び<a class="characterClass" href="#cl-16">片仮名（cl-16）</a>は，行に文字を配置していく際には，原則として，文字の<a href="#term.character-frame" class="termref">外枠</a>を密着させて配置する<span class="index" id="d3e519"><a href="#term.solid-setting" class="termref">ベタ組</a></span>にする（[[[#fig1_8]]]）．</p>
       <figure id="fig1_8"> 
       <img its-locale-filter-list="en" src="images/img1_8.png" alt="Example of solid setting in horizontal writing mode." width="289" height="111">
       <img its-locale-filter-list="ja" lang="ja" src="images_ja/img1_8.png" alt="ベタ組の例 （横組の場合）" width="289" height="111">
@@ -771,8 +785,8 @@
         </figcaption>
       </figure>
       <aside class="note" id="n15">
-        <p its-locale-filter-list="en" lang="en">There is little market data comparing the number of pages with vertical writing mode  and horizontal writing mode, but it is said that both are almost the same.</p>
-        <p its-locale-filter-list="ja" lang="ja"><span class="index" id="d3e2384"><span class="index" id="d3e2385">縦組と横組</span></span>の組版されたページ数を調査したデータはほとんどないが，日本における縦組と横組の本の刊行点数は，ほぼ同じくらいと予想される．</p>
+        <p its-locale-filter-list="en" lang="en">There is little market data comparing numbers (e.g. total pages of published books, total number of copies of published books) between vertical writing mode and horizontal writing mode, but it is said that both are almost the same.</p>
+        <p its-locale-filter-list="ja" lang="ja">出版物において<span class="index" id="d3e2384"><span class="index" id="d3e2385">縦組と横組</span></span>の数（ページ数や刊行点数）の比較を調査したデータはほとんどないが，日本においてはほぼ同じくらいと予想される．</p>
       </aside>
       <aside class="note" id="n16">
         <p its-locale-filter-list="en" lang="en">For official (e.g. governmental) documentation, horizontal writing mode is recommended. Educational material (with the exception
@@ -2053,7 +2067,7 @@
           </ol>
         </li>
         <li id="id142">
-          <p its-locale-filter-list="en" lang="en"><span class="character">LEFT CORNER BRACKET "「"</span>, <span class="character">RIGHT CORNER BRACKET "」"</span>, <span class="character">LEFT DOUBLE QUOTATION MARK "“"</span> and <span class="character">RIGHT DOUBLE QUOTATION MARK "”"</span></p>
+          <p its-locale-filter-list="en" lang="en"><span class="character">LEFT CORNER BRACKET "「"</span>, <span class="character">RIGHT CORNER BRACKET "」"</span>, <span class="character">LEFT DOUBLE QUOTATION MARK "“"</span>, <span class="character">RIGHT DOUBLE QUOTATION MARK "”"</span>, <span class="character">LEFT SINGLE QUOTATION MARK "‘"</span> and <span class="character">RIGHT SINGLE QUOTATION MARK "’"</span</p>
           <p its-locale-filter-list="ja" lang="ja"><span class="index" id="d5e447">かぎ括弧</span>（始めかぎ括弧<span class="character">[「] (LEFT CORNER BRACKET)</span>及び終わりかぎ括弧<span class="character">[」] (RIGHT CORNER BRACKET)</span>）と<span class="index" id="d5e456">クォーテーションマーク</span>（左ダブルクォーテーションマーク<span class="character">[“] (LEFT DOUBLE QUOTATION MARK)</span>及び右ダブルクォーテーションマーク<span class="character">[”] (RIGHT DOUBLE QUOTATION MARK)</span>並びに左シングルクォーテーションマーク<span class="character">[‘] (LEFT SINGLE QUOTATION MARK)</span>及び右シングルクォーテーションマーク<span class="character">[’] (RIGHT SINGLE QUOTATION MARK)</span>）</p>
           <ol>
             <li id="id143">
@@ -2112,8 +2126,8 @@
         </li>
       </ol>
       <aside class="note" id="n50">
-        <p its-locale-filter-list="en" lang="en"> The position of the <a href="#term.letter-face" class="termref">letter face</a> of <a class="characterClass" href="#cl-07">commas (cl-07)</a> and <a class="characterClass" href="#cl-06">full stops (cl-06)</a> within the <a href="#term.character-frame" class="termref">character frame</a> differs in vertical and horizontal writing modes. The same letter face can be used for <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>, <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> and <a class="characterClass" href="#cl-03">hyphens (cl-03)</a> in both vertical and horizontal writing mode by rotating clockwise 90 degrees to the inline direction. The position of the <a href="#term.letter-face" class="termref">letter face</a> of <a class="characterClass" href="#cl-11">small kana (cl-11)</a> symbols within the character frame is different in vertical and horizontal writing modes. For <span class="character">KATAKANA-HIRAGANA PROLONGED SOUND MARK "ー"</span>, the difference between vertical and horizontal writing modes is not only in the orientation of the <a href="#term.character-shape" class="termref">letter form</a> to the inline direction, but also the shape of the symbol (see [[[#fig2_7]]]).</p>
-        <p its-locale-filter-list="ja" lang="ja"><a class="characterClass" href="#cl-06">句点類（cl-06）</a>及び<a class="characterClass" href="#cl-07">読点類（cl-07）</a>は，縦組用と横組用では，文字の<a href="#term.character-frame" class="termref">外枠</a>に対する<a href="#term.letter-face" class="termref">字面</a>の配置位置が異なる．<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>及び<a class="characterClass" href="#cl-03">ハイフン類（cl-03）</a>は，縦組用と横組用で字面の向きを変更する．その他，<a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a>は，前述したように文字の外枠に対する字面の位置が縦組用と横組用では異なる．また，<span class="index" id="d5e967">長音記号</span><span class="character">[ー] (KATAKANA-HIRAGANA PROLONGED SOUND MARK)</span>は，<a href="#term.character-shape" class="termref">字形</a>の向きを変更するだけではなく，字形そのものも変更している．横組用の長音記号は，縦組用の長音記号を単純に反時計回りに90度回転したものではない（[[[#fig2_7]]]）．</p>
+        <p its-locale-filter-list="en" lang="en"> The position of the <a href="#term.letter-face" class="termref">letter face</a> of <a class="characterClass" href="#cl-07">commas (cl-07)</a> and <a class="characterClass" href="#cl-06">full stops (cl-06)</a> within the <a href="#term.character-frame" class="termref">character frame</a> differs in vertical and horizontal writing modes. The same letter face can be used for <a class="characterClass" href="#cl-01">opening brackets (cl-01)</a>, <a class="characterClass" href="#cl-02">closing brackets (cl-02)</a> and <a class="characterClass" href="#cl-03">hyphens (cl-03)</a> in both vertical and horizontal writing mode by rotating clockwise 90 degrees to the inline direction. The position of the <a href="#term.letter-face" class="termref">letter face</a> of <a class="characterClass" href="#cl-11">small kana (cl-11)</a> symbols within the character frame is different in vertical and horizontal writing modes. For <a class="characterClass" href="#cl-10">Prolonged sound mark (cl-10)</a>, the difference between vertical and horizontal writing modes is not only in the orientation of the <a href="#term.character-shape" class="termref">letter form</a> to the inline direction, but also the shape of the symbol (see [[[#fig2_7]]]).</p>
+        <p its-locale-filter-list="ja" lang="ja"><a class="characterClass" href="#cl-06">句点類（cl-06）</a>及び<a class="characterClass" href="#cl-07">読点類（cl-07）</a>は，縦組用と横組用では，文字の<a href="#term.character-frame" class="termref">外枠</a>に対する<a href="#term.letter-face" class="termref">字面</a>の配置位置が異なる．<a class="characterClass" href="#cl-01">始め括弧類（cl-01）</a>，<a class="characterClass" href="#cl-02">終わり括弧類（cl-02）</a>及び<a class="characterClass" href="#cl-03">ハイフン類（cl-03）</a>は，縦組用と横組用で字面の向きを変更する．その他，<a class="characterClass" href="#cl-11">小書きの仮名（cl-11）</a>は，前述したように文字の外枠に対する字面の位置が縦組用と横組用では異なる．また，<a class="characterClass" href="#cl-10">長音記号 (cl-10)</a><span class=n"character">[ー] (KATAKANA-HIRAGANA PROLONGED SOUND MARK)</span>は，<a href="#term.character-shape" class="termref">字形</a>の向きを変更するだけではなく，字形そのものも変更している．横組用の長音記号は，縦組用の長音記号を単純に反時計回りに90度回転したものではない（[[[#fig2_7]]]）．</p>
       </aside>
       <figure id="fig2_7"> 
       <img its-locale-filter-list="en" src="images/img2_7.png" alt="KATAKANA-HIRAGANA PROLONGED SOUND MARK for vertical and horizontal writing modes." width="439" height="160">
@@ -2367,7 +2381,7 @@
       <aside class="note" id="n57">
         <p its-locale-filter-list="en" lang="en">Because the inherent character width of a bracket is considered to be half-width, [[[#fig2_15]]] ① can be explained as the result of applying the principle that any line should start with no spacing. On the other hand, the principle represented by [[[#fig2_15]]] ② is to assume that opening brackets should be always accompanied by the preceding half em
           spacing
-          as if they were full-width and then apply the same principle as in [[[#fig2_15]]] ①. JIS X 4051 adopts the principle shown in ① (the patterns shown in ② is offered as options) . The pattern shown in ③ was first invented in books such as novels, which use frequent line feeds and corner brackets in dialogues, for which the first line indent with one em spacing or one and a half em spacing (then this pattern was accepted and adopted by general books). Major Japanese publishers who deal with literature, such as Kodansha, Shinchosha, Bungei Shunju, Chuoh Kouronsha, and Chikuma Shobo, have adopted the pattern shown in ③. By contrast, Iwanami Shoten and other publishers adopted the pattern shown in ①. Because Iwanami Shoten once adopted pattern ② in vertical composition, there used to be many examples of it, but few examples of ② can be found today.</p>
+          as if they were full-width and then apply the same principle as in [[[#fig2_15]]] ①. JIS X 4051 adopts the principle shown in ① (the patterns shown in ② is offered as options) . The pattern shown in ③ was first invented in books such as novels, which use frequent line feeds and corner brackets in dialogues, for which the first line indent with one em spacing or one and a half em spacing was considered to be too much (then this pattern was accepted and adopted by general books). Major Japanese publishers who deal with literature, such as Kodansha, Shinchosha, Bungei Shunju, Chuoh Kouronsha, and Chikuma Shobo, have adopted the pattern shown in ③. By contrast, Iwanami Shoten and other publishers adopted the pattern shown in ①. Because Iwanami Shoten once adopted pattern ② in vertical composition, there used to be many examples of it, but few examples of ② can be found today.</p>
         <p its-locale-filter-list="ja" lang="ja">元々括弧類の字幅は半角であったのであるから，何も空き量を入れなければ[[[#fig2_15]]]の①の方法となる．これに対し，②の方法は，行頭の括弧類の字幅について空き量を含めて全角とする処理方法である．JIS X 4051では，①の方法を採用している（ただし，オプションで②の方法も選択できる）．③の方法は，小説などで会話が多い場合，改行行頭の括弧の字下げを全角アキ又は全角半（全角の1.5倍）アキとすると下がり過ぎになることから考えられた方法である（これが一般書にも採用されるようになっている）．講談社，新潮社，文藝春秋，中央公論新社，筑摩書房など文芸関係の<span class="index" id="d5e2829"><span class="index" id="d5e2830">出版社</span></span>では，③の方法が採用されている．岩波書店やその他の出版社では①の方法を採用している．以前の岩波書店の縦組では②の方法であり，この方法を採用している例はかなりあった．しかし，今日では②の方法を採用している例は少なくなった．</p>
       </aside>
       <aside class="note" id="n58">
@@ -2441,7 +2455,7 @@
 
           </figure>
           <aside class="note" id="n62">
-            <p its-locale-filter-list="en" lang="en">The details of composition rules for <a class="characterClass" href="#cl-04">dividing punctuation marks (cl-04)</a> and <a class="characterClass" href="#cl-03">hyphens (cl-03)</a> are described in [[[#spacing_between_characters"]]] as a complete table,  in accordance with the descriptions of character classes in [[[#about_character_classes]]].</p>
+            <p its-locale-filter-list="en" lang="en">The details of composition rules for <a class="characterClass" href="#cl-04">dividing punctuation marks (cl-04)</a> and <a class="characterClass" href="#cl-03">hyphens (cl-03)</a> are described in [[[#spacing_between_characters]]] as a complete table,  in accordance with the descriptions of character classes in [[[#about_character_classes]]].</p>
             <p its-locale-filter-list="ja" lang="ja"><a class="characterClass" href="#cl-04">区切り約物（cl-04）</a>及び<a class="characterClass" href="#cl-03">ハイフン類（cl-03）</a>の配置方法についての詳細は，[[[#about_character_classes]]]で説明する文字クラスに従い，表の形式にして[[[#spacing_between_characters]]]で示す．</p>
           </aside>
         </li>
@@ -2731,7 +2745,7 @@
           </aside>
         </li>
         <li id="id178">
-          <p its-locale-filter-list="en" lang="en">Between <a class="characterClass" href="#cl-12">prefixed abbreviations (cl-12)</a> (<span class="character">YEN SIGN "¥"</span>，<span class="character">DOLLAR SIGN "$"</span>，<span class="character">CENT SIGN "¢"</span> etc.) and the following arabic or ideographic numeral (see [[[#fig2_26]]]). The reason is that such character sequences are to be handled as one unit.</p>
+          <p its-locale-filter-list="en" lang="en">Between <a class="characterClass" href="#cl-12">prefixed abbreviations (cl-12)</a> (<span class="character">YEN SIGN "¥"</span>，<span class="character">DOLLAR SIGN "$"</span> etc.) and the following arabic or ideographic numeral (see [[[#fig2_26]]]). The reason is that such character sequences are to be handled as one unit.</p>
           <p its-locale-filter-list="ja" lang="ja"><span class="index" id="d5e5191"><a class="characterClass" href="#cl-12">前置省略記号（cl-12）</a></span>（円記号<span class="character">[¥] (YEN SIGN)</span>，ドル記号<span class="character">[$] (DOLLAR SIGN)</span>など）とその後ろにくるアラビア数字・漢数字との間（[[[#fig2_26]]]）．それらの文字列を一体として扱いたいためである．</p>
           <figure id="fig2_26"> 
       <img its-locale-filter-list="en" src="images/img2_26.png" alt="Unbreakable sequences between prefixed abbreviations and the following European numeral." width="171" height="74">
@@ -2991,12 +3005,12 @@
 <span its-locale-filter-list="en" lang="en">Composition of Japanese and Western Mixed Texts</span>
 <span its-locale-filter-list="ja" lang="ja">和文と欧文との混植</span>
 </h4>
-      <p its-locale-filter-list="en" lang="en">There are a lot of examples of Japanese text in which Western and/or Greek letters are mixed among Japanese letters. Examples
+      <p its-locale-filter-list="en" lang="en">There are a lot of examples of Japanese text in which Western letters are mixed among Japanese letters (<a href="#term.japanese-and-western-mixed-text-composition" class="termref">Japanese and Western mixed text composition</a>). Examples
         are as follows: </p>
       <p its-locale-filter-list="ja" lang="ja">和文の中にラテン文字やギリシャ文字などの欧字・欧文を<span class="index" id="d5e6557"><a href="#term.mixed-text-composition" class="termref">混植</a>（<a href="#term.japanese-and-western-mixed-text-composition" class="termref">和欧文混植</a>）する例</span>は多い．次のような例がある．</p>
       <ol>
         <li id="id199">
-          <p its-locale-filter-list="en" lang="en">Using one Latin letter as a symbol for something, like "A" and "B".</p>
+          <p its-locale-filter-list="en" lang="en">Using one Western letter as a symbol for something, like "A" and "B".</p>
           <p its-locale-filter-list="ja" lang="ja">AとBといったように欧字1字を記号として使用する．</p>
         </li>
         <li id="id200">
@@ -3012,8 +3026,8 @@
           <p its-locale-filter-list="ja" lang="ja">欧文の文献表示などで著者名や書名などを原本通り表記する．</p>
         </li>
       </ol>
-      <p its-locale-filter-list="en" lang="en">Latin letters are also used in <a href="#term.itemization" class="termref">itemized lists</a> and numbering of <a href="#term.heading" class="termref">headings</a>, as well as symbols for units, symbols for chemical elements,
-        and mathematical symbols. As can be judged from these examples, mixtures of Latin letters among Japanese letters are in daily use
+      <p its-locale-filter-list="en" lang="en">Western letters are also used in <a href="#term.itemization" class="termref">itemized lists</a> and numbering of <a href="#term.heading" class="termref">headings</a>, as well as symbols for units, symbols for chemical elements,
+        and mathematical symbols. As can be judged from these examples, mixtures of Western letters among Japanese letters are in daily use
         in Japanese composition.</p>
       <p its-locale-filter-list="ja" lang="ja"><a href="#term.itemization" class="termref">箇条書き</a>や<a href="#term.heading" class="termref">見出し</a>の頭に付く番号，さらに，単位記号・元素記号・数学記号等でも欧字は使用されており，日本語組版にとっては，<a href="#term.japanese-and-western-mixed-text-composition" class="termref2nd">和欧文混植</a>は，ごく一般的な事例になっている．</p>
       <aside class="note" id="n89">
@@ -3718,6 +3732,18 @@
         </figcaption>
 
       </figure>
+      <p its-locale-filter-list="en" lang="en">For positioning of characters of ruby annotation on block direction, 
+        character frames of ruby annotation are contiguous with ones of its base text ([[[#fig2_3_9]]]).</p>
+      <p its-locale-filter-list="ja" lang="ja">なお，ルビの行送り方向の配置位置は，親文字の文字の外枠とルビ文字の外枠を接して配置する（[[[#fig2_3_9]]]）．</p>
+      <aside class="note" id="n20211126001">
+        <p its-locale-filter-list="en" lang="en">Positioning of characters of ruby annotation on block direction</p>
+        <p its-locale-filter-list="ja" lang="ja">行送り方向のルビの配置位置</p>
+        <p its-locale-filter-list="en" lang="en">In generic principles, 
+          character frames of ruby annotation are contiguous with ones of its base text in the block direction.
+          For visually handicapped person, there are cases to desire some spacing between two character frames in the block direction, 
+          so it is desired to have capability to configure these spacing. </p>
+        <p its-locale-filter-list="ja" lang="ja">行送り方向のルビの配置位置は，親文字の文字の外枠とルビ文字の文字の外枠を接して配置するのが原則である．しかし，視覚障碍者にとって，親文字とルビの行送り方向の間隔がある程度は空いているのが望ましい場合もあり，この間隔は変更できることが望ましい．</p>        
+      </aside>
       <p its-locale-filter-list="en" lang="en"> In the following sections, the ruby composition methods will be explained on the assumption that the size of ruby is half the size of the
         base characters, and they will be attached to the right in vertical writing mode and above in horizontal writing mode. First we look at
         the basic composition rules of <a href="#term.mono-ruby" class="termref2nd">mono-ruby</a>, <a href="#term.group-ruby" class="termref2nd">group-ruby</a> and <a href="#term.jukugo-ruby" class="termref2nd">jukugo-ruby</a>, then the rules of positioning of ruby with respect to
@@ -3905,7 +3931,7 @@
         <p its-locale-filter-list="en" lang="en"> In letterpress printing, there were not many choices for adjustment of inter-character spacing between ruby characters. Therefore,
           depending on the number of characters in the base text and its ruby text, the choice was whether to add a certain amount of space
           before the leading ruby character and after the trailing character, or not. In the former case it had been said that for 2
-          units of inter-character spacing between each c ruby characters, adding 1 unit of the leading and trailing spacing would
+          units of inter-character spacing between each adjacent ruby characters, adding 1 unit of the leading and trailing spacing would
           give a balanced appearance. </p>
         <p its-locale-filter-list="ja" lang="ja">活字組版では，ルビ文字の字間調整が細かくできない場合も多く，親文字とルビ文字の字数に応じて，適宜ルビ文字の文字列の先頭及び末尾を空けない方法と空ける方法を選択して行ってきた．また，ルビ文字の文字列の先頭及び末尾を空ける場合は，ルビ文字の文字列の字間の空き量の大きさ2に対して，その先頭及び末尾の空き量を1の比率で空けると体裁がよい，といわれていた．</p>
       </aside>
@@ -6138,7 +6164,7 @@
           <p its-locale-filter-list="en" lang="en">Always begin with odd pages, i.e. new recto. Used for  Naka-tobira, han-tobira and top level heading. </p>
           <p its-locale-filter-list="ja" lang="ja">必ず奇数ページから開始する．<span class="index" id="d8e1194">改丁</span>という．中扉，半扉，大見出しなどで採用されている．</p>          <aside class="note" id="n211">
             <p its-locale-filter-list="en" lang="en">Books usually begin with the recto side as page one. Accordingly, vertically set books, which are bound on the right-hand side, <span class="index" id="d8e1224">begin with the left page in a spread</span> (see [[[#fig3_1_11]]]), whereas horizontally set books, which are bound on the left-hand side, <span class="index" id="d8e1230">begin with the right page in a spread</span>.</p>
-            <p its-locale-filter-list="ja" lang="ja">書籍は，表（おもて）面を1ページとして開始する．したがって，縦組の右綴じの場合は，左ページから開始する（<span class="index" id="d8e1224">左ページおこし</span>という）と改丁になり（[[[#fig3_1_11]]]），横組の左綴じの場合は，右ページから開始する（<span class="index" id="d8e1230">右ページおこし</span>という）と改丁になる．</p>
+            <p its-locale-filter-list="ja" lang="ja">書籍は，表（おもて）面を1ページとして開始する．したがって，縦組の右綴じの場合は，左ページから開始する（<span class="index" id="d8e1224j">左ページおこし</span>という）と改丁になり（[[[#fig3_1_11]]]），横組の左綴じの場合は，右ページから開始する（<span class="index" id="d8e1230j">右ページおこし</span>という）と改丁になる．</p>
           </aside>
           <figure id="fig3_1_11"> 
       <img its-locale-filter-list="en" src="images/img3_1_11.png" alt="An example of new recto (vertical writing mode)" width="424" height="429">
@@ -6907,8 +6933,8 @@
         <p its-locale-filter-list="ja" lang="ja">上記に掲げた注の形式以外に，学習参考書や歴史の教科書などで人物や事項の簡単な説明，古典の現代文への翻訳などを行間に配置する例がある．このように行間に配置する注の形式もある（[[[#fig3_2_8]]]）．<span class="index" id="d9e545">行間注</span>などとよばれている．</p>
       </aside>
       <figure id="fig3_2_8"> 
-      <img its-locale-filter-list="en" src="images/img3_2_8.png" alt="An example of an interlinear note" width="344" height="119">
-      <img its-locale-filter-list="ja" lang="ja" src="images_ja/img3_2_8.png" alt="行間に配置した注の例" width="332" height="119">
+      <img its-locale-filter-list="en" src="images/img3_2_8.png" alt="An example of an interlinear note" width="480" height="148">
+      <img its-locale-filter-list="ja" lang="ja" src="images_ja/img3_2_8.png" alt="行間に配置した注の例" width="484" height="153">
         <figcaption>
         <span its-locale-filter-list="en" lang="en">An example of an interlinear note</span>
         <span its-locale-filter-list="ja" lang="ja">行間に配置した注の例</span>
@@ -22480,7 +22506,7 @@
       <li id="id670">
         <p its-locale-filter-list="en" lang="en">Because the purpose of ruby annotation, including jukugo-ruby, is to supply the reading of each base kanji character, attach each run of ruby text which represents the reading to the corresponding base kanji character.</p>
         <p its-locale-filter-list="ja" lang="ja">熟語ルビであっても，それを構成するそれぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の読み方を示すものであるから，それぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>とその読みを示すルビとをできるだけ対応させる．</p>
-        <p its-locale-filter-list="en" lang="en">If each run of ruby characters representing the reading of a given base <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> participating in a kanji compound word is less than or equal to two, attach each ruby text to the corresponding base <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> (see <a class="figure_ref" href="#fig_a6-1">Fig. F.1</a>). The following figures supply a pair of examples of the same text per line, with and without character frames displayed. Ruby characters and base characters in the same color indicate that they correspond to each other. Those <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> which are not part of the jukugo-ruby, and which, therefore, ruby characters are not allowed to overhang, are presented in yet different colors. </p>
+        <p its-locale-filter-list="en" lang="en">If each run of ruby characters representing the reading of a given base <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> participating in a kanji compound word is less than or equal to two, attach each ruby text to the corresponding base <a class="characterClass" href="#cl-19">ideographic character (cl-19)</a> (see [[[#fig_a6-1]]]). The following figures supply a pair of examples of the same text per line, with and without character frames displayed. Ruby characters and base characters in the same color indicate that they correspond to each other. Those <a class="characterClass" href="#cl-19">ideographic characters (cl-19)</a> which are not part of the jukugo-ruby, and which, therefore, ruby characters are not allowed to overhang, are presented in yet different colors. </p>
         <p its-locale-filter-list="ja" lang="ja">熟語ルビを構成するそれぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>の読み方を示すルビが，それぞれ2字以下であれば，それぞれの<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>にルビを対応させる（[[[#fig_a6-1]]]）．なお，文字の外枠を示した以下の図では，親文字の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>とそれに対応するルビ文字との対応関係を同一の体裁で示す．熟語ルビではない，ルビを掛けてはならない別の<a class="characterClass" href="#cl-19">漢字等（cl-19）</a>も，別の体裁で示す．</p>
         <figure id="fig_a6-1">
       <img its-locale-filter-list="en" src="images/img_a6_1.png" alt="Jukugo-ruby distribution 1." width="265" height="156">
@@ -22933,7 +22959,7 @@
           <td>jihaba<br/>じはば</td>
           <td>
             <p its-locale-filter-list="en" lang="en">Size of a character frame in the inline direction, generally indicated as a ratio of the size of a full-width character, as in full-width, half-width, or quarter em width. Character advance is the width of a given character in horizontal writing-mode, while it is the height in vertical writing-mode.</p>
-            <p its-locale-filter-list="ja" lang="ja">字幅が，全角の2分の1である文字の外枠．（JIS X 4051）</p>
+            <p its-locale-filter-list="ja" lang="ja">文字を配列する方向（字詰め方向）の文字の外枠の大きさ．一般に字幅の絶対値を文字サイズで除した値で示す．全角，半角，四分角など．字幅は，横組では文字の幅となるが，縦組では文字の高さとなる．</p>
           </td>
         </tr>
         <tr id="term.character-frame">
@@ -22948,7 +22974,7 @@
         <tr id="term.character-shape">
           <td>character shape</td>
           <td>字形</td>
-          <td>jikei<br/></td>
+          <td>jikei<br/>じけい</td>
           <td>
             <p its-locale-filter-list="en" lang="en">Incarnation of a character by handwriting, printing or rendering to a computer screen. (JIS Z 8125)</p>
             <p its-locale-filter-list="ja" lang="ja">文字について，手書き，印字，画面表示などによって実際に図形として表現したもの．（JIS Z 8125）</p>
@@ -22966,7 +22992,7 @@
         <tr id="term.characters-not-ending-line">
           <td>characters not ending line</td>
           <td>行末禁則文字</td>
-          <td>gyōmatsu kinsoku moji<br/></td>
+          <td>gyōmatsu kinsoku moji<br/>ぎょうまつきんそくもじ</td>
           <td>
             <p its-locale-filter-list="en" lang="en">Any character for which "line-end prohibition rule" is invoked. (JIS Z 8125)</p>
             <p its-locale-filter-list="ja" lang="ja">行末禁則の条件に該当する文字．（JIS Z 8125）</p>
@@ -23257,7 +23283,7 @@
           <tr id="term.furigana">
             <td>furigana</td>
             <td>振り仮名</td>
-            <td>furigana<br/></td>
+            <td>furigana<br/>ふりがな</td>
             <td>
               <p its-locale-filter-list="en" lang="en">A method of ruby annotation using kana characters to indicate how to read kanji characters. This term derives from a Japanese verb "furu (to attach alongside)" and "kana", and has been used synonymously with "ruby". This document prefers to use the term "ruby".</p>
               <p its-locale-filter-list="ja" lang="ja">ルビの配置位置に，仮名を使用したもの．なお，振り仮名とは，漢字の読み方を示すために，そのわきに付ける仮名という意味で，ルビと同義的に用いられてきた．この文書では“ルビ”という用語を一貫して用いる．</p>
@@ -23266,7 +23292,7 @@
           <tr id="term.furikanji">
             <td>furikanji</td>
             <td>振り漢字</td>
-            <td>furikanji<br/>ふりがな</td>
+            <td>furikanji<br/>ふりかんじ</td>
             <td>
               <p its-locale-filter-list="en" lang="en">A method of ruby annotation using Kanji characters for ruby instead of kana characters.</p>
               <p its-locale-filter-list="ja" lang="ja">ルビの配置位置に，仮名ではなく，漢字を使用したもの．</p>
@@ -23801,7 +23827,7 @@
             <td>回り込み</td>
             <td>mawarikomi<br/>まわりこみ</td>
             <td>
-              <p its-locale-filter-list="en" lang="en">Text setting style to fill the left line direction space, which is happen to appear because of the arragnement of illustrations, tables, etc. (JIS Z 8125)</p>
+              <p its-locale-filter-list="en" lang="en">Text setting style to fill the space in the inline direction, which happen to appear because of the arrangement of illustrations, tables, etc. (JIS Z 8125)</p>
               <p its-locale-filter-list="ja" lang="ja">図版，表組などを配置するために確保した領域の字詰め方向の余白に本文を組み込むこと．（JIS Z 8125）</p>
             </td>
           </tr>
@@ -23911,7 +23937,7 @@
             <td>jizume<br/>じづめ</td>
             <td>
               <p its-locale-filter-list="en" lang="en">Number of characters in a line to specify the length of lines. (JIS Z 8125)</p>
-              <p its-locale-filter-list="ja" lang="ja">図版，表組などを配置するために確保した領域の字詰め方向の余白に本文を組み込むこと．（JIS Z 8125）</p>
+              <p its-locale-filter-list="ja" lang="ja">行長を文字サイズの倍数で指定する場合の文字数．（JIS Z 8125）</p>
             </td>
           </tr>
           <tr id="term.number-of-columns">
@@ -24214,7 +24240,7 @@
           <tr id="term.single-line-alignment-method">
             <td>single line alignment method</td>
             <td>そろえ</td>
-            <td>soroe<br/>かたばしらほうしき</td>
+            <td>soroe<br/>そろえ</td>
             <td>
               <p its-locale-filter-list="en" lang="en">To align a run of text that is shorter than a given line length to designated positions.</p>
               <p its-locale-filter-list="ja" lang="ja">1行の文字列について，指定した位置に文字の配置位置を合わせること．</p>
