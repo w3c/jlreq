@@ -57,7 +57,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
   - [Request to revise UAX 50 for harmonization with Adobe Japan1 / Adobe Japan 1と互換を取るためのUAX 50への変更提案](docs/uax-with-aj1/Request-to-revise-UAX-50-for-the-harmonization-with-Adobe-Japan1.md) (English only)
   - [Analysis of changes required for Adobe-Japan1 (AJ1) Japanese fonts to adopt UAX 50 / AJ!フォントをUAX 50準拠とするのに必要とされる変更点の解析](docs/uax50_analysis/Changes_required_for_AJ1_fonts_to_adopt.md) (under translation into English)
   - [Ruby and Accessibility / ルビとアクセシビリティー](docs/simple-ruby/) ([on github.io](https://w3c.github.io/jlreq/docs/simple-ruby/index.html))
-    - Originally developed as Rurles for Simple Placement of Japanese Ruby, accessibility section is kept here after main parts have moved to [simple-ruby repository](https://github.com/w3c/simple-ruby/). (ルビの簡便な配置ルールの文書として作成されましたが、[主要部分がsimple-ruby](https://github.com/w3c/simple-ruby/)へ移動した後、アクセシビリティーの節の中身のみが残されています。)
+    - Originally developed as Rules for Simple Placement of Japanese Ruby, accessibility section is kept here after main parts have moved to [simple-ruby repository](https://github.com/w3c/simple-ruby/). (ルビの簡便な配置ルールの文書として作成されましたが、[主要部分がsimple-ruby](https://github.com/w3c/simple-ruby/)へ移動した後、アクセシビリティーの節の中身のみが残されています。)
 
 
 ### Feedback (意見の提供)
