@@ -49,7 +49,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 ### Related documents (関連文書)
 - [Current Status of Japanese Typography Using Web Technologies](https://www.w3.org/Submission/2017/SUBM-CSJTUWT-20170102/)
 - [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
-- Following documents for discussion of [jlreq-d](https://github.com/w3c/jlreq-d/) are stored at (次期JLreqに向けた議論用文書の集積用ディレクトリ): [directory](docs/)
+- The following documents for discussion of [jlreq-d](https://github.com/w3c/jlreq-d/) are stored at (次期JLreqに向けた議論用文書の集積用ディレクトリ): [directory](docs/)
   - [Initial draft concept of new JLreq document - JDLReq overview / 次期JLReq文書の初期検討メモ](docs/JDLReq_overview/JDLReq_overview.md) (Japanese only)
   - [Layout for consecutive punctuation marks with different character size / 文字サイズなどが異なる約物が連続した場合の処理](docs/layout_of_punctuations/punctuations_in_different_sizes.md) (Japanese only)
   - [Rules for Simple Placement of Line Composition (idea) / 簡便な行組版ルール（案）](docs/line-composition/) ([on github.io](https://w3c.github.io/jlreq/docs/line-composition/index.html)) (Japanese only)
