@@ -31,7 +31,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 - **Japanese Script Resources** • [*DNOTE*](https://www.w3.org/TR/jpan-lreq/) • [*Editor's draft (編集草案)*](https://w3c.github.io/jlreq/jpan/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/jpan/)
 - **Requirements for Japanese Text Layout (日本語組版処理の要件)** • [DNOTE](https://www.w3.org/TR/jlreq) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/index.html)
 - **Rules for Simple Placement of Japanese Ruby (ルビの簡便な配置ルール)** • [DNOTE](https://www.w3.org/TR/simple-ruby/) • [*Editor's draft (編集草案)*](https://w3c.github.io/simple-ruby/) • [*Latest commits (直近の更新)*](https://github.com/w3c/simple-ruby/commits/gh-pages/index.html)
-- **Requirements for Japanese Digital Text Layout (日本語デジタルテキストの組版要件)** • [DNOTE](https://github.com/w3c/jlreq-d) • [*draft Table of Contents (目次案)*](https://github.com/w3c/jlreq-d/wiki/jlreq-d-ToC-draft)
+- **Requirements for Japanese Digital Text Layout (日本語デジタルテキストの組版要件)** • [DNOTE](https://github.com/w3c/jlreq-d) • [draft Table of Contents and text in Japanese (目次と内容の草案)](https://github.com/w3c/jlreq-d/wiki)
 
 
 
@@ -46,10 +46,18 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 • [*Other (その他)*](https://github.com/w3c/jlreq/issues?q=is%3Aopen+-label%3Aquestion+-label%3Agap) 
 • [*Spec issues (仕様書についての議論)*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ajlreq+label%3Aspec-type-issue)
 
-
 ### Related documents (関連文書)
 - [Current Status of Japanese Typography Using Web Technologies](https://www.w3.org/Submission/2017/SUBM-CSJTUWT-20170102/)
 - [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
+- The following documents for discussion of [jlreq-d](https://github.com/w3c/jlreq-d/) are stored at (次期JLreqに向けた議論用文書の集積用ディレクトリ): [directory](docs/)
+  - [Initial draft concept of new JLreq document - JDLReq overview / 次期JLReq文書の初期検討メモ](docs/JDLReq_overview/JDLReq_overview.md) (Japanese only)
+  - [Layout for consecutive punctuation marks with different character size / 文字サイズなどが異なる約物が連続した場合の処理](docs/layout_of_punctuations/punctuations_in_different_sizes.md) (Japanese only)
+  - [Rules for Simple Placement of Line Composition (idea) / 簡便な行組版ルール（案）](docs/line-composition/) ([on github.io](https://w3c.github.io/jlreq/docs/line-composition/index.html)) (Japanese only)
+  - [Design of character classes for inter-character spacing extended to Unicode / Unicode に拡張した字間プロパティの設計](docs/spacing_property/spacing_property) (Japanese only)
+  - [Request to revise UAX 50 for harmonization with Adobe Japan1 / Adobe Japan 1と互換を取るためのUAX 50への変更提案](docs/uax-with-aj1/Request-to-revise-UAX-50-for-the-harmonization-with-Adobe-Japan1.md) (English only)
+  - [Analysis of changes required for Adobe-Japan1 (AJ1) Japanese fonts to adopt UAX 50 / AJ!フォントをUAX 50準拠とするのに必要とされる変更点の解析](docs/uax50_analysis/Changes_required_for_AJ1_fonts_to_adopt.md) (under translation into English)
+  - [Ruby and Accessibility / ルビとアクセシビリティー](docs/simple-ruby/) ([on github.io](https://w3c.github.io/jlreq/docs/simple-ruby/index.html))
+    - Originally developed as Rules for Simple Placement of Japanese Ruby, accessibility section is kept here after main parts have moved to [simple-ruby repository](https://github.com/w3c/simple-ruby/). (ルビの簡便な配置ルールの文書として作成されましたが、[主要部分がsimple-ruby](https://github.com/w3c/simple-ruby/)へ移動した後、アクセシビリティーの節の中身のみが残されています。)
 
 
 ### Feedback (意見の提供)
