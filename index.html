@@ -19,55 +19,35 @@
           shortName:  "jlreq",
 		  noRecTrack: true,
           editors: [
-                {   name:       "<span lang='ja'>千葉 弘幸</span> (Hiroyuki Chiba)",
-                    company:    "Invited Expert",
-                    w3cid:      "40236" },
-                {   name:       "<span lang='ja'>枝本 順三郎</span> (Junsaburo Edamoto)",
-                    company:    "Invited Expert",
-                    w3cid:      "40799" },
                 {   name:       "Richard Ishida",
                     company:    "W3C",
                     w3cid:      "3439" },
-                {   name:       "<span lang='ja'>石野 恵一郎</span> (Keiichiro Ishino)",
-                    company:    "Antenna House",
-                    w3cid:      "134219" },
-                {   name:       "<span lang='ja'>加藤 誠一</span> (Seiichi Kato), (<span lang='ja'>第２版</span> 2nd edition)",
-                    company:    "Microsoft",
-                    w3cid:      "45143" },
-                {   name:       "<span lang='ja'>小林 龍生</span> (Tatsuo Kobayashi)",
-                    company:    "1st edition, JustSystems; 2nd edition, Invited Expert",
-                    w3cid:      "37983" },
-                {   name:       "<span lang='ja'>小林 敏</span> (Toshi Kobayashi)",
+                {   name:       "<span lang='ja'>木田 泰夫</span> (Yasuo Kida)",
                     company:    "Invited Expert",
-                    w3cid:      "40266" },
-                {   name:       "Nathaniel McCully, (<span lang='ja'>第２版</span> 2nd edition)",
-                    company:    "Adobe",
-                    w3cid:      "41643" },
-                {   name:       "<span lang='ja'>小野澤 賢三</span> (Kenzou Onozawa)",
-                    company:    "Invited Expert",
-                    w3cid:      "40219" },
-                {   name:       "Felix Sasaki",
-                    company:    "1st edition, University of Applied Sciences Potsdam; 2nd edition, DFKI GmbH",
-                    w3cid:      "37415" },
-                {   name:       "<span lang='ja'>下農 淳司</span> (Atsushi Shimono), (<span lang='ja'>第２版</span> 2nd edition)",
+                    w3cid:      "109416"},
+                {   name:       "<span lang='ja'>下農 淳司</span> (Atsushi Shimono)",
                     company:    "W3C",
                     w3cid:      "110639"},
-                {   name:       "<span lang='ja'>塩澤 元</span> (Hajime Shiozawa), (<span lang='ja'>第２版</span> 2nd edition)",
-                    company:    "Invited Expert",
-                    w3cid:      "45399" },
-                {   name:       "<span lang='ja'>薛 富僑</span> (Fuqiao Xue), (<span lang='ja'>第２版</span> 2nd edition)",
+                {   name:       "<span lang='ja'>薛 富僑</span> (Fuqiao Xue)",
                     company:    "W3C",
                     w3cid:      "95475" },
-          ],
-          formerEditors: [
-                {   name:       "<span lang='ja'>阿南 康宏</span> (Yasuhiro Anan), (<span lang='ja'>第１版</span> 1st edition)",
-                    company:    "Microsoft" },
           ],
 		group:        "i18n",
 		//wgPublicList: "public-i18n-cjk",
 		edDraftURI: "https://w3c.github.io/jlreq/", 
  		github: "w3c/jlreq",
         postProcess: [ setFrontMatterIds, initialiseLang_p ],
+    otherLinks: [
+      {
+        key: "Contributors:",
+        data: [
+          {
+            value: "See the Contributors section.",
+            href: "#contributors",
+          },
+        ],
+      },
+    ],
 		};
     </script>
 </head>
@@ -84,8 +64,8 @@
   <p its-locale-filter-list="ja" lang="ja"><em>この節はこの文書の公開時点での状況を述べています．他の文書によりこの文書が更新されていることがあります．現在の W3C の文書と最新版の技術報告のリストは，https://www.w3.org/TR/ にある<a href="https://www.w3.org/TR/">W3C 技術報告一覧</a>から入手できます．</em></p>
   <p its-locale-filter-list="en" lang="en">This is a maintenance version of a document that describes requirements for general Japanese layout realized with technologies like CSS, SVG, XSL-FO and eBook standards. The document is mainly based on a standard for Japanese layout, JIS X 4051, however, it also addresses areas which are not covered by JIS X 4051. The second version of the document added a significant amount of additional information related to hanmen design, such as handling headings, placement of illustrations and tables, handling of notes and reference marks, etc. This version integrates errata and links to related materials.</p>
   <p its-locale-filter-list="ja" lang="ja">この文書は，CSS，SVG，XSL-FOおよびeBookなどの技術で実現が求められる一般的な日本語組版の要件を記述した文書の訂正版です．この文書は，主としてJIS X 4051（日本語組版規則）に基づいていますが，一部，JIS X 4051に記載されていない事項にも言及しています．この第2版では版面デザインに関する説明を大幅に増やしました．例えば，見出しの扱い，図版や表の配置，注や合印などです．</p>
-  <p its-locale-filter-list="en" lang="en">This document was developed by participants in the <a href="https://github.com/w3c/jlreq/">Japanese Layout Task Force</a>. It will be published by the <a href="https://www.w3.org/International/">Internationalization Working Group</a>. Previous versions of the document were developed by participants in the  <a href="http://www.w3.org/2007/02/japanese-layout/">previous Japanese Layout Task Force</a>, with input from four W3C Working Groups, <a href="http://www.w3.org/Style/CSS/">CSS</a>, <a href="http://www.w3.org/International/core/">Internationalization Core</a>, <a href="http://www.w3.org/Graphics/SVG/">SVG</a> and <a href="http://www.w3.org/Style/XSL/">XSL</a>.</p>
-<p its-locale-filter-list="ja" lang="ja">この文書は <a href="http://www.w3.org/2007/02/japanese-layout/">JLReq 日本語組版タスクフォース</a> の参加者により作成されており，<a href="https://www.w3.org/International/">国際化委員会</a>において公開されます．以前のバージョンのこの文書は <a href="http://www.w3.org/2007/02/japanese-layout/">JLReq 日本語組版タスクフォース</a> の参加者により，<a href="http://www.w3.org/Style/CSS/">CSS</a>，<a href="http://www.w3.org/International/core/">Internationalization Core</a>，<a href="http://www.w3.org/Graphics/SVG/">SVG</a>，<a href="http://www.w3.org/Style/XSL/">XSL</a> の4つの W3C ワーキンググループからの情報を参考に作成されています．</p>
+  <p its-locale-filter-list="en" lang="en">This document was developed by participants in the <a href="https://github.com/w3c/jlreq/">Japanese Layout Task Force</a>. It will be published by the <a href="https://www.w3.org/International/">Internationalization Working Group</a>. Previous versions of the document were developed by participants in the  <a href="https://www.w3.org/2007/02/japanese-layout/">previous Japanese Layout Task Force</a>, with input from four W3C Working Groups, <a href="https://www.w3.org/Style/CSS/">CSS</a>, <a href="https://www.w3.org/International/core/">Internationalization Core</a>, <a href="https://www.w3.org/Graphics/SVG/">SVG</a> and <a href="https://www.w3.org/Style/XSL/">XSL</a>.</p>
+<p its-locale-filter-list="ja" lang="ja">この文書は <a href="https://www.w3.org/2007/02/japanese-layout/">JLReq 日本語組版タスクフォース</a> の参加者により作成されており，<a href="https://www.w3.org/International/">国際化委員会</a>において公開されます．以前のバージョンのこの文書は <a href="https://www.w3.org/2007/02/japanese-layout/">JLReq 日本語組版タスクフォース</a> の参加者により，<a href="https://www.w3.org/Style/CSS/">CSS</a>，<a href="https://www.w3.org/International/core/">Internationalization Core</a>，<a href="https://www.w3.org/Graphics/SVG/">SVG</a>，<a href="https://www.w3.org/Style/XSL/">XSL</a> の4つの W3C ワーキンググループからの情報を参考に作成されています．</p>
 <p its-locale-filter-list="en" lang="en">The document was originally authored in Japanese, then translated to English under the guidance of the Japanese authors. In order to reach the largest international audience, the W3C works in English, so the <a href="?lang=en">English</a> version of the document is the authoritative version. However, the <a href="?lang=ja">Japanese</a> version of this document is also available.</p>
 <p its-locale-filter-list="ja" lang="ja">この文書は日本語で記述されたものを，日本語版作成者の監修のもとに英語に翻訳したものです．最大の国際的な利用者に届けるため，W3C は英語を標準としているため，この文書は<a href="?lang=en">英語版</a>が公式となります．なお，<a href="?lang=ja">日本語版</a>も提供しています．</p>
 <div class="note" id="n0">
@@ -106,7 +86,7 @@
 </p><p its-locale-filter-list="ja" lang="ja">
 ワーキンググループノートとしての公開は <abbr title="World Wide Web Consortium">W3C</abbr> 会員による支持を意味しません．この文書は草案であり，更新やほかの文書により置き換えられる可能性が常にあります．作業版以外としての参照は推奨されません．
 </p><p its-locale-filter-list="ja" lang="ja" data-deliverer="32113">
-この文書は<a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> 特許ポリシー</a>に従って運営されているグループにより作成されました．このグループはこの文書を <abbr title="World Wide Web Consortium">W3C</abbr> 勧告とすることを想定していません．
+この文書は<a href="https://www.w3.org/policies/patent-policy/"><abbr title="World Wide Web Consortium">W3C</abbr> 特許ポリシー</a>に従って運営されているグループにより作成されました．このグループはこの文書を <abbr title="World Wide Web Consortium">W3C</abbr> 勧告とすることを想定していません．
 </p><p its-locale-filter-list="ja" lang="ja">
 この文書は<a href="https://www.w3.org/policies/process/20231103/">2023年11月3日版の<abbr title="World Wide Web Consortium">W3C</abbr> プロセス文書</a>に従っています．
 </p>
@@ -121,7 +101,50 @@
     <span its-locale-filter-list="ja" lang="ja">序論</span>
     </h2>
   
-  
+  <section id="contributors">
+    <h3>
+      <span its-locale-filter-list="en" lang="en">Contributors</span>
+      <span its-locale-filter-list="ja" lang="ja">貢献者</span>
+    </h3>
+    <p its-locale-filter-list="en" lang="en">The <a href="https://www.w3.org/TR/2009/NOTE-jlreq-20090604/">first edition (2009/06/04)</a> of this document was authord and edited by following contributors.</p>
+    <p its-locale-filter-list="ja" lang="ja">この文書の<a href="https://www.w3.org/TR/2009/NOTE-jlreq-20090604/">第１版 (2009/06/04)</a>は以下の編者によって作成されました．</p>
+    <ul>
+      <li>Yasuhiro Anan (阿南 康宏), Microsoft</li>
+      <li>Hiroyuki Chiba (千葉 弘幸), Invited Expert</li>
+      <li>Junsaburo Edamoto (枝本 順三郎), Invited Expert</li>
+      <li>Richard Ishida, W3C</li>
+      <li>Keiichiro Ishino (石野 恵一郎), Antenna House</li>
+      <li>Tatsuo Kobayashi (小林 龍生), JustSystems</li>
+      <li>Toshi Kobayashi (小林 敏), Invited Expert</li>
+      <li>Kenzou Onozawa (小野澤 賢三), Invited Expert</li>
+      <li>Felix Sasaki, University of Applied Sciences Potsdam</li>
+    </ul>
+
+    <p its-locale-filter-list="en" lang="en">The <a href="https://www.w3.org/TR/2012/NOTE-jlreq-20120403/">second edition (2012/04/03)</a> of this document was authord and edited by following contributors.</p>
+    <p its-locale-filter-list="ja" lang="ja">この文書の<a href="https://www.w3.org/TR/2012/NOTE-jlreq-20120403/">第２版 (2012/04/03)</a>は以下の編者によって作成された．</p>
+    <ul>
+      <li>Hiroyuki Chiba (千葉 弘幸), Invited Expert</li>
+      <li>Junsaburo Edamoto (枝本 順三郎), Invited Expert</li>
+      <li>Richard Ishida, W3C</li>
+      <li>Keiichiro Ishino (石野 恵一郎), Antenna House</li>
+      <li>Seiichi Kato (加藤 誠一), Microsoft</li>
+      <li>Tatsuo Kobayashi (小林 龍生), Invited Expert</li>
+      <li>Toshi Kobayashi (小林 敏), Invited Expert</li>
+      <li>Kenzou Onozawa (小野澤 賢三), Invited Expert</li>
+      <li>Felix Sasaki, DFKI GmbH</li>
+      <li>Hajime Shiozawa (塩澤 元), Invited Expert</li>
+    </ul>
+
+    <p its-locale-filter-list="en" lang="en">
+      Japanese version was merged with language selection feature by 薛 富僑 (Fuqiao Xue) and Richard Ishida 
+      prior to publication of <a href="https://www.w3.org/TR/2020/NOTE-jlreq-20200811/">2020/08/11 version of second edition</a>.
+    </p>
+    <p its-locale-filter-list="ja" lang="ja">
+      別文書として公開されていた日本語版は<a href="https://www.w3.org/TR/2020/NOTE-jlreq-20200811/">2020/08/11版の第２版</a>の公開に向けて，
+      薛 富僑 (Fuqiao Xue)とRichard Ishidaにより英語版へ統合された．
+    </p>
+  </section>
+
   <section>
     <h3 id="purpose_of_this_document">
 		<span its-locale-filter-list="en" lang="en">Purpose of This Document</span>
@@ -153,9 +176,9 @@
         <p its-locale-filter-list="ja" lang="ja">日本における国際化，標準化活動の専門家（マイクロソフト，アンテナハウス，ジャストシステムの社員）</p>
       </li>
       <li id="id2">
-        <p its-locale-filter-list="en" lang="en">Members of the <a href="http://www.w3.org/">W3C</a> <a href="http://www.w3.org/Style/CSS/">CSS</a>, <a href="http://www.w3.org/Graphics/SVG/">SVG</a>, <a href="http://www.w3.org/Style/XSL/">XSL</a> and <a href="http://www.w3.org/International/core/">i18n Core</a>,
+        <p its-locale-filter-list="en" lang="en">Members of the <a href="https://www.w3.org/">W3C</a> <a href="https://www.w3.org/Style/CSS/">CSS</a>, <a href="https://www.w3.org/Graphics/SVG/">SVG</a>, <a href="https://www.w3.org/Style/XSL/">XSL</a> and <a href="https://www.w3.org/International/core/">i18n Core</a>,
           Working Groups.</p>
-         <p its-locale-filter-list="ja" lang="ja"><a href="http://www.w3.org/">W3C</a>の<a href="http://www.w3.org/Style/CSS/">CSS</a>，<a href="http://www.w3.org/Graphics/SVG/">SVG</a>，<a href="http://www.w3.org/Style/XSL/">XSL</a>，<a href="http://www.w3.org/International/core/">国際化コア</a>の各ワーキンググループメンバー</p>
+         <p its-locale-filter-list="ja" lang="ja"><a href="https://www.w3.org/">W3C</a>の<a href="https://www.w3.org/Style/CSS/">CSS</a>，<a href="https://www.w3.org/Graphics/SVG/">SVG</a>，<a href="https://www.w3.org/Style/XSL/">XSL</a>，<a href="https://www.w3.org/International/core/">国際化コア</a>の各ワーキンググループメンバー</p>
      </li>
     </ol>
     <p its-locale-filter-list="en" lang="en">This task force also constitutes an important innovation due to its bilingual work-flow. Discussion is mainly conducted in Japanese, because
@@ -307,8 +330,8 @@
       <p its-locale-filter-list="en" lang="en">JIS X 4051 : 2004 Formatting rules for Japanese documents </p>
       <p its-locale-filter-list="ja" lang="ja">JIS X 4051 : 2004 日本語文書の組版方法（<span class="english">Formatting rules for Japanese documents</span>）</p>
     </blockquote>
-    <p its-locale-filter-list="en" lang="en"> JIS X 4051 is available from the Japan Standards Association (http://www.jsa.or.jp/), but a PDF version is not available from JSA. The PDF version is accessible from the Japanese Industrial Standards Committee site (http://www.jisc.go.jp/), however it is not possible to download it. </p>
-    <p its-locale-filter-list="ja" lang="ja"> JIS X 4051 は，日本規格協会（http://www.jsa.or.jp/）から入手できる（PDFデータの頒布はしていない）．ただし，日本産業標準調査会（http://www.jisc.go.jp/）で，この規格を検索することにより，PDFの閲覧が可能である（閲覧のみに限られる）．</p>
+    <p its-locale-filter-list="en" lang="en"> JIS X 4051 is available from the Japan Standards Association (https://www.jsa.or.jp/), but a PDF version is not available from JSA. The PDF version is accessible from the Japanese Industrial Standards Committee site (https://www.jisc.go.jp/), however it is not possible to download it. </p>
+    <p its-locale-filter-list="ja" lang="ja"> JIS X 4051 は，日本規格協会（https://www.jsa.or.jp/）から入手できる（PDFデータの頒布はしていない）．ただし，日本産業標準調査会（https://www.jisc.go.jp/）で，この規格を検索することにより，PDFの閲覧が可能である（閲覧のみに限られる）．</p>
   </section>
 </section>
 <section id="chapter_2">
@@ -24572,8 +24595,8 @@
   <span its-locale-filter-list="en" lang="en">Acknowledgements</span>
   <span its-locale-filter-list="ja" lang="ja">謝辞</span>
 </h2>
-  <p its-locale-filter-list="en" lang="en">This document has been developed with contributions from participants of the <a href="http://www.w3.org/2007/02/japanese-layout/">Japanese Layout Task Force</a>.</p>
-  <p its-locale-filter-list="ja" lang="ja">この資料は，<a href="http://www.w3.org/2007/02/japanese-layout/">Japanese Layout Task Force</a>の参加者の多大な協力によって作成されている．</p>
+  <p its-locale-filter-list="en" lang="en">This document has been developed with contributions from participants of the <a href="https://www.w3.org/2007/02/japanese-layout/">Japanese Layout Task Force</a>.</p>
+  <p its-locale-filter-list="ja" lang="ja">この資料は，<a href="https://www.w3.org/2007/02/japanese-layout/">Japanese Layout Task Force</a>の参加者の多大な協力によって作成されている．</p>
 </section>
 
 
