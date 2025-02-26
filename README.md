@@ -110,7 +110,7 @@ To get an idea about what's involved, see  [Get involved with Language Enablemen
 ### Links to practical information (実用的な情報へのリンク)
 - [public-i18n-japanese mail archive (メールリストアーカイブ)](https://lists.w3.org/Archives/Public/public-i18n-japanese/)
 - [public-i18n-cjk mail archive (メールリストアーカイブ)](https://lists.w3.org/Archives/Public/public-i18n-cjk/)
-- [Writing i18n tests (国際化関連テストを作成するには)](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
+- [Writing i18n tests (国際化関連テストを作成するには)](https://github.com/w3c/i18n-tests/wiki/Writing-i18n-tests)
 - [Practical tips for task forces (タスクフォースの実用的 tips)](https://www.w3.org/International/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
 - [Meeting info (定例会議情報)](https://www.w3.org/2021/04/jlreq-meeting-info.html)
 
