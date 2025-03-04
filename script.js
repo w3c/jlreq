@@ -21,7 +21,8 @@ const translations = {
 	'feedback': { 'en': 'Feedback:', 'ja': '意見・提案：' },
 	'pullRequests': {'en': "Pull requests", 'ja': "プルリクエスト" },
 	'title': {'en': 'Requirements for Japanese Text Layout', 'ja': '日本語組版処理の要件（日本語版）' },
-	'detailDocument': {'en': 'More details about this document', 'ja': 'この文書についての詳細情報' }
+	'detailDocument': {'en': 'More details about this document', 'ja': 'この文書についての詳細情報' },
+	'contributors': {'en': 'Contributors:', 'ja': '貢献者:' }
 }
 
 function switchLang (lang) {
@@ -57,6 +58,12 @@ function switchLang (lang) {
 			document.querySelectorAll('[its-locale-filter-list='+lang+']').forEach(obj => obj.classList.add('hidden'))
 			}
 		})
+		// tweak title
+		if (langs['ja'] && langs['en']) {
+			document.querySelectorAll('title').forEach(obj => {
+				obj.textContent = obj.dataset['loc_en'] + ' - ' + obj.dataset['loc_ja'];
+			})
+		}
 
 		const url = new URL(document.location);
 		const params = url.searchParams;
@@ -75,8 +82,8 @@ async function setFrontMatterIds() {
 	let addLangData = function (obj) {
 		let ctxt = obj.textContent.trim();
 		if (ctxt in en2id) {
-			obj.id = en2id[ctxt];
-			Object.keys(translations[obj.id]).forEach(langid => obj.dataset['loc_' + langid] = translations[obj.id][langid]);
+      coid = en2id[ctxt];
+			Object.keys(translations[coid]).forEach(langid => obj.dataset['loc_' + langid] = translations[coid][langid]);
 			delete en2id[ctxt]; // debugout
 		}
 	};
