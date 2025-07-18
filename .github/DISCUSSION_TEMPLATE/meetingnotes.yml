@@ -21,6 +21,6 @@ body:
         - Attendee: (to be filled)
         ## Agenda (and notes)
         - GitHub issues
-        # Minutes
-        ## The next JLreq TF meeting
+        ## Minutes
+        ### The next JLreq TF meeting
         yyyy-mm-dd
