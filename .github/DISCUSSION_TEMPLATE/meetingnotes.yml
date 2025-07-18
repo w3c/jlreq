@@ -7,11 +7,12 @@ body:
         Input area contains a template for meeting notes, including agenda part.
         1. Edit items where appropriate like XXXX-XX-XX for meeting date
         2. Create new discussion from green button
-        3. (until meeting) Continue edit discussion with adding agenda items
+        3. Edit discussion with removing top line starting with `###`
+        4. (until meeting) Continue edit discussion with adding agenda items
   - type: textarea
-    id: Agenda
+    id: Template
     attributes: 
-      label: Agenda
+      label: Template
       description: list agenda items
       value: |
         # JLreq TF meeting YYYY-MM-DD
