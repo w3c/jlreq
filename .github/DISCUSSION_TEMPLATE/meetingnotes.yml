@@ -1,42 +1,26 @@
-title: "Meeting Notes"
+title: "JLreq TF meeting YYYY-MM-DD"
 body:
   - type: markdown
     attributes:
       value: |
         # How to add new meeting note
-        Fill following fields, and edit markdown formatting after submission if you need.
-  - type: input
-    id: meetingnotes
-    attributes:
-      label: JLreq TF meeting notes
-      description: input date as yyyy-mm-dd
-      value: yyyy-mm-dd
-  - type: input
-    id: Attendee
-    attributes:
-      label: Attendee
-      description: input names of attendee
+        Input area contains a template for meeting notes, including agenda part.
+        1. Edit items where appropriate like XXXX-XX-XX for meeting date
+        2. Create new discussion from green button
+        3. Edit discussion with removing top line starting with `###`
+        4. (until meeting) Continue edit discussion with adding agenda items
   - type: textarea
-    id: Agenda
+    id: Template
     attributes: 
-      label: Agenda
+      label: Template
       description: list agenda items
       value: |
-        ## Previous meeting on [yyyy-mm-dd]()
-        ## For this meeting
-  - type: textarea
-    id: Minutes
-    attributes:
-      label: Minutes
-      description: paste minutes here
-      value: |
-        ## Agenda 1
-        XXXX
-        ## Agenda 2
-        XXXX
-  - type: input
-    id: nextmeeting
-    attributes:
-      label: The next JLreq TF meeting
-      description: put date of next meeting
-      value: yyyy-mm-dd
+        # JLreq TF meeting YYYY-MM-DD
+        - Previous meeting on [YYYY-MM-DD](https://github.com/w3c/jlreq/discussions/XXX)
+        - [日本語版 (Japanese edition)]() (終了後、議事録が完成したらリンクが追記されます)
+        - Attendee: (to be filled)
+        ## Agenda (and notes)
+        - GitHub issues
+        ## Minutes
+        ### The next JLreq TF meeting
+        yyyy-mm-dd
