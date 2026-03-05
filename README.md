@@ -27,26 +27,18 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 ---
 
 
-### Resource & requirement docs （文書）
+### Japanese
 - **Japanese Script Resources** • [*DNOTE*](https://www.w3.org/TR/jpan-lreq/) • [*Editor's draft (編集草案)*](https://w3c.github.io/jlreq/jpan/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/jpan/)
 - **Requirements for Japanese Text Layout (日本語組版処理の要件)** • [DNOTE](https://www.w3.org/TR/jlreq) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/index.html)
 - **Rules for Simple Placement of Japanese Ruby (ルビの簡便な配置ルール)** • [DNOTE](https://www.w3.org/TR/simple-ruby/) • [*Editor's draft (編集草案)*](https://w3c.github.io/simple-ruby/) • [*Latest commits (直近の更新)*](https://github.com/w3c/simple-ruby/commits/gh-pages/index.html)
 - **Requirements for Japanese Digital Text Layout (日本語デジタルテキストの組版要件)** • [DNOTE](https://github.com/w3c/jlreq-d) • [draft Table of Contents and text in Japanese (目次と内容の草案)](https://github.com/w3c/jlreq-d/wiki)
-
-
-
-### Gap-analysis docs （文書）
 - **Japanese Gap Analysis （日本語ギャップ分析）** • [DNOTE](https://www.w3.org/TR/jpan-gap) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/gap-analysis/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/gap-analysis/index.html)
-
-
-
-### Discussions (議論項目)
-- **Japanese** • [*Questions (質問)*](https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)
+- **Discussions** • [*Questions (質問)*](https://github.com/w3c/jlreq/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion)
 • [*Gap reports (ギャップ分析)*](https://github.com/w3c/jlreq/labels/doc%3Ajlreq)
 • [*Other (その他)*](https://github.com/w3c/jlreq/issues?q=is%3Aopen+-label%3Aquestion+-label%3Agap) 
 • [*Spec issues (仕様書についての議論)*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ajlreq+label%3Aspec-type-issue)
 
-### Related documents (関連文書)
+### Other documents (関連文書)
 - [Current Status of Japanese Typography Using Web Technologies](https://www.w3.org/Submission/2017/SUBM-CSJTUWT-20170102/)
 - [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
 - The following documents for discussion of [jlreq-d](https://github.com/w3c/jlreq-d/) are stored at (次期JLreqに向けた議論用文書の集積用ディレクトリ): [directory](docs/)
