@@ -28,7 +28,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 ### Japanese
-- **Japanese Script Resources** • [*DNOTE*](https://www.w3.org/TR/jpan-lreq/) • [*Editor's draft (編集草案)*](https://w3c.github.io/jlreq/jpan/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/jpan/)
+- **Japanese Script Resources** • [*DNOTE*](https://www.w3.org/TR/jpan-lreq/) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/jpan/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/jpan/)
 - **Requirements for Japanese Text Layout (日本語組版処理の要件)** • [DNOTE](https://www.w3.org/TR/jlreq) • [*Editor's draft (編集草案)*](https://www.w3.org/International/jlreq/) • [*Latest commits (直近の更新)*](https://github.com/w3c/jlreq/commits/gh-pages/index.html)
 - **Rules for Simple Placement of Japanese Ruby (ルビの簡便な配置ルール)** • [DNOTE](https://www.w3.org/TR/simple-ruby/) • [*Editor's draft (編集草案)*](https://w3c.github.io/simple-ruby/) • [*Latest commits (直近の更新)*](https://github.com/w3c/simple-ruby/commits/gh-pages/index.html)
 - **Requirements for Japanese Digital Text Layout (日本語デジタルテキストの組版要件)** • [DNOTE](https://github.com/w3c/jlreq-d) • [draft Table of Contents and text in Japanese (目次と内容の草案)](https://github.com/w3c/jlreq-d/wiki)
