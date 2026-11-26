@@ -21,6 +21,9 @@ body:
         - Attendee: (to be filled)
         ## Agenda (and notes)
         - GitHub issues
+          - info share
+          - pending (items not discussed last time)
+          - ToDo (to be copied into next until marked as done)
         ## Minutes
         ### The next JLreq TF meeting
         yyyy-mm-dd
